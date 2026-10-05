@@ -58,6 +58,14 @@ html, body {
   padding: 0;
 }
 
+/* Prevent mobile browsers (iOS Safari / Chrome) from auto-inflating font
+   size inside narrow table columns that sit within a wider, scrollable
+   table - the cause of oddly huge text on phones. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--color-bg);
@@ -663,7 +671,68 @@ main {
 
 /* ===================== Responsive ===================== */
 @media (max-width: 640px) {
-  .candidates-table th:nth-child(1), .candidates-table td:nth-child(1) { display: none; }
   .toolbar__row { flex-direction: column; align-items: stretch; }
   .party-card__header { flex-wrap: wrap; }
+
+  /* Candidate list: switch from a horizontally-scrolling table to a
+     stacked card layout - far more usable on a phone than tiny columns. */
+  .table-wrap:has(.candidates-table) { overflow-x: visible; }
+  .candidates-table { min-width: 0; width: 100%; }
+  .candidates-table thead { display: none; }
+
+  .candidates-table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: .4rem;
+    row-gap: .2rem;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .candidates-table tbody td {
+    border-bottom: none;
+    padding: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .candidates-table tbody td:nth-child(1) {
+    order: 1;
+    width: auto;
+    font-weight: 700;
+    color: var(--color-pink);
+  }
+  .candidates-table tbody td:nth-child(1)::after { content: "."; }
+
+  .candidates-table tbody td:nth-child(2) {
+    order: 2;
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .candidates-table tbody td:nth-child(3) {
+    order: 3;
+    width: auto;
+    font-size: .82rem;
+    color: var(--color-text-muted);
+  }
+  .candidates-table tbody td:nth-child(3)::after { content: " let"; }
+
+  .candidates-table tbody td:nth-child(4) {
+    order: 4;
+    flex: 1 0 100%;
+    font-size: .85rem;
+    color: var(--color-text-muted);
+  }
+
+  .candidates-table tbody td:nth-child(5) {
+    order: 5;
+    flex: 1 0 100%;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--color-pink);
+  }
 }

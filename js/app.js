@@ -157,6 +157,8 @@
   // Measures the widest "name + gender badge" combination across every
   // candidate (not just the currently filtered ones) so the column stays a
   // stable width regardless of filtering, and sets it as a CSS variable.
+  // Uses a plain styled element (not a real table) so it is never affected
+  // by responsive table rules (e.g. the mobile card layout).
   async function measureNameColumnWidth() {
     if (document.fonts && document.fonts.ready) {
       try {
@@ -166,31 +168,22 @@
       }
     }
 
-    const probe = document.createElement("table");
-    probe.className = "candidates-table";
+    const probe = document.createElement("div");
     probe.style.position = "absolute";
     probe.style.visibility = "hidden";
     probe.style.left = "-9999px";
     probe.style.top = "0";
-    probe.style.width = "auto";
-    probe.style.minWidth = "0";
-    probe.style.tableLayout = "auto";
-
-    const tbody = document.createElement("tbody");
-    state.allCandidates.forEach((c) => {
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.style.whiteSpace = "nowrap";
-      td.innerHTML = `<strong>${c.name}</strong> ${genderBadge(c.gender)}`;
-      tr.appendChild(td);
-      tbody.appendChild(tr);
-    });
-    probe.appendChild(tbody);
+    probe.style.whiteSpace = "nowrap";
+    probe.style.fontFamily = "var(--font-body)";
+    probe.style.fontSize = ".9rem";
+    probe.style.paddingLeft = ".9rem";
+    probe.style.paddingRight = ".9rem";
     document.body.appendChild(probe);
 
     let maxWidth = 0;
-    tbody.querySelectorAll("td").forEach((td) => {
-      maxWidth = Math.max(maxWidth, td.scrollWidth);
+    state.allCandidates.forEach((c) => {
+      probe.innerHTML = `<strong>${c.name}</strong> ${genderBadge(c.gender)}`;
+      maxWidth = Math.max(maxWidth, probe.scrollWidth);
     });
 
     document.body.removeChild(probe);
