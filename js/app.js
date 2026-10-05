@@ -29,6 +29,8 @@
 
   const round1 = (n) => Math.round(n * 10) / 10;
 
+  const partyLabel = (party) => `${party.id}. ${party.name}`;
+
   function average(nums) {
     if (!nums.length) return null;
     return nums.reduce((a, b) => a + b, 0) / nums.length;
@@ -39,11 +41,17 @@
     const saved = localStorage.getItem("p12-theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = saved || (prefersDark ? "dark" : "light");
-    document.documentElement.setAttribute("data-theme", theme);
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
+    const toggle = document.getElementById("theme-toggle");
+
+    function applyTheme(t) {
+      document.documentElement.setAttribute("data-theme", t);
+      toggle.setAttribute("aria-checked", t === "dark" ? "true" : "false");
+    }
+
+    applyTheme(theme);
+    toggle.addEventListener("click", () => {
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
       localStorage.setItem("p12-theme", next);
     });
   }
@@ -215,7 +223,7 @@
     const tbody = document.getElementById("flat-table-body");
     const sorted = filtered
       .slice()
-      .sort((a, b) => a.partyName.localeCompare(b.partyName, "cs") || (a.number || 0) - (b.number || 0));
+      .sort((a, b) => (a.partyId || 0) - (b.partyId || 0) || (a.number || 0) - (b.number || 0));
 
     tbody.innerHTML = sorted
       .map(
@@ -225,7 +233,7 @@
           <td><strong>${c.name}</strong> ${genderBadge(c.gender)}</td>
           <td>${c.age ?? "–"}</td>
           <td>${c.profession ? c.profession : "–"}</td>
-          <td>${c.partyName}</td>
+          <td>${c.partyId}. ${c.partyName}</td>
         </tr>`
       )
       .join("");
@@ -446,9 +454,10 @@
       .map(({ party, stats }) => {
         const widthPct = (stats.avgAge / maxAge) * 100;
         const avgLine = overallPct != null ? `<div class="party-bar-row__avg-line" style="left:${overallPct}%"></div>` : "";
+        const label = partyLabel(party);
         return `
           <div class="party-bar-row">
-            <div class="party-bar-row__label"><span title="${party.name}">${party.name}</span><span>${stats.avgAge}&nbsp;let</span></div>
+            <div class="party-bar-row__label"><span title="${label}">${label}</span><span>${stats.avgAge}&nbsp;let</span></div>
             <div class="party-bar-row__track">
               <div class="party-bar-row__fill" style="width:${widthPct}%"></div>
               ${avgLine}
@@ -461,14 +470,17 @@
   function renderPartyGenderChart(partyStatsList) {
     const el = document.getElementById("party-gender-chart");
     el.innerHTML = partyStatsList
-      .map(({ party, stats }) => `
+      .map(({ party, stats }) => {
+        const label = partyLabel(party);
+        return `
         <div class="party-bar-row">
-          <div class="party-bar-row__label"><span title="${party.name}">${party.name}</span><span>${stats.femalePct}&nbsp;% Ž / ${stats.malePct}&nbsp;% M</span></div>
+          <div class="party-bar-row__label"><span title="${label}">${label}</span><span>${stats.femalePct}&nbsp;% Ž / ${stats.malePct}&nbsp;% M</span></div>
           <div class="party-bar-row__track">
             <div class="party-bar-row__segment party-bar-row__segment--female" style="width:${stats.femalePct}%"></div>
             <div class="party-bar-row__segment party-bar-row__segment--male" style="width:${stats.malePct}%"></div>
           </div>
-        </div>`)
+        </div>`;
+      })
       .join("");
   }
 
@@ -478,7 +490,7 @@
     tbody.innerHTML = partyStatsList
       .map(({ party, stats }) => `
           <tr>
-            <td><strong>${party.name}</strong></td>
+            <td><strong>${partyLabel(party)}</strong></td>
             <td>${stats.total}</td>
             <td>${stats.female} (${stats.femalePct}&nbsp;%)</td>
             <td>${stats.male} (${stats.malePct}&nbsp;%)</td>

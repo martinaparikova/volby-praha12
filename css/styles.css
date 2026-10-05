@@ -9,11 +9,11 @@
   --color-text-muted: #635f68;
   --color-border: #f0dde6;
 
-  --color-pink: #e8296b;
-  --color-pink-dark: #b81456;
-  --color-pink-light: #ff6fa3;
-  --color-green: #0f4c3a;
-  --color-green-light: #1d7a5f;
+  --color-pink: #d9477e;
+  --color-pink-dark: #b23867;
+  --color-pink-light: #e678a0;
+  --color-green: #14513f;
+  --color-green-light: #3f8d72;
   --color-green-dark: #0a3327;
 
   --color-female: var(--color-pink);
@@ -29,18 +29,18 @@
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #0b1512;
-  --color-bg-alt: #121f1a;
-  --color-text: #f3f1f4;
-  --color-text-muted: #a9b6b0;
-  --color-border: #203029;
+  --color-bg: #0e1715;
+  --color-bg-alt: #16211d;
+  --color-text: #e9e6e8;
+  --color-text-muted: #9aa6a0;
+  --color-border: #263330;
 
-  --color-pink: #ff5c9d;
-  --color-pink-dark: #ff85b5;
-  --color-pink-light: #ff9ac2;
-  --color-green: #1f7a5c;
-  --color-green-light: #35c48f;
-  --color-green-dark: #0d2d22;
+  --color-pink: #c96488;
+  --color-pink-dark: #ab4f72;
+  --color-pink-light: #d884a1;
+  --color-green: #336b55;
+  --color-green-light: #4f9880;
+  --color-green-dark: #152821;
 
   --color-female: var(--color-pink);
   --color-male: var(--color-green-light);
@@ -116,22 +116,47 @@ main {
 .brand__text strong { font-family: var(--font-heading); font-size: 1.05rem; }
 .brand__text span { font-size: .78rem; color: var(--color-text-muted); }
 
-.theme-toggle {
+/* Theme toggle — sliding switch with sun/moon icons in site colors */
+.theme-switch {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  padding: 0;
   border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  border-radius: 999px;
+  background: var(--color-bg);
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-  transition: transform .2s ease, background-color .2s ease;
+  flex: none;
 }
-.theme-toggle:hover { transform: scale(1.06); }
-.theme-toggle__icon--sun { display: none; }
-:root[data-theme="dark"] .theme-toggle__icon { display: none; }
-:root[data-theme="dark"] .theme-toggle__icon--sun { display: inline; }
+.theme-switch__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .2s ease;
+}
+.theme-switch__icon svg { width: 100%; height: 100%; }
+.theme-switch__icon--sun { left: 8px; color: var(--color-pink); z-index: 2; }
+.theme-switch__icon--moon { right: 8px; color: var(--color-text-muted); z-index: 2; }
+.theme-switch[aria-checked="true"] .theme-switch__icon--sun { color: var(--color-text-muted); }
+.theme-switch[aria-checked="true"] .theme-switch__icon--moon { color: var(--color-green-light); }
+.theme-switch__thumb {
+  position: absolute;
+  z-index: 1;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  box-shadow: var(--shadow-soft);
+  transition: transform .25s ease;
+}
+.theme-switch[aria-checked="true"] .theme-switch__thumb { transform: translateX(30px); }
 
 /* ===================== Hero ===================== */
 .hero {
