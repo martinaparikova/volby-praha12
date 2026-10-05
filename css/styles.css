@@ -457,7 +457,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.candidates-table td:nth-child(1), .candidates-table th:nth-child(1) { width: 44px; }
+.candidates-table td:nth-child(1), .candidates-table th:nth-child(1) { width: 56px; }
 .candidates-table td:nth-child(2), .candidates-table th:nth-child(2) { width: var(--name-col-width, 220px); white-space: nowrap; }
 .candidates-table td:nth-child(3), .candidates-table th:nth-child(3) { width: 60px; }
 .candidates-table td:nth-child(4), .candidates-table th:nth-child(4) { white-space: normal; }
