@@ -258,8 +258,33 @@ main {
 }
 
 .filter-group { display: flex; flex-direction: column; gap: .35rem; }
-.filter-group--grow { flex: 1; min-width: 240px; }
+.filter-group--grow { flex: 1; min-width: 280px; }
 .filter-group__label { font-size: .8rem; color: var(--color-text-muted); font-weight: 600; }
+
+.age-filter {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.age-number-input {
+  width: 58px;
+  flex: none;
+  padding: .4rem .5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: .9rem;
+  font-family: var(--font-body);
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.age-number-input::-webkit-outer-spin-button,
+.age-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.age-number-input:focus { outline: 2px solid var(--color-pink); outline-offset: 1px; }
 
 .btn {
   font-family: var(--font-body);
@@ -283,6 +308,8 @@ main {
   height: 28px;
   display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 120px;
 }
 .range-slider__track {
   position: absolute;
@@ -290,12 +317,14 @@ main {
   height: 4px;
   border-radius: 4px;
   background: var(--color-border);
+  z-index: 1;
 }
 .range-slider__range {
   position: absolute;
   height: 4px;
   border-radius: 4px;
   background: var(--color-pink);
+  z-index: 1;
 }
 .range-slider input[type="range"] {
   position: absolute;
@@ -306,6 +335,7 @@ main {
   -webkit-appearance: none;
   appearance: none;
   height: 28px;
+  z-index: 2;
 }
 .range-slider input[type="range"]::-webkit-slider-thumb {
   pointer-events: all;
@@ -385,11 +415,13 @@ main {
 .badge--male { background: color-mix(in srgb, var(--color-male) 16%, transparent); color: var(--color-male); }
 
 /* ===================== Tables ===================== */
-.table-wrap { overflow-x: auto; }
+.table-wrap { overflow-x: auto; max-width: 100%; }
 .candidates-table, .overview-table {
   width: 100%;
+  min-width: 640px;
   border-collapse: collapse;
   font-size: .9rem;
+  table-layout: fixed;
 }
 .candidates-table th, .candidates-table td,
 .overview-table th, .overview-table td {
@@ -397,8 +429,11 @@ main {
   padding: .65rem .9rem;
   border-bottom: 1px solid var(--color-border);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.candidates-table td:nth-child(4), .candidates-table th:nth-child(4) { white-space: normal; min-width: 220px; }
+.candidates-table td:nth-child(4), .candidates-table th:nth-child(4) { white-space: normal; width: 36%; }
+.overview-table td:nth-child(1), .overview-table th:nth-child(1) { white-space: normal; width: 34%; }
 .candidates-table thead th, .overview-table thead th {
   font-family: var(--font-heading);
   font-size: .78rem;
@@ -473,7 +508,10 @@ main {
   gap: 1.25rem;
   margin-bottom: 1.5rem;
 }
+.chart-grid--stack { grid-template-columns: 1fr; }
+.chart-card { min-width: 0; }
 .chart-card h2 { font-size: 1.05rem; }
+.chart-card__hint { font-size: .78rem; color: var(--color-text-muted); margin: -.3rem 0 1rem; }
 
 .donut-wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .donut { width: 140px; height: 140px; transform: rotate(-90deg); }
@@ -492,6 +530,53 @@ main {
 .bar-row__track { background: var(--color-bg); border-radius: 999px; height: 12px; overflow: hidden; }
 .bar-row__fill { height: 100%; background: linear-gradient(90deg, var(--color-green), var(--color-pink)); border-radius: 999px; }
 .bar-row__count { text-align: right; color: var(--color-text-muted); }
+
+/* Per-party comparison bar charts (overview tab) */
+.party-bar-chart { display: flex; flex-direction: column; gap: .85rem; }
+.party-bar-row { display: flex; flex-direction: column; gap: .3rem; }
+.party-bar-row__label {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  font-size: .82rem;
+  font-weight: 600;
+}
+.party-bar-row__label span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.party-bar-row__label span:last-child { flex: none; color: var(--color-text-muted); font-weight: 500; white-space: nowrap; }
+.party-bar-row__track {
+  position: relative;
+  background: var(--color-bg);
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+}
+.party-bar-row__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-green), var(--color-pink));
+  border-radius: 999px;
+}
+.party-bar-row__avg-line {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--color-text-muted);
+  opacity: .55;
+}
+
+/* Stacked gender ratio bars */
+.party-bar-chart--stacked .party-bar-row__track {
+  display: flex;
+  background: var(--color-border);
+}
+.party-bar-chart--stacked .party-bar-row__segment--female { background: var(--color-female); height: 100%; }
+.party-bar-chart--stacked .party-bar-row__segment--male { background: var(--color-male); height: 100%; }
 
 /* ===================== Footer ===================== */
 .site-footer {

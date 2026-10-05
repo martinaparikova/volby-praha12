@@ -65,12 +65,16 @@
             </div>
           </div>
           <div class="filter-group filter-group--grow">
-            <span class="filter-group__label">Věk: <strong><span id="age-min-label"></span>–<span id="age-max-label"></span> let</strong></span>
-            <div class="range-slider" id="age-range-slider">
-              <input type="range" id="age-min" step="1" />
-              <input type="range" id="age-max" step="1" />
-              <div class="range-slider__track"></div>
-              <div class="range-slider__range"></div>
+            <span class="filter-group__label">Věk (let)</span>
+            <div class="age-filter">
+              <input type="number" id="age-min-number" class="age-number-input" aria-label="Minimální věk" inputmode="numeric" />
+              <div class="range-slider" id="age-range-slider">
+                <div class="range-slider__track"></div>
+                <div class="range-slider__range"></div>
+                <input type="range" id="age-min" step="1" />
+                <input type="range" id="age-max" step="1" />
+              </div>
+              <input type="number" id="age-max-number" class="age-number-input" aria-label="Maximální věk" inputmode="numeric" />
             </div>
           </div>
           <button class="btn btn--ghost" id="reset-filters">Zrušit filtry</button>
@@ -134,6 +138,19 @@
         <div class="card chart-card">
           <h2>Věkové rozložení</h2>
           <div class="bar-chart" id="age-bar-chart"></div>
+        </div>
+      </div>
+
+      <div class="chart-grid chart-grid--stack">
+        <div class="card chart-card">
+          <h2>Průměrný věk podle kandidátek</h2>
+          <p class="chart-card__hint">Svislá čárkovaná čára značí celkový průměr napříč zvoleným rozsahem.</p>
+          <div class="party-bar-chart" id="party-age-chart"></div>
+        </div>
+        <div class="card chart-card">
+          <h2>Poměr žen a mužů podle kandidátek</h2>
+          <p class="chart-card__hint">Každý pruh ukazuje podíl žen a mužů na dané kandidátce.</p>
+          <div class="party-bar-chart party-bar-chart--stacked" id="party-gender-chart"></div>
         </div>
       </div>
 

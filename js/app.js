@@ -271,25 +271,35 @@
   function initAgeSlider() {
     const min = document.getElementById("age-min");
     const max = document.getElementById("age-max");
-    min.min = max.min = state.ageBounds.min;
-    min.max = max.max = state.ageBounds.max;
+    const minNumber = document.getElementById("age-min-number");
+    const maxNumber = document.getElementById("age-max-number");
+
+    min.min = max.min = minNumber.min = maxNumber.min = state.ageBounds.min;
+    min.max = max.max = minNumber.max = maxNumber.max = state.ageBounds.max;
     min.value = state.ageBounds.min;
     max.value = state.ageBounds.max;
 
-    function onChange() {
-      let lo = parseInt(min.value, 10);
-      let hi = parseInt(max.value, 10);
-      if (lo > hi) {
-        [lo, hi] = [hi, lo];
-      }
+    function applyRange(lo, hi) {
+      lo = clampAge(lo);
+      hi = clampAge(hi);
+      if (lo > hi) [lo, hi] = [hi, lo];
       state.filters.ageMin = lo;
       state.filters.ageMax = hi;
       syncAgeSlider();
       renderCandidatesTab();
     }
 
-    min.addEventListener("input", onChange);
-    max.addEventListener("input", onChange);
+    function clampAge(value) {
+      if (!Number.isFinite(value)) return state.ageBounds.min;
+      return Math.min(state.ageBounds.max, Math.max(state.ageBounds.min, value));
+    }
+
+    min.addEventListener("input", () => applyRange(parseInt(min.value, 10), parseInt(max.value, 10)));
+    max.addEventListener("input", () => applyRange(parseInt(min.value, 10), parseInt(max.value, 10)));
+
+    minNumber.addEventListener("change", () => applyRange(parseInt(minNumber.value, 10), state.filters.ageMax));
+    maxNumber.addEventListener("change", () => applyRange(state.filters.ageMin, parseInt(maxNumber.value, 10)));
+
     syncAgeSlider();
   }
 
@@ -298,8 +308,8 @@
     const max = document.getElementById("age-max");
     min.value = state.filters.ageMin;
     max.value = state.filters.ageMax;
-    document.getElementById("age-min-label").textContent = state.filters.ageMin;
-    document.getElementById("age-max-label").textContent = state.filters.ageMax;
+    document.getElementById("age-min-number").value = state.filters.ageMin;
+    document.getElementById("age-max-number").value = state.filters.ageMax;
 
     const total = state.ageBounds.max - state.ageBounds.min || 1;
     const leftPct = ((state.filters.ageMin - state.ageBounds.min) / total) * 100;
@@ -349,14 +359,26 @@
     };
   }
 
+  function getPartyStatsList() {
+    const n = state.overview.topN;
+    const useTop = state.overview.scope === "top";
+    return state.parties.map((party) => {
+      const candidates = useTop ? party.candidates.filter((c) => c.number != null && c.number <= n) : party.candidates;
+      return { party, stats: computeStats(candidates) };
+    });
+  }
+
   function renderOverview() {
     const scopeCandidates = getOverviewScopeCandidates();
     const stats = computeStats(scopeCandidates);
+    const partyStatsList = getPartyStatsList();
 
     renderSummaryGrid(stats);
     renderDonut(stats);
     renderAgeBarChart(scopeCandidates);
-    renderOverviewTable();
+    renderPartyAgeChart(partyStatsList, stats);
+    renderPartyGenderChart(partyStatsList);
+    renderOverviewTable(partyStatsList);
   }
 
   function renderSummaryGrid(stats) {
@@ -405,24 +427,54 @@
       .join("");
   }
 
-  function renderOverviewTable() {
-    const n = state.overview.topN;
-    const useTop = state.overview.scope === "top";
+  function renderPartyAgeChart(partyStatsList, overallStats) {
+    const el = document.getElementById("party-age-chart");
+    const withAge = partyStatsList.filter((p) => p.stats.avgAge != null);
+    const maxAge = Math.max(...withAge.map((p) => p.stats.avgAge), 1);
+    const overallPct = overallStats.avgAge != null ? (overallStats.avgAge / maxAge) * 100 : null;
+
+    el.innerHTML = withAge
+      .map(({ party, stats }) => {
+        const widthPct = (stats.avgAge / maxAge) * 100;
+        const avgLine = overallPct != null ? `<div class="party-bar-row__avg-line" style="left:${overallPct}%"></div>` : "";
+        return `
+          <div class="party-bar-row">
+            <div class="party-bar-row__label"><span title="${party.name}">${party.name}</span><span>${stats.avgAge}&nbsp;let</span></div>
+            <div class="party-bar-row__track">
+              <div class="party-bar-row__fill" style="width:${widthPct}%"></div>
+              ${avgLine}
+            </div>
+          </div>`;
+      })
+      .join("");
+  }
+
+  function renderPartyGenderChart(partyStatsList) {
+    const el = document.getElementById("party-gender-chart");
+    el.innerHTML = partyStatsList
+      .map(({ party, stats }) => `
+        <div class="party-bar-row">
+          <div class="party-bar-row__label"><span title="${party.name}">${party.name}</span><span>${stats.femalePct}&nbsp;% Ž / ${stats.malePct}&nbsp;% M</span></div>
+          <div class="party-bar-row__track">
+            <div class="party-bar-row__segment party-bar-row__segment--female" style="width:${stats.femalePct}%"></div>
+            <div class="party-bar-row__segment party-bar-row__segment--male" style="width:${stats.malePct}%"></div>
+          </div>
+        </div>`)
+      .join("");
+  }
+
+  function renderOverviewTable(partyStatsList) {
     const tbody = document.getElementById("overview-table-body");
 
-    tbody.innerHTML = state.parties
-      .map((party) => {
-        const candidates = useTop ? party.candidates.filter((c) => c.number != null && c.number <= n) : party.candidates;
-        const stats = computeStats(candidates);
-        return `
+    tbody.innerHTML = partyStatsList
+      .map(({ party, stats }) => `
           <tr>
             <td><strong>${party.name}</strong></td>
             <td>${stats.total}</td>
             <td>${stats.female} (${stats.femalePct}&nbsp;%)</td>
             <td>${stats.male} (${stats.malePct}&nbsp;%)</td>
             <td>${stats.avgAge ?? "–"} let</td>
-          </tr>`;
-      })
+          </tr>`)
       .join("");
   }
 
