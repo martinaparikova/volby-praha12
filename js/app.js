@@ -152,6 +152,50 @@
     return "";
   }
 
+  // Measures the widest "name + gender badge" combination across every
+  // candidate (not just the currently filtered ones) so the column stays a
+  // stable width regardless of filtering, and sets it as a CSS variable.
+  async function measureNameColumnWidth() {
+    if (document.fonts && document.fonts.ready) {
+      try {
+        await document.fonts.ready;
+      } catch (e) {
+        /* ignore font loading errors, measure with whatever is available */
+      }
+    }
+
+    const probe = document.createElement("table");
+    probe.className = "candidates-table";
+    probe.style.position = "absolute";
+    probe.style.visibility = "hidden";
+    probe.style.left = "-9999px";
+    probe.style.top = "0";
+    probe.style.width = "auto";
+    probe.style.minWidth = "0";
+    probe.style.tableLayout = "auto";
+
+    const tbody = document.createElement("tbody");
+    state.allCandidates.forEach((c) => {
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.style.whiteSpace = "nowrap";
+      td.innerHTML = `<strong>${c.name}</strong> ${genderBadge(c.gender)}`;
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+    });
+    probe.appendChild(tbody);
+    document.body.appendChild(probe);
+
+    let maxWidth = 0;
+    tbody.querySelectorAll("td").forEach((td) => {
+      maxWidth = Math.max(maxWidth, td.scrollWidth);
+    });
+
+    document.body.removeChild(probe);
+
+    document.documentElement.style.setProperty("--name-col-width", `${Math.ceil(maxWidth) + 4}px`);
+  }
+
   function renderGroupedView(filtered) {
     const container = document.getElementById("grouped-view");
     const byParty = new Map();
@@ -510,6 +554,7 @@
       return;
     }
     renderHeroStats();
+    await measureNameColumnWidth();
     initFilterControls();
     initOverviewControls();
     renderCandidatesTab();
