@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volby Praha 12 — komunální volby 2026</title>
+  <meta name="description" content="Přehled kandidátů do zastupitelstva MČ Praha 12 pro komunální volby 2026 — jména, věk, povolání, filtrování a statistiky." />
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="brand">
+        <span class="brand__badge">P12</span>
+        <div class="brand__text">
+          <strong>Volby Praha 12</strong>
+          <span>Komunální volby 2026 · přehled kandidátů</span>
+        </div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Přepnout tmavý režim">
+        <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <h1>Kdo kandiduje v Praze&nbsp;12?</h1>
+        <p>Projděte si všechny kandidátní listiny pro komunální volby 2026, filtrujte podle věku a pohlaví a podívejte se na přehledy a statistiky napříč kandidátkami.</p>
+        <div class="hero__stats" id="hero-stats" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="Sekce">
+      <button class="tabs__btn is-active" id="tab-btn-candidates" role="tab" aria-selected="true" aria-controls="tab-candidates">Kandidáti</button>
+      <button class="tabs__btn" id="tab-btn-overview" role="tab" aria-selected="false" aria-controls="tab-overview">Přehledy</button>
+    </nav>
+
+    <!-- ===================== KANDIDÁTI ===================== -->
+    <section id="tab-candidates" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-btn-candidates">
+      <div class="toolbar card">
+        <div class="toolbar__row">
+          <div class="segmented" role="group" aria-label="Zobrazení">
+            <button class="segmented__btn is-active" data-view="grouped">Podle kandidátek</button>
+            <button class="segmented__btn" data-view="flat">Všichni najednou</button>
+          </div>
+          <div class="search-box">
+            <span aria-hidden="true">🔍</span>
+            <input type="search" id="search-input" placeholder="Hledat jméno nebo povolání…" aria-label="Hledat kandidáta" />
+          </div>
+        </div>
+        <div class="toolbar__row">
+          <div class="filter-group">
+            <span class="filter-group__label">Pohlaví</span>
+            <div class="segmented segmented--sm" role="group" aria-label="Pohlaví">
+              <button class="segmented__btn is-active" data-gender="all">Všichni</button>
+              <button class="segmented__btn" data-gender="F">Ženy</button>
+              <button class="segmented__btn" data-gender="M">Muži</button>
+            </div>
+          </div>
+          <div class="filter-group filter-group--grow">
+            <span class="filter-group__label">Věk: <strong><span id="age-min-label"></span>–<span id="age-max-label"></span> let</strong></span>
+            <div class="range-slider" id="age-range-slider">
+              <input type="range" id="age-min" step="1" />
+              <input type="range" id="age-max" step="1" />
+              <div class="range-slider__track"></div>
+              <div class="range-slider__range"></div>
+            </div>
+          </div>
+          <button class="btn btn--ghost" id="reset-filters">Zrušit filtry</button>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+      <div id="grouped-view" class="grouped-view"></div>
+      <div id="flat-view" class="flat-view" hidden>
+        <div class="table-wrap card">
+          <table class="candidates-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Jméno</th>
+                <th>Věk</th>
+                <th>Povolání</th>
+                <th>Kandidátka</th>
+              </tr>
+            </thead>
+            <tbody id="flat-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>Žádný kandidát neodpovídá zvoleným filtrům.</p>
+    </section>
+
+    <!-- ===================== PŘEHLEDY ===================== -->
+    <section id="tab-overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-overview">
+      <div class="toolbar card">
+        <div class="toolbar__row">
+          <div class="segmented" role="group" aria-label="Rozsah přehledu">
+            <button class="segmented__btn is-active" data-scope="all">Celkem</button>
+            <button class="segmented__btn" data-scope="top">TOP N</button>
+          </div>
+          <div class="topn-input" id="topn-wrap" hidden>
+            <label for="topn-input">N =</label>
+            <input type="number" id="topn-input" min="1" max="35" value="10" />
+            <span class="hint">prvních N kandidátů z každé kandidátky</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-grid" id="summary-grid"></div>
+
+      <div class="chart-grid">
+        <div class="card chart-card">
+          <h2>Poměr žen a mužů</h2>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 120" class="donut" id="gender-donut" role="img" aria-label="Poměr žen a mužů">
+              <circle cx="60" cy="60" r="50" class="donut__bg"></circle>
+              <circle cx="60" cy="60" r="50" class="donut__segment donut__segment--female" id="donut-female"></circle>
+            </svg>
+            <div class="donut-legend">
+              <div><span class="dot dot--female"></span>Ženy <strong id="legend-female"></strong></div>
+              <div><span class="dot dot--male"></span>Muži <strong id="legend-male"></strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="card chart-card">
+          <h2>Věkové rozložení</h2>
+          <div class="bar-chart" id="age-bar-chart"></div>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <h2>Přehled podle kandidátek</h2>
+        <div class="table-wrap">
+          <table class="overview-table">
+            <thead>
+              <tr>
+                <th>Kandidátka</th>
+                <th>Počet</th>
+                <th>Ženy</th>
+                <th>Muži</th>
+                <th>Průměrný věk</th>
+              </tr>
+            </thead>
+            <tbody id="overview-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Zdroj dat: Český statistický úřad, zprostředkováno přes
+      <a href="https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107" target="_blank" rel="noopener">Poradnu pro obce</a>.
+      Pohlaví je u části kandidátů dopočítáno odhadem podle křestního jména.
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
