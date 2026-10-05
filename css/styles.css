@@ -619,11 +619,16 @@ main {
   border-radius: 999px;
 }
 .avg-marker__arrow {
-  width: 26px;
+  width: 30px;
   height: 36px;
-  color: var(--color-pink);
-  filter: drop-shadow(0 2px 3px color-mix(in srgb, var(--color-pink) 35%, transparent));
+  filter: drop-shadow(0 3px 3px color-mix(in srgb, var(--color-green-dark) 45%, transparent));
 }
+.avg-marker__arrow-shape {
+  fill: var(--color-pink);
+  stroke: var(--color-green-dark);
+  stroke-width: 5;
+}
+.avg-marker__arrow-shine { fill: #fff; opacity: .55; }
 
 /* Stacked gender ratio bars */
 .party-bar-chart--stacked .party-bar-row__track {
