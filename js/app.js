@@ -17,6 +17,8 @@
     overview: {
       scope: "all", // 'all' | 'top'
       topN: 10,
+      ageSort: "default", // 'default' | 'asc' | 'desc'
+      genderSort: "default", // 'default' | 'female' | 'male'
     },
   };
 
@@ -388,6 +390,22 @@
       state.overview.topN = Number.isFinite(n) && n > 0 ? n : 10;
       renderOverview();
     });
+
+    document.querySelectorAll('[data-age-sort]').forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll('[data-age-sort]').forEach((b) => b.classList.toggle("is-active", b === btn));
+        state.overview.ageSort = btn.dataset.ageSort;
+        renderOverview();
+      });
+    });
+
+    document.querySelectorAll('[data-gender-sort]').forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll('[data-gender-sort]').forEach((b) => b.classList.toggle("is-active", b === btn));
+        state.overview.genderSort = btn.dataset.genderSort;
+        renderOverview();
+      });
+    });
   }
 
   function getOverviewScopeCandidates() {
@@ -494,7 +512,14 @@
       marker.hidden = true;
     }
 
-    el.innerHTML = withAge
+    const sorted = withAge.slice();
+    if (state.overview.ageSort === "asc") {
+      sorted.sort((a, b) => a.stats.avgAge - b.stats.avgAge);
+    } else if (state.overview.ageSort === "desc") {
+      sorted.sort((a, b) => b.stats.avgAge - a.stats.avgAge);
+    }
+
+    el.innerHTML = sorted
       .map(({ party, stats }) => {
         const widthPct = (stats.avgAge / maxAge) * 100;
         const avgLine = overallPct != null ? `<div class="party-bar-row__avg-line" style="left:${overallPct}%"></div>` : "";
@@ -513,7 +538,13 @@
 
   function renderPartyGenderChart(partyStatsList) {
     const el = document.getElementById("party-gender-chart");
-    el.innerHTML = partyStatsList
+    const sorted = partyStatsList.slice();
+    if (state.overview.genderSort === "female") {
+      sorted.sort((a, b) => b.stats.femalePct - a.stats.femalePct);
+    } else if (state.overview.genderSort === "male") {
+      sorted.sort((a, b) => b.stats.malePct - a.stats.malePct);
+    }
+    el.innerHTML = sorted
       .map(({ party, stats }) => {
         const label = partyLabel(party);
         return `

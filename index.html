@@ -155,7 +155,14 @@
 
       <div class="chart-grid chart-grid--stack">
         <div class="card chart-card">
-          <h2>Průměrný věk podle kandidátek</h2>
+          <div class="chart-card__header">
+            <h2>Průměrný věk podle kandidátek</h2>
+            <div class="segmented segmented--sm" role="group" aria-label="Řazení podle věku">
+              <button class="segmented__btn is-active" data-age-sort="default">Pořadí listiny</button>
+              <button class="segmented__btn" data-age-sort="asc">Nejmladší</button>
+              <button class="segmented__btn" data-age-sort="desc">Nejstarší</button>
+            </div>
+          </div>
           <p class="chart-card__hint">Svislá čárkovaná čára značí celkový průměr napříč zvoleným rozsahem.</p>
           <div class="party-chart-wrap">
             <div class="avg-marker" id="party-age-avg-marker" hidden>
@@ -170,7 +177,14 @@
           </div>
         </div>
         <div class="card chart-card">
-          <h2>Poměr žen a mužů podle kandidátek</h2>
+          <div class="chart-card__header">
+            <h2>Poměr žen a mužů podle kandidátek</h2>
+            <div class="segmented segmented--sm" role="group" aria-label="Řazení podle poměru žen a mužů">
+              <button class="segmented__btn is-active" data-gender-sort="default">Pořadí listiny</button>
+              <button class="segmented__btn" data-gender-sort="female">Nejvíc žen</button>
+              <button class="segmented__btn" data-gender-sort="male">Nejvíc mužů</button>
+            </div>
+          </div>
           <p class="chart-card__hint">Každý pruh ukazuje podíl žen a mužů na dané kandidátce.</p>
           <div class="party-bar-chart party-bar-chart--stacked" id="party-gender-chart"></div>
         </div>
