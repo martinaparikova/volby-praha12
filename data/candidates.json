@@ -55,7 +55,7 @@
           "number": 7,
           "name": "Mgr. Lucie Hlavičková",
           "age": 48,
-          "gender": "M",
+          "gender": "F",
           "profession": "daňová poradkyně"
         },
         {
@@ -426,7 +426,7 @@
           "number": 24,
           "name": "Lucie Hodková",
           "age": 19,
-          "gender": "M",
+          "gender": "F",
           "profession": "studentka"
         },
         {
@@ -580,7 +580,7 @@
           "number": 10,
           "name": "Mgr. Zlatuše Rybářová",
           "age": 61,
-          "gender": "M",
+          "gender": "F",
           "profession": "manažerka sociálních a zdravotních služeb"
         },
         {
@@ -930,7 +930,7 @@
           "number": 24,
           "name": "Nicole Sobotková",
           "age": 22,
-          "gender": "M",
+          "gender": "F",
           "profession": "obsluha restaurace"
         },
         {
@@ -1056,7 +1056,7 @@
           "number": 6,
           "name": "Marie Zralíková",
           "age": 66,
-          "gender": "M",
+          "gender": "F",
           "profession": "zaměstnanec"
         },
         {
@@ -1238,7 +1238,7 @@
           "number": 22,
           "name": "MVDr. Danuše Melničáková",
           "age": 70,
-          "gender": "M",
+          "gender": "F",
           "profession": "veterinární lékařka v důchodu"
         },
         {
@@ -1266,7 +1266,7 @@
           "number": 26,
           "name": "Bc. Alice Sedláčková",
           "age": 28,
-          "gender": "M",
+          "gender": "F",
           "profession": "specialistka mezinárodní klientské péče, zpěvačka"
         },
         {
@@ -2036,7 +2036,7 @@
           "number": 28,
           "name": "Lucie Najmanová Ph.D.",
           "age": 55,
-          "gender": "M",
+          "gender": "F",
           "profession": "vědecká pracovnice"
         },
         {
@@ -2281,7 +2281,7 @@
           "number": 27,
           "name": "Danuše Nováková",
           "age": 63,
-          "gender": "M",
+          "gender": "F",
           "profession": "prodavačka"
         },
         {

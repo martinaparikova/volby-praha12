@@ -35,7 +35,12 @@ def clean(text):
     return re.sub(r"\s+", " ", text or "").strip()
 
 
-def guess_gender(first_name):
+def guess_gender(first_name, last_name):
+    # Strongest signal: Czech feminine surnames almost always end in "á"
+    # (e.g. "-ová", "-ská", "-cká", or plain adjectival "-á"). Male surnames
+    # never end this way, so this overrides the first-name heuristic below.
+    if last_name and last_name.rstrip(".,").endswith("á"):
+        return "F"
     if not first_name:
         return None
     key = first_name.lower()
@@ -44,10 +49,19 @@ def guess_gender(first_name):
     return "F" if key.endswith("a") else "M"
 
 
-def first_name_of(full_name):
+def name_tokens_without_titles(full_name):
     tokens = full_name.split(" ")
-    kept = [t for t in tokens if t.rstrip(",") not in TITLE_TOKENS]
+    return [t for t in tokens if t.rstrip(",") not in TITLE_TOKENS]
+
+
+def first_name_of(full_name):
+    kept = name_tokens_without_titles(full_name)
     return kept[0] if kept else None
+
+
+def last_name_of(full_name):
+    kept = name_tokens_without_titles(full_name)
+    return kept[-1] if kept else None
 
 
 def parse():
@@ -82,7 +96,7 @@ def parse():
             age = int(age_match.group(1)) if age_match else None
             name = clean(name_cell.find("strong").get_text()) if name_cell.find("strong") else re.sub(r"\s*\(\d+\s*let\)", "", full_text)
             profession = clean(profession_cell.get_text()) if profession_cell else None
-            gender = guess_gender(first_name_of(name))
+            gender = guess_gender(first_name_of(name), last_name_of(name))
 
             candidates.append(
                 {
