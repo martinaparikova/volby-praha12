@@ -1,6 +1,6 @@
 /* ===================== Design tokens ===================== */
 :root {
-  --font-heading: "Poppins", "Inter", system-ui, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --color-bg: #fbf6f8;
@@ -103,7 +103,7 @@ main {
 
 .brand__badge {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
   background: var(--gradient-hero);
   padding: .4rem .65rem;
@@ -168,7 +168,7 @@ main {
 .hero__inner { max-width: 1100px; margin: 0 auto; }
 .hero h1 {
   font-size: clamp(1.7rem, 4vw, 2.6rem);
-  font-weight: 800;
+  font-weight: 700;
 }
 .hero p {
   max-width: 640px;
@@ -544,14 +544,14 @@ main {
 .donut__segment { fill: none; stroke-width: 16; stroke-linecap: round; transition: stroke-dasharray .4s ease; }
 .donut__segment--female { stroke: var(--color-female); }
 
-.donut-legend { display: flex; flex-direction: column; gap: .5rem; font-size: .9rem; }
+.donut-legend { display: flex; flex-direction: column; gap: .5rem; font-size: .9rem; font-family: var(--font-heading); }
 .donut-legend strong { margin-left: .3rem; }
 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: .4rem; }
 .dot--female { background: var(--color-female); }
 .dot--male { background: var(--color-male); }
 
 .bar-chart { display: flex; flex-direction: column; gap: .6rem; }
-.bar-row { display: grid; grid-template-columns: 70px 1fr 40px; align-items: center; gap: .6rem; font-size: .82rem; }
+.bar-row { display: grid; grid-template-columns: 70px 1fr 40px; align-items: center; gap: .6rem; font-size: .82rem; font-family: var(--font-heading); }
 .bar-row__track { background: var(--color-bg); border-radius: 999px; height: 12px; overflow: hidden; }
 .bar-row__fill { height: 100%; background: linear-gradient(90deg, var(--color-green), var(--color-pink)); border-radius: 999px; }
 .bar-row__count { text-align: right; color: var(--color-text-muted); }
@@ -565,6 +565,7 @@ main {
   gap: .5rem;
   font-size: .82rem;
   font-weight: 600;
+  font-family: var(--font-heading);
 }
 .party-bar-row__label span:first-child {
   flex: 1 1 auto;
@@ -609,8 +610,9 @@ main {
   white-space: nowrap;
 }
 .avg-marker__label {
+  font-family: var(--font-heading);
   font-size: .74rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .04em;
   color: var(--color-pink);
