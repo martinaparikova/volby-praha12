@@ -1,16 +1,35 @@
 """
 Parses the official ČSÚ candidate lists (zprostředkované přes poradnaproobce.cz)
-for Praha 12, municipal elections 2026, from the saved HTML page into structured JSON.
+for Prague city districts, municipal elections 2026, from a saved HTML page
+into structured JSON.
+
+Usage:
+  python scripts/parse_candidates.py [slug ...]   # defaults to all municipalities
 """
 import json
 import os
 import re
+import sys
 import tempfile
 
 from bs4 import BeautifulSoup
 
-SRC = os.path.join(tempfile.gettempdir(), "praha12_candidates.html")
-OUT = os.path.join(os.path.dirname(__file__), "..", "data", "candidates.json")
+MUNICIPALITIES = {
+    "praha12": {
+        "name": "Praha 12",
+        "html_file": "praha12_candidates.html",
+        "source_url": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107",
+        "out_file": "candidates-praha12.json",
+    },
+    "praha11": {
+        "name": "Praha 11",
+        "html_file": "praha11_candidates.html",
+        "source_url": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-11-547034",
+        "out_file": "candidates-praha11.json",
+    },
+}
+
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 
 # Academic/professional titles that can precede or follow a candidate's name
 # on Czech ballots. Stripped out to isolate the given/first name for gender
@@ -28,6 +47,8 @@ GENDER_OVERRIDES = {
     "attila": "M",
     "lingli": "F",
     "petri": "F",
+    "ingrid": "F",
+    "karin": "F",
 }
 
 
@@ -64,8 +85,8 @@ def last_name_of(full_name):
     return kept[-1] if kept else None
 
 
-def parse():
-    with open(SRC, encoding="utf-8") as f:
+def parse(src_path):
+    with open(src_path, encoding="utf-8") as f:
         soup = BeautifulSoup(f.read(), "html.parser")
 
     sections = soup.select("section.cmp_election_openable_section")
@@ -120,18 +141,19 @@ def parse():
     return parties
 
 
-if __name__ == "__main__":
-    import sys
+def run_for(slug):
+    config = MUNICIPALITIES[slug]
+    src_path = os.path.join(tempfile.gettempdir(), config["html_file"])
+    out_path = os.path.join(DATA_DIR, config["out_file"])
 
-    sys.stdout.reconfigure(encoding="utf-8")
-    parties = parse()
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
+    parties = parse(src_path)
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(
             {
-                "municipality": "Praha 12",
+                "municipality": config["name"],
                 "election": "Volby do zastupitelstev obcí 2026",
-                "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107",
+                "source": config["source_url"],
                 "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
                 "parties": parties,
             },
@@ -139,7 +161,18 @@ if __name__ == "__main__":
             ensure_ascii=False,
             indent=2,
         )
+
     total = sum(len(p["candidates"]) for p in parties)
-    print(f"Parties: {len(parties)}, total candidates parsed: {total}")
+    print(f"[{config['name']}] parties: {len(parties)}, total candidates parsed: {total}")
     for p in parties:
-        print(f"- {p['name']}: {len(p['candidates'])} (expected {p['candidateCount']})")
+        print(f"  - {p['name']}: {len(p['candidates'])} (expected {p['candidateCount']})")
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
+    slugs = sys.argv[1:] or list(MUNICIPALITIES.keys())
+    for slug in slugs:
+        if slug not in MUNICIPALITIES:
+            print(f"Unknown municipality slug: {slug} (known: {', '.join(MUNICIPALITIES)})")
+            continue
+        run_for(slug)

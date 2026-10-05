@@ -1,8 +1,24 @@
 (() => {
   "use strict";
 
+  const MUNICIPALITIES = {
+    praha12: {
+      label: "Praha 12",
+      badge: "P12",
+      file: "data/candidates-praha12.json",
+    },
+    praha11: {
+      label: "Praha 11",
+      badge: "P11",
+      file: "data/candidates-praha11.json",
+    },
+  };
+  const DEFAULT_MUNICIPALITY = "praha12";
+
   /* ===================== State ===================== */
   const state = {
+    municipality: DEFAULT_MUNICIPALITY,
+    source: null,
     parties: [],
     allCandidates: [], // flattened, each carries partyId/partyName
     ageBounds: { min: 18, max: 90 },
@@ -81,10 +97,11 @@
   }
 
   /* ===================== Data loading ===================== */
-  async function loadData() {
-    const res = await fetch("data/candidates.json");
+  async function loadData(file) {
+    const res = await fetch(file);
     if (!res.ok) throw new Error("Nepodařilo se načíst data kandidátů.");
     const json = await res.json();
+    state.source = { url: json.source, municipality: json.municipality };
     state.parties = json.parties;
     state.allCandidates = json.parties.flatMap((p) =>
       p.candidates.map((c) => ({ ...c, partyId: p.id, partyName: p.name }))
@@ -94,6 +111,60 @@
     state.ageBounds.max = Math.max(...ages);
     state.filters.ageMin = state.ageBounds.min;
     state.filters.ageMax = state.ageBounds.max;
+  }
+
+  /* ===================== Municipality switching ===================== */
+  function initMunicipalitySwitch() {
+    document.querySelectorAll('[data-municipality]').forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.dataset.municipality === state.municipality) return;
+        switchMunicipality(btn.dataset.municipality);
+      });
+    });
+  }
+
+  async function switchMunicipality(slug) {
+    const config = MUNICIPALITIES[slug];
+    if (!config) return;
+
+    document.querySelectorAll('[data-municipality]').forEach((b) => b.classList.toggle("is-active", b.dataset.municipality === slug));
+
+    // Reset candidate-browsing state - old filters/open accordions rarely
+    // make sense for a different municipality's data.
+    state.filters.gender = "all";
+    state.filters.search = "";
+    state.openParties = new Set();
+    document.getElementById("search-input").value = "";
+    document.querySelectorAll('[data-gender]').forEach((b) => b.classList.toggle("is-active", b.dataset.gender === "all"));
+
+    try {
+      await loadData(config.file);
+    } catch (err) {
+      document.getElementById("grouped-view").innerHTML = `<p class="empty-state">Nepodařilo se načíst data: ${err.message}</p>`;
+      return;
+    }
+
+    state.municipality = slug;
+    localStorage.setItem("p12-municipality", slug);
+
+    document.getElementById("brand-badge").textContent = config.badge;
+    document.getElementById("brand-title").textContent = `Volby ${config.label}`;
+    document.getElementById("hero-title").innerHTML = `Kdo kandiduje v ${toLocative(config.label)}?`;
+    document.title = `Volby ${config.label} — komunální volby 2026`;
+    const sourceLink = document.getElementById("source-link");
+    if (sourceLink && state.source) sourceLink.href = state.source.url;
+
+    updateAgeSliderBounds();
+    await measureNameColumnWidth();
+    renderHeroStats();
+    renderCandidatesTab();
+    renderOverview();
+  }
+
+  // Quick Czech locative-case helper for the two supported districts, used
+  // in the "Kdo kandiduje v ...?" heading (e.g. "Praze 12", "Praze 11").
+  function toLocative(label) {
+    return label.replace(/^Praha(\s+\d+)/, "Praze$1").replace(" ", "&nbsp;");
   }
 
   /* ===================== Hero stats ===================== */
@@ -312,19 +383,14 @@
       renderCandidatesTab();
     });
 
-    initAgeSlider();
+    initAgeSliderListeners();
   }
 
-  function initAgeSlider() {
+  function initAgeSliderListeners() {
     const min = document.getElementById("age-min");
     const max = document.getElementById("age-max");
     const minNumber = document.getElementById("age-min-number");
     const maxNumber = document.getElementById("age-max-number");
-
-    min.min = max.min = minNumber.min = maxNumber.min = state.ageBounds.min;
-    min.max = max.max = minNumber.max = maxNumber.max = state.ageBounds.max;
-    min.value = state.ageBounds.min;
-    max.value = state.ageBounds.max;
 
     function applyRange(lo, hi) {
       lo = clampAge(lo);
@@ -346,6 +412,18 @@
 
     minNumber.addEventListener("change", () => applyRange(parseInt(minNumber.value, 10), state.filters.ageMax));
     maxNumber.addEventListener("change", () => applyRange(state.filters.ageMin, parseInt(maxNumber.value, 10)));
+  }
+
+  // Called once on load and again every time the municipality (and
+  // therefore the available age range) changes.
+  function updateAgeSliderBounds() {
+    const min = document.getElementById("age-min");
+    const max = document.getElementById("age-max");
+    const minNumber = document.getElementById("age-min-number");
+    const maxNumber = document.getElementById("age-max-number");
+
+    min.min = max.min = minNumber.min = maxNumber.min = state.ageBounds.min;
+    min.max = max.max = minNumber.max = maxNumber.max = state.ageBounds.max;
 
     syncAgeSlider();
   }
@@ -571,18 +649,13 @@
   async function init() {
     initTheme();
     initTabs();
-    try {
-      await loadData();
-    } catch (err) {
-      document.getElementById("grouped-view").innerHTML = `<p class="empty-state">Nepodařilo se načíst data: ${err.message}</p>`;
-      return;
-    }
-    renderHeroStats();
-    await measureNameColumnWidth();
     initFilterControls();
     initOverviewControls();
-    renderCandidatesTab();
-    renderOverview();
+    initMunicipalitySwitch();
+
+    const saved = localStorage.getItem("p12-municipality");
+    const initialSlug = saved && MUNICIPALITIES[saved] ? saved : DEFAULT_MUNICIPALITY;
+    await switchMunicipality(initialSlug);
   }
 
   document.addEventListener("DOMContentLoaded", init);

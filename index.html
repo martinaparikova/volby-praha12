@@ -15,35 +15,41 @@
   <header class="site-header">
     <div class="site-header__inner">
       <div class="brand">
-        <span class="brand__badge">P12</span>
+        <span class="brand__badge" id="brand-badge">P12</span>
         <div class="brand__text">
-          <strong>Volby Praha 12</strong>
+          <strong id="brand-title">Volby Praha 12</strong>
           <span>Komunální volby 2026 · přehled kandidátů</span>
         </div>
       </div>
-      <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Přepnout tmavý režim">
-        <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <path d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.6 5.4l-1.6 1.6M6.9 17.1l-1.6 1.6M18.6 18.6l-1.6-1.6M6.9 6.9 5.3 5.3"/>
-            </g>
-          </svg>
-        </span>
-        <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="theme-switch__thumb" aria-hidden="true"></span>
-      </button>
+      <div class="header-controls">
+        <div class="municipality-switch segmented segmented--sm" role="group" aria-label="Městská část" id="municipality-switch">
+          <button class="segmented__btn is-active" data-municipality="praha12">Praha 12</button>
+          <button class="segmented__btn" data-municipality="praha11">Praha 11</button>
+        </div>
+        <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Přepnout tmavý režim">
+          <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+              <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.6 5.4l-1.6 1.6M6.9 17.1l-1.6 1.6M18.6 18.6l-1.6-1.6M6.9 6.9 5.3 5.3"/>
+              </g>
+            </svg>
+          </span>
+          <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="theme-switch__thumb" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero__inner">
-        <h1>Kdo kandiduje v Praze&nbsp;12?</h1>
+        <h1 id="hero-title">Kdo kandiduje v Praze&nbsp;12?</h1>
         <p>Projděte si všechny kandidátní listiny pro komunální volby 2026, filtrujte podle věku a pohlaví a podívejte se na přehledy a statistiky napříč kandidátkami.</p>
         <div class="hero__stats" id="hero-stats" aria-live="polite"></div>
       </div>
@@ -212,7 +218,7 @@
 
   <footer class="site-footer">
     <p>Zdroj dat: Český statistický úřad, zprostředkováno přes
-      <a href="https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107" target="_blank" rel="noopener">Poradnu pro obce</a>.
+      <a href="https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107" target="_blank" rel="noopener" id="source-link">Poradnu pro obce</a>.
       Pohlaví je u části kandidátů dopočítáno odhadem podle křestního jména.
     </p>
   </footer>

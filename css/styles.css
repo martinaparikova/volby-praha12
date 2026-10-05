@@ -105,9 +105,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: .75rem;
+  flex-wrap: wrap;
 }
 
 .brand { display: flex; align-items: center; gap: .75rem; }
+
+.header-controls { display: flex; align-items: center; gap: .75rem; }
 
 .brand__badge {
   font-family: var(--font-heading);
