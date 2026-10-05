@@ -145,7 +145,13 @@
         <div class="card chart-card">
           <h2>Průměrný věk podle kandidátek</h2>
           <p class="chart-card__hint">Svislá čárkovaná čára značí celkový průměr napříč zvoleným rozsahem.</p>
-          <div class="party-bar-chart" id="party-age-chart"></div>
+          <div class="party-chart-wrap">
+            <div class="avg-marker" id="party-age-avg-marker" hidden>
+              <span class="avg-marker__label">Průměr</span>
+              <span class="avg-marker__arrow" aria-hidden="true">↓</span>
+            </div>
+            <div class="party-bar-chart" id="party-age-chart"></div>
+          </div>
         </div>
         <div class="card chart-card">
           <h2>Poměr žen a mužů podle kandidátek</h2>

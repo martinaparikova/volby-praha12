@@ -570,6 +570,28 @@ main {
   opacity: .55;
 }
 
+/* Average marker (arrow + label) shown above the age comparison chart */
+.party-chart-wrap { position: relative; padding-top: 2rem; }
+.avg-marker {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  line-height: 1.1;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+.avg-marker__label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.avg-marker__arrow { font-size: .95rem; }
+
 /* Stacked gender ratio bars */
 .party-bar-chart--stacked .party-bar-row__track {
   display: flex;

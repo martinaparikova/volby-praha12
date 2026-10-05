@@ -429,9 +429,18 @@
 
   function renderPartyAgeChart(partyStatsList, overallStats) {
     const el = document.getElementById("party-age-chart");
+    const marker = document.getElementById("party-age-avg-marker");
     const withAge = partyStatsList.filter((p) => p.stats.avgAge != null);
     const maxAge = Math.max(...withAge.map((p) => p.stats.avgAge), 1);
     const overallPct = overallStats.avgAge != null ? (overallStats.avgAge / maxAge) * 100 : null;
+
+    if (overallPct != null) {
+      marker.hidden = false;
+      marker.style.left = `${overallPct}%`;
+      marker.querySelector(".avg-marker__label").textContent = `Průměr (${overallStats.avgAge} let)`;
+    } else {
+      marker.hidden = true;
+    }
 
     el.innerHTML = withAge
       .map(({ party, stats }) => {
