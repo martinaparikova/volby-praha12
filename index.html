@@ -50,8 +50,8 @@
     </section>
 
     <nav class="tabs" role="tablist" aria-label="Sekce">
-      <button class="tabs__btn" id="tab-btn-candidates" role="tab" aria-selected="false" aria-controls="tab-candidates">Kandidáti</button>
       <button class="tabs__btn is-active" id="tab-btn-overview" role="tab" aria-selected="true" aria-controls="tab-overview">Přehledy</button>
+      <button class="tabs__btn" id="tab-btn-candidates" role="tab" aria-selected="false" aria-controls="tab-candidates">Kandidáti</button>
     </nav>
 
     <!-- ===================== KANDIDÁTI ===================== -->
@@ -160,7 +160,10 @@
           <div class="party-chart-wrap">
             <div class="avg-marker" id="party-age-avg-marker" hidden>
               <span class="avg-marker__label">Průměr</span>
-              <span class="avg-marker__arrow" aria-hidden="true">↓</span>
+              <svg class="avg-marker__arrow" viewBox="0 0 36 50" aria-hidden="true">
+                <path d="M8 3 C 33 9, 1 24, 17 33" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M8 29 L18 43 L28 28" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
             <div class="party-bar-chart" id="party-age-chart"></div>
           </div>

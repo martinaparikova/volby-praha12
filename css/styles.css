@@ -596,7 +596,7 @@ main {
 }
 
 /* Average marker (arrow + label) shown above the age comparison chart */
-.party-chart-wrap { position: relative; padding-top: 2rem; }
+.party-chart-wrap { position: relative; padding-top: 3.6rem; }
 .avg-marker {
   position: absolute;
   top: 0;
@@ -604,18 +604,26 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: .1rem;
   line-height: 1.1;
   white-space: nowrap;
-  color: var(--color-text-muted);
 }
 .avg-marker__label {
-  font-size: .72rem;
-  font-weight: 700;
+  font-size: .74rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .03em;
+  letter-spacing: .04em;
+  color: var(--color-pink);
+  background: color-mix(in srgb, var(--color-pink) 14%, transparent);
+  padding: .2rem .55rem;
+  border-radius: 999px;
 }
-.avg-marker__arrow { font-size: .95rem; }
+.avg-marker__arrow {
+  width: 26px;
+  height: 36px;
+  color: var(--color-pink);
+  filter: drop-shadow(0 2px 3px color-mix(in srgb, var(--color-pink) 35%, transparent));
+}
 
 /* Stacked gender ratio bars */
 .party-bar-chart--stacked .party-bar-row__track {
