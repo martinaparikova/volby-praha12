@@ -665,6 +665,110 @@ main {
 .party-bar-chart--stacked .party-bar-row__segment--female { background: var(--color-female); height: 100%; }
 .party-bar-chart--stacked .party-bar-row__segment--male { background: var(--color-male); height: 100%; }
 
+/* ===================== Results tab ===================== */
+.sample-banner {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: color-mix(in srgb, #e8a73c 16%, transparent);
+  border: 1px solid color-mix(in srgb, #e8a73c 45%, transparent);
+  color: color-mix(in srgb, #e8a73c 65%, var(--color-text));
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.results-toolbar { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.results-toolbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.results-progress { flex: 1 1 260px; display: flex; flex-direction: column; gap: .35rem; }
+.results-progress__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .82rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+.results-progress__label strong { color: var(--color-text); font-family: var(--font-heading); }
+.results-progress__track { height: 10px; background: var(--color-bg); border-radius: 999px; overflow: hidden; }
+.results-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-green), var(--color-pink));
+  border-radius: 999px;
+  transition: width .4s ease;
+}
+
+.results-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: .82rem;
+  color: var(--color-text-muted);
+}
+.results-meta div { display: flex; flex-direction: column; gap: .2rem; }
+.results-meta strong { color: var(--color-text); font-family: var(--font-heading); font-size: .95rem; }
+
+.results-autorefresh {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.results-autorefresh input { accent-color: var(--color-pink); width: 16px; height: 16px; }
+
+.party-bar-chart--results .party-bar-row__label span:last-child { color: var(--color-text); font-weight: 700; }
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: .6rem;
+}
+.seat-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: .6rem .7rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  min-height: 72px;
+  background: var(--color-bg);
+}
+.seat-card__number {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+}
+.seat-card__name {
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.seat-card__party {
+  font-size: .7rem;
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.seat-card--pending {
+  border-style: dashed;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+.seat-card--pending .seat-card__name { font-weight: 500; font-size: .78rem; color: var(--color-text-muted); }
+.seat-card--filled { border-color: color-mix(in srgb, var(--color-pink) 35%, var(--color-border)); }
+
 /* ===================== Footer ===================== */
 .site-footer {
   text-align: center;

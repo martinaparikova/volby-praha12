@@ -1,0 +1,291 @@
+{
+  "municipality": "Praha 12",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 35,
+  "precinctsTotal": 28,
+  "precinctsCounted": 18,
+  "turnoutPercent": 47.2,
+  "parties": [
+    {
+      "id": 6,
+      "name": "OBČANÉ DVANÁCTKY",
+      "votesPercent": 20.5,
+      "seats": 8
+    },
+    {
+      "id": 7,
+      "name": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
+      "votesPercent": 12.8,
+      "seats": 5
+    },
+    {
+      "id": 10,
+      "name": "Motoristé sobě",
+      "votesPercent": 10.4,
+      "seats": 4
+    },
+    {
+      "id": 11,
+      "name": "PRAHA 12 SOBĚ",
+      "votesPercent": 10.1,
+      "seats": 4
+    },
+    {
+      "id": 1,
+      "name": "TOP 09 & SOUSEDÉ PRO DVANÁCTKU",
+      "votesPercent": 9.0,
+      "seats": 3
+    },
+    {
+      "id": 5,
+      "name": "Svobodní",
+      "votesPercent": 7.6,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "Občanská demokratická strana",
+      "votesPercent": 6.8,
+      "seats": 2
+    },
+    {
+      "id": 8,
+      "name": "Starostové se Změnou pro Prahu 12",
+      "votesPercent": 6.7,
+      "seats": 2
+    },
+    {
+      "id": 9,
+      "name": "Piráti Praha 12",
+      "votesPercent": 6.0,
+      "seats": 2
+    },
+    {
+      "id": 2,
+      "name": "ANO 2011",
+      "votesPercent": 5.9,
+      "seats": 2
+    },
+    {
+      "id": 4,
+      "name": "Naše Dvanáctka",
+      "votesPercent": 4.3,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Ing. Robert Tietz",
+      "partyId": 7,
+      "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí"
+    },
+    {
+      "seatNumber": 2,
+      "name": "Mgr. Lenka Vedralová",
+      "partyId": 2,
+      "partyName": "ANO 2011"
+    },
+    {
+      "seatNumber": 3,
+      "name": "Vladimír Vaněk",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 4,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 6,
+      "name": "Kristýna Adamcová Čílová",
+      "partyId": 10,
+      "partyName": "Motoristé sobě"
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 8,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 9,
+      "name": "Renáta Sedláčková",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 10,
+      "name": "Bc. Hana Kapasná",
+      "partyId": 7,
+      "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí"
+    },
+    {
+      "seatNumber": 11,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 12,
+      "name": "Jakub Němec MBA",
+      "partyId": 10,
+      "partyName": "Motoristé sobě"
+    },
+    {
+      "seatNumber": 13,
+      "name": "Ing. Ladislav Pelcl",
+      "partyId": 11,
+      "partyName": "PRAHA 12 SOBĚ"
+    },
+    {
+      "seatNumber": 14,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "Ing. Vladimír Albrecht",
+      "partyId": 5,
+      "partyName": "Svobodní"
+    },
+    {
+      "seatNumber": 17,
+      "name": "Mgr. Jiří Růžička",
+      "partyId": 11,
+      "partyName": "PRAHA 12 SOBĚ"
+    },
+    {
+      "seatNumber": 18,
+      "name": "PhDr. Bc. Daniela Rázková",
+      "partyId": 8,
+      "partyName": "Starostové se Změnou pro Prahu 12"
+    },
+    {
+      "seatNumber": 19,
+      "name": "Ing. Eva Tylová",
+      "partyId": 9,
+      "partyName": "Piráti Praha 12"
+    },
+    {
+      "seatNumber": 20,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 21,
+      "name": "Bc. Věra Zrůstová",
+      "partyId": 7,
+      "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí"
+    },
+    {
+      "seatNumber": 22,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 23,
+      "name": "Zdeněk Kosour",
+      "partyId": 1,
+      "partyName": "TOP 09 & SOUSEDÉ PRO DVANÁCTKU"
+    },
+    {
+      "seatNumber": 24,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 25,
+      "name": "Mgr. Nikola Turková",
+      "partyId": 8,
+      "partyName": "Starostové se Změnou pro Prahu 12"
+    },
+    {
+      "seatNumber": 26,
+      "name": "PhDr. Petr Balla",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 27,
+      "name": "Jaroslav Zvonař",
+      "partyId": 2,
+      "partyName": "ANO 2011"
+    },
+    {
+      "seatNumber": 28,
+      "name": "Petr Šula",
+      "partyId": 1,
+      "partyName": "TOP 09 & SOUSEDÉ PRO DVANÁCTKU"
+    },
+    {
+      "seatNumber": 29,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 30,
+      "name": "Mgr. Eva Češpiva",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 31,
+      "name": "Mgr. Bc. Dana Balla",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 32,
+      "name": "Ing. Zdeněk Ročňák",
+      "partyId": 6,
+      "partyName": "OBČANÉ DVANÁCTKY"
+    },
+    {
+      "seatNumber": 33,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 34,
+      "name": "Michaela Černá",
+      "partyId": 3,
+      "partyName": "Občanská demokratická strana"
+    },
+    {
+      "seatNumber": 35,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    }
+  ]
+}

@@ -6,14 +6,17 @@
       label: "Praha 12",
       badge: "P12",
       file: "data/candidates-praha12.json",
+      resultsFile: "data/results-praha12.json",
     },
     praha11: {
       label: "Praha 11",
       badge: "P11",
       file: "data/candidates-praha11.json",
+      resultsFile: "data/results-praha11.json",
     },
   };
   const DEFAULT_MUNICIPALITY = "praha12";
+  const RESULTS_AUTOREFRESH_MS = 60000;
 
   /* ===================== State ===================== */
   const state = {
@@ -36,7 +39,11 @@
       ageSort: "default", // 'default' | 'asc' | 'desc'
       genderSort: "default", // 'default' | 'female' | 'male'
     },
+    results: null,
+    resultsAutoRefresh: true,
   };
+
+  let resultsTimer = null;
 
   /* ===================== Utilities ===================== */
   const normalize = (s) =>
@@ -76,24 +83,23 @@
 
   /* ===================== Tabs ===================== */
   function initTabs() {
-    const btnCandidates = document.getElementById("tab-btn-candidates");
-    const btnOverview = document.getElementById("tab-btn-overview");
-    const panelCandidates = document.getElementById("tab-candidates");
-    const panelOverview = document.getElementById("tab-overview");
+    const tabs = [
+      { btn: document.getElementById("tab-btn-overview"), panel: document.getElementById("tab-overview"), onActivate: renderOverview },
+      { btn: document.getElementById("tab-btn-candidates"), panel: document.getElementById("tab-candidates") },
+      { btn: document.getElementById("tab-btn-results"), panel: document.getElementById("tab-results"), onActivate: () => { renderResultsTab(); startResultsAutoRefresh(); } },
+    ];
 
-    function activate(btn, panel) {
-      [btnCandidates, btnOverview].forEach((b) => {
-        b.classList.toggle("is-active", b === btn);
-        b.setAttribute("aria-selected", b === btn ? "true" : "false");
+    function activate(target) {
+      tabs.forEach(({ btn, panel }) => {
+        btn.classList.toggle("is-active", btn === target.btn);
+        btn.setAttribute("aria-selected", btn === target.btn ? "true" : "false");
+        panel.classList.toggle("is-active", panel === target.panel);
       });
-      [panelCandidates, panelOverview].forEach((p) => p.classList.toggle("is-active", p === panel));
+      if (target.btn !== document.getElementById("tab-btn-results")) stopResultsAutoRefresh();
+      if (target.onActivate) target.onActivate();
     }
 
-    btnCandidates.addEventListener("click", () => activate(btnCandidates, panelCandidates));
-    btnOverview.addEventListener("click", () => {
-      activate(btnOverview, panelOverview);
-      renderOverview();
-    });
+    tabs.forEach((t) => t.btn.addEventListener("click", () => activate(t)));
   }
 
   /* ===================== Data loading ===================== */
@@ -159,12 +165,120 @@
     renderHeroStats();
     renderCandidatesTab();
     renderOverview();
+
+    state.results = null;
+    try {
+      await loadResults(config.resultsFile);
+    } catch (err) {
+      state.results = null;
+    }
+    if (document.getElementById("tab-btn-results").classList.contains("is-active")) {
+      renderResultsTab();
+    }
   }
 
   // Quick Czech locative-case helper for the two supported districts, used
   // in the "Kdo kandiduje v ...?" heading (e.g. "Praze 12", "Praze 11").
   function toLocative(label) {
     return label.replace(/^Praha(\s+\d+)/, "Praze$1").replace(" ", "&nbsp;");
+  }
+
+  /* ===================== Results tab ===================== */
+  async function loadResults(file) {
+    const res = await fetch(file, { cache: "no-store" });
+    if (!res.ok) throw new Error("Nepodařilo se načíst výsledky.");
+    const json = await res.json();
+    json.fetchedAt = new Date();
+    state.results = json;
+  }
+
+  function initResultsControls() {
+    document.getElementById("results-refresh-btn").addEventListener("click", () => refreshResults());
+
+    const toggle = document.getElementById("results-autorefresh-toggle");
+    toggle.addEventListener("change", () => {
+      state.resultsAutoRefresh = toggle.checked;
+      if (state.resultsAutoRefresh) startResultsAutoRefresh();
+      else stopResultsAutoRefresh();
+    });
+  }
+
+  async function refreshResults() {
+    const config = MUNICIPALITIES[state.municipality];
+    const btn = document.getElementById("results-refresh-btn");
+    btn.disabled = true;
+    try {
+      await loadResults(config.resultsFile);
+      renderResultsTab();
+    } catch (err) {
+      /* keep showing the last known results on failure */
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  function startResultsAutoRefresh() {
+    stopResultsAutoRefresh();
+    if (!state.resultsAutoRefresh) return;
+    resultsTimer = setInterval(refreshResults, RESULTS_AUTOREFRESH_MS);
+  }
+
+  function stopResultsAutoRefresh() {
+    if (resultsTimer) {
+      clearInterval(resultsTimer);
+      resultsTimer = null;
+    }
+  }
+
+  function renderResultsTab() {
+    const r = state.results;
+    const banner = document.getElementById("results-sample-banner");
+    if (!r) {
+      banner.hidden = true;
+      return;
+    }
+
+    banner.hidden = !r.isSample;
+    if (r.isSample) document.getElementById("results-sample-text").textContent = r.sampleNote;
+
+    const precinctsPct = r.precinctsTotal ? round1((r.precinctsCounted / r.precinctsTotal) * 100) : 0;
+    document.getElementById("results-precincts").textContent = `${r.precinctsCounted} z ${r.precinctsTotal} (${precinctsPct}\u00a0%)`;
+    document.getElementById("results-precincts-fill").style.width = `${precinctsPct}%`;
+    document.getElementById("results-turnout").textContent = `${r.turnoutPercent}\u00a0%`;
+    document.getElementById("results-updated").textContent = r.fetchedAt
+      ? r.fetchedAt.toLocaleTimeString("cs-CZ", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+      : "–";
+
+    const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);
+    document.getElementById("results-party-chart").innerHTML = r.parties
+      .map(
+        (p) => `
+        <div class="party-bar-row">
+          <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${p.seats}&nbsp;mandátů</span></div>
+          <div class="party-bar-row__track">
+            <div class="party-bar-row__fill" style="width:${(p.votesPercent / maxPct) * 100}%"></div>
+          </div>
+        </div>`
+      )
+      .join("");
+
+    const confirmed = r.seats.filter((s) => s.name).length;
+    document.getElementById("results-seats-confirmed").textContent = confirmed;
+    document.getElementById("results-seats-total").textContent = r.totalSeats;
+    document.getElementById("results-seats-grid").innerHTML = r.seats
+      .map((s) =>
+        s.name
+          ? `<div class="seat-card seat-card--filled">
+              <span class="seat-card__number">#${s.seatNumber}</span>
+              <span class="seat-card__name">${s.name}</span>
+              <span class="seat-card__party" title="${s.partyName}">${s.partyName}</span>
+            </div>`
+          : `<div class="seat-card seat-card--pending">
+              <span class="seat-card__number">#${s.seatNumber}</span>
+              <span class="seat-card__name">čeká na výsledek</span>
+            </div>`
+      )
+      .join("");
   }
 
   /* ===================== Hero stats ===================== */
@@ -652,6 +766,7 @@
     initFilterControls();
     initOverviewControls();
     initMunicipalitySwitch();
+    initResultsControls();
 
     const saved = localStorage.getItem("p12-municipality");
     const initialSlug = saved && MUNICIPALITIES[saved] ? saved : DEFAULT_MUNICIPALITY;

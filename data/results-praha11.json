@@ -1,0 +1,285 @@
+{
+  "municipality": "Praha 11",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 35,
+  "precinctsTotal": 29,
+  "precinctsCounted": 17,
+  "turnoutPercent": 30.9,
+  "parties": [
+    {
+      "id": 5,
+      "name": "Spolu pro Prahu 11",
+      "votesPercent": 18.9,
+      "seats": 7
+    },
+    {
+      "id": 7,
+      "name": "Výzva pro Prahu 11",
+      "votesPercent": 12.3,
+      "seats": 5
+    },
+    {
+      "id": 9,
+      "name": "SPD pro Prahu 11 s podporou Trikolora, PRO, Přísahy a nezávislých kandidátů",
+      "votesPercent": 11.5,
+      "seats": 4
+    },
+    {
+      "id": 6,
+      "name": "Česká pirátská strana",
+      "votesPercent": 11.1,
+      "seats": 4
+    },
+    {
+      "id": 4,
+      "name": "PRAHA 11 SOBĚ",
+      "votesPercent": 11.1,
+      "seats": 4
+    },
+    {
+      "id": 1,
+      "name": "Motoristé sobě a Svobodní",
+      "votesPercent": 9.6,
+      "seats": 3
+    },
+    {
+      "id": 10,
+      "name": "ANO 2011",
+      "votesPercent": 8.3,
+      "seats": 3
+    },
+    {
+      "id": 8,
+      "name": "Hnutí pro Prahu 11",
+      "votesPercent": 6.4,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "GEN",
+      "votesPercent": 6.4,
+      "seats": 2
+    },
+    {
+      "id": 2,
+      "name": "TOP 09 a Starostové a nezávislí",
+      "votesPercent": 4.4,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Petr Sýkora",
+      "partyId": 10,
+      "partyName": "ANO 2011"
+    },
+    {
+      "seatNumber": 2,
+      "name": "PhDr. Šárka Zdeňková",
+      "partyId": 8,
+      "partyName": "Hnutí pro Prahu 11"
+    },
+    {
+      "seatNumber": 3,
+      "name": "Ing. Ondřej Lang Svoboda",
+      "partyId": 4,
+      "partyName": "PRAHA 11 SOBĚ"
+    },
+    {
+      "seatNumber": 4,
+      "name": "Bc. Libor Vrkoč",
+      "partyId": 3,
+      "partyName": "GEN"
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 6,
+      "name": "Radek Šimon",
+      "partyId": 10,
+      "partyName": "ANO 2011"
+    },
+    {
+      "seatNumber": 7,
+      "name": "Josef Schreier",
+      "partyId": 4,
+      "partyName": "PRAHA 11 SOBĚ"
+    },
+    {
+      "seatNumber": 8,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 9,
+      "name": "Ing. Martin Horák",
+      "partyId": 10,
+      "partyName": "ANO 2011"
+    },
+    {
+      "seatNumber": 10,
+      "name": "Klára Kadlecová DiS.",
+      "partyId": 5,
+      "partyName": "Spolu pro Prahu 11"
+    },
+    {
+      "seatNumber": 11,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 13,
+      "name": "Ing. Rostislav Korbel",
+      "partyId": 5,
+      "partyName": "Spolu pro Prahu 11"
+    },
+    {
+      "seatNumber": 14,
+      "name": "Ondřej Nováček",
+      "partyId": 5,
+      "partyName": "Spolu pro Prahu 11"
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 16,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 17,
+      "name": "Jakub Dragoun",
+      "partyId": 7,
+      "partyName": "Výzva pro Prahu 11"
+    },
+    {
+      "seatNumber": 18,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 19,
+      "name": "Jiří Dohnal",
+      "partyId": 6,
+      "partyName": "Česká pirátská strana"
+    },
+    {
+      "seatNumber": 20,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 21,
+      "name": "Ing. Jiří Štyler",
+      "partyId": 3,
+      "partyName": "GEN"
+    },
+    {
+      "seatNumber": 22,
+      "name": "PhDr. Tomáš Kunca Ph.D.",
+      "partyId": 7,
+      "partyName": "Výzva pro Prahu 11"
+    },
+    {
+      "seatNumber": 23,
+      "name": "Mgr. Zuzana Böhmová",
+      "partyId": 6,
+      "partyName": "Česká pirátská strana"
+    },
+    {
+      "seatNumber": 24,
+      "name": "PhDr. Jan Jaroš",
+      "partyId": 4,
+      "partyName": "PRAHA 11 SOBĚ"
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 26,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 27,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 28,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 29,
+      "name": "Jan Navrátil",
+      "partyId": 5,
+      "partyName": "Spolu pro Prahu 11"
+    },
+    {
+      "seatNumber": 30,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 31,
+      "name": "Milan Urban",
+      "partyId": 9,
+      "partyName": "SPD pro Prahu 11 s podporou Trikolora, PRO, Přísahy a nezávislých kandidátů"
+    },
+    {
+      "seatNumber": 32,
+      "name": "Mgr. Miroslav Doležal",
+      "partyId": 9,
+      "partyName": "SPD pro Prahu 11 s podporou Trikolora, PRO, Přísahy a nezávislých kandidátů"
+    },
+    {
+      "seatNumber": 33,
+      "name": "Bc. Jana Horáčková",
+      "partyId": 7,
+      "partyName": "Výzva pro Prahu 11"
+    },
+    {
+      "seatNumber": 34,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    },
+    {
+      "seatNumber": 35,
+      "name": null,
+      "partyId": null,
+      "partyName": null
+    }
+  ]
+}

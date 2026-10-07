@@ -15,6 +15,10 @@ městskými částmi je vpravo nahoře v hlavičce.
   TOP N kandidátů z každé kandidátky (N je nastavitelné, výchozí hodnota 10).
 - Srovnávací grafy a tabulka kandidátek (počet kandidátů, poměr žen/mužů,
   průměrný věk), s možností řazení.
+- Záložka **Výsledky** pro sledování výsledků voleb v noci z 9. na 10. 10.:
+  průběh sečtených okrsků, volební účast, průběžné výsledky kandidátek a
+  postupně se plnící mandáty (jméno + strana). Automatické obnovení dat
+  každých 60 s (lze vypnout) + tlačítko pro okamžité obnovení.
 - Přepínání světlého/tmavého režimu (vpravo nahoře), barevné schéma
   růžová + tmavě zelená.
 - Responzivní — na mobilu se tabulka kandidátů mění na přehledné kartičky.
@@ -24,10 +28,13 @@ městskými částmi je vpravo nahoře v hlavičce.
 ```
 index.html                        # hlavní stránka
 css/styles.css                    # styly, light/dark theme
-js/app.js                         # veškerá logika — filtrování, přehledy, grafy, přepínání měst
+js/app.js                         # veškerá logika — filtrování, přehledy, grafy, přepínání měst, výsledky
 data/candidates-praha12.json      # strukturovaná data kandidátů pro Prahu 12 (generovaná)
 data/candidates-praha11.json      # strukturovaná data kandidátů pro Prahu 11 (generovaná)
-scripts/parse_candidates.py       # skript pro vygenerování obou souborů v data/
+data/results-praha12.json         # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
+data/results-praha11.json         # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
+scripts/parse_candidates.py       # skript pro vygenerování obou souborů candidates-*.json
+scripts/generate_sample_results.py # skript pro vygenerování ukázkových dat results-*.json
 ```
 
 ## Zdroj dat
@@ -53,6 +60,42 @@ V `scripts/parse_candidates.py` přidejte záznam do `MUNICIPALITIES` (název,
 zdrojová HTML stránka, URL zdroje, výstupní soubor) a v `js/app.js` obdobný
 záznam do `MUNICIPALITIES` (popisek, zkratka do odznaku, cesta k JSON souboru).
 Tlačítko v přepínači měst přidejte do `index.html` (`#municipality-switch`).
+
+## Záložka Výsledky — stav a napojení reálných dat
+
+`data/results-praha12.json` a `data/results-praha11.json` obsahují **zatím
+jen ukázková, náhodně vygenerovaná data** (`scripts/generate_sample_results.py`),
+protože skutečné výsledky zveřejní ČSÚ až v průběhu a po volbách (9.–10. 10.
+2026). Stránka na to upozorňuje žlutým banerem, dokud `isSample` v datech je
+`true`.
+
+Formát souboru `results-*.json`:
+
+```jsonc
+{
+  "municipality": "Praha 12",
+  "isSample": true,              // smazat/nastavit na false u ostrých dat
+  "sampleNote": "...",           // text žlutého baneru (jen když isSample)
+  "precinctsTotal": 28,          // celkem okrsků
+  "precinctsCounted": 18,        // sečteno okrsků
+  "turnoutPercent": 47.2,        // volební účast
+  "totalSeats": 35,              // velikost zastupitelstva
+  "parties": [ { "id": 1, "name": "...", "votesPercent": 20.5, "seats": 8 } ],
+  "seats": [ { "seatNumber": 1, "name": "Jméno Příjmení", "partyId": 1, "partyName": "..." } ]
+  // "name"/"partyId"/"partyName" = null u dosud nerozhodnutého křesla
+}
+```
+
+Až ČSÚ zveřejní skutečný formát (pravděpodobně XML na `volby.gov.cz/appdata/kv2026/...`,
+viz [dokumentace otevřených dat](https://volby.gov.cz/opendata/kv2026/kv2026_opendata_seznam.htm)),
+bude potřeba napsat obdobný převodní skript jako `parse_candidates.py`, který
+z reálného zdroje vygeneruje JSON ve výše uvedeném tvaru — samotná stránka
+(`index.html`/`js/app.js`) se měnit nemusí. Do té doby lze `results-*.json`
+periodicky přegenerovat (`python scripts/generate_sample_results.py`) jen pro
+vývoj/náhled.
+
+Stránka data obnovuje automaticky každých 60 s (dá se vypnout zaškrtávátkem),
+plus je tlačítko „Aktualizovat teď“ pro okamžité obnovení.
 
 ## Spuštění lokálně
 

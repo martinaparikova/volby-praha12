@@ -58,7 +58,51 @@
     <nav class="tabs" role="tablist" aria-label="Sekce">
       <button class="tabs__btn is-active" id="tab-btn-overview" role="tab" aria-selected="true" aria-controls="tab-overview">Přehledy</button>
       <button class="tabs__btn" id="tab-btn-candidates" role="tab" aria-selected="false" aria-controls="tab-candidates">Kandidáti</button>
+      <button class="tabs__btn" id="tab-btn-results" role="tab" aria-selected="false" aria-controls="tab-results">Výsledky</button>
     </nav>
+
+    <!-- ===================== VÝSLEDKY ===================== -->
+    <section id="tab-results" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-results">
+      <div class="sample-banner" id="results-sample-banner" hidden>
+        <span aria-hidden="true">⚠️</span>
+        <span id="results-sample-text"></span>
+      </div>
+
+      <div class="card results-toolbar">
+        <div class="results-toolbar__row">
+          <div class="results-progress">
+            <div class="results-progress__label">
+              <span>Sečteno okrsků</span>
+              <strong id="results-precincts">–</strong>
+            </div>
+            <div class="results-progress__track"><div class="results-progress__fill" id="results-precincts-fill"></div></div>
+          </div>
+          <div class="results-meta">
+            <div><span>Volební účast</span><strong id="results-turnout">–</strong></div>
+            <div><span>Aktualizováno</span><strong id="results-updated">–</strong></div>
+          </div>
+        </div>
+        <div class="results-toolbar__row">
+          <label class="results-autorefresh">
+            <input type="checkbox" id="results-autorefresh-toggle" checked />
+            Automaticky obnovovat (60 s)
+          </label>
+          <button class="btn btn--ghost" id="results-refresh-btn">⟳ Aktualizovat teď</button>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <h2>Výsledky kandidátek</h2>
+        <p class="chart-card__hint">Průběžný podíl hlasů a odhad počtu mandátů podle sečtených okrsků.</p>
+        <div class="party-bar-chart party-bar-chart--results" id="results-party-chart"></div>
+      </div>
+
+      <div class="card table-card">
+        <h2>Zastupitelstvo (<span id="results-seats-confirmed">0</span> z <span id="results-seats-total">35</span> obsazeno)</h2>
+        <p class="chart-card__hint">Jednotlivá křesla se doplňují postupně, jak jsou potvrzovány výsledky.</p>
+        <div class="seats-grid" id="results-seats-grid"></div>
+      </div>
+    </section>
 
     <!-- ===================== KANDIDÁTI ===================== -->
     <section id="tab-candidates" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-candidates">
