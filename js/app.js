@@ -1,20 +1,18 @@
 (() => {
   "use strict";
 
-  const MUNICIPALITIES = {
-    praha12: {
-      label: "Praha 12",
-      badge: "P12",
-      file: "data/candidates-praha12.json",
-      resultsFile: "data/results-praha12.json",
-    },
-    praha11: {
-      label: "Praha 11",
-      badge: "P11",
-      file: "data/candidates-praha11.json",
-      resultsFile: "data/results-praha11.json",
-    },
-  };
+  // All 22 numbered Prague city districts (Praha 1-22).
+  const MUNICIPALITIES = Object.fromEntries(
+    Array.from({ length: 22 }, (_, i) => i + 1).map((n) => [
+      `praha${n}`,
+      {
+        label: `Praha ${n}`,
+        badge: `P${n}`,
+        file: `data/candidates-praha${n}.json`,
+        resultsFile: `data/results-praha${n}.json`,
+      },
+    ])
+  );
   const DEFAULT_MUNICIPALITY = "praha12";
   const RESULTS_AUTOREFRESH_MS = 60000;
 
@@ -121,11 +119,14 @@
 
   /* ===================== Municipality switching ===================== */
   function initMunicipalitySwitch() {
-    document.querySelectorAll('[data-municipality]').forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.municipality === state.municipality) return;
-        switchMunicipality(btn.dataset.municipality);
-      });
+    const select = document.getElementById("municipality-select");
+    if (!select) return;
+    select.innerHTML = Object.entries(MUNICIPALITIES)
+      .map(([slug, cfg]) => `<option value="${slug}">${cfg.label}</option>`)
+      .join("");
+    select.addEventListener("change", () => {
+      if (select.value === state.municipality) return;
+      switchMunicipality(select.value);
     });
   }
 
@@ -133,7 +134,8 @@
     const config = MUNICIPALITIES[slug];
     if (!config) return;
 
-    document.querySelectorAll('[data-municipality]').forEach((b) => b.classList.toggle("is-active", b.dataset.municipality === slug));
+    const select = document.getElementById("municipality-select");
+    if (select) select.value = slug;
 
     // Reset candidate-browsing state - old filters/open accordions rarely
     // make sense for a different municipality's data.

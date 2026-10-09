@@ -1,0 +1,384 @@
+{
+  "municipality": "Praha 8",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 45,
+  "precinctsTotal": 37,
+  "precinctsCounted": 24,
+  "turnoutPercent": 42.8,
+  "parties": [
+    {
+      "id": 2,
+      "name": "Spojená levice pro Prahu (KSČM - ČSSD)",
+      "votesPercent": 16.1,
+      "seats": 7
+    },
+    {
+      "id": 5,
+      "name": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "votesPercent": 15.5,
+      "seats": 7
+    },
+    {
+      "id": 9,
+      "name": "ANO 2011",
+      "votesPercent": 14.5,
+      "seats": 7
+    },
+    {
+      "id": 8,
+      "name": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "votesPercent": 13.6,
+      "seats": 6
+    },
+    {
+      "id": 4,
+      "name": "ODS s podporou KDU-ČSL",
+      "votesPercent": 11.5,
+      "seats": 5
+    },
+    {
+      "id": 7,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ + TOP 09 – Společně pro Prahu 8",
+      "votesPercent": 10.8,
+      "seats": 5
+    },
+    {
+      "id": 1,
+      "name": "8žije, Praha sobě a Zelení",
+      "votesPercent": 8.6,
+      "seats": 4
+    },
+    {
+      "id": 3,
+      "name": "PATRIOTI PRO PRAHU 8",
+      "votesPercent": 6.2,
+      "seats": 3
+    },
+    {
+      "id": 6,
+      "name": "Česká pirátská strana",
+      "votesPercent": 3.1,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 2,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 3,
+      "name": "PhDr. Ing. Matěj Fichtner MBA",
+      "partyId": 9,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 46
+    },
+    {
+      "seatNumber": 4,
+      "name": "Václav Stránský",
+      "partyId": 1,
+      "partyName": "8žije, Praha sobě a Zelení",
+      "preferenceVotes": 97
+    },
+    {
+      "seatNumber": 5,
+      "name": "JUDr. Václav Musílek",
+      "partyId": 8,
+      "partyName": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "preferenceVotes": 144
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": "PhDr. Barbora Musilová",
+      "partyId": 1,
+      "partyName": "8žije, Praha sobě a Zelení",
+      "preferenceVotes": 72
+    },
+    {
+      "seatNumber": 8,
+      "name": "Mgr. Vladimíra Ludková",
+      "partyId": 4,
+      "partyName": "ODS s podporou KDU-ČSL",
+      "preferenceVotes": 76
+    },
+    {
+      "seatNumber": 9,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 10,
+      "name": "Jitka Honsnejmanová DiS.",
+      "partyId": 5,
+      "partyName": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "preferenceVotes": 103
+    },
+    {
+      "seatNumber": 11,
+      "name": "Mgr. Michal Janovský",
+      "partyId": 3,
+      "partyName": "PATRIOTI PRO PRAHU 8",
+      "preferenceVotes": 66
+    },
+    {
+      "seatNumber": 12,
+      "name": "Andrea Vyhnalíková",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu (KSČM - ČSSD)",
+      "preferenceVotes": 66
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "Michal Trník",
+      "partyId": 1,
+      "partyName": "8žije, Praha sobě a Zelení",
+      "preferenceVotes": 40
+    },
+    {
+      "seatNumber": 17,
+      "name": "Mgr. et Mgr. Jana Solomonová",
+      "partyId": 9,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 109
+    },
+    {
+      "seatNumber": 18,
+      "name": "Mgr. Adam Gregor",
+      "partyId": 9,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 95
+    },
+    {
+      "seatNumber": 19,
+      "name": "Mgr. Kristina Špringr",
+      "partyId": 5,
+      "partyName": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "preferenceVotes": 44
+    },
+    {
+      "seatNumber": 20,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 21,
+      "name": "Bc. Antonín Teplý DiS.",
+      "partyId": 5,
+      "partyName": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "preferenceVotes": 38
+    },
+    {
+      "seatNumber": 22,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 23,
+      "name": "Ing. Martin Jedlička DiS.",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ + TOP 09 – Společně pro Prahu 8",
+      "preferenceVotes": 66
+    },
+    {
+      "seatNumber": 24,
+      "name": "Bc. Petr Špringr DiS.",
+      "partyId": 5,
+      "partyName": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "preferenceVotes": 87
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 26,
+      "name": "Mgr. Vítězslav Novák",
+      "partyId": 8,
+      "partyName": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "preferenceVotes": 61
+    },
+    {
+      "seatNumber": 27,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 28,
+      "name": "MVDr. Bc. Vladislava Vojtíšková",
+      "partyId": 1,
+      "partyName": "8žije, Praha sobě a Zelení",
+      "preferenceVotes": 72
+    },
+    {
+      "seatNumber": 29,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 30,
+      "name": "Jiří Svoboda DiS.",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu (KSČM - ČSSD)",
+      "preferenceVotes": 167
+    },
+    {
+      "seatNumber": 31,
+      "name": "Michal Fišer MBA",
+      "partyId": 9,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 57
+    },
+    {
+      "seatNumber": 32,
+      "name": "Mgr. Hana Novotná",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ + TOP 09 – Společně pro Prahu 8",
+      "preferenceVotes": 51
+    },
+    {
+      "seatNumber": 33,
+      "name": "Jana Křivonosková",
+      "partyId": 4,
+      "partyName": "ODS s podporou KDU-ČSL",
+      "preferenceVotes": 121
+    },
+    {
+      "seatNumber": 34,
+      "name": "Bc. Michal Švarc",
+      "partyId": 3,
+      "partyName": "PATRIOTI PRO PRAHU 8",
+      "preferenceVotes": 22
+    },
+    {
+      "seatNumber": 35,
+      "name": "RNDr. Milan Press",
+      "partyId": 8,
+      "partyName": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "preferenceVotes": 112
+    },
+    {
+      "seatNumber": 36,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 37,
+      "name": "Ing. Ondřej Havlena Ph.D.",
+      "partyId": 5,
+      "partyName": "Mourek s podporou SEN PRO PRAHU s Václavem Láskou",
+      "preferenceVotes": 173
+    },
+    {
+      "seatNumber": 38,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 39,
+      "name": "Mgr. Bc. Daniela Kováříková",
+      "partyId": 8,
+      "partyName": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "preferenceVotes": 72
+    },
+    {
+      "seatNumber": 40,
+      "name": "Mgr. Jaromír Petelík",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu (KSČM - ČSSD)",
+      "preferenceVotes": 167
+    },
+    {
+      "seatNumber": 41,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 42,
+      "name": "Mgr. Tomáš Tatranský",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ + TOP 09 – Společně pro Prahu 8",
+      "preferenceVotes": 63
+    },
+    {
+      "seatNumber": 43,
+      "name": "Ing. Tomáš Slabihoudek",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ + TOP 09 – Společně pro Prahu 8",
+      "preferenceVotes": 52
+    },
+    {
+      "seatNumber": 44,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 45,
+      "name": "dipl. tech. Vlasta Matějková",
+      "partyId": 8,
+      "partyName": "SPD pro Prahu 8 s podporou Česká párty, PRO a Svobodní",
+      "preferenceVotes": 74
+    }
+  ]
+}

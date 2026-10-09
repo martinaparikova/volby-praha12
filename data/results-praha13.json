@@ -1,0 +1,314 @@
+{
+  "municipality": "Praha 13",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 35,
+  "precinctsTotal": 40,
+  "precinctsCounted": 19,
+  "turnoutPercent": 28.8,
+  "parties": [
+    {
+      "id": 1,
+      "name": "SPD a nezávislí kandidáti pro Prahu 13 s podporou tradičních sociálních demokratů",
+      "votesPercent": 14.8,
+      "seats": 5
+    },
+    {
+      "id": 9,
+      "name": "ODS s podporou nezávislých",
+      "votesPercent": 14.0,
+      "seats": 5
+    },
+    {
+      "id": 5,
+      "name": "Zelení a Piráti pro 13",
+      "votesPercent": 13.4,
+      "seats": 5
+    },
+    {
+      "id": 2,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votesPercent": 12.2,
+      "seats": 4
+    },
+    {
+      "id": 4,
+      "name": "Společně pro Prahu 13 - TOP 09 a KDU-ČSL",
+      "votesPercent": 11.6,
+      "seats": 4
+    },
+    {
+      "id": 6,
+      "name": "SEN PRO PRAHU 13 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
+      "votesPercent": 11.1,
+      "seats": 4
+    },
+    {
+      "id": 3,
+      "name": "PRAHA 13 SOBĚ",
+      "votesPercent": 11.0,
+      "seats": 4
+    },
+    {
+      "id": 7,
+      "name": "Změna pro Prahu 13 - Národní hnutí",
+      "votesPercent": 9.1,
+      "seats": 3
+    },
+    {
+      "id": 8,
+      "name": "ANO 2011",
+      "votesPercent": 2.9,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Ivana Todlová",
+      "partyId": 4,
+      "partyName": "Společně pro Prahu 13 - TOP 09 a KDU-ČSL",
+      "preferenceVotes": 49
+    },
+    {
+      "seatNumber": 2,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 3,
+      "name": "Mgr. Bc. Miroslav Sedlák",
+      "partyId": 7,
+      "partyName": "Změna pro Prahu 13 - Národní hnutí",
+      "preferenceVotes": 15
+    },
+    {
+      "seatNumber": 4,
+      "name": "Mgr. Bc. Vojtěch Nitra MSc.",
+      "partyId": 6,
+      "partyName": "SEN PRO PRAHU 13 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
+      "preferenceVotes": 37
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 9,
+      "name": "doc. Ing. Petr Praus CSc.",
+      "partyId": 4,
+      "partyName": "Společně pro Prahu 13 - TOP 09 a KDU-ČSL",
+      "preferenceVotes": 27
+    },
+    {
+      "seatNumber": 10,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 11,
+      "name": "RNDr. Jiří Mašek CSc.",
+      "partyId": 2,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 22
+    },
+    {
+      "seatNumber": 12,
+      "name": "Ing. Jan Zeman CSc.",
+      "partyId": 7,
+      "partyName": "Změna pro Prahu 13 - Národní hnutí",
+      "preferenceVotes": 61
+    },
+    {
+      "seatNumber": 13,
+      "name": "Ing. Petra Dymlová",
+      "partyId": 9,
+      "partyName": "ODS s podporou nezávislých",
+      "preferenceVotes": 26
+    },
+    {
+      "seatNumber": 14,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 17,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 18,
+      "name": "Karel Vítek",
+      "partyId": 6,
+      "partyName": "SEN PRO PRAHU 13 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
+      "preferenceVotes": 33
+    },
+    {
+      "seatNumber": 19,
+      "name": "Bc. Maxim Omelčak",
+      "partyId": 1,
+      "partyName": "SPD a nezávislí kandidáti pro Prahu 13 s podporou tradičních sociálních demokratů",
+      "preferenceVotes": 107
+    },
+    {
+      "seatNumber": 20,
+      "name": "Šárka Kuželová",
+      "partyId": 2,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 29
+    },
+    {
+      "seatNumber": 21,
+      "name": "Michal Večeřílek",
+      "partyId": 3,
+      "partyName": "PRAHA 13 SOBĚ",
+      "preferenceVotes": 65
+    },
+    {
+      "seatNumber": 22,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 23,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 24,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 26,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 27,
+      "name": "RNDr. Marcela Plesníková",
+      "partyId": 8,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 10
+    },
+    {
+      "seatNumber": 28,
+      "name": "Kristýna Marie Pokorná",
+      "partyId": 5,
+      "partyName": "Zelení a Piráti pro 13",
+      "preferenceVotes": 65
+    },
+    {
+      "seatNumber": 29,
+      "name": "Mgr. Bc. Tomáš Mudra",
+      "partyId": 4,
+      "partyName": "Společně pro Prahu 13 - TOP 09 a KDU-ČSL",
+      "preferenceVotes": 67
+    },
+    {
+      "seatNumber": 30,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 31,
+      "name": "Adam Kopetzký",
+      "partyId": 5,
+      "partyName": "Zelení a Piráti pro 13",
+      "preferenceVotes": 67
+    },
+    {
+      "seatNumber": 32,
+      "name": "Vojtěch Ludvík",
+      "partyId": 2,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 30
+    },
+    {
+      "seatNumber": 33,
+      "name": "PhDr. Emil Voráček DrSc.",
+      "partyId": 1,
+      "partyName": "SPD a nezávislí kandidáti pro Prahu 13 s podporou tradičních sociálních demokratů",
+      "preferenceVotes": 44
+    },
+    {
+      "seatNumber": 34,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 35,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

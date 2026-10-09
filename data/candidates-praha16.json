@@ -1,0 +1,568 @@
+{
+  "municipality": "Praha 16",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-16-539601",
+  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "parties": [
+    {
+      "id": 1,
+      "name": "Společně pro Radotín",
+      "candidateCount": 15,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. Lucie Malátová MBA",
+          "age": 54,
+          "gender": "F",
+          "profession": "ekonomka a zastupitelka"
+        },
+        {
+          "number": 2,
+          "name": "Jan-Matěj Rak",
+          "age": 49,
+          "gender": "M",
+          "profession": "hudebník, učitel a zastupitel"
+        },
+        {
+          "number": 3,
+          "name": "Mgr. Matěj Pomahač",
+          "age": 42,
+          "gender": "M",
+          "profession": "zemědělský konzultant, spolupředseda Strany zelených a zastupitel"
+        },
+        {
+          "number": 4,
+          "name": "Mgr. Samantha Chvojková",
+          "age": 27,
+          "gender": "F",
+          "profession": "učitelka"
+        },
+        {
+          "number": 5,
+          "name": "Ing. Jan Šatra",
+          "age": 56,
+          "gender": "M",
+          "profession": "bankovní firemní poradce a zastupitel"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Vratislav Šustr",
+          "age": 28,
+          "gender": "M",
+          "profession": "učitel"
+        },
+        {
+          "number": 7,
+          "name": "Petr Martínek",
+          "age": 65,
+          "gender": "M",
+          "profession": "řidič tramvaje v důchodu"
+        },
+        {
+          "number": 8,
+          "name": "Tomáš Strejček",
+          "age": 19,
+          "gender": "M",
+          "profession": "překladatel a student"
+        },
+        {
+          "number": 9,
+          "name": "Václav Vojíř",
+          "age": 67,
+          "gender": "M",
+          "profession": "řidič autobusu v důchodu, předseda spolku Život na soutoku, student univerzity 3. věku"
+        },
+        {
+          "number": 10,
+          "name": "Zdeněk Bohdanecký",
+          "age": 49,
+          "gender": "M",
+          "profession": "technický konzultant"
+        },
+        {
+          "number": 11,
+          "name": "Ing. Jiří Horák",
+          "age": 67,
+          "gender": "M",
+          "profession": "vedení firmy, zakladatel květinových luk v Radotíně"
+        },
+        {
+          "number": 12,
+          "name": "Ing. Jan Sigmund Sukeník Sychravý",
+          "age": 50,
+          "gender": "M",
+          "profession": "senior grafik/manažer produkce, předseda SVJ a BD"
+        },
+        {
+          "number": 13,
+          "name": "Mgr. Zuzana Pomahačová",
+          "age": 49,
+          "gender": "F",
+          "profession": "učitelka"
+        },
+        {
+          "number": 14,
+          "name": "Bc. Tomáš Sladký",
+          "age": 55,
+          "gender": "M",
+          "profession": "projektový manažer"
+        },
+        {
+          "number": 15,
+          "name": "Jitka Vondráčková",
+          "age": 65,
+          "gender": "F",
+          "profession": "úřednice"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Občanská demokratická strana Radotín",
+      "candidateCount": 15,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Mgr. Karel Hanzlík",
+          "age": 60,
+          "gender": "M",
+          "profession": "starosta Městské části Praha 16 (Radotín), organizátor sportovních akcí pro radotínské děti a mládež"
+        },
+        {
+          "number": 2,
+          "name": "Mgr. Miroslav Knotek",
+          "age": 58,
+          "gender": "M",
+          "profession": "místostarosta Městské části Praha 16 (Radotín), starosta TJ Sokol Radotín"
+        },
+        {
+          "number": 3,
+          "name": "doc. Ing. arch. Jana Zdráhalová Ph.D.",
+          "age": 48,
+          "gender": "F",
+          "profession": "architektka, vysokoškolská pedagožka, vedoucí Ústavu urbanismu Fakulty architektury ČVUT"
+        },
+        {
+          "number": 4,
+          "name": "Bc. Simona Baráková",
+          "age": 56,
+          "gender": "F",
+          "profession": "učitelka na 1. stupni ZŠ Radotín, trenérka radotínské lakrosové mládeže"
+        },
+        {
+          "number": 5,
+          "name": "Ing. Viktor Krištof MBA",
+          "age": 47,
+          "gender": "M",
+          "profession": "filmový producent, ředitel filmové školy, organizátor radotínských filmových akcí"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Jakub Mareš Ph.D.",
+          "age": 32,
+          "gender": "M",
+          "profession": "hydrogeolog, člen výboru Radotínského turistického klubu"
+        },
+        {
+          "number": 7,
+          "name": "Jan Fleischner",
+          "age": 31,
+          "gender": "M",
+          "profession": "realitní makléř, člen výboru LTC Radotín"
+        },
+        {
+          "number": 8,
+          "name": "Mgr. Aneta Lédrová",
+          "age": 45,
+          "gender": "F",
+          "profession": "lékárnice, zakladatelka radotínského dětského pěveckého sboru Korunka"
+        },
+        {
+          "number": 9,
+          "name": "Bc. Jan Lukavský",
+          "age": 24,
+          "gender": "M",
+          "profession": "učitel dějepisu a občanské výchovy na ZŠ Radotín, organizátor historicko-naučných vycházek po Radotíně"
+        },
+        {
+          "number": 10,
+          "name": "Ing. Irena Farníková",
+          "age": 74,
+          "gender": "F",
+          "profession": "programátorka, knihovnice, kronikářka Radotína"
+        },
+        {
+          "number": 11,
+          "name": "Ing. Kamil Staněk",
+          "age": 43,
+          "gender": "M",
+          "profession": "podnikatel v oblasti financí a nemovitostí, organizátor dětských táborů a aktivit pro rodiny"
+        },
+        {
+          "number": 12,
+          "name": "Michal Pavlát",
+          "age": 46,
+          "gender": "M",
+          "profession": "profesionální hasič, podnikatel, radotínský skaut"
+        },
+        {
+          "number": 13,
+          "name": "Mgr. Sabina Krejčí",
+          "age": 33,
+          "gender": "F",
+          "profession": "vedoucí Místní knihovny Radotín"
+        },
+        {
+          "number": 14,
+          "name": "Ing. Martina Ježková",
+          "age": 48,
+          "gender": "F",
+          "profession": "personální ředitelka, volejbalová trenérka mládeže Radotínského SK"
+        },
+        {
+          "number": 15,
+          "name": "Ing. Jan Farník",
+          "age": 74,
+          "gender": "M",
+          "profession": "strojní inženýr, informatik, člen LTC Radotín"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "GEN",
+      "candidateCount": 15,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. Karel Klíma",
+          "age": 50,
+          "gender": "M",
+          "profession": "ekonomický manažer, předseda SC Olympia Radotín"
+        },
+        {
+          "number": 2,
+          "name": "Ing. Zdeněk Hradecký",
+          "age": 62,
+          "gender": "M",
+          "profession": "technik požární ochrany"
+        },
+        {
+          "number": 3,
+          "name": "Rostislav Hrych",
+          "age": 64,
+          "gender": "M",
+          "profession": "reklamační technik staveb, Místopředseda Radotínského sportovního klubu"
+        },
+        {
+          "number": 4,
+          "name": "Michaela Kouřímová",
+          "age": 41,
+          "gender": "F",
+          "profession": "referentka ve státní správě"
+        },
+        {
+          "number": 5,
+          "name": "Pavel Zeman",
+          "age": 42,
+          "gender": "M",
+          "profession": "technik"
+        },
+        {
+          "number": 6,
+          "name": "Bc. Petra Vlčková",
+          "age": 40,
+          "gender": "F",
+          "profession": "provozní ředitelka - zdravotnictví"
+        },
+        {
+          "number": 7,
+          "name": "Benedikt Vlček",
+          "age": 53,
+          "gender": "M",
+          "profession": "technický pracovník / trenér mládeže SC Olympia Radotín"
+        },
+        {
+          "number": 8,
+          "name": "Radek Kasík",
+          "age": 54,
+          "gender": "M",
+          "profession": "manažer provozu restaurací"
+        },
+        {
+          "number": 9,
+          "name": "Matyáš Eiselt",
+          "age": 32,
+          "gender": "M",
+          "profession": "technik — správce areálu"
+        },
+        {
+          "number": 10,
+          "name": "Jiří Bahenský",
+          "age": 37,
+          "gender": "M",
+          "profession": "poštovní doručovatel"
+        },
+        {
+          "number": 11,
+          "name": "Kateřina Polyóková",
+          "age": 35,
+          "gender": "F",
+          "profession": "administrativní pracovnice"
+        },
+        {
+          "number": 12,
+          "name": "Miroslav Petr",
+          "age": 50,
+          "gender": "M",
+          "profession": "šéfkuchař"
+        },
+        {
+          "number": 13,
+          "name": "Radek Janovec",
+          "age": 56,
+          "gender": "M",
+          "profession": "OSVČ - malíř"
+        },
+        {
+          "number": 14,
+          "name": "Stanislava Kouřímová",
+          "age": 67,
+          "gender": "F",
+          "profession": "prodavačka"
+        },
+        {
+          "number": 15,
+          "name": "Dušan Čaplán",
+          "age": 64,
+          "gender": "M",
+          "profession": "staniční dozorce"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Piráti a nezávislí kandidáti",
+      "candidateCount": 15,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. Martin Zelený Ph.D.",
+          "age": 37,
+          "gender": "M",
+          "profession": "ekonom"
+        },
+        {
+          "number": 2,
+          "name": "Mgr. Jan Schroll",
+          "age": 51,
+          "gender": "M",
+          "profession": "učitel"
+        },
+        {
+          "number": 3,
+          "name": "Petr Horský",
+          "age": 60,
+          "gender": "M",
+          "profession": "finanční poradce"
+        },
+        {
+          "number": 4,
+          "name": "Martina Homolová",
+          "age": 39,
+          "gender": "F",
+          "profession": "průvodkyně v dětském klubu"
+        },
+        {
+          "number": 5,
+          "name": "Mgr. Štěpán Esterle",
+          "age": 36,
+          "gender": "M",
+          "profession": "železniční expert"
+        },
+        {
+          "number": 6,
+          "name": "Ing. Igor Štverka MBA",
+          "age": 66,
+          "gender": "M",
+          "profession": "odborný poradce"
+        },
+        {
+          "number": 7,
+          "name": "ThLic. Bc. Monika Radovanská",
+          "age": 41,
+          "gender": "F",
+          "profession": "učitelka a teoložka"
+        },
+        {
+          "number": 8,
+          "name": "Bc. Karel Nejedlík",
+          "age": 40,
+          "gender": "M",
+          "profession": "IT specialista"
+        },
+        {
+          "number": 9,
+          "name": "Ing. Vladimír Radovanský",
+          "age": 65,
+          "gender": "M",
+          "profession": "konzultant a námořní kapitán"
+        },
+        {
+          "number": 10,
+          "name": "Mgr. Alice Moravcová",
+          "age": 37,
+          "gender": "F",
+          "profession": "vědecký pracovník"
+        },
+        {
+          "number": 11,
+          "name": "Thomas Jandečka",
+          "age": 35,
+          "gender": "M",
+          "profession": "technický vedoucí vývoje"
+        },
+        {
+          "number": 12,
+          "name": "PhDr. Dagmar Sladká",
+          "age": 72,
+          "gender": "F",
+          "profession": "projektová manažerka"
+        },
+        {
+          "number": 13,
+          "name": "RNDr. Lucie Svobodová Ph.D.",
+          "age": 49,
+          "gender": "F",
+          "profession": "vědecký asistent - tkáňové inženýrství"
+        },
+        {
+          "number": 14,
+          "name": "Martin Rydrych",
+          "age": 44,
+          "gender": "M",
+          "profession": "tiskař"
+        },
+        {
+          "number": 15,
+          "name": "Bc. Ondřej Nečas",
+          "age": 40,
+          "gender": "M",
+          "profession": "zakladatel Školy improvizace, podnikatel a umělec"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ANO 2011",
+      "candidateCount": 15,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Štefan Lazárek MBA",
+          "age": 50,
+          "gender": "M",
+          "profession": "podnikatel"
+        },
+        {
+          "number": 2,
+          "name": "Ing. Eva Zajíčková",
+          "age": 28,
+          "gender": "F",
+          "profession": "key account manažerka"
+        },
+        {
+          "number": 3,
+          "name": "Radek Šafařík",
+          "age": 45,
+          "gender": "M",
+          "profession": "mistr ve výrobě"
+        },
+        {
+          "number": 4,
+          "name": "Jan Baudyš",
+          "age": 73,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 5,
+          "name": "Ivo Kabók",
+          "age": 43,
+          "gender": "M",
+          "profession": "manažer"
+        },
+        {
+          "number": 6,
+          "name": "Marie Baudyšová",
+          "age": 46,
+          "gender": "F",
+          "profession": "recepční"
+        },
+        {
+          "number": 7,
+          "name": "Filip Mattov",
+          "age": 20,
+          "gender": "M",
+          "profession": "administrativní zaměstnanec"
+        },
+        {
+          "number": 8,
+          "name": "Jiří Vrba",
+          "age": 74,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 9,
+          "name": "Jiří Větrovec",
+          "age": 77,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 10,
+          "name": "Jiřina Hrdličková",
+          "age": 54,
+          "gender": "F",
+          "profession": "vedoucí prodejny"
+        },
+        {
+          "number": 11,
+          "name": "Aneta Brachová",
+          "age": 39,
+          "gender": "F",
+          "profession": "administrativní zaměstnankyně"
+        },
+        {
+          "number": 12,
+          "name": "Antonín Doubek",
+          "age": 85,
+          "gender": "M",
+          "profession": "automechanik"
+        },
+        {
+          "number": 13,
+          "name": "Soňa Bulová",
+          "age": 63,
+          "gender": "F",
+          "profession": "administrativní zaměstnankyně"
+        },
+        {
+          "number": 14,
+          "name": "Adam Kotnauer",
+          "age": 21,
+          "gender": "M",
+          "profession": "student"
+        },
+        {
+          "number": 15,
+          "name": "Marta Doubková",
+          "age": 58,
+          "gender": "F",
+          "profession": "obsluha čerpací stanice"
+        }
+      ]
+    }
+  ]
+}

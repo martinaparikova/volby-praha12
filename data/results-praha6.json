@@ -1,0 +1,396 @@
+{
+  "municipality": "Praha 6",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 45,
+  "precinctsTotal": 46,
+  "precinctsCounted": 31,
+  "turnoutPercent": 37.5,
+  "parties": [
+    {
+      "id": 4,
+      "name": "Česká pirátská strana",
+      "votesPercent": 21.1,
+      "seats": 10
+    },
+    {
+      "id": 9,
+      "name": "TOP 09",
+      "votesPercent": 16.9,
+      "seats": 8
+    },
+    {
+      "id": 8,
+      "name": "ANO 2011",
+      "votesPercent": 11.6,
+      "seats": 5
+    },
+    {
+      "id": 1,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votesPercent": 8.5,
+      "seats": 4
+    },
+    {
+      "id": 5,
+      "name": "SPD s podporou Trikolory a PRO",
+      "votesPercent": 8.1,
+      "seats": 4
+    },
+    {
+      "id": 10,
+      "name": "Motoristé sobě a Svobodní",
+      "votesPercent": 7.9,
+      "seats": 4
+    },
+    {
+      "id": 2,
+      "name": "GEN",
+      "votesPercent": 6.6,
+      "seats": 3
+    },
+    {
+      "id": 7,
+      "name": "ODS a KDU-ČSL",
+      "votesPercent": 6.3,
+      "seats": 3
+    },
+    {
+      "id": 11,
+      "name": "JSME PRAHA 6",
+      "votesPercent": 5.5,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "Komunistická strana Čech a Moravy",
+      "votesPercent": 3.8,
+      "seats": 1
+    },
+    {
+      "id": 6,
+      "name": "PRAHA 6 SOBĚ",
+      "votesPercent": 3.7,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Mgr. Ondřej Chrást",
+      "partyId": 11,
+      "partyName": "JSME PRAHA 6",
+      "preferenceVotes": 81
+    },
+    {
+      "seatNumber": 2,
+      "name": "Mgr. Ondřej Máchal",
+      "partyId": 10,
+      "partyName": "Motoristé sobě a Svobodní",
+      "preferenceVotes": 36
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": "Ing. Jan Decker CSc.",
+      "partyId": 7,
+      "partyName": "ODS a KDU-ČSL",
+      "preferenceVotes": 54
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": "Mgr. Jakub Stárek",
+      "partyId": 7,
+      "partyName": "ODS a KDU-ČSL",
+      "preferenceVotes": 19
+    },
+    {
+      "seatNumber": 9,
+      "name": "Tomáš Mandlík",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 99
+    },
+    {
+      "seatNumber": 10,
+      "name": "Ing. arch. Martin Polách",
+      "partyId": 8,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 41
+    },
+    {
+      "seatNumber": 11,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 12,
+      "name": "Ing. Václav Kožený Ph.D., MBA",
+      "partyId": 7,
+      "partyName": "ODS a KDU-ČSL",
+      "preferenceVotes": 50
+    },
+    {
+      "seatNumber": 13,
+      "name": "Ing. Kristýna Kyselová",
+      "partyId": 8,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 89
+    },
+    {
+      "seatNumber": 14,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 15,
+      "name": "JUDr. Ivan Hrůza",
+      "partyId": 3,
+      "partyName": "Komunistická strana Čech a Moravy",
+      "preferenceVotes": 29
+    },
+    {
+      "seatNumber": 16,
+      "name": "MUDr. Martin Lukáč",
+      "partyId": 5,
+      "partyName": "SPD s podporou Trikolory a PRO",
+      "preferenceVotes": 67
+    },
+    {
+      "seatNumber": 17,
+      "name": "Bc. Jakub Janik",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 80
+    },
+    {
+      "seatNumber": 18,
+      "name": "Bc. Šárka Exnarová",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 52
+    },
+    {
+      "seatNumber": 19,
+      "name": "Ing. Petr Dub",
+      "partyId": 2,
+      "partyName": "GEN",
+      "preferenceVotes": 75
+    },
+    {
+      "seatNumber": 20,
+      "name": "Bc. Jaroslav Kukla",
+      "partyId": 5,
+      "partyName": "SPD s podporou Trikolory a PRO",
+      "preferenceVotes": 23
+    },
+    {
+      "seatNumber": 21,
+      "name": "Jan Dočekal",
+      "partyId": 10,
+      "partyName": "Motoristé sobě a Svobodní",
+      "preferenceVotes": 95
+    },
+    {
+      "seatNumber": 22,
+      "name": "Matěj Víšek",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 41
+    },
+    {
+      "seatNumber": 23,
+      "name": "Ing. Roman Mejstřík",
+      "partyId": 2,
+      "partyName": "GEN",
+      "preferenceVotes": 103
+    },
+    {
+      "seatNumber": 24,
+      "name": "Antonín Štogr Vlk",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 95
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 26,
+      "name": "Bc. Jan Klofáč",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 169
+    },
+    {
+      "seatNumber": 27,
+      "name": "Ing. Lenka Zátorská",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 27
+    },
+    {
+      "seatNumber": 28,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 29,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 30,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 31,
+      "name": "RNDr. Michala Dušková Ph.D.",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 57
+    },
+    {
+      "seatNumber": 32,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 33,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 34,
+      "name": "Mgr. Karolína Zapotilová",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 63
+    },
+    {
+      "seatNumber": 35,
+      "name": "Jiří Benda",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 215
+    },
+    {
+      "seatNumber": 36,
+      "name": "Ing. Mgr. Petr Soukal Ph.D.",
+      "partyId": 8,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 49
+    },
+    {
+      "seatNumber": 37,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 38,
+      "name": "Dagmar Vybíralová",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 47
+    },
+    {
+      "seatNumber": 39,
+      "name": "MgA. Petr Prokop",
+      "partyId": 1,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 99
+    },
+    {
+      "seatNumber": 40,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 41,
+      "name": "JUDr. Patricie Pražáková",
+      "partyId": 8,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 136
+    },
+    {
+      "seatNumber": 42,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 43,
+      "name": "Ing. arch. Eva Smutná FEng.",
+      "partyId": 9,
+      "partyName": "TOP 09",
+      "preferenceVotes": 249
+    },
+    {
+      "seatNumber": 44,
+      "name": "Viktor Mahrik",
+      "partyId": 4,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 138
+    },
+    {
+      "seatNumber": 45,
+      "name": "Ing. Vladimír Matějovský",
+      "partyId": 10,
+      "partyName": "Motoristé sobě a Svobodní",
+      "preferenceVotes": 27
+    }
+  ]
+}

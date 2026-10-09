@@ -5,8 +5,8 @@
   "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
   "generatedAt": null,
   "totalSeats": 35,
-  "precinctsTotal": 28,
-  "precinctsCounted": 16,
+  "precinctsTotal": 19,
+  "precinctsCounted": 11,
   "turnoutPercent": 39.3,
   "parties": [
     {
@@ -36,7 +36,7 @@
     {
       "id": 4,
       "name": "PRAHA 11 SOBĚ",
-      "votesPercent": 11.1,
+      "votesPercent": 11.0,
       "seats": 4
     },
     {
@@ -76,28 +76,28 @@
       "name": "Klára Kadlecová DiS.",
       "partyId": 5,
       "partyName": "Spolu pro Prahu 11",
-      "preferenceVotes": 37
+      "preferenceVotes": 39
     },
     {
       "seatNumber": 2,
       "name": "PhDr. Tomáš Kunca Ph.D.",
       "partyId": 7,
       "partyName": "Výzva pro Prahu 11",
-      "preferenceVotes": 34
+      "preferenceVotes": 36
     },
     {
       "seatNumber": 3,
       "name": "Ing. Martin Sedeke",
       "partyId": 5,
       "partyName": "Spolu pro Prahu 11",
-      "preferenceVotes": 174
+      "preferenceVotes": 184
     },
     {
       "seatNumber": 4,
       "name": "Ing. Aleš Kulhánek Ph.D.",
       "partyId": 8,
       "partyName": "Hnutí pro Prahu 11",
-      "preferenceVotes": 33
+      "preferenceVotes": 35
     },
     {
       "seatNumber": 5,
@@ -111,21 +111,21 @@
       "name": "Ladislav Štula",
       "partyId": 9,
       "partyName": "SPD pro Prahu 11 s podporou Trikolora, PRO, Přísahy a nezávislých kandidátů",
-      "preferenceVotes": 77
+      "preferenceVotes": 82
     },
     {
       "seatNumber": 7,
       "name": "PhDr. Jan Jaroš",
       "partyId": 4,
       "partyName": "PRAHA 11 SOBĚ",
-      "preferenceVotes": 104
+      "preferenceVotes": 111
     },
     {
       "seatNumber": 8,
       "name": "Michal Geberle",
       "partyId": 1,
       "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 38
+      "preferenceVotes": 41
     },
     {
       "seatNumber": 9,
@@ -139,7 +139,7 @@
       "name": "Mgr. Martin Reinisch",
       "partyId": 1,
       "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 24
+      "preferenceVotes": 26
     },
     {
       "seatNumber": 11,
@@ -153,14 +153,14 @@
       "name": "Ing. Rostislav Korbel",
       "partyId": 5,
       "partyName": "Spolu pro Prahu 11",
-      "preferenceVotes": 78
+      "preferenceVotes": 83
     },
     {
       "seatNumber": 13,
       "name": "Eva Evelina Miler",
       "partyId": 9,
       "partyName": "SPD pro Prahu 11 s podporou Trikolora, PRO, Přísahy a nezávislých kandidátů",
-      "preferenceVotes": 80
+      "preferenceVotes": 85
     },
     {
       "seatNumber": 14,
@@ -188,7 +188,7 @@
       "name": "Mgr. Zuzana Böhmová",
       "partyId": 6,
       "partyName": "Česká pirátská strana",
-      "preferenceVotes": 56
+      "preferenceVotes": 59
     },
     {
       "seatNumber": 18,
@@ -202,7 +202,7 @@
       "name": "Ing. Ondřej Lang Svoboda",
       "partyId": 4,
       "partyName": "PRAHA 11 SOBĚ",
-      "preferenceVotes": 69
+      "preferenceVotes": 74
     },
     {
       "seatNumber": 20,
@@ -223,7 +223,7 @@
       "name": "Mgr. Barbora Lužíková",
       "partyId": 1,
       "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 45
+      "preferenceVotes": 47
     },
     {
       "seatNumber": 23,
@@ -237,7 +237,7 @@
       "name": "Bc. Michal Veselský DiS.",
       "partyId": 4,
       "partyName": "PRAHA 11 SOBĚ",
-      "preferenceVotes": 83
+      "preferenceVotes": 89
     },
     {
       "seatNumber": 25,
@@ -251,7 +251,7 @@
       "name": "Radek Šimon",
       "partyId": 10,
       "partyName": "ANO 2011",
-      "preferenceVotes": 43
+      "preferenceVotes": 46
     },
     {
       "seatNumber": 27,
@@ -272,28 +272,28 @@
       "name": "Ing. Jiří Štyler",
       "partyId": 3,
       "partyName": "GEN",
-      "preferenceVotes": 21
+      "preferenceVotes": 23
     },
     {
       "seatNumber": 30,
       "name": "Mgr. Jakub Lepš M.A.",
       "partyId": 2,
       "partyName": "TOP 09 a Starostové a nezávislí",
-      "preferenceVotes": 11
+      "preferenceVotes": 12
     },
     {
       "seatNumber": 31,
       "name": "Petr Sýkora",
       "partyId": 10,
       "partyName": "ANO 2011",
-      "preferenceVotes": 78
+      "preferenceVotes": 83
     },
     {
       "seatNumber": 32,
       "name": "Mgr. Martin Duška",
       "partyId": 6,
       "partyName": "Česká pirátská strana",
-      "preferenceVotes": 42
+      "preferenceVotes": 45
     },
     {
       "seatNumber": 33,

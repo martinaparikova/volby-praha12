@@ -1,12 +1,13 @@
-﻿# Volby Praha 12 / Praha 11 — přehled kandidátů 2026
+# Volby Praha 1–22 — přehled kandidátů 2026
 
-Statická webová aplikace s přehledem kandidátů do zastupitelstev MČ Praha 12 a
-MČ Praha 11 pro komunální volby 2026 (9.–10. 10. 2026). Přepínání mezi oběma
-městskými částmi je vpravo nahoře v hlavičce.
+Statická webová aplikace s přehledem kandidátů do zastupitelstev všech 22
+číslovaných městských částí Prahy (Praha 1 až Praha 22) pro komunální volby
+2026 (9.–10. 10. 2026). Přepínání mezi městskými částmi je vpravo nahoře
+v hlavičce (rozbalovací seznam).
 
 ## Funkce
 
-- Přepínání mezi městskými částmi (Praha 12 / Praha 11) — vpravo nahoře.
+- Přepínání mezi 22 městskými částmi (Praha 1–22) — vpravo nahoře.
 - Seznam kandidátů rozklikávací podle jednotlivých kandidátních listin, nebo
   zobrazení všech kandidátů najednou v jedné tabulce.
 - Filtrování podle věku (rozsahový slider) a pohlaví.
@@ -17,8 +18,9 @@ městskými částmi je vpravo nahoře v hlavičce.
   průměrný věk), s možností řazení.
 - Záložka **Výsledky** pro sledování výsledků voleb v noci z 9. na 10. 10.:
   průběh sečtených okrsků, volební účast, průběžné výsledky kandidátek a
-  postupně se plnící mandáty (jméno + strana). Automatické obnovení dat
-  každých 60 s (lze vypnout) + tlačítko pro okamžité obnovení.
+  postupně se plnící mandáty (jméno + strana + počet preferenčních hlasů),
+  seřazené a barevně odlišené podle stran. Automatické obnovení dat každých
+  60 s (lze vypnout) + tlačítko pro okamžité obnovení.
 - Přepínání světlého/tmavého režimu (vpravo nahoře), barevné schéma
   růžová + tmavě zelená.
 - Responzivní — na mobilu se tabulka kandidátů mění na přehledné kartičky.
@@ -29,45 +31,52 @@ městskými částmi je vpravo nahoře v hlavičce.
 index.html                        # hlavní stránka
 css/styles.css                    # styly, light/dark theme
 js/app.js                         # veškerá logika — filtrování, přehledy, grafy, přepínání měst, výsledky
-data/candidates-praha12.json      # strukturovaná data kandidátů pro Prahu 12 (generovaná)
-data/candidates-praha11.json      # strukturovaná data kandidátů pro Prahu 11 (generovaná)
-data/results-praha12.json         # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
-data/results-praha11.json         # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
-scripts/parse_candidates.py       # skript pro vygenerování obou souborů candidates-*.json
+data/candidates-praha{1..22}.json # strukturovaná data kandidátů pro Prahu 1-22 (generovaná)
+data/results-praha{1..22}.json    # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
+scripts/parse_candidates.py       # skript pro vygenerování candidates-*.json
 scripts/generate_sample_results.py # skript pro vygenerování ukázkových dat results-*.json
 ```
 
 ## Zdroj dat
 
 Data o kandidátech (jméno, věk, povolání) pocházejí z Českého statistického
-úřadu, zprostředkovaná přes [Poradnu pro obce](https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107).
+úřadu, zprostředkovaná přes [Poradnu pro obce](https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-12-547107).
 Pohlaví kandidátů není v datech uvedeno explicitně — u části kandidátů je
 odhadnuto heuristikou podle křestního jména a koncovky příjmení (se seznamem
 ručních výjimek pro nestandardní případy). V případě chyby v odhadu pohlaví
 prosím upravte `GENDER_OVERRIDES` ve `scripts/parse_candidates.py` a znovu
 spusťte skript.
 
+Skutečná velikost zastupitelstva (`totalSeats`) pro každou část vychází
+z oficiálních výsledků voleb 2022 (`volby.gov.cz`) — je daná statutem městské
+části a mezi volbami se nemění; viz `DISTRICT_SEATS` ve
+`scripts/generate_sample_results.py`.
+
 ### Aktualizace dat
 
-1. Stáhněte aktuální HTML stránky s kandidátkami (např. přes `Invoke-WebRequest`)
-   do `%TEMP%\praha12_candidates.html` (resp. `%TEMP%\praha11_candidates.html`).
-2. Spusťte `python scripts/parse_candidates.py` — přegeneruje oba soubory
-   v `data/`. Lze spustit i jen pro jedno město: `python scripts/parse_candidates.py praha11`.
+1. Stáhněte aktuální HTML stránky s kandidátkami (např. přes `Invoke-WebRequest`
+   s běžným prohlížečovým `User-Agent`, jinak web vrátí jen úvodní stránku)
+   do `%TEMP%\praha{N}_candidates.html` pro každou část.
+2. Spusťte `python scripts/parse_candidates.py` — přegeneruje všechny soubory
+   v `data/`. Lze spustit i jen pro některá města: `python scripts/parse_candidates.py praha11 praha12`.
 
 ### Přidání další městské části
 
-V `scripts/parse_candidates.py` přidejte záznam do `MUNICIPALITIES` (název,
-zdrojová HTML stránka, URL zdroje, výstupní soubor) a v `js/app.js` obdobný
-záznam do `MUNICIPALITIES` (popisek, zkratka do odznaku, cesta k JSON souboru).
-Tlačítko v přepínači měst přidejte do `index.html` (`#municipality-switch`).
+Číslované části Praha 1–22 jsou už všechny zahrnuté. Pro přidání jiné (např.
+některé z menších městských částí jako Praha-Zličín) přidejte záznam do
+`MUNICIPALITIES` ve `scripts/parse_candidates.py` (název, zdrojová HTML
+stránka, URL zdroje, výstupní soubor), do `DISTRICT_SEATS`/`MUNICIPALITIES`
+ve `scripts/generate_sample_results.py` (reálná velikost zastupitelstva) a
+do `MUNICIPALITIES` v `js/app.js` (popisek, zkratka do odznaku, cesta k JSON
+souborům) — přepínač v `index.html` (`#municipality-select`) se pak naplní
+automaticky.
 
 ## Záložka Výsledky — stav a napojení reálných dat
 
-`data/results-praha12.json` a `data/results-praha11.json` obsahují **zatím
-jen ukázková, náhodně vygenerovaná data** (`scripts/generate_sample_results.py`),
-protože skutečné výsledky zveřejní ČSÚ až v průběhu a po volbách (9.–10. 10.
-2026). Stránka na to upozorňuje žlutým banerem, dokud `isSample` v datech je
-`true`.
+`data/results-praha{1..22}.json` obsahují **zatím jen ukázková, náhodně
+vygenerovaná data** (`scripts/generate_sample_results.py`), protože skutečné
+výsledky zveřejní ČSÚ až v průběhu a po volbách (9.–10. 10. 2026). Stránka na
+to upozorňuje žlutým banerem, dokud `isSample` v datech je `true`.
 
 Formát souboru `results-*.json`:
 

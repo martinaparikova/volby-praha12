@@ -1,7 +1,7 @@
 """
 Generates plausible SAMPLE election-night results (not real data) for the
 results-tracking page, based on the real candidate lists already parsed into
-data/candidates-praha12.json / data/candidates-praha11.json.
+data/candidates-praha{1..22}.json.
 
 This exists purely so the results UI can be built and previewed before the
 real ČSÚ results feed exists (available only once the election has started,
@@ -17,20 +17,27 @@ import random
 import sys
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-TOTAL_SEATS = 35
 
-MUNICIPALITIES = {
-    "praha12": {
-        "candidates_file": "candidates-praha12.json",
-        "results_file": "results-praha12.json",
-        "seed": 1012,
-    },
-    "praha11": {
-        "candidates_file": "candidates-praha11.json",
-        "results_file": "results-praha11.json",
-        "seed": 1011,
-    },
+# Real council size per district (počet volených členů zastupitelstva),
+# taken from the official 2022 results archive (volby.gov.cz) - these sizes
+# are set by municipal statute and don't change between elections.
+DISTRICT_SEATS = {
+    1: 27, 2: 35, 3: 35, 4: 45, 5: 41, 6: 45, 7: 29, 8: 45, 9: 33, 10: 45,
+    11: 35, 12: 35, 13: 35, 14: 31, 15: 31, 16: 15, 17: 23, 18: 23, 19: 15,
+    20: 25, 21: 17, 22: 25,
 }
+
+
+def _municipality(number):
+    return {
+        "candidates_file": f"candidates-praha{number}.json",
+        "results_file": f"results-praha{number}.json",
+        "seed": 1000 + number,
+        "total_seats": DISTRICT_SEATS[number],
+    }
+
+
+MUNICIPALITIES = {f"praha{n}": _municipality(n) for n in DISTRICT_SEATS}
 
 
 def dhondt_seats(parties, total_seats):
@@ -45,16 +52,19 @@ def dhondt_seats(parties, total_seats):
 
 def generate(slug):
     config = MUNICIPALITIES[slug]
+    total_seats = config["total_seats"]
     with open(os.path.join(DATA_DIR, config["candidates_file"]), encoding="utf-8") as f:
         candidates_data = json.load(f)
 
     rng = random.Random(config["seed"])
     parties_src = candidates_data["parties"]
 
-    # Plausible-looking, randomized vote shares (not real results).
+    # Plausible-looking, randomized vote shares (not real results). Scaled
+    # roughly by council size, so bigger districts (more seats, more
+    # inhabitants) also show proportionally more cast votes.
     raw_weights = [rng.uniform(0.4, 1.0) ** 2 for _ in parties_src]
     total_weight = sum(raw_weights)
-    total_votes_cast = rng.randint(7500, 9500)
+    total_votes_cast = rng.randint(total_seats * 230, total_seats * 280)
     party_results = []
     for party, weight in zip(parties_src, raw_weights):
         votes = round(total_votes_cast * weight / total_weight)
@@ -65,13 +75,13 @@ def generate(slug):
     for p in party_results:
         p["votesPercent"] = round(p["votes"] / total_votes * 100, 1)
 
-    seats_won = dhondt_seats(party_results, TOTAL_SEATS)
+    seats_won = dhondt_seats(party_results, total_seats)
     for p, n in zip(party_results, seats_won):
         p["seats"] = n
 
     party_results.sort(key=lambda p: p["votes"], reverse=True)
 
-    # Build the 35 council seats: for each party, its top N candidates (by
+    # Build the council seats: for each party, its top N candidates (by
     # ballot number) fill its allocated seats - a simplification of real
     # preferential-vote tallying, fine for a visual sample.
     candidates_by_party = {p["id"]: sorted(p["candidates"], key=lambda c: c["number"] or 999) for p in parties_src}
@@ -94,14 +104,15 @@ def generate(slug):
     rng.shuffle(filled_seats)
 
     # Simulate "election night in progress": only some precincts counted so
-    # far, so only part of the seats are confirmed yet.
-    precincts_total = rng.randint(28, 36)
+    # far, so only part of the seats are confirmed yet. Precinct count is
+    # loosely scaled by council size, so bigger districts show more of them.
+    precincts_total = rng.randint(max(5, round(total_seats * 0.5)), max(8, round(total_seats * 1.0) + 5))
     progress = rng.uniform(0.45, 0.7)
     precincts_counted = max(1, round(precincts_total * progress))
-    confirmed_count = max(1, round(TOTAL_SEATS * progress))
+    confirmed_count = max(1, round(total_seats * progress))
 
     seats = []
-    for i in range(TOTAL_SEATS):
+    for i in range(total_seats):
         if i < confirmed_count:
             seats.append({"seatNumber": i + 1, **filled_seats[i]})
         else:
@@ -124,7 +135,7 @@ def generate(slug):
         "isSample": True,
         "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
         "generatedAt": None,  # filled in by the frontend with fetch time; left null here
-        "totalSeats": TOTAL_SEATS,
+        "totalSeats": total_seats,
         "precinctsTotal": precincts_total,
         "precinctsCounted": precincts_counted,
         "turnoutPercent": round(rng.uniform(28, 48), 1),
@@ -140,7 +151,7 @@ def generate(slug):
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     confirmed = sum(1 for s in seats if s["name"])
-    print(f"[{slug}] wrote {out_path}: {confirmed}/{TOTAL_SEATS} seats confirmed, "
+    print(f"[{slug}] wrote {out_path}: {confirmed}/{total_seats} seats confirmed, "
           f"{precincts_counted}/{precincts_total} okrsků, {len(party_results)} stran")
 
 

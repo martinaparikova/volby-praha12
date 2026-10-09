@@ -1,0 +1,390 @@
+{
+  "municipality": "Praha 10",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 45,
+  "precinctsTotal": 28,
+  "precinctsCounted": 13,
+  "turnoutPercent": 30.1,
+  "parties": [
+    {
+      "id": 2,
+      "name": "TOP 09 SPOLU S OSOBNOSTMI PRAHY 10",
+      "votesPercent": 17.1,
+      "seats": 8
+    },
+    {
+      "id": 10,
+      "name": "PRAHA 10 SOBĚ",
+      "votesPercent": 16.6,
+      "seats": 8
+    },
+    {
+      "id": 8,
+      "name": "Starostové, Vlasta a Lidovci",
+      "votesPercent": 14.3,
+      "seats": 7
+    },
+    {
+      "id": 1,
+      "name": "JSME PRAHA 10",
+      "votesPercent": 13.2,
+      "seats": 6
+    },
+    {
+      "id": 7,
+      "name": "Česká pirátská strana",
+      "votesPercent": 9.0,
+      "seats": 4
+    },
+    {
+      "id": 5,
+      "name": "ANO 2011",
+      "votesPercent": 8.9,
+      "seats": 4
+    },
+    {
+      "id": 3,
+      "name": "SDRUŽENÍ PŘÁTEL PRAHY 10",
+      "votesPercent": 6.1,
+      "seats": 2
+    },
+    {
+      "id": 9,
+      "name": "Společně pro Prahu 10 (Nejlepší město na světě - ODS a lokální osobnosti)",
+      "votesPercent": 5.6,
+      "seats": 2
+    },
+    {
+      "id": 6,
+      "name": "Naše Praha 10",
+      "votesPercent": 5.1,
+      "seats": 2
+    },
+    {
+      "id": 4,
+      "name": "SPD pro Prahu 10 s podporou PRO, Trikolory, Přísahy a Svobodných",
+      "votesPercent": 4.1,
+      "seats": 2
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 2,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": "Ing. Jarmila Bendová",
+      "partyId": 5,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 73
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": "David Krůta",
+      "partyId": 2,
+      "partyName": "TOP 09 SPOLU S OSOBNOSTMI PRAHY 10",
+      "preferenceVotes": 86
+    },
+    {
+      "seatNumber": 7,
+      "name": "Mgr. Ivana Cabrnochová",
+      "partyId": 6,
+      "partyName": "Naše Praha 10",
+      "preferenceVotes": 47
+    },
+    {
+      "seatNumber": 8,
+      "name": "Mgr. David Bouz",
+      "partyId": 10,
+      "partyName": "PRAHA 10 SOBĚ",
+      "preferenceVotes": 40
+    },
+    {
+      "seatNumber": 9,
+      "name": "Mgr. Olga Katarzyna Słowik Ph.D.",
+      "partyId": 10,
+      "partyName": "PRAHA 10 SOBĚ",
+      "preferenceVotes": 139
+    },
+    {
+      "seatNumber": 10,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 11,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 12,
+      "name": "Ing. Petr Beneš",
+      "partyId": 1,
+      "partyName": "JSME PRAHA 10",
+      "preferenceVotes": 158
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 17,
+      "name": "Renata Chmelová",
+      "partyId": 8,
+      "partyName": "Starostové, Vlasta a Lidovci",
+      "preferenceVotes": 75
+    },
+    {
+      "seatNumber": 18,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 19,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 20,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 21,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 22,
+      "name": "JUDr. Pavel Šutka",
+      "partyId": 9,
+      "partyName": "Společně pro Prahu 10 (Nejlepší město na světě - ODS a lokální osobnosti)",
+      "preferenceVotes": 46
+    },
+    {
+      "seatNumber": 23,
+      "name": "Ing. Milan Maršálek",
+      "partyId": 8,
+      "partyName": "Starostové, Vlasta a Lidovci",
+      "preferenceVotes": 120
+    },
+    {
+      "seatNumber": 24,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 26,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 27,
+      "name": "Mgr. Ing. Martin Kopecký",
+      "partyId": 5,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 43
+    },
+    {
+      "seatNumber": 28,
+      "name": "Mgr. Adam Šilar",
+      "partyId": 8,
+      "partyName": "Starostové, Vlasta a Lidovci",
+      "preferenceVotes": 27
+    },
+    {
+      "seatNumber": 29,
+      "name": "Ing. Romana Šímová MBA, LL.M.",
+      "partyId": 5,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 39
+    },
+    {
+      "seatNumber": 30,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 31,
+      "name": "Registrační úřad ponechal pozici volnou Kandidát v registraci škrtnut",
+      "partyId": 3,
+      "partyName": "SDRUŽENÍ PŘÁTEL PRAHY 10",
+      "preferenceVotes": 62
+    },
+    {
+      "seatNumber": 32,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 33,
+      "name": "Mgr. Stanislav Šimek",
+      "partyId": 4,
+      "partyName": "SPD pro Prahu 10 s podporou PRO, Trikolory, Přísahy a Svobodných",
+      "preferenceVotes": 23
+    },
+    {
+      "seatNumber": 34,
+      "name": "Dita Jarošová DiS.",
+      "partyId": 3,
+      "partyName": "SDRUŽENÍ PŘÁTEL PRAHY 10",
+      "preferenceVotes": 32
+    },
+    {
+      "seatNumber": 35,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 36,
+      "name": "Bc. et Bc. Markéta Žilinová",
+      "partyId": 1,
+      "partyName": "JSME PRAHA 10",
+      "preferenceVotes": 29
+    },
+    {
+      "seatNumber": 37,
+      "name": "Ing. Radka Jenka Šubířová",
+      "partyId": 10,
+      "partyName": "PRAHA 10 SOBĚ",
+      "preferenceVotes": 137
+    },
+    {
+      "seatNumber": 38,
+      "name": "Mgr. Michal Kočí",
+      "partyId": 1,
+      "partyName": "JSME PRAHA 10",
+      "preferenceVotes": 104
+    },
+    {
+      "seatNumber": 39,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 40,
+      "name": "Laura Brázdová",
+      "partyId": 7,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 77
+    },
+    {
+      "seatNumber": 41,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 42,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 43,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 44,
+      "name": "Mgr. Eliška Čepová",
+      "partyId": 8,
+      "partyName": "Starostové, Vlasta a Lidovci",
+      "preferenceVotes": 136
+    },
+    {
+      "seatNumber": 45,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

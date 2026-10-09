@@ -1,0 +1,2150 @@
+{
+  "municipality": "Praha 3",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-3-500097",
+  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "parties": [
+    {
+      "id": 1,
+      "name": "Piráti, PRAHA 3 SOBĚ a Edita Janečková",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Mgr. Edita Janečková",
+          "age": 56,
+          "gender": "F",
+          "profession": "právnička, ředitelka rodinného a komunitního centra Nová Trojka"
+        },
+        {
+          "number": 2,
+          "name": "Bc. Jan Bartko",
+          "age": 36,
+          "gender": "M",
+          "profession": "radní Prahy 3 pro finance a životní prostředí, finanční analytik"
+        },
+        {
+          "number": 3,
+          "name": "Mgr. Filip Málek",
+          "age": 34,
+          "gender": "M",
+          "profession": "místostarosta Prahy 3 pro školství"
+        },
+        {
+          "number": 4,
+          "name": "Denisa Pevná MSc.",
+          "age": 33,
+          "gender": "F",
+          "profession": "manažerka mezinárodní spolupráce"
+        },
+        {
+          "number": 5,
+          "name": "Mgr. Bc. Kateřina Konrádová",
+          "age": 35,
+          "gender": "F",
+          "profession": "analytička vzdělávací politiky"
+        },
+        {
+          "number": 6,
+          "name": "Bc. Jakub Rychlý",
+          "age": 24,
+          "gender": "M",
+          "profession": "předseda správní rady Nekrachni"
+        },
+        {
+          "number": 7,
+          "name": "JUDr. Pavel Musil Ph.D.",
+          "age": 53,
+          "gender": "M",
+          "profession": "advokát"
+        },
+        {
+          "number": 8,
+          "name": "PhDr. Jakub Cháb",
+          "age": 63,
+          "gender": "M",
+          "profession": "učitel, manažer v důchodu"
+        },
+        {
+          "number": 9,
+          "name": "Mgr. et Mgr. Karel Gargulák",
+          "age": 38,
+          "gender": "M",
+          "profession": "analytik vzdělávání"
+        },
+        {
+          "number": 10,
+          "name": "Ing. Kateřina Knoblochová",
+          "age": 48,
+          "gender": "F",
+          "profession": "manažerka v oblasti autorských práv"
+        },
+        {
+          "number": 11,
+          "name": "Mgr. Bara Soukup",
+          "age": 38,
+          "gender": "F",
+          "profession": "geoinformatička, zastupitelka hl. m. Prahy"
+        },
+        {
+          "number": 12,
+          "name": "Mgr. et Mgr. Julie Kochová",
+          "age": 35,
+          "gender": "F",
+          "profession": "zastupitelka Prahy 3, zakladatelka organizace pro pomoc ohroženým dětem"
+        },
+        {
+          "number": 13,
+          "name": "Mgr. Jan Houška",
+          "age": 26,
+          "gender": "M",
+          "profession": "státní úředník"
+        },
+        {
+          "number": 14,
+          "name": "Ing. arch. Viktor Tonner",
+          "age": 47,
+          "gender": "M",
+          "profession": "architekt, kreativní ředitel"
+        },
+        {
+          "number": 15,
+          "name": "Bc. Jiří Svrček",
+          "age": 34,
+          "gender": "M",
+          "profession": "arborista"
+        },
+        {
+          "number": 16,
+          "name": "Mgr. et Mgr. Tereza Prášilová Chábová",
+          "age": 32,
+          "gender": "F",
+          "profession": "vědecká pracovnice"
+        },
+        {
+          "number": 17,
+          "name": "Mgr. František Doseděl",
+          "age": 39,
+          "gender": "M",
+          "profession": "advokát"
+        },
+        {
+          "number": 18,
+          "name": "Petr Hartl",
+          "age": 33,
+          "gender": "M",
+          "profession": "manažer v oblasti telekomunikací"
+        },
+        {
+          "number": 19,
+          "name": "MgA. Ondřej Elfmark",
+          "age": 41,
+          "gender": "M",
+          "profession": "architekt, designér, pedagog"
+        },
+        {
+          "number": 20,
+          "name": "Terezie Františka Čeřovská",
+          "age": 50,
+          "gender": "F",
+          "profession": "specialistka v oblasti compliance"
+        },
+        {
+          "number": 21,
+          "name": "Kateřina Sehnoutková DiS.",
+          "age": 44,
+          "gender": "F",
+          "profession": "sociální pracovnice"
+        },
+        {
+          "number": 22,
+          "name": "Matyáš Pondělíček",
+          "age": 26,
+          "gender": "M",
+          "profession": "celní deklarant"
+        },
+        {
+          "number": 23,
+          "name": "Ing. Iveta Pospíšilová",
+          "age": 62,
+          "gender": "F",
+          "profession": "projektová manažerka"
+        },
+        {
+          "number": 24,
+          "name": "MUDr. Kryštof Prášil",
+          "age": 32,
+          "gender": "M",
+          "profession": "lékař"
+        },
+        {
+          "number": 25,
+          "name": "Ing. Simona Mikušová",
+          "age": 60,
+          "gender": "F",
+          "profession": "vizážistka"
+        },
+        {
+          "number": 26,
+          "name": "Eduard Ducháček",
+          "age": 38,
+          "gender": "M",
+          "profession": "manager"
+        },
+        {
+          "number": 27,
+          "name": "Vojtěch Sedláček",
+          "age": 46,
+          "gender": "M",
+          "profession": "art director v nakladatelství"
+        },
+        {
+          "number": 28,
+          "name": "Magdalena Janečková",
+          "age": 21,
+          "gender": "F",
+          "profession": "studentka 3. lékařské fakulty UK"
+        },
+        {
+          "number": 29,
+          "name": "Ing. Jan Martínek",
+          "age": 46,
+          "gender": "M",
+          "profession": "ekonom v oblasti obnovitelných zdrojů"
+        },
+        {
+          "number": 30,
+          "name": "Mgr. Helena Pipová Ph.D.",
+          "age": 34,
+          "gender": "F",
+          "profession": "psycholožka, vysokoškolská pedagožka"
+        },
+        {
+          "number": 31,
+          "name": "Martin Chour",
+          "age": 27,
+          "gender": "M",
+          "profession": "finanční poradce"
+        },
+        {
+          "number": 32,
+          "name": "Mgr. Linda Keršnerová",
+          "age": 35,
+          "gender": "F",
+          "profession": "advokátka"
+        },
+        {
+          "number": 33,
+          "name": "Mgr. Danny Píšů",
+          "age": 34,
+          "gender": "M",
+          "profession": "geolog, hydrogeolog"
+        },
+        {
+          "number": 34,
+          "name": "Mgr. Ján Bardiovský",
+          "age": 50,
+          "gender": "M",
+          "profession": "právník"
+        },
+        {
+          "number": 35,
+          "name": "Bc. Martina Kameník Vacková",
+          "age": 38,
+          "gender": "F",
+          "profession": "mluvčí a manažerka krizové komunikace, odbornice na humanitní vědy"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ANO 2011",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. et Ing. Anna Patočková",
+          "age": 39,
+          "gender": "F",
+          "profession": "zastupitelka MČ, projektová manažerka"
+        },
+        {
+          "number": 2,
+          "name": "Mgr. Pavel Traub",
+          "age": 38,
+          "gender": "M",
+          "profession": "publicista, odborář a technik ve stavebnictví"
+        },
+        {
+          "number": 3,
+          "name": "Vlastimil Plášek",
+          "age": 39,
+          "gender": "M",
+          "profession": "OSVČ"
+        },
+        {
+          "number": 4,
+          "name": "Bc. Michaela Šobrová",
+          "age": 40,
+          "gender": "F",
+          "profession": "basketbalová trenérka, manažerka"
+        },
+        {
+          "number": 5,
+          "name": "Andrej Polák",
+          "age": 25,
+          "gender": "M",
+          "profession": "student Právnické fakulty Univerzity Karlovy"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Ladislav Uhlíř",
+          "age": 40,
+          "gender": "M",
+          "profession": "státní zaměstnanec"
+        },
+        {
+          "number": 7,
+          "name": "Mgr. Ondřej Šimon MPA",
+          "age": 44,
+          "gender": "M",
+          "profession": "ředitel domova pro seniory"
+        },
+        {
+          "number": 8,
+          "name": "Ing. Irena Kryštůfková",
+          "age": 78,
+          "gender": "F",
+          "profession": "zastupitelka MČ Praha 3"
+        },
+        {
+          "number": 9,
+          "name": "Michaela Schwarzová",
+          "age": 52,
+          "gender": "F",
+          "profession": "finanční účetní"
+        },
+        {
+          "number": 10,
+          "name": "František Sarauer",
+          "age": 45,
+          "gender": "M",
+          "profession": "technik, zastupitel MČ Praha 3"
+        },
+        {
+          "number": 11,
+          "name": "Mgr. Ing. Alexandr Chmelík",
+          "age": 40,
+          "gender": "M",
+          "profession": "referent"
+        },
+        {
+          "number": 12,
+          "name": "Václav Balvín",
+          "age": 29,
+          "gender": "M",
+          "profession": "sanitář na operačním sále ve FNKV"
+        },
+        {
+          "number": 13,
+          "name": "Ing. Lukáš Kobrle",
+          "age": 39,
+          "gender": "M",
+          "profession": "CEO - development"
+        },
+        {
+          "number": 14,
+          "name": "Ing. Pavel Žížala",
+          "age": 79,
+          "gender": "M",
+          "profession": "znalec zapsaný u Městského soudu v Praze"
+        },
+        {
+          "number": 15,
+          "name": "JUDr. Zdeněk Stejskal",
+          "age": 66,
+          "gender": "M",
+          "profession": "advokát"
+        },
+        {
+          "number": 16,
+          "name": "Ing. Kristýna Žikešová",
+          "age": 28,
+          "gender": "F",
+          "profession": "realitní makléřka"
+        },
+        {
+          "number": 17,
+          "name": "Eva Meisterová",
+          "age": 59,
+          "gender": "F",
+          "profession": "recepční"
+        },
+        {
+          "number": 18,
+          "name": "Rudolf Folvarčný",
+          "age": 22,
+          "gender": "M",
+          "profession": "student"
+        },
+        {
+          "number": 19,
+          "name": "Mgr. Zuzana Bláhová",
+          "age": 64,
+          "gender": "F",
+          "profession": "security"
+        },
+        {
+          "number": 20,
+          "name": "David Tacl",
+          "age": 42,
+          "gender": "M",
+          "profession": "zastupitel MČ Praha 3"
+        },
+        {
+          "number": 21,
+          "name": "Bc. Petr Vejvoda",
+          "age": 27,
+          "gender": "M",
+          "profession": "student"
+        },
+        {
+          "number": 22,
+          "name": "Ing. Emil Vohradník",
+          "age": 83,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 23,
+          "name": "René Hrubý",
+          "age": 55,
+          "gender": "M",
+          "profession": "OSVČ"
+        },
+        {
+          "number": 24,
+          "name": "Jan Uchytil",
+          "age": 25,
+          "gender": "M",
+          "profession": "číšník"
+        },
+        {
+          "number": 25,
+          "name": "Jana Drtinová",
+          "age": 66,
+          "gender": "F",
+          "profession": "asistentka servisu"
+        },
+        {
+          "number": 26,
+          "name": "Bc. Martin Malý",
+          "age": 31,
+          "gender": "M",
+          "profession": "konzultant cvičení a zdravého životního stylu"
+        },
+        {
+          "number": 27,
+          "name": "Jana Horálková Hrabánková",
+          "age": 49,
+          "gender": "F",
+          "profession": "dobrovolnice na invalidním vozíku"
+        },
+        {
+          "number": 28,
+          "name": "Libuše Strouhová",
+          "age": 76,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 29,
+          "name": "Anna Šolcová",
+          "age": 31,
+          "gender": "F",
+          "profession": "asistentka"
+        },
+        {
+          "number": 30,
+          "name": "Ing. Kristina Reichlová",
+          "age": 81,
+          "gender": "F",
+          "profession": "ekonomka a překladatelka"
+        },
+        {
+          "number": 31,
+          "name": "MUDr. Mária Majorová",
+          "age": 66,
+          "gender": "F",
+          "profession": "stomatochirurgička"
+        },
+        {
+          "number": 32,
+          "name": "Libuše Meriová",
+          "age": 78,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 33,
+          "name": "Ivana Vejvodová",
+          "age": 57,
+          "gender": "F",
+          "profession": "CEO v mediální společnosti"
+        },
+        {
+          "number": 34,
+          "name": "Michaela Hladíková",
+          "age": 42,
+          "gender": "F",
+          "profession": "prodavačka"
+        },
+        {
+          "number": 35,
+          "name": "Marie Suchomelová",
+          "age": 42,
+          "gender": "F",
+          "profession": "dobrovolnice"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "MOTORISTÉ sobě a PATRIOTI s podporou spoluvlastníků a sousedů",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. Mojmír Mikuláš",
+          "age": 58,
+          "gender": "M",
+          "profession": "zastupitel Prahy 3, vedoucí oddělení podpory sportu Kabinetu ministra pro sport, prevenci a zdraví, člen Výboru pro územní rozvoj Prahy 3, předseda SVJ, předseda spolku JEDEME AUTEM"
+        },
+        {
+          "number": 2,
+          "name": "MUDr. Marek Zeman MBA",
+          "age": 62,
+          "gender": "M",
+          "profession": "zastupitel Prahy 3, lékař, primář zdravotního zařízení, člen Správní rady VZP"
+        },
+        {
+          "number": 3,
+          "name": "Bc. Tomáš Štampach",
+          "age": 41,
+          "gender": "M",
+          "profession": "vedoucí oddělení veřejné výzkumné instituce, člen Finančního výboru Prahy 3"
+        },
+        {
+          "number": 4,
+          "name": "Gabriela Sedláčková",
+          "age": 41,
+          "gender": "F",
+          "profession": "poslankyně Parlamentu ČR, předsedkyně Stálé komise pro kontrolu činnosti NBÚ, místopředsedkyně Výboru pro lidská práva a petice, členka Kulturní komise Prahy 3"
+        },
+        {
+          "number": 5,
+          "name": "Ing. Šárka Hospůdková",
+          "age": 59,
+          "gender": "F",
+          "profession": "odhadkyně nemovitostí, předsedkyně SVJ"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Bc. Petra Hynčicová",
+          "age": 48,
+          "gender": "F",
+          "profession": "sociální pracovník, vedoucí oddělení zřízených organizací a zdravotnictví, členka Komise pro výchovu a vzdělávání"
+        },
+        {
+          "number": 7,
+          "name": "Bc. Matěj Vlášek",
+          "age": 24,
+          "gender": "M",
+          "profession": "student ekonomie na VŠE, člen Komise pro vedlejší hospodářskou činnost Prahy 3"
+        },
+        {
+          "number": 8,
+          "name": "Izabela Zemanová",
+          "age": 20,
+          "gender": "F",
+          "profession": "studentka ekonomie"
+        },
+        {
+          "number": 9,
+          "name": "Daniel Bušek",
+          "age": 35,
+          "gender": "M",
+          "profession": "projektový IT manažer, člen Komise pro IT a inovace Prahy 3"
+        },
+        {
+          "number": 10,
+          "name": "Radomíra Hlaváčová",
+          "age": 56,
+          "gender": "F",
+          "profession": "všeobecná zdravotní sestra"
+        },
+        {
+          "number": 11,
+          "name": "Jan Brodský",
+          "age": 46,
+          "gender": "M",
+          "profession": "odborník na energetiku, předseda bytového družstva, člen Dopravní komise Prahy 3"
+        },
+        {
+          "number": 12,
+          "name": "Mgr. Pavlína Malinová",
+          "age": 59,
+          "gender": "F",
+          "profession": "učitelka"
+        },
+        {
+          "number": 13,
+          "name": "Ing. Filip Procházka",
+          "age": 56,
+          "gender": "M",
+          "profession": "poradce v oblasti strategického řízení a managementu"
+        },
+        {
+          "number": 14,
+          "name": "Barbora Sedláčková",
+          "age": 38,
+          "gender": "F",
+          "profession": "fotografka, tatérka a grafická designérka"
+        },
+        {
+          "number": 15,
+          "name": "Tomáš Němec",
+          "age": 73,
+          "gender": "M",
+          "profession": "publicista"
+        },
+        {
+          "number": 16,
+          "name": "Jarka Čiháková",
+          "age": 66,
+          "gender": "F",
+          "profession": "obchodní zástupkyně"
+        },
+        {
+          "number": 17,
+          "name": "Jan Mensdorff",
+          "age": 62,
+          "gender": "M",
+          "profession": "matematik a programátor"
+        },
+        {
+          "number": 18,
+          "name": "Martina Dytrichová",
+          "age": 61,
+          "gender": "F",
+          "profession": "pracovník přímé péče o seniory"
+        },
+        {
+          "number": 19,
+          "name": "Tomáš Tábor",
+          "age": 53,
+          "gender": "M",
+          "profession": "elektromontér zařízení vysokého napětí"
+        },
+        {
+          "number": 20,
+          "name": "Stanislava Jeřábková",
+          "age": 41,
+          "gender": "F",
+          "profession": "vedoucí pobočky České pošty"
+        },
+        {
+          "number": 21,
+          "name": "Jiří Bragagnolo",
+          "age": 78,
+          "gender": "M",
+          "profession": "technik telekomunikačních systémů, důchodce"
+        },
+        {
+          "number": 22,
+          "name": "Jana Klovrzová Uhlířová",
+          "age": 50,
+          "gender": "F",
+          "profession": "úřednice"
+        },
+        {
+          "number": 23,
+          "name": "Ing. Václav Bayer",
+          "age": 71,
+          "gender": "M",
+          "profession": "stavební inženýr"
+        },
+        {
+          "number": 24,
+          "name": "Ing. Lenka Bayerová",
+          "age": 71,
+          "gender": "F",
+          "profession": "inženýrka ekonomie"
+        },
+        {
+          "number": 25,
+          "name": "Matěj Šuster",
+          "age": 49,
+          "gender": "M",
+          "profession": "publicista a překladatel"
+        },
+        {
+          "number": 26,
+          "name": "Petr Balaš",
+          "age": 40,
+          "gender": "M",
+          "profession": "obchodník se starožitnostmi"
+        },
+        {
+          "number": 27,
+          "name": "Petr Jendřejčík",
+          "age": 52,
+          "gender": "M",
+          "profession": "zahradník"
+        },
+        {
+          "number": 28,
+          "name": "Jakub Štětina",
+          "age": 34,
+          "gender": "M",
+          "profession": "pracovník produkce"
+        },
+        {
+          "number": 29,
+          "name": "Jan Knyttl",
+          "age": 48,
+          "gender": "M",
+          "profession": "specialista informačních technologií"
+        },
+        {
+          "number": 30,
+          "name": "Jan Kovács",
+          "age": 58,
+          "gender": "M",
+          "profession": "číšník"
+        },
+        {
+          "number": 31,
+          "name": "Martin Bušek",
+          "age": 30,
+          "gender": "M",
+          "profession": "obchodní zástupce"
+        },
+        {
+          "number": 32,
+          "name": "Radek Weinzettl",
+          "age": 45,
+          "gender": "M",
+          "profession": "specialista silniční dopravy"
+        },
+        {
+          "number": 33,
+          "name": "Radek Vaněček",
+          "age": 48,
+          "gender": "M",
+          "profession": "profesionální řidič"
+        },
+        {
+          "number": 34,
+          "name": "Roman Vipler",
+          "age": 61,
+          "gender": "M",
+          "profession": "jednatel restaurace"
+        },
+        {
+          "number": 35,
+          "name": "Ing. Martina Kotrčová",
+          "age": 58,
+          "gender": "F",
+          "profession": "ekonomka"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Praha 3 srdcem",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Mgr. Denisa Šťastná Ph.D.",
+          "age": 53,
+          "gender": "F",
+          "profession": "teatroložka, redaktorka, zastupitelka MČ Praha 3"
+        },
+        {
+          "number": 2,
+          "name": "Margita Brychtová DiS.",
+          "age": 43,
+          "gender": "F",
+          "profession": "zdravotník"
+        },
+        {
+          "number": 3,
+          "name": "Antonín Homola",
+          "age": 38,
+          "gender": "M",
+          "profession": "asistent poslance Hayata Okamury, manažer, zastupitel MČ Praha 3"
+        },
+        {
+          "number": 4,
+          "name": "David Gregor",
+          "age": 49,
+          "gender": "M",
+          "profession": "privátní bankéř"
+        },
+        {
+          "number": 5,
+          "name": "Mgr. Tereza Tlamichová",
+          "age": 37,
+          "gender": "F",
+          "profession": "fyzioterapeutka"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Markéta Gabrielová",
+          "age": 35,
+          "gender": "F",
+          "profession": "zdravotní sestra"
+        },
+        {
+          "number": 7,
+          "name": "Milan Horvát",
+          "age": 65,
+          "gender": "M",
+          "profession": "řidič MHD, důchodce"
+        },
+        {
+          "number": 8,
+          "name": "Jiří Kolátor",
+          "age": 40,
+          "gender": "M",
+          "profession": "OSVČ"
+        },
+        {
+          "number": 9,
+          "name": "PharmDr. Jitka Felberová",
+          "age": 60,
+          "gender": "F",
+          "profession": "úřednice"
+        },
+        {
+          "number": 10,
+          "name": "Mgr. Michael Pondělíček Ph.D. et Ph.D.",
+          "age": 63,
+          "gender": "M",
+          "profession": "odborný asistent na VŠ"
+        },
+        {
+          "number": 11,
+          "name": "Dagmar Wiselková",
+          "age": 68,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 12,
+          "name": "František Dušátko",
+          "age": 53,
+          "gender": "M",
+          "profession": "majitel lezeckého centra"
+        },
+        {
+          "number": 13,
+          "name": "Mgr. Kristýna Setničková",
+          "age": 32,
+          "gender": "F",
+          "profession": "rodičovská dovolená"
+        },
+        {
+          "number": 14,
+          "name": "Mgr. Petr Koubek Ph.D.",
+          "age": 50,
+          "gender": "M",
+          "profession": "učitel"
+        },
+        {
+          "number": 15,
+          "name": "Mgr. Adéla Šilar",
+          "age": 32,
+          "gender": "F",
+          "profession": "rodičovská dovolená"
+        },
+        {
+          "number": 16,
+          "name": "Zdeňka Rožnovská",
+          "age": 61,
+          "gender": "F",
+          "profession": "prodavačka"
+        },
+        {
+          "number": 17,
+          "name": "Alena Cihanová",
+          "age": 62,
+          "gender": "F",
+          "profession": "administrativní pracovnice"
+        },
+        {
+          "number": 18,
+          "name": "Ing. Jaroslav Tingl",
+          "age": 61,
+          "gender": "M",
+          "profession": "stavební inženýr"
+        },
+        {
+          "number": 19,
+          "name": "Anna Mašková",
+          "age": 67,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 20,
+          "name": "Matouš Benda",
+          "age": 28,
+          "gender": "M",
+          "profession": "učitel"
+        },
+        {
+          "number": 21,
+          "name": "PhDr. Eliška Janšová",
+          "age": 88,
+          "gender": "F",
+          "profession": "členka Rady vlády pro rovnost žen a mužů"
+        },
+        {
+          "number": 22,
+          "name": "Mgr. Jiří Bochez",
+          "age": 49,
+          "gender": "M",
+          "profession": "zástupce ředitele"
+        },
+        {
+          "number": 23,
+          "name": "Ing. Gabriela Kalivodová",
+          "age": 69,
+          "gender": "F",
+          "profession": "podnikatelka"
+        },
+        {
+          "number": 24,
+          "name": "Lubomír Hanzl",
+          "age": 41,
+          "gender": "M",
+          "profession": "manažer velkoobchodu"
+        },
+        {
+          "number": 25,
+          "name": "Bc. Martina Gregorová",
+          "age": 43,
+          "gender": "F",
+          "profession": "specialistka klientského servisu"
+        },
+        {
+          "number": 26,
+          "name": "Ing. Štěpán Jenčík",
+          "age": 39,
+          "gender": "M",
+          "profession": "IT odborník"
+        },
+        {
+          "number": 27,
+          "name": "Mária Uhnáková",
+          "age": 75,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 28,
+          "name": "Ing. Petr Kolář",
+          "age": 41,
+          "gender": "M",
+          "profession": "IT specialista"
+        },
+        {
+          "number": 29,
+          "name": "Mgr. Jaroslava Starcová",
+          "age": 71,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 30,
+          "name": "Tomáš Rosol",
+          "age": 23,
+          "gender": "M",
+          "profession": "závozník"
+        },
+        {
+          "number": 31,
+          "name": "Bc. Ivana Dušátková",
+          "age": 53,
+          "gender": "F",
+          "profession": "produktová manažerka"
+        },
+        {
+          "number": 32,
+          "name": "Milan Vlasák",
+          "age": 59,
+          "gender": "M",
+          "profession": "fundraiser"
+        },
+        {
+          "number": 33,
+          "name": "Edita Schallmannová",
+          "age": 20,
+          "gender": "F",
+          "profession": "podnikatelka"
+        },
+        {
+          "number": 34,
+          "name": "Tomáš Brychta",
+          "age": 53,
+          "gender": "M",
+          "profession": "OSVČ"
+        },
+        {
+          "number": 35,
+          "name": "Irma Homolová",
+          "age": 70,
+          "gender": "F",
+          "profession": "důchodkyně"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "TOP 09 + Starostové a nezávislí s podporou Žižkov (nejen) sobě",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Mgr. Michal Vronský",
+          "age": 48,
+          "gender": "M",
+          "profession": "starosta Prahy 3"
+        },
+        {
+          "number": 2,
+          "name": "Mgr. Pavel Dobeš",
+          "age": 44,
+          "gender": "M",
+          "profession": "místostarosta Prahy 3 pro územní rozvoj, oblast Nákladového nádraží Žižkov a sport"
+        },
+        {
+          "number": 3,
+          "name": "Jiří Ptáček",
+          "age": 47,
+          "gender": "M",
+          "profession": "radní Prahy 3 pro životní prostředí"
+        },
+        {
+          "number": 4,
+          "name": "Mgr. Pavel Křeček",
+          "age": 44,
+          "gender": "M",
+          "profession": "radní Prahy 3 pro kulturu, dotace, participaci a strategické plánování, advokát"
+        },
+        {
+          "number": 5,
+          "name": "JUDr. Robert Pecka LL.M.",
+          "age": 35,
+          "gender": "M",
+          "profession": "radní Prahy 3 pro majetek, investice, energetiku a městské společnosti"
+        },
+        {
+          "number": 6,
+          "name": "Zdeňka Štěpánková",
+          "age": 61,
+          "gender": "F",
+          "profession": "ředitelka nadačního fondu, zastupitelka Prahy 3"
+        },
+        {
+          "number": 7,
+          "name": "Petra Sedláčková",
+          "age": 51,
+          "gender": "F",
+          "profession": "IT manažerka, zastupitelka Prahy 3"
+        },
+        {
+          "number": 8,
+          "name": "JUDr. Eva Pánková",
+          "age": 51,
+          "gender": "F",
+          "profession": "právnička, zastupitelka Prahy 3"
+        },
+        {
+          "number": 9,
+          "name": "Bc. Max Špachta",
+          "age": 26,
+          "gender": "M",
+          "profession": "poradce předsedy Výboru pro bezpečnost Zastupitelstva hl. m. Prahy, vicepresident YouthEPP"
+        },
+        {
+          "number": 10,
+          "name": "Ing. Jaroslav Musil MBA",
+          "age": 51,
+          "gender": "M",
+          "profession": "ředitel pro strategii a rozvoj"
+        },
+        {
+          "number": 11,
+          "name": "RNDr. Jan Materna Ph.D.",
+          "age": 58,
+          "gender": "M",
+          "profession": "zastupitel Prahy 3, starosta TJ Sokol Žižkov II"
+        },
+        {
+          "number": 12,
+          "name": "Mgr. Adam Trunečka",
+          "age": 26,
+          "gender": "M",
+          "profession": "datový analytik"
+        },
+        {
+          "number": 13,
+          "name": "Karel Vejvoda MBA",
+          "age": 45,
+          "gender": "M",
+          "profession": "podnikatel v IT, zastupitel Prahy 3"
+        },
+        {
+          "number": 14,
+          "name": "Mgr. Ondřej Vévoda",
+          "age": 33,
+          "gender": "M",
+          "profession": "právník, compliance specialista"
+        },
+        {
+          "number": 15,
+          "name": "Jaroslav Ille MBA",
+          "age": 42,
+          "gender": "M",
+          "profession": "obchodní manažer, zastupitel Prahy 3"
+        },
+        {
+          "number": 16,
+          "name": "Mgr. Bc. Michal Dobiáš",
+          "age": 40,
+          "gender": "M",
+          "profession": "advokát, jednatel Sboru dobrovolných hasičů Praha — Žižkov"
+        },
+        {
+          "number": 17,
+          "name": "JUDr. Mgr. Tereza Smužová MPA",
+          "age": 35,
+          "gender": "F",
+          "profession": "HR manažerka na univerzitě"
+        },
+        {
+          "number": 18,
+          "name": "Jaroslav Sláma",
+          "age": 78,
+          "gender": "M",
+          "profession": "fotograf"
+        },
+        {
+          "number": 19,
+          "name": "prof. Ing. Mgr. Martin Dlouhý Dr., MSc.",
+          "age": 56,
+          "gender": "M",
+          "profession": "vysokoškolský učitel"
+        },
+        {
+          "number": 20,
+          "name": "Mgr. Natálie Daňková",
+          "age": 26,
+          "gender": "F",
+          "profession": "marketingová manažerka"
+        },
+        {
+          "number": 21,
+          "name": "MUDr. Gabriela Pecková",
+          "age": 69,
+          "gender": "F",
+          "profession": "lékařka"
+        },
+        {
+          "number": 22,
+          "name": "Mgr. Štěpán Hofman",
+          "age": 34,
+          "gender": "M",
+          "profession": "ředitel strategických projektů"
+        },
+        {
+          "number": 23,
+          "name": "Mgr. Bohuslava Kočvarová",
+          "age": 67,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 24,
+          "name": "Bc. Kristian Thiel",
+          "age": 24,
+          "gender": "M",
+          "profession": "student a datový analytik"
+        },
+        {
+          "number": 25,
+          "name": "Ing. Josef Heller MBA",
+          "age": 83,
+          "gender": "M",
+          "profession": "ředitel Hospice Malovická"
+        },
+        {
+          "number": 26,
+          "name": "Nikol Medunová MBA, MSc.",
+          "age": 35,
+          "gender": "M",
+          "profession": "vysokoškolská učitelka"
+        },
+        {
+          "number": 27,
+          "name": "prof. MUDr. Lucie Bankovská Motlová Ph.D.",
+          "age": 61,
+          "gender": "F",
+          "profession": "lékařka"
+        },
+        {
+          "number": 28,
+          "name": "Ing. Zdeněk Mengler",
+          "age": 70,
+          "gender": "M",
+          "profession": "koordinátor projektů na podporu rodinné péče o děti"
+        },
+        {
+          "number": 29,
+          "name": "Ing. Pavel Štros",
+          "age": 65,
+          "gender": "M",
+          "profession": "správce nemovitostí"
+        },
+        {
+          "number": 30,
+          "name": "Lubomír Čámský",
+          "age": 65,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 31,
+          "name": "Mgr. Simeon Popov MBA, LL.D.",
+          "age": 50,
+          "gender": "M",
+          "profession": "právník, rozhodce"
+        },
+        {
+          "number": 32,
+          "name": "Ing. Jindřich Vančát",
+          "age": 69,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 33,
+          "name": "Šimon Ornest",
+          "age": 52,
+          "gender": "M",
+          "profession": "kapelník The Tap Tap, vychovatel"
+        },
+        {
+          "number": 34,
+          "name": "Ing. Lenka Dáňová",
+          "age": 53,
+          "gender": "F",
+          "profession": "státní úředník"
+        },
+        {
+          "number": 35,
+          "name": "Julie Smejkalová",
+          "age": 22,
+          "gender": "F",
+          "profession": "poslankyně, studentka Právnické fakulty UK"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "SPOLEČNĚ pro Prahu 3 (ODS, Soukromníci)",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Mgr. Filip Nekola MPA",
+          "age": 33,
+          "gender": "M",
+          "profession": "zastupitel MČ Prahy 3, poradce místopředsedy sněmovny"
+        },
+        {
+          "number": 2,
+          "name": "Ing. Michal Papež",
+          "age": 42,
+          "gender": "M",
+          "profession": "zastupitel MČ Prahy 3, vedoucí provozu Zoo Praha"
+        },
+        {
+          "number": 3,
+          "name": "Mgr. Alexander Bellu MBA",
+          "age": 39,
+          "gender": "M",
+          "profession": "vedoucí pracovník, Pražské služby, a.s."
+        },
+        {
+          "number": 4,
+          "name": "MUDr. Robert Hoffmann",
+          "age": 58,
+          "gender": "M",
+          "profession": "zastupitel MČ Prahy 3, lékař"
+        },
+        {
+          "number": 5,
+          "name": "Mgr. Iva Vojtková",
+          "age": 69,
+          "gender": "F",
+          "profession": "předsedkyně kontrolního výboru MČ Prahy 3"
+        },
+        {
+          "number": 6,
+          "name": "Marcela Pekařová",
+          "age": 45,
+          "gender": "F",
+          "profession": "živnostník"
+        },
+        {
+          "number": 7,
+          "name": "MUDr. Jiří Jungwirth",
+          "age": 65,
+          "gender": "M",
+          "profession": "lékař - chirurg"
+        },
+        {
+          "number": 8,
+          "name": "Bc. Jan Kabát",
+          "age": 36,
+          "gender": "M",
+          "profession": "obchodní ředitel"
+        },
+        {
+          "number": 9,
+          "name": "Marek Čerjak",
+          "age": 42,
+          "gender": "M",
+          "profession": "podnikatel - programátor"
+        },
+        {
+          "number": 10,
+          "name": "Ing. Ladislav Linek",
+          "age": 67,
+          "gender": "M",
+          "profession": "manažer"
+        },
+        {
+          "number": 11,
+          "name": "Mgr. Lucie Bogdanová",
+          "age": 41,
+          "gender": "F",
+          "profession": "státní úředník"
+        },
+        {
+          "number": 12,
+          "name": "Ing. Martin Dušek",
+          "age": 51,
+          "gender": "M",
+          "profession": "IT manažer a bezpečnostní expert"
+        },
+        {
+          "number": 13,
+          "name": "Mgr. Martin Benda",
+          "age": 56,
+          "gender": "M",
+          "profession": "zaměstnanec v sociálních službách"
+        },
+        {
+          "number": 14,
+          "name": "Jan Kestl",
+          "age": 32,
+          "gender": "M",
+          "profession": "ředitel správy družstva"
+        },
+        {
+          "number": 15,
+          "name": "Mgr. Miroslav Vilímec",
+          "age": 68,
+          "gender": "M",
+          "profession": "houslista, hudební manažer"
+        },
+        {
+          "number": 16,
+          "name": "Ing. Jakub Langmajer",
+          "age": 41,
+          "gender": "M",
+          "profession": "office/sales manager"
+        },
+        {
+          "number": 17,
+          "name": "Marek Najbert",
+          "age": 24,
+          "gender": "M",
+          "profession": "živnostník"
+        },
+        {
+          "number": 18,
+          "name": "Bc. et Bc. Matěj Hajský",
+          "age": 25,
+          "gender": "M",
+          "profession": "key account manager"
+        },
+        {
+          "number": 19,
+          "name": "PhDr. Roman Vondra Ph.D.",
+          "age": 47,
+          "gender": "M",
+          "profession": "historik"
+        },
+        {
+          "number": 20,
+          "name": "Jitka Linková",
+          "age": 60,
+          "gender": "F",
+          "profession": "vedoucí Republikové kanceláře strany Soukromníků ČR"
+        },
+        {
+          "number": 21,
+          "name": "Ing. Lukáš Večeřa",
+          "age": 32,
+          "gender": "M",
+          "profession": "korporátní bankéř"
+        },
+        {
+          "number": 22,
+          "name": "Jakub Závorka",
+          "age": 49,
+          "gender": "M",
+          "profession": "obchodní manažer"
+        },
+        {
+          "number": 23,
+          "name": "Ing. Jana Caldrová",
+          "age": 64,
+          "gender": "F",
+          "profession": "konzultant pro správu zeleně"
+        },
+        {
+          "number": 24,
+          "name": "Mgr. Jana Šturmová",
+          "age": 51,
+          "gender": "F",
+          "profession": "HR manager"
+        },
+        {
+          "number": 25,
+          "name": "Marie Kurovská",
+          "age": 64,
+          "gender": "F",
+          "profession": "fotografka, cestovní ruch"
+        },
+        {
+          "number": 26,
+          "name": "BcA. Julie Linková",
+          "age": 35,
+          "gender": "F",
+          "profession": "správce soc. sítí, marketing"
+        },
+        {
+          "number": 27,
+          "name": "Bc. Adéla Pekárnová",
+          "age": 22,
+          "gender": "F",
+          "profession": "student"
+        },
+        {
+          "number": 28,
+          "name": "Stanislav Čížkovský",
+          "age": 54,
+          "gender": "M",
+          "profession": "živnostník"
+        },
+        {
+          "number": 29,
+          "name": "Mgr. Jiří Blahutka",
+          "age": 46,
+          "gender": "M",
+          "profession": "právník"
+        },
+        {
+          "number": 30,
+          "name": "Ing. Ivan Macháček",
+          "age": 76,
+          "gender": "M",
+          "profession": "podnikatel"
+        },
+        {
+          "number": 31,
+          "name": "Naděžda Vymětalová",
+          "age": 66,
+          "gender": "F",
+          "profession": "asistent prodeje"
+        },
+        {
+          "number": 32,
+          "name": "Martin Čermák",
+          "age": 24,
+          "gender": "M",
+          "profession": "student"
+        },
+        {
+          "number": 33,
+          "name": "Štěpán Linhart",
+          "age": 19,
+          "gender": "M",
+          "profession": "student společenských věd"
+        },
+        {
+          "number": 34,
+          "name": "MUDr. Jana Žmolíková",
+          "age": 80,
+          "gender": "F",
+          "profession": "revizní lékař VZP"
+        },
+        {
+          "number": 35,
+          "name": "Vojtěch Benda",
+          "age": 30,
+          "gender": "M",
+          "profession": "novinář"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Strana zelených",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Ing. arch. Matěj Michalk Žaloudek",
+          "age": 40,
+          "gender": "M",
+          "profession": "architekt a urbanista"
+        },
+        {
+          "number": 2,
+          "name": "Mgr. Jana Valová",
+          "age": 41,
+          "gender": "F",
+          "profession": "odborná asistentka místostarosty se zaměřením na politiku dostupného bydlení"
+        },
+        {
+          "number": 3,
+          "name": "Mgr. Rebeka Vadasová",
+          "age": 43,
+          "gender": "F",
+          "profession": "učitelka"
+        },
+        {
+          "number": 4,
+          "name": "Mgr. Ondřej Rut",
+          "age": 44,
+          "gender": "M",
+          "profession": "místostarosta pro bydlení, dopravu a čerpání dotací"
+        },
+        {
+          "number": 5,
+          "name": "Ing. arch. Mgr. Klára Brůhová Ph.D.",
+          "age": 41,
+          "gender": "F",
+          "profession": "historička architektury"
+        },
+        {
+          "number": 6,
+          "name": "Mgr. Karolína Salomonová LL.M.",
+          "age": 34,
+          "gender": "F",
+          "profession": "ředitelka školky"
+        },
+        {
+          "number": 7,
+          "name": "Mgr. Petra Valeš Jelínková",
+          "age": 44,
+          "gender": "F",
+          "profession": "psychoterapeutka, překladatelka"
+        },
+        {
+          "number": 8,
+          "name": "Miroslava Viraková",
+          "age": 35,
+          "gender": "F",
+          "profession": "pracovnice v sociálních službách"
+        },
+        {
+          "number": 9,
+          "name": "Mgr. Marie Kaiserová",
+          "age": 27,
+          "gender": "F",
+          "profession": "socioložka, studentka architektury"
+        },
+        {
+          "number": 10,
+          "name": "Ing. Zdeněk Jahn",
+          "age": 51,
+          "gender": "M",
+          "profession": "ekonom a sociální pracovník"
+        },
+        {
+          "number": 11,
+          "name": "Bc. Jan Klátil",
+          "age": 36,
+          "gender": "M",
+          "profession": "programátor"
+        },
+        {
+          "number": 12,
+          "name": "Mgr. Helena Ganická",
+          "age": 45,
+          "gender": "F",
+          "profession": "poradkyně na norské ambasádě"
+        },
+        {
+          "number": 13,
+          "name": "Bc. Ing. David Koubek",
+          "age": 46,
+          "gender": "M",
+          "profession": "zdravotnický záchranář"
+        },
+        {
+          "number": 14,
+          "name": "Jaromír Valeš",
+          "age": 24,
+          "gender": "M",
+          "profession": "knihovník"
+        },
+        {
+          "number": 15,
+          "name": "Christelle Linda Natabou",
+          "age": 32,
+          "gender": "M",
+          "profession": "IT konzultantka"
+        },
+        {
+          "number": 16,
+          "name": "Ing. Petr Novák",
+          "age": 48,
+          "gender": "M",
+          "profession": "datový analytik"
+        },
+        {
+          "number": 17,
+          "name": "PhDr. Mgr. Eva Ferrarová Ph.D.",
+          "age": 73,
+          "gender": "F",
+          "profession": "antropoložka v důchodu"
+        },
+        {
+          "number": 18,
+          "name": "Mgr. Martina Chmelová",
+          "age": 61,
+          "gender": "F",
+          "profession": "psychoterapeutka"
+        },
+        {
+          "number": 19,
+          "name": "Bc. Petr Konečný DiS.",
+          "age": 29,
+          "gender": "M",
+          "profession": "sociální pracovník"
+        },
+        {
+          "number": 20,
+          "name": "Mgr. Anna Kusáková",
+          "age": 37,
+          "gender": "F",
+          "profession": "knihovnice"
+        },
+        {
+          "number": 21,
+          "name": "Mgr. Kateřina Cidlinská Ph.D.",
+          "age": 43,
+          "gender": "F",
+          "profession": "akademická pracovnice"
+        },
+        {
+          "number": 22,
+          "name": "Mgr. Kristýna Dobrianská",
+          "age": 30,
+          "gender": "F",
+          "profession": "právnička a dobrovolnice"
+        },
+        {
+          "number": 23,
+          "name": "Kateřina Šrámková",
+          "age": 30,
+          "gender": "F",
+          "profession": "laktační poradkyně – specialistka na poporodní péči"
+        },
+        {
+          "number": 24,
+          "name": "Mgr. Martin Langpaul",
+          "age": 45,
+          "gender": "M",
+          "profession": "pedagog a psychoterapeut"
+        },
+        {
+          "number": 25,
+          "name": "PhDr. Kateřina Ptáčková",
+          "age": 47,
+          "gender": "F",
+          "profession": "socioložka a koordinátorka nadačních projektů"
+        },
+        {
+          "number": 26,
+          "name": "Mgr. Lenka Davidová",
+          "age": 50,
+          "gender": "F",
+          "profession": "středoškolská učitelka angličtiny"
+        },
+        {
+          "number": 27,
+          "name": "Joeri Alexander Happel",
+          "age": 52,
+          "gender": "M",
+          "profession": "průvodce – tour manager"
+        },
+        {
+          "number": 28,
+          "name": "Mgr. Josef Švéda MPhil., Ph.D.",
+          "age": 44,
+          "gender": "M",
+          "profession": "učitel"
+        },
+        {
+          "number": 29,
+          "name": "Bc. Monika Bunžová",
+          "age": 40,
+          "gender": "F",
+          "profession": "matka na rodičovské, podnikatelka s vínem"
+        },
+        {
+          "number": 30,
+          "name": "Mgr. Jan Huňka",
+          "age": 50,
+          "gender": "M",
+          "profession": "právník"
+        },
+        {
+          "number": 31,
+          "name": "Mgr. Martina Nováková",
+          "age": 41,
+          "gender": "F",
+          "profession": "expertka na vzdělávání, předsedkyně školské rady ZŠ Jarov"
+        },
+        {
+          "number": 32,
+          "name": "Mgr. Markéta Rohanová",
+          "age": 54,
+          "gender": "F",
+          "profession": "učitelka"
+        },
+        {
+          "number": 33,
+          "name": "Bc. Ludmila Böhmová",
+          "age": 30,
+          "gender": "F",
+          "profession": "pracující v neziskovém sektoru"
+        },
+        {
+          "number": 34,
+          "name": "Kamil Marcel Hodáček",
+          "age": 46,
+          "gender": "M",
+          "profession": "spisovatel"
+        },
+        {
+          "number": 35,
+          "name": "Mgr. Vladimír Kusbach Ph.D.",
+          "age": 45,
+          "gender": "M",
+          "profession": "geolog, vědecký pracovník Geofyzikálního ústavu AV ČR"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Komunistická strana Čech a Moravy",
+      "candidateCount": 17,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Jiří Hájek",
+          "age": 77,
+          "gender": "M",
+          "profession": "revizor"
+        },
+        {
+          "number": 2,
+          "name": "Viktor Pázler",
+          "age": 81,
+          "gender": "M",
+          "profession": "ekonom"
+        },
+        {
+          "number": 3,
+          "name": "Jaroslav Botor",
+          "age": 70,
+          "gender": "M",
+          "profession": "právník"
+        },
+        {
+          "number": 4,
+          "name": "Jana Koptíková",
+          "age": 52,
+          "gender": "F",
+          "profession": "pečovatelka"
+        },
+        {
+          "number": 5,
+          "name": "Galina Ulrychová",
+          "age": 63,
+          "gender": "F",
+          "profession": "OSVČ"
+        },
+        {
+          "number": 6,
+          "name": "Jiřina Sainerová",
+          "age": 77,
+          "gender": "F",
+          "profession": "všeobecná sestra"
+        },
+        {
+          "number": 7,
+          "name": "Marie Kubíková",
+          "age": 77,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 8,
+          "name": "Helena Michaela Březinová",
+          "age": 74,
+          "gender": "F",
+          "profession": "revizorka"
+        },
+        {
+          "number": 9,
+          "name": "Jiří Bečvář",
+          "age": 80,
+          "gender": "M",
+          "profession": "revizor"
+        },
+        {
+          "number": 10,
+          "name": "Naděžda Zlatníková",
+          "age": 81,
+          "gender": "F",
+          "profession": "revizorka"
+        },
+        {
+          "number": 11,
+          "name": "Blanka Bedlivá",
+          "age": 84,
+          "gender": "F",
+          "profession": "místopředsedkyně"
+        },
+        {
+          "number": 12,
+          "name": "Jaroslav Černý",
+          "age": 86,
+          "gender": "M",
+          "profession": "voják v.v."
+        },
+        {
+          "number": 13,
+          "name": "Alena Adamcová",
+          "age": 93,
+          "gender": "F",
+          "profession": "hospodářka"
+        },
+        {
+          "number": 14,
+          "name": "Věra Abrahámová",
+          "age": 95,
+          "gender": "F",
+          "profession": "důchodkyně"
+        },
+        {
+          "number": 15,
+          "name": "Pavel Mandík",
+          "age": 71,
+          "gender": "M",
+          "profession": "důchodce"
+        },
+        {
+          "number": 16,
+          "name": "Eva Havránková",
+          "age": 92,
+          "gender": "F",
+          "profession": "hospodářka"
+        },
+        {
+          "number": 17,
+          "name": "Josef Prokůpek",
+          "age": 88,
+          "gender": "M",
+          "profession": "důchodce"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "SPD, Trikolora a nezávislí kandidáti pro Prahu 3 s podporou strany PRO a Přísahy",
+      "candidateCount": 35,
+      "candidates": [
+        {
+          "number": 1,
+          "name": "Josef Sláma",
+          "age": 49,
+          "gender": "M",
+          "profession": "zastupitel Prahy 3, jednatel firmy"
+        },
+        {
+          "number": 2,
+          "name": "Michaela Grzegorzová",
+          "age": 49,
+          "gender": "F",
+          "profession": "zastupitelka Prahy 3, podnikatelka v kartonážním průmyslu"
+        },
+        {
+          "number": 3,
+          "name": "Ing. MgA. et MgA. Petr Chromčák",
+          "age": 69,
+          "gender": "M",
+          "profession": "dirigent"
+        },
+        {
+          "number": 4,
+          "name": "Mgr. Václav Papež",
+          "age": 53,
+          "gender": "M",
+          "profession": "analytik kybernetické bezpečnosti"
+        },
+        {
+          "number": 5,
+          "name": "Michaela Zemanová",
+          "age": 57,
+          "gender": "F",
+          "profession": "bankovní specialistka"
+        },
+        {
+          "number": 6,
+          "name": "Vladimír Jonáš",
+          "age": 74,
+          "gender": "M",
+          "profession": "úředník státní správy"
+        },
+        {
+          "number": 7,
+          "name": "Ing. Dan Štěpánek",
+          "age": 45,
+          "gender": "M",
+          "profession": "projektový manažer"
+        },
+        {
+          "number": 8,
+          "name": "Ing. Pavel Botur",
+          "age": 64,
+          "gender": "M",
+          "profession": "ekonom"
+        },
+        {
+          "number": 9,
+          "name": "JUDr. Denis Kašicyn",
+          "age": 41,
+          "gender": "M",
+          "profession": "právník"
+        },
+        {
+          "number": 10,
+          "name": "Jiří Nácovský",
+          "age": 55,
+          "gender": "M",
+          "profession": "herec, živnostník vzduchotechnika"
+        },
+        {
+          "number": 11,
+          "name": "Mgr. Petr Vojtíšek MBA",
+          "age": 58,
+          "gender": "M",
+          "profession": "konzultant"
+        },
+        {
+          "number": 12,
+          "name": "David Tesař",
+          "age": 50,
+          "gender": "M",
+          "profession": "předseda spolku Manifest"
+        },
+        {
+          "number": 13,
+          "name": "Zdeněk Stibor",
+          "age": 63,
+          "gender": "M",
+          "profession": "učitel hudby"
+        },
+        {
+          "number": 14,
+          "name": "Zbyněk Hájek",
+          "age": 47,
+          "gender": "M",
+          "profession": "vedoucí učitel odborného výcviku"
+        },
+        {
+          "number": 15,
+          "name": "Jitka Výborná",
+          "age": 70,
+          "gender": "F",
+          "profession": "ekonomka"
+        },
+        {
+          "number": 16,
+          "name": "Stanislav Kindl",
+          "age": 50,
+          "gender": "M",
+          "profession": "konzultant"
+        },
+        {
+          "number": 17,
+          "name": "Alla Fedorova",
+          "age": 51,
+          "gender": "F",
+          "profession": "specialistka na marketing a komunikaci"
+        },
+        {
+          "number": 18,
+          "name": "Martin Zábrana",
+          "age": 49,
+          "gender": "M",
+          "profession": "majitel restaurace"
+        },
+        {
+          "number": 19,
+          "name": "Ing. Tomáš Firla",
+          "age": 65,
+          "gender": "M",
+          "profession": "monitoring výstavby metra D"
+        },
+        {
+          "number": 20,
+          "name": "Věra Brychtová",
+          "age": 58,
+          "gender": "F",
+          "profession": "podnikatelka v kultuře"
+        },
+        {
+          "number": 21,
+          "name": "Ing. Tomáš Kopřiva",
+          "age": 70,
+          "gender": "M",
+          "profession": "emeritní manažer"
+        },
+        {
+          "number": 22,
+          "name": "Miroslav Mazáček",
+          "age": 68,
+          "gender": "M",
+          "profession": "obchodní zástupce"
+        },
+        {
+          "number": 23,
+          "name": "Petr Kříž",
+          "age": 52,
+          "gender": "M",
+          "profession": "manažer logistiky"
+        },
+        {
+          "number": 24,
+          "name": "Ing. Evžena Trnková",
+          "age": 69,
+          "gender": "F",
+          "profession": "supervizorka chemie na SŠ"
+        },
+        {
+          "number": 25,
+          "name": "Petra Zuzana Čampulková",
+          "age": 52,
+          "gender": "F",
+          "profession": "zdravotní sestra"
+        },
+        {
+          "number": 26,
+          "name": "Irena Stiborová",
+          "age": 65,
+          "gender": "F",
+          "profession": "hospodářka"
+        },
+        {
+          "number": 27,
+          "name": "RNDr. Pavel Ložek",
+          "age": 79,
+          "gender": "M",
+          "profession": "organizační a účetní poradce"
+        },
+        {
+          "number": 28,
+          "name": "Blahoslav Volf",
+          "age": 59,
+          "gender": "M",
+          "profession": "zahradník"
+        },
+        {
+          "number": 29,
+          "name": "Naděžda Homová",
+          "age": 66,
+          "gender": "F",
+          "profession": "zubní technička"
+        },
+        {
+          "number": 30,
+          "name": "Radek Červený",
+          "age": 49,
+          "gender": "M",
+          "profession": "skladový operátor"
+        },
+        {
+          "number": 31,
+          "name": "Zdeněk Stibor DiS.",
+          "age": 24,
+          "gender": "M",
+          "profession": "konzultant"
+        },
+        {
+          "number": 32,
+          "name": "Martin Werner",
+          "age": 54,
+          "gender": "M",
+          "profession": "projektový manažer"
+        },
+        {
+          "number": 33,
+          "name": "Petra Mikšovská",
+          "age": 28,
+          "gender": "F",
+          "profession": "recepční stomatologické kliniky"
+        },
+        {
+          "number": 34,
+          "name": "Ing. Jekatěrina Běljankova",
+          "age": 37,
+          "gender": "F",
+          "profession": "realitní makléřka"
+        },
+        {
+          "number": 35,
+          "name": "Petra Jandová",
+          "age": 51,
+          "gender": "F",
+          "profession": "administrativní pracovnice"
+        }
+      ]
+    }
+  ]
+}

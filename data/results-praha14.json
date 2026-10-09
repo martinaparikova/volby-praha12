@@ -1,0 +1,286 @@
+{
+  "municipality": "Praha 14",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 31,
+  "precinctsTotal": 33,
+  "precinctsCounted": 15,
+  "turnoutPercent": 36.5,
+  "parties": [
+    {
+      "id": 5,
+      "name": "NAŠE Čtrnáctka",
+      "votesPercent": 22.8,
+      "seats": 8
+    },
+    {
+      "id": 6,
+      "name": "Česká levice",
+      "votesPercent": 14.1,
+      "seats": 4
+    },
+    {
+      "id": 1,
+      "name": "Svoboda a přímá demokracie pro Prahu 14 s podporou občanského hnutí Přísaha, České strany národně sociální a nezávislých kandidátů",
+      "votesPercent": 11.9,
+      "seats": 4
+    },
+    {
+      "id": 8,
+      "name": "ODS SPOLU s TOP 09 a Sousedy pro Prahu 14",
+      "votesPercent": 11.8,
+      "seats": 4
+    },
+    {
+      "id": 7,
+      "name": "MY pro Prahu 14 - Piráti, Praha 14 sobě, Zelení",
+      "votesPercent": 10.9,
+      "seats": 3
+    },
+    {
+      "id": 4,
+      "name": "Svobodní",
+      "votesPercent": 10.2,
+      "seats": 3
+    },
+    {
+      "id": 9,
+      "name": "ANO 2011",
+      "votesPercent": 7.1,
+      "seats": 2
+    },
+    {
+      "id": 2,
+      "name": "SRDCEM PRO PRAHU 14 - NEZÁVISLÍ A NOVÍ LIDOVCI",
+      "votesPercent": 7.0,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votesPercent": 4.2,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "RNDr. Jiří Vyhnalík",
+      "partyId": 4,
+      "partyName": "Svobodní",
+      "preferenceVotes": 32
+    },
+    {
+      "seatNumber": 2,
+      "name": "Ing. Pavla Boturová",
+      "partyId": 1,
+      "partyName": "Svoboda a přímá demokracie pro Prahu 14 s podporou občanského hnutí Přísaha, České strany národně sociální a nezávislých kandidátů",
+      "preferenceVotes": 75
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": "Bc. Jiří Hodeček MBA",
+      "partyId": 4,
+      "partyName": "Svobodní",
+      "preferenceVotes": 59
+    },
+    {
+      "seatNumber": 9,
+      "name": "Ing. Václav Bříza",
+      "partyId": 6,
+      "partyName": "Česká levice",
+      "preferenceVotes": 64
+    },
+    {
+      "seatNumber": 10,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 11,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": "Jaroslav Šůs",
+      "partyId": 5,
+      "partyName": "NAŠE Čtrnáctka",
+      "preferenceVotes": 35
+    },
+    {
+      "seatNumber": 15,
+      "name": "JUDr. Bc. Jaroslav Verner",
+      "partyId": 7,
+      "partyName": "MY pro Prahu 14 - Piráti, Praha 14 sobě, Zelení",
+      "preferenceVotes": 57
+    },
+    {
+      "seatNumber": 16,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 17,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 18,
+      "name": "PhDr. Zuzana Jelenová",
+      "partyId": 2,
+      "partyName": "SRDCEM PRO PRAHU 14 - NEZÁVISLÍ A NOVÍ LIDOVCI",
+      "preferenceVotes": 54
+    },
+    {
+      "seatNumber": 19,
+      "name": "Petr Zeman",
+      "partyId": 7,
+      "partyName": "MY pro Prahu 14 - Piráti, Praha 14 sobě, Zelení",
+      "preferenceVotes": 59
+    },
+    {
+      "seatNumber": 20,
+      "name": "Mgr. Petr Setvín",
+      "partyId": 5,
+      "partyName": "NAŠE Čtrnáctka",
+      "preferenceVotes": 25
+    },
+    {
+      "seatNumber": 21,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 22,
+      "name": "Radka Houdková",
+      "partyId": 6,
+      "partyName": "Česká levice",
+      "preferenceVotes": 30
+    },
+    {
+      "seatNumber": 23,
+      "name": "Jiří Zajac",
+      "partyId": 8,
+      "partyName": "ODS SPOLU s TOP 09 a Sousedy pro Prahu 14",
+      "preferenceVotes": 60
+    },
+    {
+      "seatNumber": 24,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 25,
+      "name": "Karel Mládek",
+      "partyId": 5,
+      "partyName": "NAŠE Čtrnáctka",
+      "preferenceVotes": 85
+    },
+    {
+      "seatNumber": 26,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 27,
+      "name": "Mgr. František Podhajský Ph.D.",
+      "partyId": 6,
+      "partyName": "Česká levice",
+      "preferenceVotes": 77
+    },
+    {
+      "seatNumber": 28,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 29,
+      "name": "Mgr. Zuzana Habartová",
+      "partyId": 7,
+      "partyName": "MY pro Prahu 14 - Piráti, Praha 14 sobě, Zelení",
+      "preferenceVotes": 74
+    },
+    {
+      "seatNumber": 30,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 31,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

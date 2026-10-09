@@ -1,0 +1,150 @@
+{
+  "municipality": "Praha 16",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 15,
+  "precinctsTotal": 20,
+  "precinctsCounted": 12,
+  "turnoutPercent": 29.8,
+  "parties": [
+    {
+      "id": 5,
+      "name": "ANO 2011",
+      "votesPercent": 26.7,
+      "seats": 4
+    },
+    {
+      "id": 4,
+      "name": "Piráti a nezávislí kandidáti",
+      "votesPercent": 23.4,
+      "seats": 4
+    },
+    {
+      "id": 2,
+      "name": "Občanská demokratická strana Radotín",
+      "votesPercent": 17.4,
+      "seats": 3
+    },
+    {
+      "id": 1,
+      "name": "Společně pro Radotín",
+      "votesPercent": 16.5,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "GEN",
+      "votesPercent": 16.0,
+      "seats": 2
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "doc. Ing. arch. Jana Zdráhalová Ph.D.",
+      "partyId": 2,
+      "partyName": "Občanská demokratická strana Radotín",
+      "preferenceVotes": 31
+    },
+    {
+      "seatNumber": 2,
+      "name": "Petr Horský",
+      "partyId": 4,
+      "partyName": "Piráti a nezávislí kandidáti",
+      "preferenceVotes": 52
+    },
+    {
+      "seatNumber": 3,
+      "name": "Radek Šafařík",
+      "partyId": 5,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 25
+    },
+    {
+      "seatNumber": 4,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": "Ing. Zdeněk Hradecký",
+      "partyId": 3,
+      "partyName": "GEN",
+      "preferenceVotes": 36
+    },
+    {
+      "seatNumber": 9,
+      "name": "Jan-Matěj Rak",
+      "partyId": 1,
+      "partyName": "Společně pro Radotín",
+      "preferenceVotes": 38
+    },
+    {
+      "seatNumber": 10,
+      "name": "Ing. Karel Klíma",
+      "partyId": 3,
+      "partyName": "GEN",
+      "preferenceVotes": 73
+    },
+    {
+      "seatNumber": 11,
+      "name": "Ing. Eva Zajíčková",
+      "partyId": 5,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 116
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": "Mgr. Karel Hanzlík",
+      "partyId": 2,
+      "partyName": "Občanská demokratická strana Radotín",
+      "preferenceVotes": 54
+    },
+    {
+      "seatNumber": 15,
+      "name": "Ing. Lucie Malátová MBA",
+      "partyId": 1,
+      "partyName": "Společně pro Radotín",
+      "preferenceVotes": 40
+    }
+  ]
+}

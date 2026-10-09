@@ -1,0 +1,254 @@
+{
+  "municipality": "Praha 7",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 29,
+  "precinctsTotal": 17,
+  "precinctsCounted": 11,
+  "turnoutPercent": 33.4,
+  "parties": [
+    {
+      "id": 4,
+      "name": "ANO s podporou Motoristů",
+      "votesPercent": 19.1,
+      "seats": 6
+    },
+    {
+      "id": 1,
+      "name": "PRAHA 7 SOBĚ",
+      "votesPercent": 18.3,
+      "seats": 5
+    },
+    {
+      "id": 6,
+      "name": "Piráti a Starostové",
+      "votesPercent": 17.2,
+      "seats": 5
+    },
+    {
+      "id": 2,
+      "name": "Spojená levice pro Prahu 7",
+      "votesPercent": 17.0,
+      "seats": 5
+    },
+    {
+      "id": 5,
+      "name": "SPD pro Prahu 7 s podporou PRO a nezávislých kandidátů",
+      "votesPercent": 15.7,
+      "seats": 4
+    },
+    {
+      "id": 3,
+      "name": "SPOLU PRO PRAHU 7",
+      "votesPercent": 12.6,
+      "seats": 4
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Ing. Kamil Vavřinec Mareš Ph.D.",
+      "partyId": 1,
+      "partyName": "PRAHA 7 SOBĚ",
+      "preferenceVotes": 97
+    },
+    {
+      "seatNumber": 2,
+      "name": "Ing. Adam Kalous",
+      "partyId": 4,
+      "partyName": "ANO s podporou Motoristů",
+      "preferenceVotes": 33
+    },
+    {
+      "seatNumber": 3,
+      "name": "Petr Mairych",
+      "partyId": 3,
+      "partyName": "SPOLU PRO PRAHU 7",
+      "preferenceVotes": 70
+    },
+    {
+      "seatNumber": 4,
+      "name": "Jakub Růžička",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu 7",
+      "preferenceVotes": 54
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": "Mgr. Jiří Vavera",
+      "partyId": 6,
+      "partyName": "Piráti a Starostové",
+      "preferenceVotes": 31
+    },
+    {
+      "seatNumber": 8,
+      "name": "MgA. Hana Třeštíková",
+      "partyId": 1,
+      "partyName": "PRAHA 7 SOBĚ",
+      "preferenceVotes": 37
+    },
+    {
+      "seatNumber": 9,
+      "name": "PhDr. Alina Akhmetshina",
+      "partyId": 5,
+      "partyName": "SPD pro Prahu 7 s podporou PRO a nezávislých kandidátů",
+      "preferenceVotes": 26
+    },
+    {
+      "seatNumber": 10,
+      "name": "Marek Hlaváček",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu 7",
+      "preferenceVotes": 93
+    },
+    {
+      "seatNumber": 11,
+      "name": "Roman Zikmund MBA",
+      "partyId": 5,
+      "partyName": "SPD pro Prahu 7 s podporou PRO a nezávislých kandidátů",
+      "preferenceVotes": 56
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 13,
+      "name": "David Frankošvili",
+      "partyId": 4,
+      "partyName": "ANO s podporou Motoristů",
+      "preferenceVotes": 88
+    },
+    {
+      "seatNumber": 14,
+      "name": "Jan Záhořík",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu 7",
+      "preferenceVotes": 61
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "Mgr. Jiří Hejnic",
+      "partyId": 3,
+      "partyName": "SPOLU PRO PRAHU 7",
+      "preferenceVotes": 52
+    },
+    {
+      "seatNumber": 17,
+      "name": "Bc. Patricia Fialová",
+      "partyId": 5,
+      "partyName": "SPD pro Prahu 7 s podporou PRO a nezávislých kandidátů",
+      "preferenceVotes": 82
+    },
+    {
+      "seatNumber": 18,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 19,
+      "name": "Jiří Bláha",
+      "partyId": 2,
+      "partyName": "Spojená levice pro Prahu 7",
+      "preferenceVotes": 85
+    },
+    {
+      "seatNumber": 20,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 21,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 22,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 23,
+      "name": "Bc. Ondřej Melena",
+      "partyId": 6,
+      "partyName": "Piráti a Starostové",
+      "preferenceVotes": 43
+    },
+    {
+      "seatNumber": 24,
+      "name": "Ing. Jan Ladin",
+      "partyId": 3,
+      "partyName": "SPOLU PRO PRAHU 7",
+      "preferenceVotes": 66
+    },
+    {
+      "seatNumber": 25,
+      "name": "Bc. Michelle Kushnir",
+      "partyId": 4,
+      "partyName": "ANO s podporou Motoristů",
+      "preferenceVotes": 56
+    },
+    {
+      "seatNumber": 26,
+      "name": "Mgr. Hana Šišková",
+      "partyId": 1,
+      "partyName": "PRAHA 7 SOBĚ",
+      "preferenceVotes": 54
+    },
+    {
+      "seatNumber": 27,
+      "name": "MUDr. Vlasta Příkaská",
+      "partyId": 5,
+      "partyName": "SPD pro Prahu 7 s podporou PRO a nezávislých kandidátů",
+      "preferenceVotes": 72
+    },
+    {
+      "seatNumber": 28,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 29,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

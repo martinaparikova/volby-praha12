@@ -5,8 +5,8 @@
   "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
   "generatedAt": null,
   "totalSeats": 35,
-  "precinctsTotal": 34,
-  "precinctsCounted": 21,
+  "precinctsTotal": 36,
+  "precinctsCounted": 20,
   "turnoutPercent": 47.1,
   "parties": [
     {
@@ -82,28 +82,28 @@
       "name": "Jakub Němec MBA",
       "partyId": 10,
       "partyName": "Motoristé sobě",
-      "preferenceVotes": 35
+      "preferenceVotes": 80
     },
     {
       "seatNumber": 2,
-      "name": "Vladimír Pluháček",
-      "partyId": 10,
-      "partyName": "Motoristé sobě",
-      "preferenceVotes": 40
-    },
-    {
-      "seatNumber": 3,
       "name": null,
       "partyId": null,
       "partyName": null,
       "preferenceVotes": null
     },
     {
+      "seatNumber": 3,
+      "name": "Ing. Robert Tietz",
+      "partyId": 7,
+      "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
+      "preferenceVotes": 81
+    },
+    {
       "seatNumber": 4,
       "name": "Mgr. Eva Češpiva",
       "partyId": 6,
       "partyName": "OBČANÉ DVANÁCTKY",
-      "preferenceVotes": 98
+      "preferenceVotes": 89
     },
     {
       "seatNumber": 5,
@@ -138,28 +138,28 @@
       "name": "Bc. Verona Ballay",
       "partyId": 11,
       "partyName": "PRAHA 12 SOBĚ",
-      "preferenceVotes": 51
+      "preferenceVotes": 92
     },
     {
       "seatNumber": 10,
       "name": "Mgr. Jiří Růžička",
       "partyId": 11,
       "partyName": "PRAHA 12 SOBĚ",
-      "preferenceVotes": 21
+      "preferenceVotes": 28
     },
     {
       "seatNumber": 11,
       "name": "Bc. Veronika Horčičková",
       "partyId": 10,
       "partyName": "Motoristé sobě",
-      "preferenceVotes": 20
+      "preferenceVotes": 76
     },
     {
       "seatNumber": 12,
       "name": "PhDr. Bc. Daniela Rázková",
       "partyId": 8,
       "partyName": "Starostové se Změnou pro Prahu 12",
-      "preferenceVotes": 72
+      "preferenceVotes": 54
     },
     {
       "seatNumber": 13,
@@ -180,42 +180,42 @@
       "name": "Michaela Černá",
       "partyId": 3,
       "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 26
+      "preferenceVotes": 51
     },
     {
       "seatNumber": 16,
-      "name": "Ing. Eva Tylová",
-      "partyId": 9,
-      "partyName": "Piráti Praha 12",
-      "preferenceVotes": 26
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
       "name": "PhDr. Petr Balla",
       "partyId": 6,
       "partyName": "OBČANÉ DVANÁCTKY",
-      "preferenceVotes": 79
+      "preferenceVotes": 165
     },
     {
       "seatNumber": 18,
       "name": "Hana Francová",
       "partyId": 7,
       "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
-      "preferenceVotes": 46
+      "preferenceVotes": 32
     },
     {
       "seatNumber": 19,
       "name": "Mgr. Nikola Turková",
       "partyId": 8,
       "partyName": "Starostové se Změnou pro Prahu 12",
-      "preferenceVotes": 60
+      "preferenceVotes": 39
     },
     {
       "seatNumber": 20,
       "name": "Bc. Tomáš Brotánek MBA",
       "partyId": 5,
       "partyName": "Svobodní",
-      "preferenceVotes": 34
+      "preferenceVotes": 71
     },
     {
       "seatNumber": 21,
@@ -229,7 +229,7 @@
       "name": "Ing. Ladislav Pelcl",
       "partyId": 11,
       "partyName": "PRAHA 12 SOBĚ",
-      "preferenceVotes": 90
+      "preferenceVotes": 86
     },
     {
       "seatNumber": 23,
@@ -240,17 +240,17 @@
     },
     {
       "seatNumber": 24,
-      "name": "Mgr. Bc. Dana Balla",
-      "partyId": 6,
-      "partyName": "OBČANÉ DVANÁCTKY",
-      "preferenceVotes": 57
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,
       "name": "Bc. Hana Kapasná",
       "partyId": 7,
       "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
-      "preferenceVotes": 137
+      "preferenceVotes": 33
     },
     {
       "seatNumber": 26,
@@ -261,45 +261,45 @@
     },
     {
       "seatNumber": 27,
-      "name": null,
-      "partyId": null,
-      "partyName": null,
-      "preferenceVotes": null
-    },
-    {
-      "seatNumber": 28,
       "name": "Ing. Vojtěch Kos MBA",
       "partyId": 3,
       "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 20
+      "preferenceVotes": 55
     },
     {
-      "seatNumber": 29,
+      "seatNumber": 28,
       "name": "Ing. Hana Wiesnerová Ph.D.",
       "partyId": 1,
       "partyName": "TOP 09 & SOUSEDÉ PRO DVANÁCTKU",
-      "preferenceVotes": 78
+      "preferenceVotes": 26
     },
     {
-      "seatNumber": 30,
+      "seatNumber": 29,
       "name": "Bc. Věra Zrůstová",
       "partyId": 7,
       "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
-      "preferenceVotes": 78
+      "preferenceVotes": 75
     },
     {
-      "seatNumber": 31,
+      "seatNumber": 30,
       "name": null,
       "partyId": null,
       "partyName": null,
       "preferenceVotes": null
     },
     {
+      "seatNumber": 31,
+      "name": "Vladimír Pluháček",
+      "partyId": 10,
+      "partyName": "Motoristé sobě",
+      "preferenceVotes": 95
+    },
+    {
       "seatNumber": 32,
-      "name": "Ing. Robert Tietz",
-      "partyId": 7,
-      "partyName": "SPD pro Prahu 12 s podporou Sociální demokracie a PŘÍSAHA občanské hnutí",
-      "preferenceVotes": 137
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 33,
@@ -317,10 +317,10 @@
     },
     {
       "seatNumber": 35,
-      "name": "Vladimír Vaněk",
+      "name": "Mgr. Bc. Dana Balla",
       "partyId": 6,
       "partyName": "OBČANÉ DVANÁCTKY",
-      "preferenceVotes": 69
+      "preferenceVotes": 81
     }
   ]
 }

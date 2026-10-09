@@ -1,0 +1,224 @@
+{
+  "municipality": "Praha 17",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 23,
+  "precinctsTotal": 17,
+  "precinctsCounted": 10,
+  "turnoutPercent": 36.7,
+  "parties": [
+    {
+      "id": 8,
+      "name": "Řepští sousedé",
+      "votesPercent": 24.6,
+      "seats": 6
+    },
+    {
+      "id": 7,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votesPercent": 18.7,
+      "seats": 4
+    },
+    {
+      "id": 2,
+      "name": "ŘEPY SOBĚ",
+      "votesPercent": 15.5,
+      "seats": 4
+    },
+    {
+      "id": 1,
+      "name": "sdružení Občanské demokratické strany a nezávislých kandidátů",
+      "votesPercent": 12.0,
+      "seats": 3
+    },
+    {
+      "id": 5,
+      "name": "SPD pro Prahu 17 s podporou Trikolory, Manifest a PRO",
+      "votesPercent": 8.8,
+      "seats": 2
+    },
+    {
+      "id": 6,
+      "name": "Komunistická strana Čech a Moravy",
+      "votesPercent": 8.4,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "name": "KDU-ČSL",
+      "votesPercent": 6.7,
+      "seats": 1
+    },
+    {
+      "id": 4,
+      "name": "ANO 2011",
+      "votesPercent": 5.3,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": "Stanislav Opluštil",
+      "partyId": 2,
+      "partyName": "ŘEPY SOBĚ",
+      "preferenceVotes": 23
+    },
+    {
+      "seatNumber": 2,
+      "name": "Ing. Lenka Malinkovičová",
+      "partyId": 8,
+      "partyName": "Řepští sousedé",
+      "preferenceVotes": 123
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": "PhDr. Jitka Synková",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 68
+    },
+    {
+      "seatNumber": 9,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 10,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 11,
+      "name": "Jana Slížová",
+      "partyId": 2,
+      "partyName": "ŘEPY SOBĚ",
+      "preferenceVotes": 50
+    },
+    {
+      "seatNumber": 12,
+      "name": "PhDr. Jiří Horák CSc.",
+      "partyId": 6,
+      "partyName": "Komunistická strana Čech a Moravy",
+      "preferenceVotes": 27
+    },
+    {
+      "seatNumber": 13,
+      "name": "Mgr. Marcela Fatrová DiS.",
+      "partyId": 7,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 74
+    },
+    {
+      "seatNumber": 14,
+      "name": "Miroslav Bartoš",
+      "partyId": 6,
+      "partyName": "Komunistická strana Čech a Moravy",
+      "preferenceVotes": 17
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "pplk. v. v. JUDr. Karel Dufek",
+      "partyId": 5,
+      "partyName": "SPD pro Prahu 17 s podporou Trikolory, Manifest a PRO",
+      "preferenceVotes": 16
+    },
+    {
+      "seatNumber": 17,
+      "name": "Mgr. Bořek Černovský",
+      "partyId": 2,
+      "partyName": "ŘEPY SOBĚ",
+      "preferenceVotes": 61
+    },
+    {
+      "seatNumber": 18,
+      "name": "Mgr. Alena Kopejtková",
+      "partyId": 1,
+      "partyName": "sdružení Občanské demokratické strany a nezávislých kandidátů",
+      "preferenceVotes": 48
+    },
+    {
+      "seatNumber": 19,
+      "name": "Bc. Martin Jaroš DiS.",
+      "partyId": 8,
+      "partyName": "Řepští sousedé",
+      "preferenceVotes": 61
+    },
+    {
+      "seatNumber": 20,
+      "name": "Ing. Jaroslava Šimonová",
+      "partyId": 3,
+      "partyName": "KDU-ČSL",
+      "preferenceVotes": 23
+    },
+    {
+      "seatNumber": 21,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 22,
+      "name": "Barbora Patrovská",
+      "partyId": 2,
+      "partyName": "ŘEPY SOBĚ",
+      "preferenceVotes": 44
+    },
+    {
+      "seatNumber": 23,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

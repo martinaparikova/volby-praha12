@@ -1,0 +1,164 @@
+{
+  "municipality": "Praha 21",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 17,
+  "precinctsTotal": 15,
+  "precinctsCounted": 7,
+  "turnoutPercent": 33.6,
+  "parties": [
+    {
+      "id": 1,
+      "name": "ANO 2011",
+      "votesPercent": 28.8,
+      "seats": 5
+    },
+    {
+      "id": 5,
+      "name": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
+      "votesPercent": 23.2,
+      "seats": 4
+    },
+    {
+      "id": 4,
+      "name": "Otevřený Újezd – pro dobrý život bez planých slibů",
+      "votesPercent": 16.9,
+      "seats": 3
+    },
+    {
+      "id": 3,
+      "name": "ÚJEZD21",
+      "votesPercent": 16.7,
+      "seats": 3
+    },
+    {
+      "id": 2,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ – ÚJEZD ŽIJE",
+      "votesPercent": 14.3,
+      "seats": 2
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 2,
+      "name": "Robert Kučera",
+      "partyId": 4,
+      "partyName": "Otevřený Újezd – pro dobrý život bez planých slibů",
+      "preferenceVotes": 67
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": "MUDr. Zita Kazdová",
+      "partyId": 4,
+      "partyName": "Otevřený Újezd – pro dobrý život bez planých slibů",
+      "preferenceVotes": 35
+    },
+    {
+      "seatNumber": 5,
+      "name": "Mgr. Milan Balahura",
+      "partyId": 1,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 28
+    },
+    {
+      "seatNumber": 6,
+      "name": "Jan Jackanič DiS.",
+      "partyId": 3,
+      "partyName": "ÚJEZD21",
+      "preferenceVotes": 42
+    },
+    {
+      "seatNumber": 7,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 8,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 9,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 10,
+      "name": "Ing. Petr Klinger",
+      "partyId": 1,
+      "partyName": "ANO 2011",
+      "preferenceVotes": 53
+    },
+    {
+      "seatNumber": 11,
+      "name": "Milan Samec",
+      "partyId": 5,
+      "partyName": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
+      "preferenceVotes": 67
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": "Ing. Marek Buchtel",
+      "partyId": 3,
+      "partyName": "ÚJEZD21",
+      "preferenceVotes": 25
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "Ing. Michal Hazdra",
+      "partyId": 5,
+      "partyName": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
+      "preferenceVotes": 90
+    },
+    {
+      "seatNumber": 17,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    }
+  ]
+}

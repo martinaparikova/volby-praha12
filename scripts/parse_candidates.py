@@ -14,19 +14,40 @@ import tempfile
 
 from bs4 import BeautifulSoup
 
+def _municipality(number, slug_with_id):
+    return {
+        "name": f"Praha {number}",
+        "html_file": f"praha{number}_candidates.html",
+        "source_url": f"https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/{slug_with_id}",
+        "out_file": f"candidates-praha{number}.json",
+    }
+
+
+# All 22 numbered Prague city districts (Praha 1-22). The trailing number in
+# each slug is the ČSÚ "ZUJ" code for that district on poradnaproobce.cz.
 MUNICIPALITIES = {
-    "praha12": {
-        "name": "Praha 12",
-        "html_file": "praha12_candidates.html",
-        "source_url": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107",
-        "out_file": "candidates-praha12.json",
-    },
-    "praha11": {
-        "name": "Praha 11",
-        "html_file": "praha11_candidates.html",
-        "source_url": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-11-547034",
-        "out_file": "candidates-praha11.json",
-    },
+    "praha1": _municipality(1, "praha-1-500054"),
+    "praha2": _municipality(2, "praha-2-500089"),
+    "praha3": _municipality(3, "praha-3-500097"),
+    "praha4": _municipality(4, "praha-4-500119"),
+    "praha5": _municipality(5, "praha-5-500143"),
+    "praha6": _municipality(6, "praha-6-500178"),
+    "praha7": _municipality(7, "praha-7-500186"),
+    "praha8": _municipality(8, "praha-8-500208"),
+    "praha9": _municipality(9, "praha-9-500216"),
+    "praha10": _municipality(10, "praha-10-500224"),
+    "praha11": _municipality(11, "praha-11-547034"),
+    "praha12": _municipality(12, "praha-12-547107"),
+    "praha13": _municipality(13, "praha-13-539694"),
+    "praha14": _municipality(14, "praha-14-547361"),
+    "praha15": _municipality(15, "praha-15-547387"),
+    "praha16": _municipality(16, "praha-16-539601"),
+    "praha17": _municipality(17, "praha-17-547174"),
+    "praha18": _municipality(18, "praha-18-547417"),
+    "praha19": _municipality(19, "praha-19-547344"),
+    "praha20": _municipality(20, "praha-20-538213"),
+    "praha21": _municipality(21, "praha-21-538949"),
+    "praha22": _municipality(22, "praha-22-538931"),
 }
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
