@@ -729,29 +729,48 @@ main {
 
 .seats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: .6rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: .5rem;
 }
 .seat-card {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: .6rem .7rem;
+  padding: .45rem .7rem;
   display: flex;
   flex-direction: column;
-  gap: .25rem;
-  min-height: 72px;
+  justify-content: center;
+  gap: .15rem;
+  min-height: 48px;
   background: var(--color-bg);
 }
+.seat-card__top {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  min-width: 0;
+}
 .seat-card__number {
+  flex: none;
   font-size: .68rem;
   font-weight: 700;
   color: var(--color-text-muted);
   font-family: var(--font-heading);
 }
 .seat-card__name {
+  flex: 1;
+  min-width: 0;
   font-size: .82rem;
   font-weight: 700;
   line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.seat-card__votes {
+  flex: none;
+  font-size: .68rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 .seat-card__party {
   font-size: .7rem;
@@ -762,12 +781,24 @@ main {
 }
 .seat-card--pending {
   border-style: dashed;
-  align-items: center;
-  justify-content: center;
   color: var(--color-text-muted);
 }
 .seat-card--pending .seat-card__name { font-weight: 500; font-size: .78rem; color: var(--color-text-muted); }
 .seat-card--filled { border-color: color-mix(in srgb, var(--color-pink) 35%, var(--color-border)); }
+
+/* Alternating background + border per party group, so seats sorted by
+   party read as clearly separated bands even though they share one grid.
+   Only filled cards get a stripe (pending ones have no known party). */
+.seat-card--filled.seat-card--stripe-a {
+  background: color-mix(in srgb, var(--color-pink) 14%, var(--color-bg));
+  border-color: color-mix(in srgb, var(--color-pink) 55%, var(--color-border));
+  border-left-width: 3px;
+}
+.seat-card--filled.seat-card--stripe-b {
+  background: color-mix(in srgb, var(--color-green) 20%, var(--color-bg));
+  border-color: color-mix(in srgb, var(--color-green) 55%, var(--color-border));
+  border-left-width: 3px;
+}
 
 /* ===================== Footer ===================== */
 .site-footer {

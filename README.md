@@ -81,10 +81,16 @@ Formát souboru `results-*.json`:
   "turnoutPercent": 47.2,        // volební účast
   "totalSeats": 35,              // velikost zastupitelstva
   "parties": [ { "id": 1, "name": "...", "votesPercent": 20.5, "seats": 8 } ],
-  "seats": [ { "seatNumber": 1, "name": "Jméno Příjmení", "partyId": 1, "partyName": "..." } ]
-  // "name"/"partyId"/"partyName" = null u dosud nerozhodnutého křesla
+  "seats": [ { "seatNumber": 1, "name": "Jméno Příjmení", "partyId": 1, "partyName": "...", "preferenceVotes": 187 } ]
+  // "name"/"partyId"/"partyName"/"preferenceVotes" = null u dosud nerozhodnutého křesla
 }
 ```
+
+V záložce Výsledky se karty v `#results-seats-grid` zobrazují seřazené podle
+stran (v pořadí dle `parties`, tj. podle podílu hlasů) a uvnitř strany podle
+`preferenceVotes` sestupně; jednotlivé strany jsou odlišené střídavým
+podbarvením karet. Dosud nerozhodnutá křesla (`partyId: null`) se zobrazují
+na konci.
 
 Až ČSÚ zveřejní skutečný formát (pravděpodobně XML na `volby.gov.cz/appdata/kv2026/...`,
 viz [dokumentace otevřených dat](https://volby.gov.cz/opendata/kv2026/kv2026_opendata_seznam.htm)),

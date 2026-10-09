@@ -77,8 +77,19 @@ def generate(slug):
     candidates_by_party = {p["id"]: sorted(p["candidates"], key=lambda c: c["number"] or 999) for p in parties_src}
     filled_seats = []
     for p in party_results:
-        for c in candidates_by_party[p["id"]][: p["seats"]]:
-            filled_seats.append({"name": c["name"], "partyId": p["id"], "partyName": p["name"]})
+        for idx, c in enumerate(candidates_by_party[p["id"]][: p["seats"]]):
+            # Plausible preferential-vote counts: roughly proportional to the
+            # party's vote total, mildly decreasing by ballot position, with
+            # randomness so it doesn't look mechanically generated.
+            base = p["votes"] * rng.uniform(0.04, 0.22)
+            decay = max(1 - idx * 0.08, 0.3)
+            preference_votes = max(5, round(base * decay))
+            filled_seats.append({
+                "name": c["name"],
+                "partyId": p["id"],
+                "partyName": p["name"],
+                "preferenceVotes": preference_votes,
+            })
 
     rng.shuffle(filled_seats)
 
@@ -94,7 +105,7 @@ def generate(slug):
         if i < confirmed_count:
             seats.append({"seatNumber": i + 1, **filled_seats[i]})
         else:
-            seats.append({"seatNumber": i + 1, "name": None, "partyId": None, "partyName": None})
+            seats.append({"seatNumber": i + 1, "name": None, "partyId": None, "partyName": None, "preferenceVotes": None})
     rng.shuffle(seats)
     for i, s in enumerate(seats, start=1):
         s["seatNumber"] = i
@@ -103,6 +114,9 @@ def generate(slug):
     # too, so the party table looks consistent with "not fully counted yet".
     for p in party_results:
         p["votes"] = round(p["votes"] * progress)
+    for s in seats:
+        if s["preferenceVotes"] is not None:
+            s["preferenceVotes"] = round(s["preferenceVotes"] * progress)
 
     result = {
         "municipality": candidates_data["municipality"],

@@ -265,20 +265,58 @@
     const confirmed = r.seats.filter((s) => s.name).length;
     document.getElementById("results-seats-confirmed").textContent = confirmed;
     document.getElementById("results-seats-total").textContent = r.totalSeats;
-    document.getElementById("results-seats-grid").innerHTML = r.seats
-      .map((s) =>
-        s.name
-          ? `<div class="seat-card seat-card--filled">
-              <span class="seat-card__number">#${s.seatNumber}</span>
-              <span class="seat-card__name">${s.name}</span>
-              <span class="seat-card__party" title="${s.partyName}">${s.partyName}</span>
-            </div>`
-          : `<div class="seat-card seat-card--pending">
-              <span class="seat-card__number">#${s.seatNumber}</span>
-              <span class="seat-card__name">čeká na výsledek</span>
-            </div>`
+    document.getElementById("results-seats-grid").innerHTML = groupSeatsByParty(r)
+      .flatMap((group, groupIndex) =>
+        group.items.map((s) => {
+          const stripe = groupIndex % 2 === 0 ? "seat-card--stripe-a" : "seat-card--stripe-b";
+          return s.name
+            ? `<div class="seat-card seat-card--filled ${stripe}">
+                <div class="seat-card__top">
+                  <span class="seat-card__number">#${s.seatNumber}</span>
+                  <span class="seat-card__name" title="${s.name}">${s.name}</span>
+                  <span class="seat-card__votes" title="${s.preferenceVotes}\u00a0preferenčních hlasů">${s.preferenceVotes}&nbsp;hl.</span>
+                </div>
+                <span class="seat-card__party" title="${s.partyName}">${s.partyName}</span>
+              </div>`
+            : `<div class="seat-card seat-card--pending ${stripe}">
+                <div class="seat-card__top">
+                  <span class="seat-card__number">#${s.seatNumber}</span>
+                  <span class="seat-card__name">čeká na výsledek</span>
+                </div>
+              </div>`;
+        })
       )
       .join("");
+  }
+
+  // Groups council seats by party (in the same order as the party results
+  // table, i.e. most votes first) and sorts each group by preferential
+  // votes, so the grid visually matches "who's ahead" at a glance.
+  // Not-yet-confirmed seats (no party assigned) are collected into a last
+  // group. The caller alternates a background stripe per returned group.
+  function groupSeatsByParty(r) {
+    const seatsByParty = new Map();
+    const pending = [];
+    r.seats.forEach((s) => {
+      if (s.partyId == null) {
+        pending.push(s);
+        return;
+      }
+      if (!seatsByParty.has(s.partyId)) seatsByParty.set(s.partyId, []);
+      seatsByParty.get(s.partyId).push(s);
+    });
+
+    const groups = r.parties
+      .filter((p) => seatsByParty.has(p.id))
+      .map((p) => ({
+        partyId: p.id,
+        items: seatsByParty.get(p.id).sort((a, b) => (b.preferenceVotes || 0) - (a.preferenceVotes || 0)),
+      }));
+
+    if (pending.length) {
+      groups.push({ partyId: null, items: pending.sort((a, b) => a.seatNumber - b.seatNumber) });
+    }
+    return groups;
   }
 
   /* ===================== Hero stats ===================== */
