@@ -1,18 +1,27 @@
 (() => {
   "use strict";
 
-  // All 22 numbered Prague city districts (Praha 1-22).
-  const MUNICIPALITIES = Object.fromEntries(
-    Array.from({ length: 22 }, (_, i) => i + 1).map((n) => [
-      `praha${n}`,
-      {
-        label: `Praha ${n}`,
-        badge: `P${n}`,
-        file: `data/candidates-praha${n}.json`,
-        resultsFile: `data/results-praha${n}.json`,
-      },
-    ])
-  );
+  // City-wide council (Zastupitelstvo hlavního města Prahy) plus all 22
+  // numbered Prague city districts (Praha 1-22).
+  const MUNICIPALITIES = {
+    magistrat: {
+      label: "Magistrát hl. m. Prahy",
+      badge: "MHMP",
+      file: "data/candidates-magistrat.json",
+      resultsFile: "data/results-magistrat.json",
+    },
+    ...Object.fromEntries(
+      Array.from({ length: 22 }, (_, i) => i + 1).map((n) => [
+        `praha${n}`,
+        {
+          label: `Praha ${n}`,
+          badge: `P${n}`,
+          file: `data/candidates-praha${n}.json`,
+          resultsFile: `data/results-praha${n}.json`,
+        },
+      ])
+    ),
+  };
   const DEFAULT_MUNICIPALITY = "praha12";
   const RESULTS_AUTOREFRESH_MS = 60000;
 
@@ -179,9 +188,11 @@
     }
   }
 
-  // Quick Czech locative-case helper for the two supported districts, used
-  // in the "Kdo kandiduje v ...?" heading (e.g. "Praze 12", "Praze 11").
+  // Quick Czech locative-case helper for the Prague districts plus the
+  // city-wide council, used in the "Kdo kandiduje v ...?" heading (e.g.
+  // "Praze 12", "Praze 11", "Praze" for the city-wide magistrát).
   function toLocative(label) {
+    if (label === "Magistrát hl. m. Prahy") return "Praze";
     return label.replace(/^Praha(\s+\d+)/, "Praze$1").replace(" ", "&nbsp;");
   }
 

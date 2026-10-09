@@ -48,6 +48,13 @@ MUNICIPALITIES = {
     "praha20": _municipality(20, "praha-20-538213"),
     "praha21": _municipality(21, "praha-21-538949"),
     "praha22": _municipality(22, "praha-22-538931"),
+    # City-wide council (Zastupitelstvo hlavního města Prahy), not a district.
+    "magistrat": {
+        "name": "Magistrát hl. m. Prahy",
+        "html_file": "magistrat_candidates.html",
+        "source_url": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-554782",
+        "out_file": "candidates-magistrat.json",
+    },
 }
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")

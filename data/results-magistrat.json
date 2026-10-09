@@ -1,0 +1,614 @@
+{
+  "municipality": "Magistrát hl. m. Prahy",
+  "election": "Volby do zastupitelstev obcí 2026",
+  "isSample": true,
+  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
+  "generatedAt": null,
+  "totalSeats": 65,
+  "precinctsTotal": 1179,
+  "precinctsCounted": 596,
+  "turnoutPercent": 30.6,
+  "parties": [
+    {
+      "id": 4,
+      "name": "Urza.cz: Nechceme vaše hlasy; ke svobodě se nelze provolit. Odmítneme každou politickou funkci; nechceme totiž lidem nařizovat, jak mají žít. Máme jinou vizi. Jdeme jinou cestou — najdete ji na webu www.urza.cz.",
+      "votesPercent": 6.6,
+      "seats": 5
+    },
+    {
+      "id": 18,
+      "name": "PATRIOTI PRO PRAHU",
+      "votesPercent": 6.2,
+      "seats": 4
+    },
+    {
+      "id": 20,
+      "name": "Spojená levice pro Prahu (KSČM, ČSSD, KSČ)",
+      "votesPercent": 6.2,
+      "seats": 4
+    },
+    {
+      "id": 9,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votesPercent": 6.0,
+      "seats": 4
+    },
+    {
+      "id": 12,
+      "name": "SPOLU pro Prahu",
+      "votesPercent": 5.8,
+      "seats": 4
+    },
+    {
+      "id": 13,
+      "name": "Levice",
+      "votesPercent": 5.7,
+      "seats": 4
+    },
+    {
+      "id": 11,
+      "name": "GEN s podporou veřejnosti",
+      "votesPercent": 5.5,
+      "seats": 4
+    },
+    {
+      "id": 21,
+      "name": "Volte Pravý Blok - stranu za snadnou a rychlou ODVOLATELNOST politiků a státních úředníků PŘÍMO OBČANY, za NÍZKÉ daně, VYROVNANÝ rozpočet, MINIMALIZACI byrokracie, SPRAVEDLIVOU a NEZKORUMPOVANOU policii a justici, REFERENDA a PŘÍMOU demokracii WWW.CI",
+      "votesPercent": 5.2,
+      "seats": 4
+    },
+    {
+      "id": 22,
+      "name": "ANO 2011",
+      "votesPercent": 5.1,
+      "seats": 3
+    },
+    {
+      "id": 16,
+      "name": "JSME PRAHA",
+      "votesPercent": 4.6,
+      "seats": 3
+    },
+    {
+      "id": 7,
+      "name": "Česká pirátská strana",
+      "votesPercent": 4.6,
+      "seats": 3
+    },
+    {
+      "id": 14,
+      "name": "Motoristé sobě",
+      "votesPercent": 4.4,
+      "seats": 3
+    },
+    {
+      "id": 8,
+      "name": "Česká strana asociálů",
+      "votesPercent": 4.2,
+      "seats": 3
+    },
+    {
+      "id": 10,
+      "name": "SPD pro Prahu s podporou Trikolory, PRO, Přísahy a nezávislých kandidátů",
+      "votesPercent": 4.2,
+      "seats": 3
+    },
+    {
+      "id": 3,
+      "name": "Libertariánská strana Voluntia",
+      "votesPercent": 3.9,
+      "seats": 3
+    },
+    {
+      "id": 2,
+      "name": "ANO LEPŠÍ ČESKO S MIMOZEMŠŤANY",
+      "votesPercent": 3.9,
+      "seats": 2
+    },
+    {
+      "id": 19,
+      "name": "REZIDENTI – REBELOVÉ pro změnu Prahy",
+      "votesPercent": 3.5,
+      "seats": 2
+    },
+    {
+      "id": 24,
+      "name": "SEN PRO PRAHU s Václavem Láskou, s podporou HPP 11 a strany Mourek",
+      "votesPercent": 2.4,
+      "seats": 1
+    },
+    {
+      "id": 15,
+      "name": "Svobodní",
+      "votesPercent": 2.3,
+      "seats": 1
+    },
+    {
+      "id": 6,
+      "name": "VELKÝ KŘÍŽEK PRO LÍTAČKU ZA KAČKU - SOUSEDÉ PRO PRAHU",
+      "votesPercent": 2.2,
+      "seats": 1
+    },
+    {
+      "id": 23,
+      "name": "Naše Praha SNK ED",
+      "votesPercent": 2.2,
+      "seats": 1
+    },
+    {
+      "id": 1,
+      "name": "LEPŠÍ ŽIVOT PRO LIDI – zrušení daně z nemovitostí, min. mzda 50.000 Kč, min. důchod 30.000 Kč, návrat cen energií na ceny z roku 2019, v obchodech zboží nejvyšší kvality za ceny dostupné pro každého, STOP válce",
+      "votesPercent": 1.7,
+      "seats": 1
+    },
+    {
+      "id": 17,
+      "name": "Demokratická strana zelených - ZA PRÁVA ZVÍŘAT, sdružení DSZ - ZA PRÁVA ZVÍŘAT a NK",
+      "votesPercent": 1.7,
+      "seats": 1
+    },
+    {
+      "id": 5,
+      "name": "PRAHA SOBĚ",
+      "votesPercent": 1.7,
+      "seats": 1
+    }
+  ],
+  "seats": [
+    {
+      "seatNumber": 1,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 2,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 3,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 4,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 5,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 6,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 7,
+      "name": "Mgr. Petra Prokšanová",
+      "partyId": 20,
+      "partyName": "Spojená levice pro Prahu (KSČM, ČSSD, KSČ)",
+      "preferenceVotes": 2283
+    },
+    {
+      "seatNumber": 8,
+      "name": "Ing. Vojtěch Ryvola",
+      "partyId": 11,
+      "partyName": "GEN s podporou veřejnosti",
+      "preferenceVotes": 1596
+    },
+    {
+      "seatNumber": 9,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 10,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 11,
+      "name": "Martin Urza",
+      "partyId": 4,
+      "partyName": "Urza.cz: Nechceme vaše hlasy; ke svobodě se nelze provolit. Odmítneme každou politickou funkci; nechceme totiž lidem nařizovat, jak mají žít. Máme jinou vizi. Jdeme jinou cestou — najdete ji na webu www.urza.cz.",
+      "preferenceVotes": 2984
+    },
+    {
+      "seatNumber": 12,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 13,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 14,
+      "name": "Tadeáš Janků",
+      "partyId": 3,
+      "partyName": "Libertariánská strana Voluntia",
+      "preferenceVotes": 1353
+    },
+    {
+      "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": "Mgr. Klára Sovová",
+      "partyId": 14,
+      "partyName": "Motoristé sobě",
+      "preferenceVotes": 1379
+    },
+    {
+      "seatNumber": 17,
+      "name": "Jiří Dubský",
+      "partyId": 2,
+      "partyName": "ANO LEPŠÍ ČESKO S MIMOZEMŠŤANY",
+      "preferenceVotes": 1741
+    },
+    {
+      "seatNumber": 18,
+      "name": "Mgr. Michal Janovský",
+      "partyId": 18,
+      "partyName": "PATRIOTI PRO PRAHU",
+      "preferenceVotes": 688
+    },
+    {
+      "seatNumber": 19,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 20,
+      "name": "Jiří Benýšek",
+      "partyId": 23,
+      "partyName": "Naše Praha SNK ED",
+      "preferenceVotes": 245
+    },
+    {
+      "seatNumber": 21,
+      "name": "doc. Ing. arch. Petr Hlaváček",
+      "partyId": 9,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 2427
+    },
+    {
+      "seatNumber": 22,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 23,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 24,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 25,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 26,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 27,
+      "name": "Ing. Adam Scheinherr MSc., Ph.D.",
+      "partyId": 5,
+      "partyName": "PRAHA SOBĚ",
+      "preferenceVotes": 502
+    },
+    {
+      "seatNumber": 28,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 29,
+      "name": "Adam Paclt",
+      "partyId": 14,
+      "partyName": "Motoristé sobě",
+      "preferenceVotes": 812
+    },
+    {
+      "seatNumber": 30,
+      "name": "Jiří Vítek",
+      "partyId": 18,
+      "partyName": "PATRIOTI PRO PRAHU",
+      "preferenceVotes": 3350
+    },
+    {
+      "seatNumber": 31,
+      "name": "Jiří Svoboda DiS.",
+      "partyId": 20,
+      "partyName": "Spojená levice pro Prahu (KSČM, ČSSD, KSČ)",
+      "preferenceVotes": 1561
+    },
+    {
+      "seatNumber": 32,
+      "name": "Hugo Štolba",
+      "partyId": 6,
+      "partyName": "VELKÝ KŘÍŽEK PRO LÍTAČKU ZA KAČKU - SOUSEDÉ PRO PRAHU",
+      "preferenceVotes": 485
+    },
+    {
+      "seatNumber": 33,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 34,
+      "name": "Lia Nova",
+      "partyId": 8,
+      "partyName": "Česká strana asociálů",
+      "preferenceVotes": 1583
+    },
+    {
+      "seatNumber": 35,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 36,
+      "name": "Ilona Svobodová",
+      "partyId": 11,
+      "partyName": "GEN s podporou veřejnosti",
+      "preferenceVotes": 889
+    },
+    {
+      "seatNumber": 37,
+      "name": "Mgr. Adam Zábranský",
+      "partyId": 7,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 1556
+    },
+    {
+      "seatNumber": 38,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 39,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 40,
+      "name": "Ing. Alexandra Udženija",
+      "partyId": 12,
+      "partyName": "SPOLU pro Prahu",
+      "preferenceVotes": 1338
+    },
+    {
+      "seatNumber": 41,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 42,
+      "name": "Jiří Fořt DiS.",
+      "partyId": 10,
+      "partyName": "SPD pro Prahu s podporou Trikolory, PRO, Přísahy a nezávislých kandidátů",
+      "preferenceVotes": 2045
+    },
+    {
+      "seatNumber": 43,
+      "name": "prof. MUDr. Zdeněk Seidl CSc.",
+      "partyId": 10,
+      "partyName": "SPD pro Prahu s podporou Trikolory, PRO, Přísahy a nezávislých kandidátů",
+      "preferenceVotes": 1185
+    },
+    {
+      "seatNumber": 44,
+      "name": "Mgr. Eliška Čepová",
+      "partyId": 9,
+      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
+      "preferenceVotes": 1927
+    },
+    {
+      "seatNumber": 45,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 46,
+      "name": "Mgr. Ondřej Chrást",
+      "partyId": 16,
+      "partyName": "JSME PRAHA",
+      "preferenceVotes": 1905
+    },
+    {
+      "seatNumber": 47,
+      "name": "Tomáš Vrla",
+      "partyId": 8,
+      "partyName": "Česká strana asociálů",
+      "preferenceVotes": 1083
+    },
+    {
+      "seatNumber": 48,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 49,
+      "name": "Ing. Roman Mejstřík",
+      "partyId": 11,
+      "partyName": "GEN s podporou veřejnosti",
+      "preferenceVotes": 2001
+    },
+    {
+      "seatNumber": 50,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 51,
+      "name": "Ing. Petr Vlček",
+      "partyId": 20,
+      "partyName": "Spojená levice pro Prahu (KSČM, ČSSD, KSČ)",
+      "preferenceVotes": 2132
+    },
+    {
+      "seatNumber": 52,
+      "name": "Bc. Michal Hroza",
+      "partyId": 12,
+      "partyName": "SPOLU pro Prahu",
+      "preferenceVotes": 1521
+    },
+    {
+      "seatNumber": 53,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 54,
+      "name": "Mgr. Pavel Čižinský",
+      "partyId": 13,
+      "partyName": "Levice",
+      "preferenceVotes": 1805
+    },
+    {
+      "seatNumber": 55,
+      "name": "Mgr. Václav Láska",
+      "partyId": 24,
+      "partyName": "SEN PRO PRAHU s Václavem Láskou, s podporou HPP 11 a strany Mourek",
+      "preferenceVotes": 688
+    },
+    {
+      "seatNumber": 56,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 57,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 58,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 59,
+      "name": "Mgr. Jan Májíček",
+      "partyId": 13,
+      "partyName": "Levice",
+      "preferenceVotes": 1533
+    },
+    {
+      "seatNumber": 60,
+      "name": "Petr Cibulka",
+      "partyId": 21,
+      "partyName": "Volte Pravý Blok - stranu za snadnou a rychlou ODVOLATELNOST politiků a státních úředníků PŘÍMO OBČANY, za NÍZKÉ daně, VYROVNANÝ rozpočet, MINIMALIZACI byrokracie, SPRAVEDLIVOU a NEZKORUMPOVANOU policii a justici, REFERENDA a PŘÍMOU demokracii WWW.CI",
+      "preferenceVotes": 1463
+    },
+    {
+      "seatNumber": 61,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 62,
+      "name": "Mgr. Tomáš Portlík",
+      "partyId": 12,
+      "partyName": "SPOLU pro Prahu",
+      "preferenceVotes": 1503
+    },
+    {
+      "seatNumber": 63,
+      "name": "Marek Skoček",
+      "partyId": 21,
+      "partyName": "Volte Pravý Blok - stranu za snadnou a rychlou ODVOLATELNOST politiků a státních úředníků PŘÍMO OBČANY, za NÍZKÉ daně, VYROVNANÝ rozpočet, MINIMALIZACI byrokracie, SPRAVEDLIVOU a NEZKORUMPOVANOU policii a justici, REFERENDA a PŘÍMOU demokracii WWW.CI",
+      "preferenceVotes": 2406
+    },
+    {
+      "seatNumber": 64,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 65,
+      "name": "Mgr. Ing. Jaromír Beránek",
+      "partyId": 7,
+      "partyName": "Česká pirátská strana",
+      "preferenceVotes": 1165
+    }
+  ]
+}

@@ -1,13 +1,15 @@
-# Volby Praha 1–22 — přehled kandidátů 2026
+# Volby Praha 1–22 a Magistrát — přehled kandidátů 2026
 
 Statická webová aplikace s přehledem kandidátů do zastupitelstev všech 22
-číslovaných městských částí Prahy (Praha 1 až Praha 22) pro komunální volby
-2026 (9.–10. 10. 2026). Přepínání mezi městskými částmi je vpravo nahoře
-v hlavičce (rozbalovací seznam).
+číslovaných městských částí Prahy (Praha 1 až Praha 22) a celoměstského
+Zastupitelstva hlavního města Prahy (magistrát) pro komunální volby 2026
+(9.–10. 10. 2026). Přepínání mezi nimi je vpravo nahoře v hlavičce
+(rozbalovací seznam).
 
 ## Funkce
 
-- Přepínání mezi 22 městskými částmi (Praha 1–22) — vpravo nahoře.
+- Přepínání mezi 22 městskými částmi (Praha 1–22) a magistrátem (celoměstské
+  Zastupitelstvo hl. m. Prahy) — vpravo nahoře.
 - Seznam kandidátů rozklikávací podle jednotlivých kandidátních listin, nebo
   zobrazení všech kandidátů najednou v jedné tabulce.
 - Filtrování podle věku (rozsahový slider) a pohlaví.
@@ -32,7 +34,9 @@ index.html                        # hlavní stránka
 css/styles.css                    # styly, light/dark theme
 js/app.js                         # veškerá logika — filtrování, přehledy, grafy, přepínání měst, výsledky
 data/candidates-praha{1..22}.json # strukturovaná data kandidátů pro Prahu 1-22 (generovaná)
+data/candidates-magistrat.json    # strukturovaná data kandidátů pro celoměstské zastupitelstvo (generovaná)
 data/results-praha{1..22}.json    # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
+data/results-magistrat.json       # data pro záložku Výsledky za magistrát (zatím UKÁZKOVÁ, viz níže)
 scripts/parse_candidates.py       # skript pro vygenerování candidates-*.json
 scripts/generate_sample_results.py # skript pro vygenerování ukázkových dat results-*.json
 ```
@@ -50,33 +54,37 @@ spusťte skript.
 Skutečná velikost zastupitelstva (`totalSeats`) pro každou část vychází
 z oficiálních výsledků voleb 2022 (`volby.gov.cz`) — je daná statutem městské
 části a mezi volbami se nemění; viz `DISTRICT_SEATS` ve
-`scripts/generate_sample_results.py`.
+`scripts/generate_sample_results.py` (magistrát má 65 členů, viz
+`MUNICIPALITIES["magistrat"]` tamtéž).
 
 ### Aktualizace dat
 
 1. Stáhněte aktuální HTML stránky s kandidátkami (např. přes `Invoke-WebRequest`
    s běžným prohlížečovým `User-Agent`, jinak web vrátí jen úvodní stránku)
-   do `%TEMP%\praha{N}_candidates.html` pro každou část.
+   do `%TEMP%\praha{N}_candidates.html` pro každou část (resp.
+   `%TEMP%\magistrat_candidates.html` pro celoměstské zastupitelstvo).
 2. Spusťte `python scripts/parse_candidates.py` — přegeneruje všechny soubory
-   v `data/`. Lze spustit i jen pro některá města: `python scripts/parse_candidates.py praha11 praha12`.
+   v `data/`. Lze spustit i jen pro některá města: `python scripts/parse_candidates.py praha11 praha12 magistrat`.
 
 ### Přidání další městské části
 
-Číslované části Praha 1–22 jsou už všechny zahrnuté. Pro přidání jiné (např.
-některé z menších městských částí jako Praha-Zličín) přidejte záznam do
-`MUNICIPALITIES` ve `scripts/parse_candidates.py` (název, zdrojová HTML
-stránka, URL zdroje, výstupní soubor), do `DISTRICT_SEATS`/`MUNICIPALITIES`
-ve `scripts/generate_sample_results.py` (reálná velikost zastupitelstva) a
-do `MUNICIPALITIES` v `js/app.js` (popisek, zkratka do odznaku, cesta k JSON
+Číslované části Praha 1–22 a celoměstské zastupitelstvo (magistrát) jsou už
+všechny zahrnuté. Pro přidání jiné (např. některé z menších městských částí
+jako Praha-Zličín) přidejte záznam do `MUNICIPALITIES` ve
+`scripts/parse_candidates.py` (název, zdrojová HTML stránka, URL zdroje,
+výstupní soubor), do `DISTRICT_SEATS`/`MUNICIPALITIES` ve
+`scripts/generate_sample_results.py` (reálná velikost zastupitelstva) a do
+`MUNICIPALITIES` v `js/app.js` (popisek, zkratka do odznaku, cesta k JSON
 souborům) — přepínač v `index.html` (`#municipality-select`) se pak naplní
 automaticky.
 
 ## Záložka Výsledky — stav a napojení reálných dat
 
-`data/results-praha{1..22}.json` obsahují **zatím jen ukázková, náhodně
-vygenerovaná data** (`scripts/generate_sample_results.py`), protože skutečné
-výsledky zveřejní ČSÚ až v průběhu a po volbách (9.–10. 10. 2026). Stránka na
-to upozorňuje žlutým banerem, dokud `isSample` v datech je `true`.
+`data/results-praha{1..22}.json` a `data/results-magistrat.json` obsahují
+**zatím jen ukázková, náhodně vygenerovaná data**
+(`scripts/generate_sample_results.py`), protože skutečné výsledky zveřejní
+ČSÚ až v průběhu a po volbách (9.–10. 10. 2026). Stránka na to upozorňuje
+žlutým banerem, dokud `isSample` v datech je `true`.
 
 Formát souboru `results-*.json`:
 

@@ -38,6 +38,14 @@ def _municipality(number):
 
 
 MUNICIPALITIES = {f"praha{n}": _municipality(n) for n in DISTRICT_SEATS}
+MUNICIPALITIES["magistrat"] = {
+    "candidates_file": "candidates-magistrat.json",
+    "results_file": "results-magistrat.json",
+    "seed": 2026,
+    "total_seats": 65,  # Zastupitelstvo hlavního města Prahy (volby.gov.cz, 2022)
+    "votes_per_seat": (6000, 9000),  # city-wide turnout is far higher per seat than a district
+    "precincts_range": (900, 1400),  # approx. voting precincts across the whole city
+}
 
 
 def dhondt_seats(parties, total_seats):
@@ -64,7 +72,8 @@ def generate(slug):
     # inhabitants) also show proportionally more cast votes.
     raw_weights = [rng.uniform(0.4, 1.0) ** 2 for _ in parties_src]
     total_weight = sum(raw_weights)
-    total_votes_cast = rng.randint(total_seats * 230, total_seats * 280)
+    lo, hi = config.get("votes_per_seat", (230, 280))
+    total_votes_cast = rng.randint(total_seats * lo, total_seats * hi)
     party_results = []
     for party, weight in zip(parties_src, raw_weights):
         votes = round(total_votes_cast * weight / total_weight)
@@ -105,8 +114,14 @@ def generate(slug):
 
     # Simulate "election night in progress": only some precincts counted so
     # far, so only part of the seats are confirmed yet. Precinct count is
-    # loosely scaled by council size, so bigger districts show more of them.
-    precincts_total = rng.randint(max(5, round(total_seats * 0.5)), max(8, round(total_seats * 1.0) + 5))
+    # loosely scaled by council size, so bigger districts show more of them
+    # (overridable via "precincts_range" for the city-wide council, which has
+    # far more voting precincts than any single district).
+    precincts_lo, precincts_hi = config.get(
+        "precincts_range",
+        (max(5, round(total_seats * 0.5)), max(8, round(total_seats * 1.0) + 5)),
+    )
+    precincts_total = rng.randint(precincts_lo, precincts_hi)
     progress = rng.uniform(0.45, 0.7)
     precincts_counted = max(1, round(precincts_total * progress))
     confirmed_count = max(1, round(total_seats * progress))
