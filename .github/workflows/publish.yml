@@ -61,6 +61,17 @@ jobs:
               "https://volby-praha12.cz/${path}?run=${RUN_ID}" \
               --output "$path"
           done
+          status=$(curl --silent --show-error --retry 3 \
+            "https://volby-praha12.cz/data/precincts-praha12.json?run=${RUN_ID}" \
+            --output /tmp/precincts-praha12.json --write-out '%{http_code}')
+          if [ "$status" = "200" ]; then
+            cp /tmp/precincts-praha12.json data/precincts-praha12.json
+          elif [ "$status" = "404" ]; then
+            echo "First precinct publication: importing all CSU batches."
+          else
+            echo "Failed to retrieve previous precinct results: HTTP $status" >&2
+            exit 1
+          fi
 
       - name: Fetch and validate official data
         if: steps.window.outputs.publish == 'true'
@@ -72,7 +83,7 @@ jobs:
           mkdir -p _site/data
           cp index.html CNAME _site/
           cp -r css js _site/
-          cp data/candidates-*.json data/results-*.json _site/data/
+          cp data/candidates-*.json data/results-*.json data/precincts-praha12.json _site/data/
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.window.outputs.publish == 'true'

@@ -47,6 +47,9 @@
       genderSort: "default", // 'default' | 'female' | 'male'
     },
     results: null,
+    precinctResults: null,
+    resultsStation: null,
+    resultsPrecinct: null,
     resultsAutoRefresh: true,
   };
 
@@ -185,9 +188,14 @@
     renderOverview();
 
     state.results = null;
+    state.precinctResults = null;
+    state.resultsStation = null;
+    state.resultsPrecinct = null;
+    document.getElementById("results-location-filter").hidden = true;
+    document.querySelectorAll("#tab-results > .card").forEach((card) => { card.hidden = true; });
     document.getElementById("results-error").hidden = true;
     try {
-      await loadResults(config.resultsFile);
+      await loadResults(config.resultsFile, slug);
     } catch (err) {
       state.results = null;
       showResultsError(err);
@@ -206,12 +214,23 @@
   }
 
   /* ===================== Results tab ===================== */
-  async function loadResults(file) {
-    const res = await fetch(file, { cache: "no-store" });
-    if (!res.ok) throw new Error("Nepodařilo se načíst výsledky.");
-    const json = await res.json();
+  async function loadResults(file, slug) {
+    const fetchJson = async (url, message) => {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(message);
+      return res.json();
+    };
+    const [json, precincts] = await Promise.all([
+      fetchJson(file, "Nepodařilo se načíst výsledky."),
+      slug === "praha12"
+        ? fetchJson("data/precincts-praha12.json", "Nepodařilo se načíst výsledky okrsků Prahy 12.")
+        : Promise.resolve(null),
+    ]);
+    if (slug === "praha12") validatePrecinctResults(precincts, json.parties);
+    if (slug !== state.municipality) return;
     json.fetchedAt = new Date();
     state.results = json;
+    state.precinctResults = precincts;
     document.getElementById("results-error").hidden = true;
   }
 
@@ -231,17 +250,31 @@
       if (state.resultsAutoRefresh) startResultsAutoRefresh();
       else stopResultsAutoRefresh();
     });
+    const pickers = ["results-station-picker", "results-precinct-picker"]
+      .map((id) => document.getElementById(id));
+    document.addEventListener("click", (event) => {
+      pickers.forEach((picker) => {
+        if (!picker.contains(event.target)) picker.open = false;
+      });
+    });
+    pickers.forEach((picker) => picker.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        picker.open = false;
+        picker.querySelector("summary").focus();
+      }
+    }));
   }
 
   async function refreshResults() {
-    const config = MUNICIPALITIES[state.municipality];
+    const slug = state.municipality;
+    const config = MUNICIPALITIES[slug];
     const btn = document.getElementById("results-refresh-btn");
     btn.disabled = true;
     try {
-      await loadResults(config.resultsFile);
+      await loadResults(config.resultsFile, slug);
       renderResultsTab();
     } catch (err) {
-      showResultsError(err);
+      if (slug === state.municipality) showResultsError(err);
     } finally {
       btn.disabled = false;
     }
@@ -258,6 +291,140 @@
       clearInterval(resultsTimer);
       resultsTimer = null;
     }
+  }
+
+  function validatePrecinctResults(data, parties) {
+    const nonnegative = (value) => Number.isInteger(value) && value >= 0;
+    const partyIds = new Set(parties.map((party) => String(party.id)));
+    if (!data || data.municipality !== "Praha 12" || data.electionDate !== "20261009" ||
+        !Array.isArray(data.precincts) || data.precincts.length !== 50 ||
+        !Array.isArray(data.stations) || !data.stations.length ||
+        !Number.isFinite(new Date(data.generatedAt).getTime())) {
+      throw new Error("Data okrsků Prahy 12 mají neplatný formát.");
+    }
+    const numbers = new Set();
+    for (const item of data.precincts) {
+      if (!nonnegative(item.number) || item.number < 12001 || item.number > 12050 ||
+          numbers.has(item.number) || typeof item.counted !== "boolean" ||
+          (item.counted && (!nonnegative(item.totalVotes) || !nonnegative(item.registeredVoters) ||
+            !nonnegative(item.issuedEnvelopes) || item.issuedEnvelopes > item.registeredVoters ||
+            !item.votes || Array.isArray(item.votes) || typeof item.votes !== "object" ||
+            Object.entries(item.votes).some(([id, votes]) => !partyIds.has(id) || !nonnegative(votes)) ||
+            Object.values(item.votes).reduce((sum, votes) => sum + votes, 0) !== item.totalVotes))) {
+        throw new Error("Data obsahují neplatný nebo duplicitní okrsek Prahy 12.");
+      }
+      numbers.add(item.number);
+    }
+    const assigned = new Set();
+    const stationIds = new Set();
+    for (const station of data.stations) {
+      if (typeof station.id !== "string" || !station.id || stationIds.has(station.id) ||
+          typeof station.name !== "string" || !station.name || typeof station.address !== "string" ||
+          !Array.isArray(station.precincts) || !station.precincts.length ||
+          station.precincts.some((number) => !numbers.has(number) || assigned.has(number))) {
+        throw new Error("Sídla volebních místností mají neplatné přiřazení okrsků.");
+      }
+      stationIds.add(station.id);
+      for (const number of station.precincts) {
+        if (assigned.has(number)) throw new Error("Okrsek je přiřazen vícekrát.");
+        assigned.add(number);
+      }
+    }
+    if (assigned.size !== numbers.size) throw new Error("U některých okrsků chybí sídlo volební místnosti.");
+  }
+
+  function renderLocationFilters() {
+    const data = state.precinctResults;
+    document.getElementById("results-location-filter").hidden = !data;
+    if (!data) return;
+    const byNumber = new Map(data.precincts.map((item) => [item.number, item]));
+    const station = data.stations.find((item) => item.id === state.resultsStation);
+    const stationCounted = station?.precincts.filter((number) => byNumber.get(number).counted).length;
+    const stationLabel = (item) => `${item.name} (${item.address})`;
+    const renderOptions = (id, options, selected, onSelect) => {
+      const container = document.getElementById(id);
+      const focusedValue = container.contains(document.activeElement) ? document.activeElement.dataset.value : null;
+      container.replaceChildren(...options.map((option) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `results-picker__option${option.pending ? " results-picker__option--pending" : ""}`;
+        button.dataset.value = option.value ?? "";
+        button.setAttribute("aria-pressed", String(option.value === selected));
+        const title = document.createElement("span");
+        title.textContent = option.label;
+        const detail = document.createElement("small");
+        detail.textContent = option.detail;
+        button.append(title, detail);
+        button.addEventListener("click", () => onSelect(option.value));
+        return button;
+      }));
+      if (focusedValue !== null) {
+        Array.from(container.children).find((button) => button.dataset.value === focusedValue)?.focus();
+      }
+    };
+    document.getElementById("results-station-value").textContent = station ? stationLabel(station) : "Všechny okrsky";
+    document.getElementById("results-station-picker").classList.toggle("results-picker--pending", !!station && !stationCounted);
+    renderOptions("results-station-options", [
+      { value: null, label: "Všechny okrsky", detail: "Souhrnné výsledky celé Prahy 12", pending: false },
+      ...data.stations.map((item) => {
+        const counted = item.precincts.filter((number) => byNumber.get(number).counted).length;
+        return {
+          value: item.id, label: stationLabel(item),
+          detail: `${counted} z ${item.precincts.length} ${item.precincts.length === 1 ? "okrsku" : "okrsků"} sečteno${counted ? "" : " · zatím nesečteno"}`,
+          pending: counted === 0,
+        };
+      }),
+    ], state.resultsStation, (value) => {
+      state.resultsStation = value;
+      state.resultsPrecinct = null;
+      document.getElementById("results-station-picker").open = false;
+      document.getElementById("results-precinct-picker").open = false;
+      renderResultsTab();
+      document.querySelector("#results-station-picker summary").focus();
+    });
+    document.getElementById("results-precinct-field").hidden = !station || station.precincts.length < 2;
+    if (!station) return;
+    document.getElementById("results-precinct-value").textContent = state.resultsPrecinct
+      ? `Okrsek ${state.resultsPrecinct}` : "Všechny okrsky v sídle";
+    document.getElementById("results-precinct-picker").classList.toggle("results-picker--pending",
+      state.resultsPrecinct ? !byNumber.get(state.resultsPrecinct).counted : !stationCounted);
+    renderOptions("results-precinct-options", [
+      { value: null, label: "Všechny okrsky v sídle", detail: `${stationCounted} z ${station.precincts.length} okrsků sečteno`, pending: !stationCounted },
+      ...station.precincts.map((number) => ({
+        value: number, label: `Okrsek ${number}`,
+        detail: byNumber.get(number).counted ? "Sečteno" : "Zatím nesečteno",
+        pending: !byNumber.get(number).counted,
+      })),
+    ], state.resultsPrecinct, (value) => {
+      state.resultsPrecinct = value;
+      document.getElementById("results-precinct-picker").open = false;
+      renderResultsTab();
+      document.querySelector("#results-precinct-picker summary").focus();
+    });
+  }
+
+  function scopedResults(results) {
+    const data = state.precinctResults;
+    const station = data?.stations.find((item) => item.id === state.resultsStation);
+    if (!station) return { results, label: `Celé zastupitelstvo: ${results.municipality}`, filtered: false };
+    const numbers = state.resultsPrecinct ? [state.resultsPrecinct] : station.precincts;
+    const counted = data.precincts.filter((item) => numbers.includes(item.number) && item.counted);
+    const totalVotes = counted.reduce((sum, item) => sum + item.totalVotes, 0);
+    const registered = counted.reduce((sum, item) => sum + item.registeredVoters, 0);
+    const issued = counted.reduce((sum, item) => sum + item.issuedEnvelopes, 0);
+    return {
+      filtered: true,
+      label: `${station.name} (${station.address}) · ${state.resultsPrecinct ? `okrsek ${state.resultsPrecinct}` : numbers.length === 1 ? `okrsek ${numbers[0]}` : "všechny okrsky v sídle"}`,
+      results: {
+        ...results, precinctsTotal: numbers.length, precinctsCounted: counted.length,
+        turnoutPercent: registered ? round1(issued / registered * 100) : null,
+        generatedAt: data.generatedAt,
+        parties: results.parties.map((party) => {
+          const votes = counted.reduce((sum, item) => sum + (item.votes[party.id] || 0), 0);
+          return { ...party, votes, votesPercent: totalVotes ? round1(votes / totalVotes * 100) : 0, seats: null };
+        }).sort((a, b) => b.votes - a.votes || a.id - b.id),
+      },
+    };
   }
 
   function estimatePartialMandates(r) {
@@ -310,17 +477,27 @@
   }
 
   function renderResultsTab() {
-    const r = state.results;
+    const overall = state.results;
     const banner = document.getElementById("results-sample-banner");
-    if (!r) {
+    document.querySelectorAll("#tab-results > .card").forEach((card) => { card.hidden = !overall; });
+    if (!overall) {
       banner.hidden = true;
       return;
     }
 
-    const estimate = estimatePartialMandates(r);
-    banner.hidden = !r.isSample && r.isComplete !== false;
-    document.getElementById("results-sample-text").textContent = r.isSample
-      ? r.sampleNote
+    renderLocationFilters();
+    const { results: r, label, filtered } = scopedResults(overall);
+    document.getElementById("results-scope").textContent = label;
+    document.getElementById("results-party-hint").textContent = filtered
+      ? "Hlasy a účast pouze za vybrané sečtené okrsky. Mandáty se rozdělují za celé zastupitelstvo, nikoliv podle sídla nebo okrsku."
+      : "Průběžné mandáty jsou odhad podle aktuálních hlasů; oficiální výsledky budou až po úplném sečtení.";
+    document.getElementById("results-council-hint").textContent = filtered
+      ? "Zastupitelstvo celé Prahy 12 — výběr sídla ani okrsku tento seznam nemění. Křesla se obsadí podle seznamu zvolených zastupitelů zveřejněného ČSÚ."
+      : "Křesla se obsadí podle seznamu zvolených zastupitelů zveřejněného ČSÚ.";
+    const estimate = filtered ? null : estimatePartialMandates(r);
+    banner.hidden = filtered || (!r.isSample && r.isComplete !== false);
+    document.getElementById("results-sample-text").textContent = overall.isSample
+      ? overall.sampleNote
       : estimate
         ? "Průběžný odhad mandátů vychází z dosavadních hlasů, zákonné uzavírací klauzule (zohledňuje počet kandidátů listiny) a d'Hondtovy metody; může se změnit. Jména zvolených zastupitelů a oficiální mandáty budou známy po úplném sečtení."
         : "Průběžná data ČSÚ. Odhad mandátů se zobrazí po započtení prvního okrsku; oficiální mandáty a zvolení zastupitelé budou uvedeni až po úplném sečtení.";
@@ -340,7 +517,9 @@
     const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);
     const renderPartyResult = (p) => {
       let mandateLabel;
-      if (p.seats != null) {
+      if (filtered) {
+        mandateLabel = `${p.votes.toLocaleString("cs-CZ")}\u00a0hlasů`;
+      } else if (p.seats != null) {
         mandateLabel = `${p.seats}\u00a0mandátů`;
       } else if (estimate && !estimate.eligible.has(p.id)) {
         mandateLabel = "pod uzavírací klauzulí";
@@ -360,7 +539,9 @@
     const aboveThreshold = r.parties.filter((p) => p.votesPercent >= 5);
     const belowThreshold = r.parties.filter((p) => p.votesPercent < 5);
     document.getElementById("results-party-chart").innerHTML =
-      aboveThreshold.map(renderPartyResult).join("") +
+      filtered && !r.precinctsCounted
+        ? '<p class="empty-state" role="status">Vybrané okrsky zatím nejsou sečtené. Výsledky se zobrazí po zveřejnění dat ČSÚ.</p>'
+        : aboveThreshold.map(renderPartyResult).join("") +
       (belowThreshold.length
         ? `<section class="results-below-threshold" aria-labelledby="results-below-threshold-title">
             <h3 id="results-below-threshold-title">Kandidátky pod 5 % hlasů</h3>
@@ -368,10 +549,10 @@
           </section>`
         : "");
 
-    const confirmed = r.seats.filter((s) => s.name).length;
+    const confirmed = overall.seats.filter((s) => s.name).length;
     document.getElementById("results-seats-confirmed").textContent = confirmed;
-    document.getElementById("results-seats-total").textContent = r.totalSeats;
-    document.getElementById("results-seats-grid").innerHTML = groupSeatsByParty(r)
+    document.getElementById("results-seats-total").textContent = overall.totalSeats;
+    document.getElementById("results-seats-grid").innerHTML = groupSeatsByParty(overall)
       .flatMap((group, groupIndex) =>
         group.items.map((s) => {
           const stripe = groupIndex % 2 === 0 ? "seat-card--stripe-a" : "seat-card--stripe-b";

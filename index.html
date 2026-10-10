@@ -69,6 +69,26 @@
       <p class="empty-state" id="results-error" role="alert" hidden></p>
 
       <div class="card results-toolbar">
+        <div id="results-location-filter" hidden>
+          <div class="results-location-filter__row">
+            <div class="results-location-filter__field">
+              <span id="results-station-label">Sídlo volební místnosti</span>
+              <details class="results-picker" id="results-station-picker">
+                <summary aria-labelledby="results-station-label results-station-value"><span id="results-station-value">Všechny okrsky</span></summary>
+                <div class="results-picker__options" id="results-station-options" role="group" aria-labelledby="results-station-label"></div>
+              </details>
+            </div>
+            <div class="results-location-filter__field results-location-filter__field--precinct" id="results-precinct-field" hidden>
+              <span id="results-precinct-label">Okrsek v tomto sídle</span>
+              <details class="results-picker" id="results-precinct-picker">
+                <summary aria-labelledby="results-precinct-label results-precinct-value"><span id="results-precinct-value">Všechny okrsky v sídle</span></summary>
+                <div class="results-picker__options" id="results-precinct-options" role="group" aria-labelledby="results-precinct-label"></div>
+              </details>
+            </div>
+          </div>
+          <p class="chart-card__hint">Šedé položky zatím nejsou sečtené. Sídlo s více okrsky ukazuje jejich společné výsledky; jednotlivý okrsek vyberete ve druhém filtru.</p>
+        </div>
+        <p class="results-scope" id="results-scope" aria-live="polite"></p>
         <div class="results-toolbar__row">
           <div class="results-progress">
             <div class="results-progress__label">
@@ -94,13 +114,13 @@
 
       <div class="card table-card">
         <h2>Výsledky kandidátek</h2>
-        <p class="chart-card__hint">Průběžné mandáty jsou odhad podle aktuálních hlasů; oficiální výsledky budou až po úplném sečtení.</p>
+        <p class="chart-card__hint" id="results-party-hint">Průběžné mandáty jsou odhad podle aktuálních hlasů; oficiální výsledky budou až po úplném sečtení.</p>
         <div class="party-bar-chart party-bar-chart--results" id="results-party-chart"></div>
       </div>
 
       <div class="card table-card">
         <h2>Zastupitelstvo (<span id="results-seats-confirmed">0</span> z <span id="results-seats-total">35</span> obsazeno)</h2>
-        <p class="chart-card__hint">Křesla se obsadí podle seznamu zvolených zastupitelů zveřejněného ČSÚ.</p>
+        <p class="chart-card__hint" id="results-council-hint">Křesla se obsadí podle seznamu zvolených zastupitelů zveřejněného ČSÚ.</p>
         <div class="seats-grid" id="results-seats-grid"></div>
       </div>
     </section>

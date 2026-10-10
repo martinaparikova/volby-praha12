@@ -1,0 +1,21 @@
+{
+  "municipality": "Praha 12",
+  "sourceNote": "Sídla a přiřazení okrsků podle seznamu dodaného správcem webu.",
+  "stations": [
+    {"id": "svejcara", "name": "ZŠ profesora Švejcara", "address": "Mráčkova 3090/2", "precincts": [12001, 12027, 12028, 12029, 12030, 12031, 12032]},
+    {"id": "masaryka", "name": "ZŠ T. G. Masaryka", "address": "Modřanská 1375/10a", "precincts": [12003, 12004]},
+    {"id": "k-dolum", "name": "ZŠ a MŠ K Dolům", "address": "U Domu služeb 1837", "precincts": [12005, 12013, 12014]},
+    {"id": "na-beranku", "name": "ZŠ a MŠ Na Beránku", "address": "Pertoldova 3373/5", "precincts": [12009, 12010, 12011, 12012]},
+    {"id": "angel", "name": "ZŠ a MŠ Angel", "address": "Angelovova 3183/15", "precincts": [12017, 12018, 12019, 12020]},
+    {"id": "rakovskeho", "name": "ZŠ Rakovského", "address": "Rakovského 3136/1", "precincts": [12021, 12022, 12023, 12024, 12025, 12026]},
+    {"id": "zarubova", "name": "ZŠ Zárubova", "address": "Zárubova 977/6", "precincts": [12033, 12034, 12035, 12036, 12037]},
+    {"id": "pisnicka", "name": "ZŠ Písnická", "address": "Písnická 760/11", "precincts": [12038, 12039, 12040, 12041, 12042, 12043, 12044]},
+    {"id": "smolkova", "name": "ZŠ a MŠ Smolkova", "address": "Smolkova 565/8", "precincts": [12045, 12046, 12047, 12048, 12049, 12050]},
+    {"id": "neslysici", "name": "Pražský spolek neslyšících", "address": "Darwinova 450/24", "precincts": [12002]},
+    {"id": "piskova", "name": "Kulturní zařízení Písková", "address": "Písková 126", "precincts": [12006]},
+    {"id": "pozarni-ochrana", "name": "Technický ústav požární ochrany", "address": "Písková 42", "precincts": [12007]},
+    {"id": "kulturni-centrum", "name": "Kulturní centrum „12“ – pobočka", "address": "Modřanská", "precincts": [12008]},
+    {"id": "tocna", "name": "Městská policie Točná", "address": "K výtopně 32", "precincts": [12015]},
+    {"id": "cholupice", "name": "Hasičská zbrojnice Cholupice", "address": "Pod Remízkem 14", "precincts": [12016]}
+  ]
+}

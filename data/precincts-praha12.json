@@ -1,0 +1,565 @@
+{
+  "municipality": "Praha 12",
+  "sourceNote": "Sídla a přiřazení okrsků podle seznamu dodaného správcem webu.",
+  "stations": [
+    {
+      "id": "svejcara",
+      "name": "ZŠ profesora Švejcara",
+      "address": "Mráčkova 3090/2",
+      "precincts": [
+        12001,
+        12027,
+        12028,
+        12029,
+        12030,
+        12031,
+        12032
+      ]
+    },
+    {
+      "id": "masaryka",
+      "name": "ZŠ T. G. Masaryka",
+      "address": "Modřanská 1375/10a",
+      "precincts": [
+        12003,
+        12004
+      ]
+    },
+    {
+      "id": "k-dolum",
+      "name": "ZŠ a MŠ K Dolům",
+      "address": "U Domu služeb 1837",
+      "precincts": [
+        12005,
+        12013,
+        12014
+      ]
+    },
+    {
+      "id": "na-beranku",
+      "name": "ZŠ a MŠ Na Beránku",
+      "address": "Pertoldova 3373/5",
+      "precincts": [
+        12009,
+        12010,
+        12011,
+        12012
+      ]
+    },
+    {
+      "id": "angel",
+      "name": "ZŠ a MŠ Angel",
+      "address": "Angelovova 3183/15",
+      "precincts": [
+        12017,
+        12018,
+        12019,
+        12020
+      ]
+    },
+    {
+      "id": "rakovskeho",
+      "name": "ZŠ Rakovského",
+      "address": "Rakovského 3136/1",
+      "precincts": [
+        12021,
+        12022,
+        12023,
+        12024,
+        12025,
+        12026
+      ]
+    },
+    {
+      "id": "zarubova",
+      "name": "ZŠ Zárubova",
+      "address": "Zárubova 977/6",
+      "precincts": [
+        12033,
+        12034,
+        12035,
+        12036,
+        12037
+      ]
+    },
+    {
+      "id": "pisnicka",
+      "name": "ZŠ Písnická",
+      "address": "Písnická 760/11",
+      "precincts": [
+        12038,
+        12039,
+        12040,
+        12041,
+        12042,
+        12043,
+        12044
+      ]
+    },
+    {
+      "id": "smolkova",
+      "name": "ZŠ a MŠ Smolkova",
+      "address": "Smolkova 565/8",
+      "precincts": [
+        12045,
+        12046,
+        12047,
+        12048,
+        12049,
+        12050
+      ]
+    },
+    {
+      "id": "neslysici",
+      "name": "Pražský spolek neslyšících",
+      "address": "Darwinova 450/24",
+      "precincts": [
+        12002
+      ]
+    },
+    {
+      "id": "piskova",
+      "name": "Kulturní zařízení Písková",
+      "address": "Písková 126",
+      "precincts": [
+        12006
+      ]
+    },
+    {
+      "id": "pozarni-ochrana",
+      "name": "Technický ústav požární ochrany",
+      "address": "Písková 42",
+      "precincts": [
+        12007
+      ]
+    },
+    {
+      "id": "kulturni-centrum",
+      "name": "Kulturní centrum „12“ – pobočka",
+      "address": "Modřanská",
+      "precincts": [
+        12008
+      ]
+    },
+    {
+      "id": "tocna",
+      "name": "Městská policie Točná",
+      "address": "K výtopně 32",
+      "precincts": [
+        12015
+      ]
+    },
+    {
+      "id": "cholupice",
+      "name": "Hasičská zbrojnice Cholupice",
+      "address": "Pod Remízkem 14",
+      "precincts": [
+        12016
+      ]
+    }
+  ],
+  "electionDate": "20261009",
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/okrsky/vysledky_okrsky.xml",
+  "generatedAt": "2026-10-10T20:00:00",
+  "lastBatch": 67,
+  "precincts": [
+    {
+      "number": 12001,
+      "counted": false
+    },
+    {
+      "number": 12002,
+      "counted": false
+    },
+    {
+      "number": 12003,
+      "counted": false
+    },
+    {
+      "number": 12004,
+      "counted": false
+    },
+    {
+      "number": 12005,
+      "counted": false
+    },
+    {
+      "number": 12006,
+      "counted": false
+    },
+    {
+      "number": 12007,
+      "counted": false
+    },
+    {
+      "number": 12008,
+      "counted": false
+    },
+    {
+      "number": 12009,
+      "counted": false
+    },
+    {
+      "number": 12010,
+      "counted": false
+    },
+    {
+      "number": 12011,
+      "counted": false
+    },
+    {
+      "number": 12012,
+      "counted": false
+    },
+    {
+      "number": 12013,
+      "counted": false
+    },
+    {
+      "number": 12014,
+      "counted": false
+    },
+    {
+      "number": 12015,
+      "counted": false
+    },
+    {
+      "number": 12016,
+      "counted": true,
+      "processingOrder": 12213,
+      "processedAt": "2026-10-10T18:58:04",
+      "registeredVoters": 697,
+      "issuedEnvelopes": 394,
+      "totalVotes": 12488,
+      "votes": {
+        "1": 1160,
+        "2": 1341,
+        "3": 4643,
+        "4": 377,
+        "5": 10,
+        "6": 112,
+        "7": 311,
+        "8": 1533,
+        "9": 2042,
+        "10": 292,
+        "11": 667
+      }
+    },
+    {
+      "number": 12017,
+      "counted": false
+    },
+    {
+      "number": 12018,
+      "counted": false
+    },
+    {
+      "number": 12019,
+      "counted": false
+    },
+    {
+      "number": 12020,
+      "counted": false
+    },
+    {
+      "number": 12021,
+      "counted": false
+    },
+    {
+      "number": 12022,
+      "counted": false
+    },
+    {
+      "number": 12023,
+      "counted": false
+    },
+    {
+      "number": 12024,
+      "counted": false
+    },
+    {
+      "number": 12025,
+      "counted": false
+    },
+    {
+      "number": 12026,
+      "counted": false
+    },
+    {
+      "number": 12027,
+      "counted": false
+    },
+    {
+      "number": 12028,
+      "counted": false
+    },
+    {
+      "number": 12029,
+      "counted": false
+    },
+    {
+      "number": 12030,
+      "counted": true,
+      "processingOrder": 13331,
+      "processedAt": "2026-10-10T19:38:50",
+      "registeredVoters": 766,
+      "issuedEnvelopes": 335,
+      "totalVotes": 11125,
+      "votes": {
+        "1": 1851,
+        "2": 1921,
+        "3": 1698,
+        "4": 417,
+        "5": 1,
+        "6": 322,
+        "7": 326,
+        "8": 1597,
+        "9": 1994,
+        "10": 150,
+        "11": 848
+      }
+    },
+    {
+      "number": 12031,
+      "counted": true,
+      "processingOrder": 13150,
+      "processedAt": "2026-10-10T19:30:59",
+      "registeredVoters": 681,
+      "issuedEnvelopes": 280,
+      "totalVotes": 8852,
+      "votes": {
+        "1": 604,
+        "2": 2139,
+        "3": 1662,
+        "4": 337,
+        "5": 9,
+        "6": 346,
+        "7": 345,
+        "8": 722,
+        "9": 1431,
+        "10": 373,
+        "11": 884
+      }
+    },
+    {
+      "number": 12032,
+      "counted": true,
+      "processingOrder": 11685,
+      "processedAt": "2026-10-10T18:42:35",
+      "registeredVoters": 668,
+      "issuedEnvelopes": 263,
+      "totalVotes": 8794,
+      "votes": {
+        "1": 387,
+        "2": 2182,
+        "3": 1341,
+        "4": 172,
+        "5": 27,
+        "6": 574,
+        "7": 733,
+        "8": 877,
+        "9": 1001,
+        "10": 401,
+        "11": 1099
+      }
+    },
+    {
+      "number": 12033,
+      "counted": false
+    },
+    {
+      "number": 12034,
+      "counted": true,
+      "processingOrder": 12239,
+      "processedAt": "2026-10-10T18:59:01",
+      "registeredVoters": 685,
+      "issuedEnvelopes": 268,
+      "totalVotes": 8804,
+      "votes": {
+        "1": 720,
+        "2": 2082,
+        "3": 1700,
+        "4": 166,
+        "5": 22,
+        "6": 224,
+        "7": 382,
+        "8": 1282,
+        "9": 929,
+        "10": 546,
+        "11": 751
+      }
+    },
+    {
+      "number": 12035,
+      "counted": false
+    },
+    {
+      "number": 12036,
+      "counted": true,
+      "processingOrder": 13579,
+      "processedAt": "2026-10-10T19:49:58",
+      "registeredVoters": 790,
+      "issuedEnvelopes": 328,
+      "totalVotes": 10650,
+      "votes": {
+        "1": 564,
+        "2": 2600,
+        "3": 2443,
+        "4": 283,
+        "5": 27,
+        "6": 577,
+        "7": 323,
+        "8": 1281,
+        "9": 1495,
+        "10": 185,
+        "11": 872
+      }
+    },
+    {
+      "number": 12037,
+      "counted": false
+    },
+    {
+      "number": 12038,
+      "counted": false
+    },
+    {
+      "number": 12039,
+      "counted": true,
+      "processingOrder": 12769,
+      "processedAt": "2026-10-10T19:16:00",
+      "registeredVoters": 731,
+      "issuedEnvelopes": 296,
+      "totalVotes": 9431,
+      "votes": {
+        "1": 435,
+        "2": 2276,
+        "3": 1844,
+        "4": 298,
+        "5": 31,
+        "6": 268,
+        "7": 207,
+        "8": 1440,
+        "9": 1335,
+        "10": 169,
+        "11": 1128
+      }
+    },
+    {
+      "number": 12040,
+      "counted": false
+    },
+    {
+      "number": 12041,
+      "counted": false
+    },
+    {
+      "number": 12042,
+      "counted": false
+    },
+    {
+      "number": 12043,
+      "counted": true,
+      "processingOrder": 12472,
+      "processedAt": "2026-10-10T19:06:00",
+      "registeredVoters": 702,
+      "issuedEnvelopes": 312,
+      "totalVotes": 10261,
+      "votes": {
+        "1": 606,
+        "2": 1568,
+        "3": 1971,
+        "4": 608,
+        "5": 10,
+        "6": 427,
+        "7": 619,
+        "8": 1496,
+        "9": 1683,
+        "10": 178,
+        "11": 1095
+      }
+    },
+    {
+      "number": 12044,
+      "counted": true,
+      "processingOrder": 11998,
+      "processedAt": "2026-10-10T18:51:13",
+      "registeredVoters": 623,
+      "issuedEnvelopes": 238,
+      "totalVotes": 7599,
+      "votes": {
+        "1": 604,
+        "2": 1313,
+        "3": 1514,
+        "4": 463,
+        "5": 18,
+        "6": 392,
+        "7": 357,
+        "8": 1335,
+        "9": 1069,
+        "10": 244,
+        "11": 290
+      }
+    },
+    {
+      "number": 12045,
+      "counted": false
+    },
+    {
+      "number": 12046,
+      "counted": true,
+      "processingOrder": 12407,
+      "processedAt": "2026-10-10T19:03:47",
+      "registeredVoters": 723,
+      "issuedEnvelopes": 249,
+      "totalVotes": 8359,
+      "votes": {
+        "1": 363,
+        "2": 1511,
+        "3": 1310,
+        "4": 185,
+        "5": 12,
+        "6": 567,
+        "7": 362,
+        "8": 1139,
+        "9": 1434,
+        "10": 509,
+        "11": 967
+      }
+    },
+    {
+      "number": 12047,
+      "counted": false
+    },
+    {
+      "number": 12048,
+      "counted": false
+    },
+    {
+      "number": 12049,
+      "counted": true,
+      "processingOrder": 13509,
+      "processedAt": "2026-10-10T19:47:04",
+      "registeredVoters": 832,
+      "issuedEnvelopes": 332,
+      "totalVotes": 11002,
+      "votes": {
+        "1": 452,
+        "2": 2202,
+        "3": 2005,
+        "4": 462,
+        "5": 1,
+        "6": 650,
+        "7": 775,
+        "8": 1846,
+        "9": 1400,
+        "10": 382,
+        "11": 827
+      }
+    },
+    {
+      "number": 12050,
+      "counted": false
+    }
+  ]
+}

@@ -23,6 +23,11 @@ Zastupitelstva hlavního města Prahy (magistrát) pro komunální volby 2026
   oficiální mandáty po úplném sečtení (jméno + strana + počet hlasů kandidáta),
   seřazené a barevně odlišené podle stran. Automatické obnovení dat každých
   60 s (lze vypnout) + tlačítko pro okamžité obnovení.
+- Pro **Prahu 12** ve výsledcích dvouúrovňový filtr: nejdřív sídlo volební
+  místnosti (název a adresa), poté u sdílených sídel konkrétní okrsek.
+  Výběr sídla sčítá hlasy jeho dosud sečtených okrsků. Nesečtené okrsky
+  a sídla bez jediného sečteného okrsku jsou šedé, ale lze je vybrat.
+  Rozdělení mandátů a seznam zastupitelů zůstávají za celou Prahu 12.
 - Přepínání světlého/tmavého režimu (vpravo nahoře), barevné schéma
   růžová + tmavě zelená.
 - Responzivní — na mobilu se tabulka kandidátů mění na přehledné kartičky.
@@ -37,11 +42,14 @@ data/candidates-praha{1..22}.json # strukturovaná data kandidátů pro Prahu 1-
 data/candidates-magistrat.json    # strukturovaná data kandidátů pro celoměstské zastupitelstvo (generovaná)
 data/results-praha{1..22}.json    # data pro záložku Výsledky (zatím UKÁZKOVÁ, viz níže)
 data/results-magistrat.json       # data pro záložku Výsledky za magistrát (zatím UKÁZKOVÁ, viz níže)
+data/polling-stations-praha12.json # sídla a přiřazení všech 50 okrsků podle dodaného seznamu
+data/precincts-praha12.json        # sídla, jednotlivé výsledky ČSÚ a kurzor poslední dávky
 scripts/parse_candidates.py       # skript pro vygenerování candidates-*.json
 scripts/generate_sample_results.py # skript pro vygenerování ukázkových dat results-*.json
 scripts/parse_real_results.py     # skript pro převod ostrých dat ČSÚ na results-*.json (viz níže)
 scripts/update_csu.py             # aktualizace platných kandidátů a oficiálních průběžných výsledků
 scripts/test_update_csu.py        # regresní testy oficiálního XML
+scripts/test_precincts.py         # testy pokrytí sídel, dávek, oprav a uchování výsledků
 ```
 
 ## Zdroj dat
@@ -73,6 +81,23 @@ Spusťte `python scripts\update_csu.py` pro aktualizaci všech zahrnutých
 zastupitelstev, nebo `python scripts\update_csu.py praha12` jen pro Prahu 12.
 Aktualizují se kandidáti i výsledky. Nepoužívejte starý HTML import pro
 aktualizaci ostrých dat, protože nefiltruje neplatné kandidáty.
+
+Při aktualizaci Prahy 12 se zároveň importují
+[přírůstkové okrskové dávky ČSÚ](https://volby.gov.cz/appdata/kv2026/20261009/odata/okrsky/vysledky_okrsky.xml).
+První import stáhne všechny dosavadní dávky; další navazují na `lastBatch`
+v `data/precincts-praha12.json`. Opravy okrsku nahradí předchozí záznam podle
+vyššího `PORADI_ZPRAC`, nikdy se nepřičítají podruhé. Okrskové dávky ČSÚ
+vznikají přibližně po pěti minutách, takže jejich čas se může lišit od
+souhrnných výsledků. Publikační workflow uchovává okrsková data z posledního
+nasazení; při selhání importu se nová neúplná verze nezveřejní.
+
+Sídla jsou převzata z obrázkového seznamu dodaného správcem webu, nikoliv
+z ČSÚ (ČSÚ adresy místností nepublikuje). U pobočky Kulturního centra „12“
+byla dodána jen ulice Modřanská, proto není doplněno neověřené číslo domu.
+Při změně místností upravte `data/polling-stations-praha12.json` a spusťte
+import znovu. Pro ostatní zastupitelstva zůstává souhrnné zobrazení beze změny.
+
+Testy importeru: `python -m unittest discover -s scripts -p 'test_*.py' -v`.
 
 ### Přidání další městské části
 

@@ -1,5 +1,6 @@
 """Update candidates and results from official ČSÚ XML, without estimating mandates."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from http.client import IncompleteRead, RemoteDisconnected
 import io
 import json
@@ -23,6 +24,7 @@ RESULTS_URL = (
     "vysledky_obce_okres_CZ0100.xml"
 )
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+PRECINCTS_URL = f"{BASE}/appdata/kv2026/20261009/odata/okrsky/vysledky_okrsky"
 
 
 def download(url: str) -> bytes:
@@ -229,6 +231,111 @@ def write_json(path: Path, value: dict) -> None:
             temporary.unlink()
 
 
+def precinct_batch(data: bytes) -> ET.Element:
+    root = parse_xml(data, "VYSLEDKY_OKRSKY")
+    batch = root.find("kv:DAVKA", NS)
+    if batch is None or batch.attrib["DATUMVOLEB"] != "20261009":
+        raise ValueError("Missing or incorrect precinct batch election")
+    integer(batch.attrib["PORADI_DAVKY"])
+    return root
+
+
+def merge_precinct_batch(root: ET.Element, precincts: dict[int, dict]) -> None:
+    for element in root.findall("kv:OKRSEK", NS):
+        values = element.attrib
+        if values["KODZASTUP"] != str(code_for("praha12")):
+            continue
+        if values["OZNAC_TYPU"] != "MCMO" or values["CIS_OBVODU"] != "1":
+            raise ValueError("Incorrect Prague 12 precinct council type")
+        number = integer(values["CIS_OKRSEK"])
+        if number not in precincts:
+            raise ValueError(f"Unknown Prague 12 precinct: {number}")
+        order = integer(values["PORADI_ZPRAC"])
+        previous = precincts[number]
+        if previous["counted"] and previous["processingOrder"] >= order:
+            continue
+        turnout = element.find("kv:UCAST_OKRSEK", NS)
+        if turnout is None:
+            raise ValueError(f"Missing turnout for precinct {number}")
+        registered = integer(turnout.attrib["ZAPSANI_VOLICI"])
+        issued = integer(turnout.attrib["VYDANE_OBALKY"])
+        total_votes = integer(turnout.attrib["PLATNE_HLASY"])
+        votes = {}
+        for party in element.findall("kv:HLASY_OKRSEK", NS):
+            party_id = str(integer(party.attrib["POR_STR_HLAS_LIST"]))
+            if party_id in votes:
+                raise ValueError(f"Duplicate party in precinct {number}")
+            votes[party_id] = integer(party.attrib["HLASY"])
+        if sum(votes.values()) != total_votes or issued > registered:
+            raise ValueError(f"Inconsistent votes or turnout for precinct {number}")
+        precincts[number] = {
+            "number": number, "counted": True, "processingOrder": order,
+            "processedAt": values["DATUM_CAS_ZPRAC"],
+            "registeredVoters": registered, "issuedEnvelopes": issued,
+            "totalVotes": total_votes, "votes": votes,
+        }
+
+
+def load_precinct_results(path: Path) -> dict:
+    with (DATA_DIR / "polling-stations-praha12.json").open(encoding="utf-8") as stream:
+        catalog = json.load(stream)
+    numbers = [number for station in catalog["stations"] for number in station["precincts"]]
+    if len(numbers) != 50 or set(numbers) != set(range(12001, 12051)):
+        raise ValueError("Polling stations must cover each Prague 12 precinct exactly once")
+    precincts = {number: {"number": number, "counted": False} for number in numbers}
+    last_batch = 0
+    if path.exists():
+        with path.open(encoding="utf-8") as stream:
+            previous = json.load(stream)
+        if previous["municipality"] != "Praha 12" or previous["electionDate"] != "20261009":
+            raise ValueError("Incorrect previous precinct results election")
+        last_batch = integer(str(previous["lastBatch"]))
+        if (len(previous["precincts"]) != len(numbers)
+                or {item["number"] for item in previous["precincts"]} != set(numbers)):
+            raise ValueError("Incorrect previous precinct coverage")
+        for item in previous["precincts"]:
+            if not isinstance(item["counted"], bool):
+                raise ValueError("Invalid previous precinct processing status")
+            if item["counted"]:
+                for key in ("processingOrder", "registeredVoters", "issuedEnvelopes", "totalVotes"):
+                    if not isinstance(item[key], int) or isinstance(item[key], bool) or item[key] < 0:
+                        raise ValueError(f"Invalid previous precinct {key}")
+                votes = item["votes"]
+                if (not isinstance(votes, dict)
+                        or any(not isinstance(vote, int) or isinstance(vote, bool) or vote < 0
+                               for vote in votes.values())
+                        or sum(votes.values()) != item["totalVotes"]
+                        or item["issuedEnvelopes"] > item["registeredVoters"]):
+                    raise ValueError("Invalid previous precinct votes or turnout")
+        precincts.update({item["number"]: item for item in previous["precincts"]})
+    latest = precinct_batch(download(f"{PRECINCTS_URL}.xml"))
+    batch = latest.find("kv:DAVKA", NS)
+    assert batch is not None
+    latest_number = integer(batch.attrib["PORADI_DAVKY"])
+    if latest_number < last_batch:
+        raise ValueError(f"Precinct batch regressed: {last_batch} -> {latest_number}")
+
+    def fetch_batch(number: int) -> ET.Element:
+        root = precinct_batch(download(f"{PRECINCTS_URL}_{number:05d}.xml"))
+        metadata = root.find("kv:DAVKA", NS)
+        assert metadata is not None
+        if integer(metadata.attrib["PORADI_DAVKY"]) != number:
+            raise ValueError(f"Incorrect precinct batch number: {number}")
+        return root
+
+    # Only the initial import needs the historical batches; subsequent runs resume.
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        for root in executor.map(fetch_batch, range(last_batch + 1, latest_number)):
+            merge_precinct_batch(root, precincts)
+    merge_precinct_batch(latest, precincts)
+    return {
+        **catalog, "electionDate": "20261009", "source": f"{PRECINCTS_URL}.xml",
+        "generatedAt": latest.attrib["DATUM_CAS_GENEROVANI"],
+        "lastBatch": latest_number,
+        "precincts": sorted(precincts.values(), key=lambda item: item["number"]),
+    }
+
+
 def preserve_results_if_precinct_count_regresses(results: dict, path: Path) -> dict:
     if not path.exists():
         return results
@@ -263,6 +370,16 @@ def update(slugs: list[str], output: Path) -> None:
             results, output / f"results-{slug}.json",
         )
         converted.append((slug, candidates, results))
+    precinct_results = (
+        load_precinct_results(output / "precincts-praha12.json") if "praha12" in slugs else None
+    )
+    if precinct_results is not None:
+        result = next(results for slug, _, results in converted if slug == "praha12")
+        party_ids = {str(party["id"]) for party in result["parties"]}
+        if result["precinctsTotal"] != len(precinct_results["precincts"]):
+            raise ValueError("Prague 12 polling station count does not match CSU")
+        if any(set(precinct.get("votes", {})) - party_ids for precinct in precinct_results["precincts"]):
+            raise ValueError("Unknown party in Prague 12 precinct results")
     # Validate every downloaded municipality before publishing any of the batch.
     for slug, candidates, results in converted:
         write_json(output / f"candidates-{slug}.json", candidates)
@@ -270,6 +387,8 @@ def update(slugs: list[str], output: Path) -> None:
         count = sum(party["candidateCount"] for party in candidates["parties"])
         print(f"[{slug}] {count} valid candidates; "
               f"{results['precinctsCounted']}/{results['precinctsTotal']} precincts", flush=True)
+    if precinct_results is not None:
+        write_json(output / "precincts-praha12.json", precinct_results)
 
 
 def main() -> None:
