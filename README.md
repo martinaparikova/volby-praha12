@@ -60,6 +60,9 @@ spusťte skript.
 
 Skutečná velikost zastupitelstva (`totalSeats`) i celkový počet okrsků
 pocházejí z aktuálního výsledkového XML ČSÚ pro rok 2026, nikoliv z archivu 2022.
+Průběžné výsledky se načítají ze souhrnného XML za okres Praha, které se
+aktualizuje při sčítání; jednotlivé XML soubory zastupitelstev mohou zůstat
+zastaralé.
 
 ### Aktualizace dat
 
@@ -98,6 +101,8 @@ Ve výsledcích kandidátek jsou listiny s podílem hlasů pod 5 % oddělené
 do šedě podbarvené skupiny. Přesně 5 % patří do horní skupiny.
 Toto vizuální rozdělení podle zobrazeného podílu hlasů nemění výpočet
 mandátů ani zákonnou uzavírací klauzuli zohledňující počet kandidátů.
+Čas dat ČSÚ odpovídá času vygenerování souhrnného XML; při pravidelném načtení
+dat se nemění, pokud ČSÚ mezitím nové výsledky nezveřejní.
 
 Formát souboru `results-*.json`:
 
@@ -126,7 +131,8 @@ na konci.
 ### Oficiální průběžné XML — `update_csu.py`
 
 Skript používá [průběžné XML ČSÚ](https://volby.gov.cz/opendata/kv2026/KV2026_XML.htm),
-např. [Praha 12](https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547107.xml).
+konkrétně [souhrnné výsledky za okres Praha](https://volby.gov.cz/appdata/kv2026/20261009/odata/okresy/vysledky_obce_okres_CZ0100.xml),
+které obsahují i zastupitelstva městských částí.
 Přebírá procenta hlasů, volební účast, počty okrsků a velikost zastupitelstva.
 Po dokončení sčítání převezme přímo přidělené mandáty a elementy `ZASTUPITEL`
 s počty hlasů. Odhad neovlivňuje tento zdroj ani JSON; počítá se v prohlížeči

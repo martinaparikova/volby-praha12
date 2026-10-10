@@ -18,6 +18,10 @@ from parse_candidates import MUNICIPALITIES, clean, guess_gender
 NS = {"kv": "http://www.volby.cz/kv/"}
 BASE = "https://volby.gov.cz"
 REGISTRY_URL = f"{BASE}/opendata/kv2026/xml/kvrk.zip"
+RESULTS_URL = (
+    f"{BASE}/appdata/kv2026/20261009/odata/okresy/"
+    "vysledky_obce_okres_CZ0100.xml"
+)
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
@@ -46,14 +50,14 @@ def code_for(slug: str) -> int:
     return int(MUNICIPALITIES[slug]["source_url"].rstrip("/").rsplit("-", 1)[1])
 
 
-def results_url(slug: str) -> str:
-    return f"{BASE}/appdata/kv2026/20261009/odata/zastup/vysledky_obec_{code_for(slug)}.xml"
-
-
-def parse_xml(data: bytes, expected_root: str) -> ET.Element:
+def parse_xml(data: bytes, expected_root: str | tuple[str, ...]) -> ET.Element:
     root = ET.fromstring(data)
-    if root.tag != f"{{{NS['kv']}}}{expected_root}":
-        raise ValueError(f"Unexpected XML root: {root.tag}; expected {expected_root}")
+    expected_roots = (expected_root,) if isinstance(expected_root, str) else expected_root
+    expected_tags = {f"{{{NS['kv']}}}{name}" for name in expected_roots}
+    if root.tag not in expected_tags:
+        raise ValueError(
+            f"Unexpected XML root: {root.tag}; expected {' or '.join(expected_roots)}"
+        )
     error = root.find("kv:CHYBA", NS)
     if error is not None:
         raise ValueError(f"ČSÚ XML error: {error.attrib}")
@@ -94,8 +98,11 @@ def registry_rows(data: bytes, codes: set[int]) -> dict[int, list[dict[str, str]
 
 
 def convert(slug: str, data: bytes, rows: list[dict[str, str]]) -> tuple[dict, dict]:
-    root = parse_xml(data, "VYSLEDKY_OBEC")
-    municipality = root.find("kv:OBEC", NS)
+    root = parse_xml(data, ("VYSLEDKY_OBEC", "VYSLEDKY_OBCE_OKRES"))
+    if root.tag == f"{{{NS['kv']}}}VYSLEDKY_OBEC":
+        municipality = root.find("kv:OBEC", NS)
+    else:
+        municipality = root.find(f"kv:OBEC[@KODZASTUP='{code_for(slug)}']", NS)
     if municipality is None or integer(municipality.attrib["KODZASTUP"]) != code_for(slug):
         raise ValueError(f"Missing or incorrect municipality for {slug}")
     if municipality.attrib["POCET_OBVODU"] != "1":
@@ -188,7 +195,7 @@ def convert(slug: str, data: bytes, rows: list[dict[str, str]]) -> tuple[dict, d
     metadata = {
         "municipality": MUNICIPALITIES[slug]["name"],
         "election": "Volby do zastupitelstev obcí 2026",
-        "source": results_url(slug),
+        "source": RESULTS_URL,
     }
     candidates = {
         **metadata, "source": REGISTRY_URL,
@@ -224,9 +231,10 @@ def write_json(path: Path, value: dict) -> None:
 
 def update(slugs: list[str], output: Path) -> None:
     rows = registry_rows(download(REGISTRY_URL), {code_for(slug) for slug in slugs})
+    results_data = download(RESULTS_URL)
     converted = []
     for slug in slugs:
-        converted.append((slug, *convert(slug, download(results_url(slug)), rows[code_for(slug)])))
+        converted.append((slug, *convert(slug, results_data, rows[code_for(slug)])))
     # Validate every downloaded municipality before publishing any of the batch.
     for slug, candidates, results in converted:
         write_json(output / f"candidates-{slug}.json", candidates)

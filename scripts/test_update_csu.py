@@ -40,6 +40,20 @@ def results(complete: bool = False) -> bytes:
     """.encode("utf-8")
 
 
+def district_results() -> bytes:
+    standalone = ET.fromstring(results())
+    municipality = standalone.find(f"{{{csu.NS['kv']}}}OBEC")
+    assert municipality is not None
+    other = ET.fromstring(ET.tostring(municipality))
+    other.set("KODZASTUP", "999999")
+    root = ET.Element(
+        f"{{{csu.NS['kv']}}}VYSLEDKY_OBCE_OKRES",
+        {"DATUM_CAS_GENEROVANI": "2026-10-10T19:30:00"},
+    )
+    root.extend((other, municipality))
+    return ET.tostring(root)
+
+
 class OfficialDataTests(unittest.TestCase):
     def setUp(self):
         self.rows = [candidate(1), candidate(2, "N"), candidate(3)]
@@ -110,6 +124,12 @@ class OfficialDataTests(unittest.TestCase):
         self.assertEqual(result["turnoutPercent"], 50.25)
         self.assertIsNone(result["parties"][0]["seats"])
         self.assertTrue(all(s["name"] is None for s in result["seats"]))
+
+    def test_uses_current_district_feed_and_selects_municipality(self):
+        _, result = csu.convert("praha12", district_results(), self.rows)
+        self.assertEqual(result["generatedAt"], "2026-10-10T19:30:00")
+        self.assertEqual(result["source"], csu.RESULTS_URL)
+        self.assertEqual(result["precinctsTotal"], 2)
 
     def test_rejects_count_mismatch_and_invalid_winner(self):
         with self.assertRaisesRegex(ValueError, "count mismatch"):

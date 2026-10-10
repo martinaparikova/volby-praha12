@@ -1,10 +1,10 @@
 {
   "municipality": "Praha 22",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_538931.xml",
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/okresy/vysledky_obce_okres_CZ0100.xml",
   "isSample": false,
   "isComplete": false,
-  "generatedAt": "2026-10-08T16:40:23",
+  "generatedAt": "2026-10-10T19:33:01",
   "totalSeats": 25,
   "precinctsTotal": 9,
   "precinctsCounted": 0,
