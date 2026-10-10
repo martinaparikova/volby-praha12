@@ -1,0 +1,85 @@
+name: Update CSU data and publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # GitHub cron uses UTC; scheduled runs can be delayed.
+    - cron: "2-57/5 * 10-17 10 *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: election-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      publish: ${{ steps.window.outputs.publish }}
+    steps:
+      - name: Limit scheduled polling to election week 2026
+        id: window
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" != "schedule" ] || { [ "$(date -u +%Y%m%d)" -ge 20261010 ] && [ "$(date -u +%Y%m%d)" -le 20261017 ]; }; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.window.outputs.publish == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.window.outputs.publish == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-csu.txt
+
+      - name: Install importer dependencies
+        if: steps.window.outputs.publish == 'true'
+        run: python -m pip install -r scripts/requirements-csu.txt
+
+      - name: Test official XML importer
+        if: steps.window.outputs.publish == 'true'
+        run: python -m unittest discover -s scripts -p test_update_csu.py -v
+
+      - name: Fetch and validate official data
+        if: steps.window.outputs.publish == 'true'
+        run: python scripts/update_csu.py
+
+      - name: Prepare public site only
+        if: steps.window.outputs.publish == 'true'
+        run: |
+          mkdir -p _site/data
+          cp index.html CNAME _site/
+          cp -r css js _site/
+          cp data/candidates-*.json data/results-*.json _site/data/
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.window.outputs.publish == 'true'
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish validated site
+        id: deployment
+        uses: actions/deploy-pages@v4

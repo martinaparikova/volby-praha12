@@ -137,9 +137,8 @@ python scripts\update_csu.py praha12 --output-dir C:\Temp\csu-test
 
 Režim `--watch` běží v popředí a ukončuje se Ctrl+C. Při chybě skončí a
 vypíše důvod; po odstranění problému je nutné ho znovu spustit.
-Samotné obnovení stránky každých 60 s pouze načítá lokální JSON — ČSÚ
-kontaktuje tento skript. GitHub Pages Python nespouští; nová data je potřeba
-publikovat do nasazené větve nebo zajistit samostatnou automatizaci.
+Samotné obnovení stránky každých 60 s pouze načítá publikovaný JSON — ČSÚ
+kontaktuje tento skript, lokálně nebo v GitHub Actions (viz nasazení níže).
 
 Regresní testy:
 
@@ -172,5 +171,27 @@ a pak otevřít `http://localhost:8765/`.
 
 ## Nasazení na GitHub Pages
 
-Stačí v nastavení repozitáře (Settings → Pages) zapnout GitHub Pages pro větev
-`main` a kořenovou složku `/`.
+V Settings → Pages je jako zdroj nastaveno **GitHub Actions**. Workflow
+`.github/workflows/publish.yml` při pushi do `main`, ručním spuštění a podle
+plánu stáhne aktuální data ČSÚ, spustí regresní testy a publikuje statický web.
+Používá vestavěný `GITHUB_TOKEN`, není potřeba přidávat osobní token ani tajné údaje.
+Změny dat se necommitují zpět do repozitáře; jsou součástí publikovaného
+Pages artefaktu. Lokální JSON a soubory v repozitáři proto nemusí mít stejný
+čas jako aktuální veřejný web.
+
+Automatické běhy jsou plánované každých **5 minut od 10. do 17. října 2026
+(UTC)**. GitHub negarantuje přesný čas a může běhy opozdit. Kontrola roku
+zabraňuje stahování a nasazování při opakování cronu v dalších letech.
+Po volebním týdnu lze blok `schedule` odstranit; ruční spuštění a publikování
+při pushi fungují dál.
+
+Ruční aktualizace: GitHub → Actions → **Update CSU data and publish** →
+**Run workflow**, větev `main`. V případě chyby stažení či validace se nová
+verze nenasadí, předchozí web zůstane dostupný a běh skončí chybou v Actions.
+Čas „Aktualizováno“ ukazuje stáří zdrojových dat ČSÚ.
+
+Instalace závislostí pro samostatný lokální běh:
+
+```powershell
+python -m pip install -r scripts\requirements-csu.txt
+```
