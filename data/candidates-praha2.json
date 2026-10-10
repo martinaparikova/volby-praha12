@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 2",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-2-500089",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -1035,7 +1035,7 @@
           "number": 3,
           "name": "Marie Fajtová dipl. um.",
           "age": 48,
-          "gender": "M",
+          "gender": "F",
           "profession": "operní pěvkyně a pedagožka"
         },
         {
@@ -1162,7 +1162,7 @@
           "name": "Mgr. Martina Macková",
           "age": 57,
           "gender": "F",
-          "profession": "ředitelka GreenWay, cvičitelka Sokol Pražský"
+          "profession": "ředitelka sítě partnerů Green Ways, cvičitelka Sokol Pražský"
         },
         {
           "number": 22,
@@ -1637,7 +1637,7 @@
           "number": 27,
           "name": "akad. mal. Anna Kubů",
           "age": 75,
-          "gender": "M",
+          "gender": "F",
           "profession": "akademická malířka"
         },
         {

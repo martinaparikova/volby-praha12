@@ -1,78 +1,86 @@
 {
   "municipality": "Praha 4",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_500119.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:32",
   "totalSeats": 45,
-  "precinctsTotal": 28,
-  "precinctsCounted": 18,
-  "turnoutPercent": 44.7,
+  "precinctsTotal": 132,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
+    {
+      "id": 1,
+      "name": "Spojená levice pro Prahu 4",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
     {
       "id": 2,
       "name": "Česká pirátská strana",
-      "votesPercent": 23.0,
-      "seats": 11
-    },
-    {
-      "id": 7,
-      "name": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "votesPercent": 19.1,
-      "seats": 9
-    },
-    {
-      "id": 4,
-      "name": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "votesPercent": 15.8,
-      "seats": 7
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "Motoristé sobě a Svobodní",
-      "votesPercent": 14.0,
-      "seats": 6
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 5,
       "name": "ANO 2011",
-      "votesPercent": 11.8,
-      "seats": 5
-    },
-    {
-      "id": 1,
-      "name": "Spojená levice pro Prahu 4",
-      "votesPercent": 10.1,
-      "seats": 4
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 6,
       "name": "SPOLU pro PRAHU 4",
-      "votesPercent": 6.2,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Josef Vlach",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 78
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
-      "name": "Mgr. Jiří Barták",
-      "partyId": 3,
-      "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 99
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
-      "name": "Bc. Filip Jelínek",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 61
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 4,
@@ -111,24 +119,24 @@
     },
     {
       "seatNumber": 9,
-      "name": "Mgr. Petr Štěpánek CSc.",
-      "partyId": 7,
-      "partyName": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "preferenceVotes": 78
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
-      "name": "Ing. Jan Hora",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 245
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
-      "name": "Ing. Dominik Vít",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 85
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
@@ -153,24 +161,24 @@
     },
     {
       "seatNumber": 15,
-      "name": "Ing. Vladimír Chalupník",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 151
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 16,
-      "name": "Ladislav Dvořák",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 25
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
-      "name": "Mgr. Tomáš Liškutín",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 250
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
@@ -181,52 +189,52 @@
     },
     {
       "seatNumber": 19,
-      "name": "Alena Kovalová",
-      "partyId": 1,
-      "partyName": "Spojená levice pro Prahu 4",
-      "preferenceVotes": 64
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
-      "name": "Ing. Tereza Nislerová MA, MIM",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 169
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 21,
-      "name": "Martin Nachtigall",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 82
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 22,
-      "name": "MUDr. Klára Cingrošová",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 52
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
-      "name": "Karel Skoupil",
-      "partyId": 1,
-      "partyName": "Spojená levice pro Prahu 4",
-      "preferenceVotes": 159
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 24,
-      "name": "PhDr. Lukáš Kaiser Zicha",
-      "partyId": 7,
-      "partyName": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "preferenceVotes": 169
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,
-      "name": "Jan Žáček",
-      "partyId": 7,
-      "partyName": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "preferenceVotes": 120
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 26,
@@ -237,10 +245,10 @@
     },
     {
       "seatNumber": 27,
-      "name": "Bc. Renata Maršíková",
-      "partyId": 3,
-      "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 43
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 28,
@@ -251,31 +259,31 @@
     },
     {
       "seatNumber": 29,
-      "name": "Ing. Jana Mařík Jurdová",
-      "partyId": 7,
-      "partyName": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "preferenceVotes": 124
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 30,
-      "name": "JUDr. Tomáš Chleboun",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 212
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 31,
-      "name": "Ivana Wurmová",
-      "partyId": 2,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 32
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 32,
-      "name": "Ondřej Hatina",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 185
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 33,
@@ -286,52 +294,52 @@
     },
     {
       "seatNumber": 34,
-      "name": "Alena Blažková",
-      "partyId": 1,
-      "partyName": "Spojená levice pro Prahu 4",
-      "preferenceVotes": 120
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 35,
-      "name": "Mgr. Gabriella Steinwald",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 71
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 36,
-      "name": "Jaroslava Mörwicková",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 72
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 37,
-      "name": "Irena Michalcová",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 56
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 38,
-      "name": "Jan Hušbauer",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 106
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 39,
-      "name": "Ing. Radek Lacko",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 51
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 40,
-      "name": "Mgr. Jan Slanina",
-      "partyId": 7,
-      "partyName": "SPOLEČNĚ PRO ZMĚNU – KOALICE STAROSTOVÉ, PRAHA SOBĚ, LIDOVCI A ZELENÍ",
-      "preferenceVotes": 47
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 41,
@@ -363,10 +371,10 @@
     },
     {
       "seatNumber": 45,
-      "name": "Mgr. Šimon Miča M.A.",
-      "partyId": 4,
-      "partyName": "SPD pro Prahu 4 s podporou PRO, Sociálních demokratů, Trikolory a nezávislých kandidátů",
-      "preferenceVotes": 144
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     }
   ]
 }

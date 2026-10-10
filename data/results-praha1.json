@@ -1,106 +1,121 @@
 {
   "municipality": "Praha 1",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_500054.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:35",
   "totalSeats": 27,
-  "precinctsTotal": 15,
-  "precinctsCounted": 9,
-  "turnoutPercent": 44.0,
+  "precinctsTotal": 21,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
-    {
-      "id": 6,
-      "name": "Rozhodujme společně",
-      "votesPercent": 11.7,
-      "seats": 4
-    },
-    {
-      "id": 4,
-      "name": "MODRÁ pro jedničku",
-      "votesPercent": 11.2,
-      "seats": 4
-    },
     {
       "id": 1,
       "name": "Občanská demokratická strana",
-      "votesPercent": 10.2,
-      "seats": 3
-    },
-    {
-      "id": 7,
-      "name": "Motoristé sobě a Svobodní",
-      "votesPercent": 10.1,
-      "seats": 3
-    },
-    {
-      "id": 3,
-      "name": "PRAHA 1 SOBĚ",
-      "votesPercent": 9.7,
-      "seats": 3
-    },
-    {
-      "id": 10,
-      "name": "Patrioti pro Prahu 1",
-      "votesPercent": 8.3,
-      "seats": 3
-    },
-    {
-      "id": 13,
-      "name": "Piráti a nezávislí pro Prahu 1",
-      "votesPercent": 7.7,
-      "seats": 2
-    },
-    {
-      "id": 12,
-      "name": "Starostové, KDU-ČSL s podporou Iniciativy občanů (My, co tady žijeme)",
-      "votesPercent": 7.3,
-      "seats": 2
-    },
-    {
-      "id": 8,
-      "name": "TOP 09 – Srdce Prahy",
-      "votesPercent": 5.5,
-      "seats": 1
-    },
-    {
-      "id": 11,
-      "name": "GEN a sousedé z Prahy 1",
-      "votesPercent": 5.4,
-      "seats": 1
-    },
-    {
-      "id": 9,
-      "name": "REZIDENTI 1",
-      "votesPercent": 5.2,
-      "seats": 1
-    },
-    {
-      "id": 5,
-      "name": "Naše Praha 1 - ANO 2011 a nezávislí, Staroměstská lípa - sdružení občanů a přátel Starého Města a Josefova v Praze, spolek",
-      "votesPercent": 2.7,
-      "seats": 0
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "NEZÁVISLÍ z Jedničky Kateřiny Klasnové a Davida Bodečka",
-      "votesPercent": 2.5,
-      "seats": 0
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 3,
+      "name": "PRAHA 1 SOBĚ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "MODRÁ pro jedničku",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "Naše Praha 1 - ANO 2011 a nezávislí, Staroměstská lípa - sdružení občanů a přátel Starého Města a Josefova v Praze, spolek",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "Rozhodujme společně",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "Motoristé sobě a Svobodní",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "TOP 09 – Srdce Prahy",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 9,
+      "name": "REZIDENTI 1",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 10,
+      "name": "Patrioti pro Prahu 1",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 11,
+      "name": "GEN a sousedé z Prahy 1",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 12,
+      "name": "Starostové, KDU-ČSL s podporou Iniciativy občanů (My, co tady žijeme)",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 13,
+      "name": "Piráti a nezávislí pro Prahu 1",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 14,
       "name": "SPD pro Prahu 1 s podporou PRO, Trikolory, Přísahy, \"sirotků sociální demokracie (1878)\" a místních obyvatel",
-      "votesPercent": 2.5,
-      "seats": 0
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Ing. Vojtěch Ryvola",
-      "partyId": 11,
-      "partyName": "GEN a sousedé z Prahy 1",
-      "preferenceVotes": 43
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
@@ -111,10 +126,10 @@
     },
     {
       "seatNumber": 3,
-      "name": "Mgr. Amália Počarovská",
-      "partyId": 3,
-      "partyName": "PRAHA 1 SOBĚ",
-      "preferenceVotes": 21
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 4,
@@ -125,17 +140,17 @@
     },
     {
       "seatNumber": 5,
-      "name": "Ing. Tomáš Bajusz",
-      "partyId": 13,
-      "partyName": "Piráti a nezávislí pro Prahu 1",
-      "preferenceVotes": 62
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 6,
-      "name": "PhDr. Daniel Kunštát Ph.D.",
-      "partyId": 1,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 43
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
@@ -146,38 +161,38 @@
     },
     {
       "seatNumber": 8,
-      "name": "Bc. Petr Rachunek",
-      "partyId": 6,
-      "partyName": "Rozhodujme společně",
-      "preferenceVotes": 87
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
-      "name": "Ing. Tomáš Heres",
-      "partyId": 1,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 64
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
-      "name": "MgA. Veronika Blažková MBA",
-      "partyId": 7,
-      "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 79
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
-      "name": "Ing. Petr Hejma",
-      "partyId": 12,
-      "partyName": "Starostové, KDU-ČSL s podporou Iniciativy občanů (My, co tady žijeme)",
-      "preferenceVotes": 48
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
-      "name": "Mgr. Michal Müller",
-      "partyId": 1,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 89
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
@@ -188,10 +203,10 @@
     },
     {
       "seatNumber": 14,
-      "name": "Jonáš Felkel",
-      "partyId": 3,
-      "partyName": "PRAHA 1 SOBĚ",
-      "preferenceVotes": 51
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
@@ -216,17 +231,17 @@
     },
     {
       "seatNumber": 18,
-      "name": "Petr Burgr",
-      "partyId": 12,
-      "partyName": "Starostové, KDU-ČSL s podporou Iniciativy občanů (My, co tady žijeme)",
-      "preferenceVotes": 12
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 19,
-      "name": "Martin Motl",
-      "partyId": 9,
-      "partyName": "REZIDENTI 1",
-      "preferenceVotes": 17
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
@@ -244,10 +259,10 @@
     },
     {
       "seatNumber": 22,
-      "name": "Bc. René Buřič",
-      "partyId": 10,
-      "partyName": "Patrioti pro Prahu 1",
-      "preferenceVotes": 21
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
@@ -258,10 +273,10 @@
     },
     {
       "seatNumber": 24,
-      "name": "Ing. Nikola Hrnčír",
-      "partyId": 6,
-      "partyName": "Rozhodujme společně",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,
@@ -272,17 +287,17 @@
     },
     {
       "seatNumber": 26,
-      "name": "Tomáš Ouška",
-      "partyId": 4,
-      "partyName": "MODRÁ pro jedničku",
-      "preferenceVotes": 16
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 27,
-      "name": "Jan Rachunek",
-      "partyId": 6,
-      "partyName": "Rozhodujme společně",
-      "preferenceVotes": 75
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     }
   ]
 }

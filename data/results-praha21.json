@@ -1,43 +1,49 @@
 {
   "municipality": "Praha 21",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_538949.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:40",
   "totalSeats": 17,
-  "precinctsTotal": 15,
-  "precinctsCounted": 7,
-  "turnoutPercent": 33.6,
+  "precinctsTotal": 8,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
       "id": 1,
       "name": "ANO 2011",
-      "votesPercent": 28.8,
-      "seats": 5
-    },
-    {
-      "id": 5,
-      "name": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
-      "votesPercent": 23.2,
-      "seats": 4
-    },
-    {
-      "id": 4,
-      "name": "Otevřený Újezd – pro dobrý život bez planých slibů",
-      "votesPercent": 16.9,
-      "seats": 3
-    },
-    {
-      "id": 3,
-      "name": "ÚJEZD21",
-      "votesPercent": 16.7,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "STAROSTOVÉ A NEZÁVISLÍ – ÚJEZD ŽIJE",
-      "votesPercent": 14.3,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 3,
+      "name": "ÚJEZD21",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "Otevřený Újezd – pro dobrý život bez planých slibů",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
@@ -50,10 +56,10 @@
     },
     {
       "seatNumber": 2,
-      "name": "Robert Kučera",
-      "partyId": 4,
-      "partyName": "Otevřený Újezd – pro dobrý život bez planých slibů",
-      "preferenceVotes": 67
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
@@ -64,24 +70,24 @@
     },
     {
       "seatNumber": 4,
-      "name": "MUDr. Zita Kazdová",
-      "partyId": 4,
-      "partyName": "Otevřený Újezd – pro dobrý život bez planých slibů",
-      "preferenceVotes": 35
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
-      "name": "Mgr. Milan Balahura",
-      "partyId": 1,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 28
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 6,
-      "name": "Jan Jackanič DiS.",
-      "partyId": 3,
-      "partyName": "ÚJEZD21",
-      "preferenceVotes": 42
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
@@ -106,17 +112,17 @@
     },
     {
       "seatNumber": 10,
-      "name": "Ing. Petr Klinger",
-      "partyId": 1,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 53
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
-      "name": "Milan Samec",
-      "partyId": 5,
-      "partyName": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
-      "preferenceVotes": 67
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
@@ -134,10 +140,10 @@
     },
     {
       "seatNumber": 14,
-      "name": "Ing. Marek Buchtel",
-      "partyId": 3,
-      "partyName": "ÚJEZD21",
-      "preferenceVotes": 25
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
@@ -148,10 +154,10 @@
     },
     {
       "seatNumber": 16,
-      "name": "Ing. Michal Hazdra",
-      "partyId": 5,
-      "partyName": "ODS a TOP 09 - SPOLEČNĚ PRO ÚJEZD",
-      "preferenceVotes": 90
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,

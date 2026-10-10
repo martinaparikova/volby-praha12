@@ -20,7 +20,7 @@ Zastupitelstva hlavního města Prahy (magistrát) pro komunální volby 2026
   průměrný věk), s možností řazení.
 - Záložka **Výsledky** pro sledování výsledků voleb v noci z 9. na 10. 10.:
   průběh sečtených okrsků, volební účast, průběžné výsledky kandidátek a
-  postupně se plnící mandáty (jméno + strana + počet preferenčních hlasů),
+  oficiální mandáty po úplném sečtení (jméno + strana + počet hlasů kandidáta),
   seřazené a barevně odlišené podle stran. Automatické obnovení dat každých
   60 s (lze vypnout) + tlačítko pro okamžité obnovení.
 - Přepínání světlého/tmavého režimu (vpravo nahoře), barevné schéma
@@ -39,32 +39,34 @@ data/results-praha{1..22}.json    # data pro záložku Výsledky (zatím UKÁZKO
 data/results-magistrat.json       # data pro záložku Výsledky za magistrát (zatím UKÁZKOVÁ, viz níže)
 scripts/parse_candidates.py       # skript pro vygenerování candidates-*.json
 scripts/generate_sample_results.py # skript pro vygenerování ukázkových dat results-*.json
+scripts/parse_real_results.py     # skript pro převod ostrých dat ČSÚ na results-*.json (viz níže)
+scripts/update_csu.py             # aktualizace platných kandidátů a oficiálních průběžných výsledků
+scripts/test_update_csu.py        # regresní testy oficiálního XML
 ```
 
 ## Zdroj dat
 
-Data o kandidátech (jméno, věk, povolání) pocházejí z Českého statistického
-úřadu, zprostředkovaná přes [Poradnu pro obce](https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-12-547107).
+Data o kandidátech (jméno, věk, povolání) pocházejí přímo z
+[oficiálního registru ČSÚ](https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip).
+Zahrnují pouze kandidáty s `PLATNOST=A`. Neplatní kandidáti (`PLATNOST=N`)
+jsou vyřazeni z tabulek i statistik; původní čísla kandidátů se zachovávají.
+Názvy a čísla listin jsou převzaty z oficiálního výsledkového XML.
+Původní import z Poradny pro obce zůstává jen jako historická vývojová pomůcka.
 Pohlaví kandidátů není v datech uvedeno explicitně — u části kandidátů je
 odhadnuto heuristikou podle křestního jména a koncovky příjmení (se seznamem
 ručních výjimek pro nestandardní případy). V případě chyby v odhadu pohlaví
 prosím upravte `GENDER_OVERRIDES` ve `scripts/parse_candidates.py` a znovu
 spusťte skript.
 
-Skutečná velikost zastupitelstva (`totalSeats`) pro každou část vychází
-z oficiálních výsledků voleb 2022 (`volby.gov.cz`) — je daná statutem městské
-části a mezi volbami se nemění; viz `DISTRICT_SEATS` ve
-`scripts/generate_sample_results.py` (magistrát má 65 členů, viz
-`MUNICIPALITIES["magistrat"]` tamtéž).
+Skutečná velikost zastupitelstva (`totalSeats`) i celkový počet okrsků
+pocházejí z aktuálního výsledkového XML ČSÚ pro rok 2026, nikoliv z archivu 2022.
 
 ### Aktualizace dat
 
-1. Stáhněte aktuální HTML stránky s kandidátkami (např. přes `Invoke-WebRequest`
-   s běžným prohlížečovým `User-Agent`, jinak web vrátí jen úvodní stránku)
-   do `%TEMP%\praha{N}_candidates.html` pro každou část (resp.
-   `%TEMP%\magistrat_candidates.html` pro celoměstské zastupitelstvo).
-2. Spusťte `python scripts/parse_candidates.py` — přegeneruje všechny soubory
-   v `data/`. Lze spustit i jen pro některá města: `python scripts/parse_candidates.py praha11 praha12 magistrat`.
+Spusťte `python scripts\update_csu.py` pro aktualizaci všech zahrnutých
+zastupitelstev, nebo `python scripts\update_csu.py praha12` jen pro Prahu 12.
+Aktualizují se kandidáti i výsledky. Nepoužívejte starý HTML import pro
+aktualizaci ostrých dat, protože nefiltruje neplatné kandidáty.
 
 ### Přidání další městské části
 
@@ -81,24 +83,26 @@ automaticky.
 ## Záložka Výsledky — stav a napojení reálných dat
 
 `data/results-praha{1..22}.json` a `data/results-magistrat.json` obsahují
-**zatím jen ukázková, náhodně vygenerovaná data**
-(`scripts/generate_sample_results.py`), protože skutečné výsledky zveřejní
-ČSÚ až v průběhu a po volbách (9.–10. 10. 2026). Stránka na to upozorňuje
-žlutým banerem, dokud `isSample` v datech je `true`.
+**oficiální průběžná data ČSÚ**. Nulový počet sečtených okrsků není ukázka.
+Dokud není zastupitelstvo úplně sečtené (`isComplete=false`), mandáty
+jednotlivých stran jsou `null` a všechna křesla čekají na výsledek.
+Žlutý baner vysvětluje, že mandáty budou dostupné po úplném sečtení.
+Účast je při nulovém počtu sečtených okrsků `null`, nikoliv skutečných 0 %.
 
 Formát souboru `results-*.json`:
 
 ```jsonc
 {
   "municipality": "Praha 12",
-  "isSample": true,              // smazat/nastavit na false u ostrých dat
-  "sampleNote": "...",           // text žlutého baneru (jen když isSample)
-  "precinctsTotal": 28,          // celkem okrsků
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-10T15:00:00", // čas dat ČSÚ, nikoliv obnovení prohlížeče
+  "precinctsTotal": 50,          // celkem okrsků
   "precinctsCounted": 18,        // sečteno okrsků
   "turnoutPercent": 47.2,        // volební účast
   "totalSeats": 35,              // velikost zastupitelstva
-  "parties": [ { "id": 1, "name": "...", "votesPercent": 20.5, "seats": 8 } ],
-  "seats": [ { "seatNumber": 1, "name": "Jméno Příjmení", "partyId": 1, "partyName": "...", "preferenceVotes": 187 } ]
+  "parties": [ { "id": 1, "name": "...", "votesPercent": 20.5, "seats": null } ],
+  "seats": [ { "seatNumber": 1, "name": null, "partyId": null, "partyName": null, "preferenceVotes": null } ]
   // "name"/"partyId"/"partyName"/"preferenceVotes" = null u dosud nerozhodnutého křesla
 }
 ```
@@ -109,13 +113,48 @@ stran (v pořadí dle `parties`, tj. podle podílu hlasů) a uvnitř strany podl
 podbarvením karet. Dosud nerozhodnutá křesla (`partyId: null`) se zobrazují
 na konci.
 
-Až ČSÚ zveřejní skutečný formát (pravděpodobně XML na `volby.gov.cz/appdata/kv2026/...`,
-viz [dokumentace otevřených dat](https://volby.gov.cz/opendata/kv2026/kv2026_opendata_seznam.htm)),
-bude potřeba napsat obdobný převodní skript jako `parse_candidates.py`, který
-z reálného zdroje vygeneruje JSON ve výše uvedeném tvaru — samotná stránka
-(`index.html`/`js/app.js`) se měnit nemusí. Do té doby lze `results-*.json`
-periodicky přegenerovat (`python scripts/generate_sample_results.py`) jen pro
-vývoj/náhled.
+### Oficiální průběžné XML — `update_csu.py`
+
+Skript používá [průběžné XML ČSÚ](https://volby.gov.cz/opendata/kv2026/KV2026_XML.htm),
+např. [Praha 12](https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547107.xml).
+Přebírá procenta hlasů, volební účast, počty okrsků a velikost zastupitelstva.
+Po dokončení sčítání převezme přímo přidělené mandáty a elementy `ZASTUPITEL`
+s počty hlasů. Neprovádí vlastní d'Hondtův výpočet ani odhad vítězů.
+Čas „Aktualizováno“ na stránce odpovídá času vytvoření dat ČSÚ.
+
+Skript před zápisem ověří všechny stažené obce. Chyba HTTP/XML, jiná obec,
+neznámá platnost kandidáta či nesoulad počtů kandidátů/mandátů ukončí běh
+s chybovou zprávou bez publikování vadné dávky. Jednotlivé soubory se nahrazují
+atomicky. Při chybě obnovení v prohlížeči zůstanou poslední výsledky
+s viditelným upozorněním.
+
+```powershell
+python scripts\update_csu.py                   # jednorázově všech 23 zastupitelstev
+python scripts\update_csu.py praha12 --watch   # lokální aktualizace každých 60 s
+python scripts\update_csu.py --watch           # totéž pro všechna zastupitelstva
+python scripts\update_csu.py praha12 --output-dir C:\Temp\csu-test
+```
+
+Režim `--watch` běží v popředí a ukončuje se Ctrl+C. Při chybě skončí a
+vypíše důvod; po odstranění problému je nutné ho znovu spustit.
+Samotné obnovení stránky každých 60 s pouze načítá lokální JSON — ČSÚ
+kontaktuje tento skript. GitHub Pages Python nespouští; nová data je potřeba
+publikovat do nasazené větve nebo zajistit samostatnou automatizaci.
+
+Regresní testy:
+
+```powershell
+python -m unittest discover -s scripts -p test_update_csu.py -v
+```
+
+### Archivní a ukázkové skripty
+
+`parse_real_results.py` je dřívější experiment pro archivní `kvt3.xml` a
+`kvhl.xml`, které ČSÚ zveřejňuje až po ukončení zpracování. **Nepoužívejte ho
+pro ostré výsledky**: jeho vlastní přepočet není ověřený na úplných reálných
+datech. Průběžné XML nyní explicitně odmítá. Stejně tak
+`generate_sample_results.py` slouží pouze k vývoji a přepsal by ostrá data
+ukázkovými.
 
 Stránka data obnovuje automaticky každých 60 s (dá se vypnout zaškrtávátkem),
 plus je tlačítko „Aktualizovat teď“ pro okamžité obnovení.
@@ -135,4 +174,3 @@ a pak otevřít `http://localhost:8765/`.
 
 Stačí v nastavení repozitáře (Settings → Pages) zapnout GitHub Pages pro větev
 `main` a kořenovou složku `/`.
-

@@ -1,79 +1,91 @@
 {
   "municipality": "Praha 15",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547387.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:35",
   "totalSeats": 31,
-  "precinctsTotal": 16,
-  "precinctsCounted": 9,
-  "turnoutPercent": 28.3,
+  "precinctsTotal": 23,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 3,
-      "name": "HNUTÍ ANTONÍNA ŠVEHLY – HAŠ",
-      "votesPercent": 15.6,
-      "seats": 5
-    },
-    {
-      "id": 6,
-      "name": "Komunistická strana Čech a Moravy",
-      "votesPercent": 12.4,
-      "seats": 4
-    },
-    {
-      "id": 11,
-      "name": "NEZÁVISLÍ",
-      "votesPercent": 12.0,
-      "seats": 4
-    },
-    {
-      "id": 5,
-      "name": "Koruna Česká (monarchistická strana Čech, Moravy a Slezska)",
-      "votesPercent": 11.7,
-      "seats": 4
-    },
-    {
-      "id": 9,
-      "name": "Piráti a Praha 15 sobě",
-      "votesPercent": 10.8,
-      "seats": 3
-    },
-    {
-      "id": 4,
-      "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 8.1,
-      "seats": 2
-    },
-    {
-      "id": 8,
-      "name": "ANO 2011",
-      "votesPercent": 7.4,
-      "seats": 2
-    },
-    {
-      "id": 7,
-      "name": "Společně pro Prahu 15 (Občanská demokratická strana, TOP 09 a nezávislí kandidáti)",
-      "votesPercent": 6.9,
-      "seats": 2
-    },
-    {
-      "id": 10,
-      "name": "Česká strana asociálů",
-      "votesPercent": 5.8,
-      "seats": 2
+      "id": 1,
+      "name": "SPD, PRO a nezávislí kandidáti pro Prahu 15",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "Patnáctka náš domov",
-      "votesPercent": 5.7,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 1,
-      "name": "SPD, PRO a nezávislí kandidáti pro Prahu 15",
-      "votesPercent": 3.6,
-      "seats": 1
+      "id": 3,
+      "name": "HNUTÍ ANTONÍNA ŠVEHLY – HAŠ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "Koruna Česká (monarchistická strana Čech, Moravy a Slezska)",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "Komunistická strana Čech a Moravy",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "Společně pro Prahu 15 (Občanská demokratická strana, TOP 09 a nezávislí kandidáti)",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 9,
+      "name": "Piráti a Praha 15 sobě",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 10,
+      "name": "Česká strana asociálů",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 11,
+      "name": "NEZÁVISLÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
@@ -86,10 +98,10 @@
     },
     {
       "seatNumber": 2,
-      "name": "Michal Klusák",
-      "partyId": 6,
-      "partyName": "Komunistická strana Čech a Moravy",
-      "preferenceVotes": 111
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
@@ -100,10 +112,10 @@
     },
     {
       "seatNumber": 4,
-      "name": "Ing. Pavel Frydrych",
-      "partyId": 1,
-      "partyName": "SPD, PRO a nezávislí kandidáti pro Prahu 15",
-      "preferenceVotes": 6
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -114,52 +126,52 @@
     },
     {
       "seatNumber": 6,
-      "name": "Mgr. Pavel Petrášek",
-      "partyId": 9,
-      "partyName": "Piráti a Praha 15 sobě",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
-      "name": "Mgr. Andrea Hogenová",
-      "partyId": 4,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 46
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
-      "name": "Mgr. Ivan Tomeš",
-      "partyId": 11,
-      "partyName": "NEZÁVISLÍ",
-      "preferenceVotes": 46
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
-      "name": "Ing. Michal Gust",
-      "partyId": 9,
-      "partyName": "Piráti a Praha 15 sobě",
-      "preferenceVotes": 37
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
-      "name": "Mgr. Petra Šikýřová",
-      "partyId": 11,
-      "partyName": "NEZÁVISLÍ",
-      "preferenceVotes": 91
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
-      "name": "Václav Novotný",
-      "partyId": 3,
-      "partyName": "HNUTÍ ANTONÍNA ŠVEHLY – HAŠ",
-      "preferenceVotes": 103
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
-      "name": "Petra Brabcová",
-      "partyId": 11,
-      "partyName": "NEZÁVISLÍ",
-      "preferenceVotes": 37
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
@@ -170,17 +182,17 @@
     },
     {
       "seatNumber": 14,
-      "name": "Jiří Pěnčík",
-      "partyId": 6,
-      "partyName": "Komunistická strana Čech a Moravy",
-      "preferenceVotes": 67
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
-      "name": "David Hájek",
-      "partyId": 8,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 44
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 16,
@@ -191,10 +203,10 @@
     },
     {
       "seatNumber": 17,
-      "name": "Vladimír Limburský",
-      "partyId": 4,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 44
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
@@ -219,17 +231,17 @@
     },
     {
       "seatNumber": 21,
-      "name": "Erik Pašingr",
-      "partyId": 5,
-      "partyName": "Koruna Česká (monarchistická strana Čech, Moravy a Slezska)",
-      "preferenceVotes": 56
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 22,
-      "name": "Jana Kučerová",
-      "partyId": 6,
-      "partyName": "Komunistická strana Čech a Moravy",
-      "preferenceVotes": 73
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
@@ -254,10 +266,10 @@
     },
     {
       "seatNumber": 26,
-      "name": "Michal Fischer",
-      "partyId": 7,
-      "partyName": "Společně pro Prahu 15 (Občanská demokratická strana, TOP 09 a nezávislí kandidáti)",
-      "preferenceVotes": 36
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 27,
@@ -268,10 +280,10 @@
     },
     {
       "seatNumber": 28,
-      "name": "Václav Bílek",
-      "partyId": 8,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 29,
@@ -289,10 +301,10 @@
     },
     {
       "seatNumber": 31,
-      "name": "Ing. Zdeněk Edlman",
-      "partyId": 2,
-      "partyName": "Patnáctka náš domov",
-      "preferenceVotes": 47
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     }
   ]
 }

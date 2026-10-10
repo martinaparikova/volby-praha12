@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 12",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -333,7 +333,7 @@
         },
         {
           "number": 11,
-          "name": "Gabriela Houbová Dis.",
+          "name": "Gabriela Houbová DiS.",
           "age": 47,
           "gender": "F",
           "profession": "pedagožka"
@@ -763,7 +763,7 @@
     {
       "id": 4,
       "name": "Naše Dvanáctka",
-      "candidateCount": 35,
+      "candidateCount": 33,
       "candidates": [
         {
           "number": 1,
@@ -899,13 +899,6 @@
           "profession": "lékařka stomatoložka"
         },
         {
-          "number": 20,
-          "name": "Ing. Jana Greifová",
-          "age": 75,
-          "gender": "F",
-          "profession": "ekonomka v důchodu"
-        },
-        {
           "number": 21,
           "name": "Adam Nedvídek",
           "age": 24,
@@ -960,13 +953,6 @@
           "age": 83,
           "gender": "M",
           "profession": "důchodce"
-        },
-        {
-          "number": 29,
-          "name": "Mgr. Iva Hájková",
-          "age": 75,
-          "gender": "F",
-          "profession": "učitelka"
         },
         {
           "number": 30,

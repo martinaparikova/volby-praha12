@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 22",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-22-538931",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -574,7 +574,7 @@
           "name": "Petr Lejnar",
           "age": 51,
           "gender": "M",
-          "profession": "předseda správní rady obchodní společnosti, Člen kontrolního výboru MČ Praha 22"
+          "profession": "předseda správní rady obchodní společnosti, člen kontrolního výboru MČ Praha 22"
         },
         {
           "number": 4,
@@ -1456,7 +1456,7 @@
           "name": "Mgr. Pavel Kosař",
           "age": 40,
           "gender": "M",
-          "profession": "právník, zastupitel MČ Praha 22"
+          "profession": " právník, zastupitel MČ Praha 22"
         }
       ]
     }

@@ -1,77 +1,86 @@
 {
   "municipality": "Praha 2",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_500089.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:40",
   "totalSeats": 35,
-  "precinctsTotal": 22,
-  "precinctsCounted": 10,
-  "turnoutPercent": 46.5,
+  "precinctsTotal": 41,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
-    {
-      "id": 8,
-      "name": "Česká pirátská strana",
-      "votesPercent": 17.9,
-      "seats": 6
-    },
-    {
-      "id": 6,
-      "name": "SPOLU pro Prahu 2",
-      "votesPercent": 15.8,
-      "seats": 6
-    },
-    {
-      "id": 7,
-      "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 15.7,
-      "seats": 6
-    },
     {
       "id": 1,
       "name": "PRAHA 2 SOBĚ",
-      "votesPercent": 13.4,
-      "seats": 5
-    },
-    {
-      "id": 5,
-      "name": "Lidovci a nezávislí Praha 2",
-      "votesPercent": 12.5,
-      "seats": 4
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "JSME PRAHA 2",
-      "votesPercent": 11.2,
-      "seats": 4
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "SPD pro Prahu 2 s podporou PRO, Svobodných a nezávislých kandidátů",
-      "votesPercent": 7.5,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 4,
       "name": "ANO 2011",
-      "votesPercent": 6.0,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "Lidovci a nezávislí Praha 2",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "SPOLU pro Prahu 2",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "Česká pirátská strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Jaroslav Němec",
-      "partyId": 2,
-      "partyName": "JSME PRAHA 2",
-      "preferenceVotes": 22
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
-      "name": "MVDr. Marie Koubková Ph.D.",
-      "partyId": 5,
-      "partyName": "Lidovci a nezávislí Praha 2",
-      "preferenceVotes": 27
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
@@ -82,10 +91,10 @@
     },
     {
       "seatNumber": 4,
-      "name": "Bc. Jan Kolář",
-      "partyId": 4,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 12
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -103,17 +112,17 @@
     },
     {
       "seatNumber": 7,
-      "name": "Jiří Dobiáš",
-      "partyId": 7,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 102
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
-      "name": "Ing. Antonín Kokeš MBA",
-      "partyId": 1,
-      "partyName": "PRAHA 2 SOBĚ",
-      "preferenceVotes": 84
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
@@ -138,10 +147,10 @@
     },
     {
       "seatNumber": 12,
-      "name": "MgA. Vladislav Kučík",
-      "partyId": 3,
-      "partyName": "SPD pro Prahu 2 s podporou PRO, Svobodných a nezávislých kandidátů",
-      "preferenceVotes": 20
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
@@ -159,10 +168,10 @@
     },
     {
       "seatNumber": 15,
-      "name": "Mgr. Karel Koželuh",
-      "partyId": 7,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 35
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 16,
@@ -173,10 +182,10 @@
     },
     {
       "seatNumber": 17,
-      "name": "Mgr. Vlaďka Matušková MSc.",
-      "partyId": 7,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 115
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
@@ -187,10 +196,10 @@
     },
     {
       "seatNumber": 19,
-      "name": "Mgr. Jana Černochová",
-      "partyId": 6,
-      "partyName": "SPOLU pro Prahu 2",
-      "preferenceVotes": 87
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
@@ -208,10 +217,10 @@
     },
     {
       "seatNumber": 22,
-      "name": "Mgr. Klára Neumannová",
-      "partyId": 7,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 69
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
@@ -222,24 +231,24 @@
     },
     {
       "seatNumber": 24,
-      "name": "MUDr. Libor Zámečník Ph.D., FEBU, FECSM, MBA",
-      "partyId": 6,
-      "partyName": "SPOLU pro Prahu 2",
-      "preferenceVotes": 80
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,
-      "name": "Ing. Jakub Kubů",
-      "partyId": 7,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 64
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 26,
-      "name": "Ing. Alexandra Udženija",
-      "partyId": 6,
-      "partyName": "SPOLU pro Prahu 2",
-      "preferenceVotes": 61
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 27,
@@ -257,17 +266,17 @@
     },
     {
       "seatNumber": 29,
-      "name": "Marie Fajtová dipl. um.",
-      "partyId": 5,
-      "partyName": "Lidovci a nezávislí Praha 2",
-      "preferenceVotes": 80
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 30,
-      "name": "Miroslav Tlamicha",
-      "partyId": 5,
-      "partyName": "Lidovci a nezávislí Praha 2",
-      "preferenceVotes": 46
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 31,
@@ -278,10 +287,10 @@
     },
     {
       "seatNumber": 32,
-      "name": "Mgr. Tomáš Čada",
-      "partyId": 2,
-      "partyName": "JSME PRAHA 2",
-      "preferenceVotes": 50
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 33,

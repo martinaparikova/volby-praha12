@@ -1,13 +1,13 @@
 {
   "municipality": "Praha 6",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-6-500178",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
       "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "candidateCount": 45,
+      "candidateCount": 44,
       "candidates": [
         {
           "number": 1,
@@ -169,13 +169,6 @@
           "age": 79,
           "gender": "F",
           "profession": "architektka, lektorka jógy"
-        },
-        {
-          "number": 24,
-          "name": "MgA. David Semler",
-          "age": 36,
-          "gender": "M",
-          "profession": "scenárista, režisér"
         },
         {
           "number": 25,
@@ -1075,7 +1068,7 @@
         },
         {
           "number": 37,
-          "name": "ing. Václav Čvančara",
+          "name": "Ing. Václav Čvančara",
           "age": 28,
           "gender": "M",
           "profession": "konstruktér, mistr republiky v DH longboardingu"
@@ -1873,7 +1866,7 @@
         },
         {
           "number": 13,
-          "name": "JUDr. Mgr. Marcel Petrásek M.B.A., LL.M.",
+          "name": "JUDr. Mgr. Marcel Petrásek MBA., LL.M.",
           "age": 49,
           "gender": "M",
           "profession": "advokát, zastupitel"
@@ -2069,7 +2062,7 @@
         },
         {
           "number": 41,
-          "name": "Antonín Filip",
+          "name": "Filip Antonín",
           "age": 44,
           "gender": "M",
           "profession": "podnikatel"
@@ -2471,7 +2464,7 @@
           "name": "Mgr. Marek Baxa",
           "age": 40,
           "gender": "M",
-          "profession": "předseda rady Skautského institutu, přírodovědec a podnikatel, zastupitel MČ Praha 6"
+          "profession": "přírodovědec a podnikatel, zastupitel MČ Praha 6, předseda rady Skautského institutu"
         },
         {
           "number": 7,
@@ -2576,7 +2569,7 @@
           "name": "Mgr. Tereza Hubičková",
           "age": 53,
           "gender": "F",
-          "profession": "account manager, projektový manažer"
+          "profession": "account manager, projektový manager"
         },
         {
           "number": 22,
@@ -2785,7 +2778,7 @@
           "number": 5,
           "name": "Mgr. Lucie Maňáková dipl.um.",
           "age": 49,
-          "gender": "M",
+          "gender": "F",
           "profession": "finanční kontrolor"
         },
         {
@@ -2979,7 +2972,7 @@
         },
         {
           "number": 33,
-          "name": "Irena Antonová",
+          "name": "Irena Antonovová",
           "age": 80,
           "gender": "F",
           "profession": "úřednice"
@@ -3007,7 +3000,7 @@
         },
         {
           "number": 37,
-          "name": "Jitka Röcková",
+          "name": "Jitka Rücková",
           "age": 55,
           "gender": "F",
           "profession": "ekonom"

@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 10",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-10-500224",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -651,15 +651,8 @@
     {
       "id": 3,
       "name": "SDRUŽENÍ PŘÁTEL PRAHY 10",
-      "candidateCount": 2,
+      "candidateCount": 1,
       "candidates": [
-        {
-          "number": 1,
-          "name": "Registrační úřad ponechal pozici volnou Kandidát v registraci škrtnut",
-          "age": 0,
-          "gender": "M",
-          "profession": ""
-        },
         {
           "number": 2,
           "name": "Dita Jarošová DiS.",
@@ -2554,7 +2547,7 @@
           "number": 39,
           "name": "MA Kryštof Burýšek",
           "age": 28,
-          "gender": "F",
+          "gender": "M",
           "profession": "PR manažer"
         },
         {

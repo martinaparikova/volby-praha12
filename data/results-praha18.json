@@ -1,95 +1,107 @@
 {
   "municipality": "Praha 18",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547417.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:24",
   "totalSeats": 23,
-  "precinctsTotal": 21,
-  "precinctsCounted": 12,
-  "turnoutPercent": 29.4,
+  "precinctsTotal": 12,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 5,
-      "name": "Naše Česko",
-      "votesPercent": 12.5,
-      "seats": 3
+      "id": 1,
+      "name": "Motoristé sobě",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 12.3,
-      "seats": 3
-    },
-    {
-      "id": 10,
-      "name": "JSME TEAM LETŇANY",
-      "votesPercent": 11.8,
-      "seats": 3
-    },
-    {
-      "id": 7,
-      "name": "SPD pro Letňany s podporou Sociální demokracie, Trikolora, PRO",
-      "votesPercent": 11.7,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "SPOLU pro Letňany",
-      "votesPercent": 11.2,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 4,
       "name": "Náš Domov Letňany",
-      "votesPercent": 10.7,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 9,
-      "name": "ANO 2011",
-      "votesPercent": 8.4,
-      "seats": 2
-    },
-    {
-      "id": 1,
-      "name": "Motoristé sobě",
-      "votesPercent": 6.7,
-      "seats": 1
+      "id": 5,
+      "name": "Naše Česko",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 6,
       "name": "Zdravé Letňany s podporou Prahy sobě, Pirátů, Lidovců a Zelených",
-      "votesPercent": 5.7,
-      "seats": 1
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 11,
-      "name": "KRÁSNÉ LETŇANY",
-      "votesPercent": 4.6,
-      "seats": 1
+      "id": 7,
+      "name": "SPD pro Letňany s podporou Sociální demokracie, Trikolora, PRO",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 8,
       "name": "Česká strana asociálů",
-      "votesPercent": 4.3,
-      "seats": 1
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 9,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 10,
+      "name": "JSME TEAM LETŇANY",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 11,
+      "name": "KRÁSNÉ LETŇANY",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Ing. Milan Bušek",
-      "partyId": 3,
-      "partyName": "SPOLU pro Letňany",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
-      "name": "Jiří Čížek",
-      "partyId": 7,
-      "partyName": "SPD pro Letňany s podporou Sociální demokracie, Trikolora, PRO",
-      "preferenceVotes": 50
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
@@ -100,10 +112,10 @@
     },
     {
       "seatNumber": 4,
-      "name": "Ing. Martin Závodný",
-      "partyId": 10,
-      "partyName": "JSME TEAM LETŇANY",
-      "preferenceVotes": 69
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -114,17 +126,17 @@
     },
     {
       "seatNumber": 6,
-      "name": "Mgr. Ondřej Lněnička",
-      "partyId": 3,
-      "partyName": "SPOLU pro Letňany",
-      "preferenceVotes": 74
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
-      "name": "Melisa Hujerová",
-      "partyId": 8,
-      "partyName": "Česká strana asociálů",
-      "preferenceVotes": 14
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
@@ -156,24 +168,24 @@
     },
     {
       "seatNumber": 12,
-      "name": "Bc. Lucie Pajerová",
-      "partyId": 5,
-      "partyName": "Naše Česko",
-      "preferenceVotes": 60
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
-      "name": "Ing. Kosta Prandžev",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 53
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 14,
-      "name": "Mgr. Zdeněk Kučera MBA",
-      "partyId": 9,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 23
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
@@ -184,10 +196,10 @@
     },
     {
       "seatNumber": 16,
-      "name": "Mgr. Michaela Hovorková",
-      "partyId": 10,
-      "partyName": "JSME TEAM LETŇANY",
-      "preferenceVotes": 36
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
@@ -198,17 +210,17 @@
     },
     {
       "seatNumber": 18,
-      "name": "Ivana Etlíková",
-      "partyId": 1,
-      "partyName": "Motoristé sobě",
-      "preferenceVotes": 40
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 19,
-      "name": "Ing. Pavel Sehnal",
-      "partyId": 11,
-      "partyName": "KRÁSNÉ LETŇANY",
-      "preferenceVotes": 7
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
@@ -226,17 +238,17 @@
     },
     {
       "seatNumber": 22,
-      "name": "Milan Čmelík",
-      "partyId": 7,
-      "partyName": "SPD pro Letňany s podporou Sociální demokracie, Trikolora, PRO",
-      "preferenceVotes": 25
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
-      "name": "Ing. Bohuslav Mašek",
-      "partyId": 7,
-      "partyName": "SPD pro Letňany s podporou Sociální demokracie, Trikolora, PRO",
-      "preferenceVotes": 32
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     }
   ]
 }

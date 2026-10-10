@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 9",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-9-500216",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -326,7 +326,7 @@
         },
         {
           "number": 12,
-          "name": "Kryštof Kratochvíl MSc",
+          "name": "Kryštof Kratochvíl MSc.",
           "age": 31,
           "gender": "M",
           "profession": "projektový lídr stavebních projektů, popularizátor cirkulární ekonomiky"
@@ -1075,7 +1075,7 @@
         },
         {
           "number": 17,
-          "name": "PaedDR. Jiří Bobuski",
+          "name": "PaedDr. Jiří Bobuski",
           "age": 81,
           "gender": "M",
           "profession": "učitel"

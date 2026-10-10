@@ -1,70 +1,79 @@
 {
   "municipality": "Praha 9",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_500216.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:27",
   "totalSeats": 33,
-  "precinctsTotal": 26,
-  "precinctsCounted": 17,
-  "turnoutPercent": 44.1,
+  "precinctsTotal": 43,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 5,
-      "name": "ANO 2011",
-      "votesPercent": 20.2,
-      "seats": 7
-    },
-    {
-      "id": 6,
-      "name": "LEPŠÍ ŽIVOT PRO LIDI – zrušení daně z nemovitostí, min. mzda 50.000 Kč, min. důchod 30.000 Kč, návrat cen energií na ceny z roku 2019, v obchodech zboží nejvyšší kvality za ceny dostupné pro každého, STOP válce",
-      "votesPercent": 19.1,
-      "seats": 6
-    },
-    {
-      "id": 8,
-      "name": "PRAHA 9 SOBĚ",
-      "votesPercent": 17.6,
-      "seats": 6
-    },
-    {
-      "id": 4,
-      "name": "ZMĚNA s podporou SEN pro Prahu",
-      "votesPercent": 11.3,
-      "seats": 4
-    },
-    {
-      "id": 7,
-      "name": "Česká pirátská strana",
-      "votesPercent": 11.0,
-      "seats": 4
+      "id": 1,
+      "name": "Svoboda a přímá demokracie (SPD) a Svobodní pro Prahu 9",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 10.7,
-      "seats": 3
-    },
-    {
-      "id": 1,
-      "name": "Svoboda a přímá demokracie (SPD) a Svobodní pro Prahu 9",
-      "votesPercent": 5.7,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "SPOLU PRO PRAHU 9 (ODS a TOP 09) s podporou nestraníků",
-      "votesPercent": 4.4,
-      "seats": 1
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "ZMĚNA s podporou SEN pro Prahu",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "LEPŠÍ ŽIVOT PRO LIDI – zrušení daně z nemovitostí, min. mzda 50.000 Kč, min. důchod 30.000 Kč, návrat cen energií na ceny z roku 2019, v obchodech zboží nejvyšší kvality za ceny dostupné pro každého, STOP válce",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "Česká pirátská strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "PRAHA 9 SOBĚ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Ing. Kateřina Hunalová",
-      "partyId": 7,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 52
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
@@ -82,10 +91,10 @@
     },
     {
       "seatNumber": 4,
-      "name": "Ing. Oliver Keruľ-Kmec",
-      "partyId": 8,
-      "partyName": "PRAHA 9 SOBĚ",
-      "preferenceVotes": 109
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -96,17 +105,17 @@
     },
     {
       "seatNumber": 6,
-      "name": "Mgr. Barbora Pokorná",
-      "partyId": 7,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 73
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
-      "name": "MgA. Kamila Matějková",
-      "partyId": 8,
-      "partyName": "PRAHA 9 SOBĚ",
-      "preferenceVotes": 44
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
@@ -117,45 +126,45 @@
     },
     {
       "seatNumber": 9,
-      "name": "Ing. Miroslav Ezechel",
-      "partyId": 8,
-      "partyName": "PRAHA 9 SOBĚ",
-      "preferenceVotes": 41
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
-      "name": "Lenka Zumrová",
-      "partyId": 1,
-      "partyName": "Svoboda a přímá demokracie (SPD) a Svobodní pro Prahu 9",
-      "preferenceVotes": 30
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
-      "name": "Ing. Michaela Kozumplíková",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 82
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
-      "name": "prof. MUDr. Sergej Zacharov Ph.D., FEAPCCT",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 68
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
-      "name": "Šárka Heverlová",
-      "partyId": 6,
-      "partyName": "LEPŠÍ ŽIVOT PRO LIDI – zrušení daně z nemovitostí, min. mzda 50.000 Kč, min. důchod 30.000 Kč, návrat cen energií na ceny z roku 2019, v obchodech zboží nejvyšší kvality za ceny dostupné pro každého, STOP válce",
-      "preferenceVotes": 104
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 14,
-      "name": "Zoltán Miklós",
-      "partyId": 8,
-      "partyName": "PRAHA 9 SOBĚ",
-      "preferenceVotes": 82
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
@@ -166,31 +175,31 @@
     },
     {
       "seatNumber": 16,
-      "name": "Ondřej Kurz",
-      "partyId": 4,
-      "partyName": "ZMĚNA s podporou SEN pro Prahu",
-      "preferenceVotes": 104
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
-      "name": "Mgr. Jakub Švec",
-      "partyId": 4,
-      "partyName": "ZMĚNA s podporou SEN pro Prahu",
-      "preferenceVotes": 22
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
-      "name": "Ing. Václav Okapa MBA",
-      "partyId": 7,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 46
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 19,
-      "name": "MgA. Michaela Brojírová",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 99
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
@@ -215,10 +224,10 @@
     },
     {
       "seatNumber": 23,
-      "name": "Vítězslav Král",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 92
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 24,
@@ -236,10 +245,10 @@
     },
     {
       "seatNumber": 26,
-      "name": "Pavel Opl",
-      "partyId": 6,
-      "partyName": "LEPŠÍ ŽIVOT PRO LIDI – zrušení daně z nemovitostí, min. mzda 50.000 Kč, min. důchod 30.000 Kč, návrat cen energií na ceny z roku 2019, v obchodech zboží nejvyšší kvality za ceny dostupné pro každého, STOP válce",
-      "preferenceVotes": 65
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 27,
@@ -250,24 +259,24 @@
     },
     {
       "seatNumber": 28,
-      "name": "Mgr. Martin Hrubčík MBA",
-      "partyId": 5,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 98
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 29,
-      "name": "Bc. et Bc. Vladimíra Mušálková",
-      "partyId": 8,
-      "partyName": "PRAHA 9 SOBĚ",
-      "preferenceVotes": 171
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 30,
-      "name": "Mgr. Pavel Pospíšek",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 68
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 31,
@@ -278,17 +287,17 @@
     },
     {
       "seatNumber": 32,
-      "name": "Ing. Zdeněk Davídek",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 24
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 33,
-      "name": "Mgr. Tereza Štochlová",
-      "partyId": 4,
-      "partyName": "ZMĚNA s podporou SEN pro Prahu",
-      "preferenceVotes": 120
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     }
   ]
 }

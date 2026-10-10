@@ -1,13 +1,13 @@
 {
   "municipality": "Praha 13",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-13-539694",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
       "name": "SPD a nezávislí kandidáti pro Prahu 13 s podporou tradičních sociálních demokratů",
-      "candidateCount": 35,
+      "candidateCount": 34,
       "candidates": [
         {
           "number": 1,
@@ -141,13 +141,6 @@
           "age": 52,
           "gender": "M",
           "profession": "technik IT"
-        },
-        {
-          "number": 20,
-          "name": "Bc. Libor Kráčmera",
-          "age": 59,
-          "gender": "M",
-          "profession": "úředník"
         },
         {
           "number": 21,

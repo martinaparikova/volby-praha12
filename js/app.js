@@ -114,7 +114,11 @@
     const res = await fetch(file);
     if (!res.ok) throw new Error("Nepodařilo se načíst data kandidátů.");
     const json = await res.json();
-    state.source = { url: json.source, municipality: json.municipality };
+    state.source = {
+      url: json.source,
+      label: json.sourceNote || "Zdroj kandidátů",
+      municipality: json.municipality,
+    };
     state.parties = json.parties;
     state.allCandidates = json.parties.flatMap((p) =>
       p.candidates.map((c) => ({ ...c, partyId: p.id, partyName: p.name }))
@@ -169,7 +173,10 @@
     document.getElementById("hero-title").innerHTML = `Kdo kandiduje v ${toLocative(config.label)}?`;
     document.title = `Volby ${config.label} — komunální volby 2026`;
     const sourceLink = document.getElementById("source-link");
-    if (sourceLink && state.source) sourceLink.href = state.source.url;
+    if (sourceLink && state.source) {
+      sourceLink.href = state.source.url;
+      sourceLink.textContent = state.source.label;
+    }
 
     updateAgeSliderBounds();
     await measureNameColumnWidth();
@@ -178,10 +185,12 @@
     renderOverview();
 
     state.results = null;
+    document.getElementById("results-error").hidden = true;
     try {
       await loadResults(config.resultsFile);
     } catch (err) {
       state.results = null;
+      showResultsError(err);
     }
     if (document.getElementById("tab-btn-results").classList.contains("is-active")) {
       renderResultsTab();
@@ -203,6 +212,14 @@
     const json = await res.json();
     json.fetchedAt = new Date();
     state.results = json;
+    document.getElementById("results-error").hidden = true;
+  }
+
+  function showResultsError(err) {
+    const message = document.getElementById("results-error");
+    message.textContent = `${err.message} Zobrazené výsledky mohou být neaktuální.`;
+    message.hidden = false;
+    console.error("Načítání výsledků selhalo:", err);
   }
 
   function initResultsControls() {
@@ -224,7 +241,7 @@
       await loadResults(config.resultsFile);
       renderResultsTab();
     } catch (err) {
-      /* keep showing the last known results on failure */
+      showResultsError(err);
     } finally {
       btn.disabled = false;
     }
@@ -251,15 +268,18 @@
       return;
     }
 
-    banner.hidden = !r.isSample;
-    if (r.isSample) document.getElementById("results-sample-text").textContent = r.sampleNote;
+    banner.hidden = !r.isSample && r.isComplete !== false;
+    document.getElementById("results-sample-text").textContent = r.isSample
+      ? r.sampleNote
+      : "Průběžná data ČSÚ. Mandáty a zvolení zastupitelé budou uvedeni až po úplném sečtení.";
 
     const precinctsPct = r.precinctsTotal ? round1((r.precinctsCounted / r.precinctsTotal) * 100) : 0;
     document.getElementById("results-precincts").textContent = `${r.precinctsCounted} z ${r.precinctsTotal} (${precinctsPct}\u00a0%)`;
     document.getElementById("results-precincts-fill").style.width = `${precinctsPct}%`;
-    document.getElementById("results-turnout").textContent = `${r.turnoutPercent}\u00a0%`;
-    document.getElementById("results-updated").textContent = r.fetchedAt
-      ? r.fetchedAt.toLocaleTimeString("cs-CZ", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+    document.getElementById("results-turnout").textContent = r.turnoutPercent == null ? "–" : `${r.turnoutPercent}\u00a0%`;
+    const updated = r.generatedAt ? new Date(r.generatedAt) : r.fetchedAt;
+    document.getElementById("results-updated").textContent = updated
+      ? updated.toLocaleString("cs-CZ")
       : "–";
 
     const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);
@@ -267,7 +287,7 @@
       .map(
         (p) => `
         <div class="party-bar-row">
-          <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${p.seats}&nbsp;mandátů</span></div>
+          <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${p.seats == null ? "mandáty zatím neurčeny" : `${p.seats}&nbsp;mandátů`}</span></div>
           <div class="party-bar-row__track">
             <div class="party-bar-row__fill" style="width:${(p.votesPercent / maxPct) * 100}%"></div>
           </div>
@@ -287,7 +307,7 @@
                 <div class="seat-card__top">
                   <span class="seat-card__number">#${s.seatNumber}</span>
                   <span class="seat-card__name" title="${s.name}">${s.name}</span>
-                  <span class="seat-card__votes" title="${s.preferenceVotes}\u00a0preferenčních hlasů">${s.preferenceVotes}&nbsp;hl.</span>
+                  <span class="seat-card__votes" title="${s.preferenceVotes}\u00a0hlasů pro kandidáta">${s.preferenceVotes}&nbsp;hl.</span>
                 </div>
                 <span class="seat-card__party" title="${s.partyName}">${s.partyName}</span>
               </div>`

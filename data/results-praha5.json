@@ -1,85 +1,98 @@
 {
   "municipality": "Praha 5",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_500143.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:24",
   "totalSeats": 41,
-  "precinctsTotal": 32,
-  "precinctsCounted": 19,
-  "turnoutPercent": 31.7,
+  "precinctsTotal": 81,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 6,
-      "name": "Motoristé sobě a Svobodní",
-      "votesPercent": 13.3,
-      "seats": 6
+      "id": 1,
+      "name": "SPD pro Prahu 5 s podporou PRO a nezávislých kandidátů",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "TOP Lidovci a Nezávislí",
-      "votesPercent": 11.9,
-      "seats": 5
-    },
-    {
-      "id": 4,
-      "name": "PRAHA 5 SOBĚ",
-      "votesPercent": 11.5,
-      "seats": 5
-    },
-    {
-      "id": 12,
-      "name": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
-      "votesPercent": 10.5,
-      "seats": 4
-    },
-    {
-      "id": 8,
-      "name": "Česká pirátská strana",
-      "votesPercent": 8.5,
-      "seats": 3
-    },
-    {
-      "id": 5,
-      "name": "Občanská demokratická strana",
-      "votesPercent": 7.4,
-      "seats": 3
-    },
-    {
-      "id": 10,
-      "name": "REZIDENTI 5P",
-      "votesPercent": 7.4,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "ANO 2011",
-      "votesPercent": 7.0,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 9,
-      "name": "Česká strana asociálů",
-      "votesPercent": 6.4,
-      "seats": 3
+      "id": 4,
+      "name": "PRAHA 5 SOBĚ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 1,
-      "name": "SPD pro Prahu 5 s podporou PRO a nezávislých kandidátů",
-      "votesPercent": 6.4,
-      "seats": 2
+      "id": 5,
+      "name": "Občanská demokratická strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "Motoristé sobě a Svobodní",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 7,
       "name": "Naše Praha 5",
-      "votesPercent": 5.1,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "Česká pirátská strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 9,
+      "name": "Česká strana asociálů",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 10,
+      "name": "REZIDENTI 5P",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 11,
       "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 4.7,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 12,
+      "name": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
@@ -92,10 +105,10 @@
     },
     {
       "seatNumber": 2,
-      "name": "Robert Izák MBA",
-      "partyId": 6,
-      "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 104
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
@@ -106,10 +119,10 @@
     },
     {
       "seatNumber": 4,
-      "name": "Ing. arch. Radek Janoušek",
-      "partyId": 4,
-      "partyName": "PRAHA 5 SOBĚ",
-      "preferenceVotes": 67
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -120,10 +133,10 @@
     },
     {
       "seatNumber": 6,
-      "name": "Ing. Jan Kavalírek",
-      "partyId": 2,
-      "partyName": "TOP Lidovci a Nezávislí",
-      "preferenceVotes": 35
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
@@ -141,10 +154,10 @@
     },
     {
       "seatNumber": 9,
-      "name": "Ing. Lubomír Brož",
-      "partyId": 3,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 55
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
@@ -155,59 +168,59 @@
     },
     {
       "seatNumber": 11,
-      "name": "Ing. Milan Vrkoč",
-      "partyId": 12,
-      "partyName": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
-      "preferenceVotes": 49
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
-      "name": "Josef Matoušek",
-      "partyId": 10,
-      "partyName": "REZIDENTI 5P",
-      "preferenceVotes": 68
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
-      "name": "Bc. Bohdana Milatová",
-      "partyId": 6,
-      "partyName": "Motoristé sobě a Svobodní",
-      "preferenceVotes": 26
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 14,
-      "name": "Mgr. Jan Klusoň",
-      "partyId": 3,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 31
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
-      "name": "Mgr. David Pavlorek",
-      "partyId": 10,
-      "partyName": "REZIDENTI 5P",
-      "preferenceVotes": 62
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 16,
-      "name": "Bc. Olga Burianová",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 39
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
-      "name": "Michael Süss",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 67
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
-      "name": "Svatopluk Bartoň",
-      "partyId": 12,
-      "partyName": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
-      "preferenceVotes": 73
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 19,
@@ -225,24 +238,24 @@
     },
     {
       "seatNumber": 21,
-      "name": "Monika Shaw Salajová M.Sc.",
-      "partyId": 12,
-      "partyName": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
-      "preferenceVotes": 83
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 22,
-      "name": "Ing. Filip Karel PhD.",
-      "partyId": 8,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 94
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
-      "name": "Mgr. Yvetta Lizatović",
-      "partyId": 11,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 38
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 24,
@@ -260,10 +273,10 @@
     },
     {
       "seatNumber": 26,
-      "name": "Mgr. Jan Smetana",
-      "partyId": 10,
-      "partyName": "REZIDENTI 5P",
-      "preferenceVotes": 86
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 27,
@@ -281,10 +294,10 @@
     },
     {
       "seatNumber": 29,
-      "name": "Mgr. Lenka Mlynařík Habrnálová",
-      "partyId": 12,
-      "partyName": "SEN PRO PRAHU 5 s podporou senátora Václava Lásky a Společnosti na ochranu Prokopského údolí",
-      "preferenceVotes": 105
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 30,
@@ -295,31 +308,31 @@
     },
     {
       "seatNumber": 31,
-      "name": "Bc. Lukáš Herold",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 52
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 32,
-      "name": "PhDr. Marie Jungmannová",
-      "partyId": 8,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 61
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 33,
-      "name": "Denisa Šátralová",
-      "partyId": 7,
-      "partyName": "Naše Praha 5",
-      "preferenceVotes": 37
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 34,
-      "name": "Mgr. Radka Šimková",
-      "partyId": 4,
-      "partyName": "PRAHA 5 SOBĚ",
-      "preferenceVotes": 97
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 35,
@@ -330,31 +343,31 @@
     },
     {
       "seatNumber": 36,
-      "name": "Mgr. Tomáš Bederka",
-      "partyId": 8,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 40
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 37,
-      "name": "Bc. Viktor Čahoj",
-      "partyId": 2,
-      "partyName": "TOP Lidovci a Nezávislí",
-      "preferenceVotes": 92
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 38,
-      "name": "JUDr. Rudolf Blažek",
-      "partyId": 7,
-      "partyName": "Naše Praha 5",
-      "preferenceVotes": 60
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 39,
-      "name": "Bc. Martin Damašek M.A.",
-      "partyId": 2,
-      "partyName": "TOP Lidovci a Nezávislí",
-      "preferenceVotes": 56
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 40,

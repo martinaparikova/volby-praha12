@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 11",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-11-547034",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -1883,7 +1883,7 @@
           "name": "Ing. Mgr. Vanda Dušková",
           "age": 45,
           "gender": "F",
-          "profession": "firemní ekoložka, předsedkyně Spolku rodičů Milíčov, náčelnice TJ Sokol Petrovice I."
+          "profession": "firemní ekoložka, předsedkyně Spolku rodičů Milíčov, náčelnice T.J. Sokol Petrovice I."
         },
         {
           "number": 17,

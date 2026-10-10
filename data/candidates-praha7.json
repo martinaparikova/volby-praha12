@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 7",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-7-500186",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -217,7 +217,7 @@
     {
       "id": 2,
       "name": "Spojená levice pro Prahu 7",
-      "candidateCount": 29,
+      "candidateCount": 28,
       "candidates": [
         {
           "number": 1,
@@ -246,13 +246,6 @@
           "age": 26,
           "gender": "M",
           "profession": "student"
-        },
-        {
-          "number": 5,
-          "name": "Jakub Růžička",
-          "age": 50,
-          "gender": "M",
-          "profession": "knihkupec"
         },
         {
           "number": 6,

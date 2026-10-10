@@ -1,0 +1,245 @@
+"""Update candidates and results from official ČSÚ XML, without estimating mandates."""
+import argparse
+import io
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
+import time
+from urllib.request import urlopen
+from xml.etree import ElementTree as ET
+import zipfile
+
+from parse_candidates import MUNICIPALITIES, clean, guess_gender
+
+NS = {"kv": "http://www.volby.cz/kv/"}
+BASE = "https://volby.gov.cz"
+REGISTRY_URL = f"{BASE}/opendata/kv2026/xml/kvrk.zip"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+
+
+def download(url: str) -> bytes:
+    with urlopen(url, timeout=60) as response:
+        return response.read()
+
+
+def code_for(slug: str) -> int:
+    return int(MUNICIPALITIES[slug]["source_url"].rstrip("/").rsplit("-", 1)[1])
+
+
+def results_url(slug: str) -> str:
+    return f"{BASE}/appdata/kv2026/20261009/odata/zastup/vysledky_obec_{code_for(slug)}.xml"
+
+
+def parse_xml(data: bytes, expected_root: str) -> ET.Element:
+    root = ET.fromstring(data)
+    if root.tag != f"{{{NS['kv']}}}{expected_root}":
+        raise ValueError(f"Unexpected XML root: {root.tag}; expected {expected_root}")
+    error = root.find("kv:CHYBA", NS)
+    if error is not None:
+        raise ValueError(f"ČSÚ XML error: {error.attrib}")
+    return root
+
+
+def integer(value: str) -> int:
+    result = int(value)
+    if result < 0:
+        raise ValueError(f"Negative value in ČSÚ data: {value}")
+    return result
+
+
+def full_name(values: dict[str, str]) -> str:
+    return clean(" ".join(values.get(key, "") for key in (
+        "TITULPRED", "JMENO", "PRIJMENI", "TITULZA",
+    )))
+
+
+def registry_rows(data: bytes, codes: set[int]) -> dict[int, list[dict[str, str]]]:
+    selected: dict[int, list[dict[str, str]]] = {code: [] for code in codes}
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        with archive.open("kvrk.xml") as stream:
+            root = None
+            for event, element in ET.iterparse(stream, events=("start", "end")):
+                if root is None:
+                    root = element
+                if event == "end" and element.tag == f"{{{NS['kv']}}}KV_REGKAND_ROW":
+                    row = {child.tag.rsplit("}", 1)[-1]: child.text or "" for child in element}
+                    code = integer(row["KODZASTUP"])
+                    if code in selected:
+                        selected[code].append(row)
+                    root.clear()
+    for code, rows in selected.items():
+        if not rows:
+            raise ValueError(f"Missing candidate registry for {code}")
+    return selected
+
+
+def convert(slug: str, data: bytes, rows: list[dict[str, str]]) -> tuple[dict, dict]:
+    root = parse_xml(data, "VYSLEDKY_OBEC")
+    municipality = root.find("kv:OBEC", NS)
+    if municipality is None or integer(municipality.attrib["KODZASTUP"]) != code_for(slug):
+        raise ValueError(f"Missing or incorrect municipality for {slug}")
+    if municipality.attrib["POCET_OBVODU"] != "1":
+        raise ValueError(f"Multiple electoral districts are not supported: {slug}")
+    expected_type = "OBEC" if slug == "magistrat" else "MCMO"
+    if municipality.attrib["OZNAC_TYPU"] != expected_type:
+        raise ValueError(f"Incorrect council type for {slug}")
+    complete = municipality.attrib["JE_SPOCTENO"]
+    if complete not in ("0", "1"):
+        raise ValueError(f"Invalid JE_SPOCTENO: {complete}")
+    complete = complete == "1"
+    total_seats = integer(municipality.attrib["VOLENO_ZASTUP"])
+    turnout = municipality.find("kv:VYSLEDEK/kv:UCAST", NS)
+    if turnout is None:
+        raise ValueError(f"Missing turnout for {slug}")
+    counted = integer(turnout.attrib["OKRSKY_ZPRAC"])
+    total = integer(turnout.attrib["OKRSKY_CELKEM"])
+    if total == 0 or counted > total or complete != (counted == total):
+        raise ValueError(f"Inconsistent processing status for {slug}")
+
+    by_party: dict[int, list[dict[str, str]]] = {}
+    for row in rows:
+        if integer(row["COBVODU"]) != 1:
+            raise ValueError(f"Unexpected candidate electoral district for {slug}")
+        if row["PLATNOST"] not in ("A", "N"):
+            raise ValueError(f"Unknown candidate validity: {row['PLATNOST']}")
+        if row["PLATNOST"] == "A":
+            by_party.setdefault(integer(row["POR_STR_HL"]), []).append(row)
+
+    parties = []
+    candidate_parties = []
+    seats = []
+    seen = set()
+    for party in municipality.findall("kv:VYSLEDEK/kv:VOLEBNI_STRANA", NS):
+        values = party.attrib
+        number = integer(values["POR_STR_HLAS_LIST"])
+        if number in seen:
+            raise ValueError(f"Duplicate party {number} for {slug}")
+        seen.add(number)
+        active = sorted(by_party.get(number, []), key=lambda row: integer(row["PORCISLO"]))
+        if len(active) != integer(values["KANDIDATU_POCET"]):
+            raise ValueError(f"Candidate count mismatch for {slug}, party {number}; refresh registry")
+        if len({row["PORCISLO"] for row in active}) != len(active):
+            raise ValueError(f"Duplicate candidate numbers for {slug}, party {number}")
+        candidate_parties.append({
+            "id": number,
+            "name": values["NAZEV_STRANY"],
+            "candidateCount": len(active),
+            "candidates": [{
+                "number": integer(row["PORCISLO"]),
+                "name": full_name(row),
+                "age": integer(row["VEK"]),
+                "gender": guess_gender(row["JMENO"].split()[0], row["PRIJMENI"]),
+                "profession": row["POVOLANI"],
+            } for row in active],
+        })
+        elected = party.findall("kv:ZASTUPITEL", NS)
+        seat_count = integer(values["ZASTUPITELE_POCET"])
+        if len(elected) != seat_count or (not complete and seat_count):
+            raise ValueError(f"Inconsistent official mandates for {slug}, party {number}")
+        if len({winner.attrib["PORADOVE_CISLO"] for winner in elected}) != len(elected):
+            raise ValueError(f"Duplicate elected candidates for {slug}, party {number}")
+        parties.append({
+            "id": number, "name": values["NAZEV_STRANY"],
+            "votes": integer(values["HLASY"]),
+            "votesPercent": float(values["HLASY_PROC"]),
+            "seats": seat_count if complete else None,
+        })
+        for winner in elected:
+            ballot_number = integer(winner.attrib["PORADOVE_CISLO"])
+            if ballot_number not in {integer(row["PORCISLO"]) for row in active}:
+                raise ValueError(f"Elected candidate is not active: {slug}, {number}/{ballot_number}")
+            seats.append({
+                "seatNumber": len(seats) + 1,
+                "name": full_name(winner.attrib),
+                "partyId": number, "partyName": values["NAZEV_STRANY"],
+                "preferenceVotes": integer(winner.attrib["HLASY"]),
+            })
+    if set(by_party) - seen:
+        raise ValueError(f"Registry contains unknown parties for {slug}")
+    if not parties or (complete and len(seats) != total_seats):
+        raise ValueError(f"Incomplete official results for {slug}")
+    if sum(party["votes"] for party in parties) != integer(turnout.attrib["PLATNE_HLASY"]):
+        raise ValueError(f"Party vote totals do not match turnout totals for {slug}")
+    for seat_number in range(len(seats) + 1, total_seats + 1):
+        seats.append({
+            "seatNumber": seat_number, "name": None, "partyId": None,
+            "partyName": None, "preferenceVotes": None,
+        })
+    metadata = {
+        "municipality": MUNICIPALITIES[slug]["name"],
+        "election": "Volby do zastupitelstev obcí 2026",
+        "source": results_url(slug),
+    }
+    candidates = {
+        **metadata, "source": REGISTRY_URL,
+        "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
+        "parties": sorted(candidate_parties, key=lambda party: party["id"]),
+    }
+    results = {
+        **metadata, "isSample": False, "isComplete": complete,
+        "generatedAt": root.attrib["DATUM_CAS_GENEROVANI"],
+        "totalSeats": total_seats, "precinctsTotal": total,
+        "precinctsCounted": counted,
+        "turnoutPercent": float(turnout.attrib["UCAST_PROC"]) if counted else None,
+        "parties": sorted(parties, key=lambda party: (-party["votes"], party["id"])),
+        "seats": seats,
+    }
+    return candidates, results
+
+
+def write_json(path: Path, value: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent,
+                                         suffix=".tmp", delete=False) as stream:
+            temporary = Path(stream.name)
+            json.dump(value, stream, ensure_ascii=False, indent=2)
+            stream.write("\n")
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
+
+
+def update(slugs: list[str], output: Path) -> None:
+    rows = registry_rows(download(REGISTRY_URL), {code_for(slug) for slug in slugs})
+    converted = []
+    for slug in slugs:
+        converted.append((slug, *convert(slug, download(results_url(slug)), rows[code_for(slug)])))
+    # Validate every downloaded municipality before publishing any of the batch.
+    for slug, candidates, results in converted:
+        write_json(output / f"candidates-{slug}.json", candidates)
+        write_json(output / f"results-{slug}.json", results)
+        count = sum(party["candidateCount"] for party in candidates["parties"])
+        print(f"[{slug}] {count} valid candidates; "
+              f"{results['precinctsCounted']}/{results['precinctsTotal']} precincts", flush=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("slugs", nargs="*", help="Default: Praha 1–22 and magistrát")
+    parser.add_argument("--output-dir", type=Path, default=DATA_DIR)
+    parser.add_argument("--watch", action="store_true", help="Repeat every 60 seconds; stop with Ctrl+C")
+    args = parser.parse_args()
+    slugs = args.slugs or list(MUNICIPALITIES)
+    for slug in slugs:
+        if slug not in MUNICIPALITIES:
+            parser.error(f"Unknown municipality: {slug}")
+    try:
+        while True:
+            update(slugs, args.output_dir)
+            if not args.watch:
+                break
+            time.sleep(60)
+    except KeyboardInterrupt:
+        print("Updating stopped.", file=sys.stderr)
+    except (OSError, ValueError, KeyError, ET.ParseError, zipfile.BadZipFile) as error:
+        parser.exit(1, f"ČSÚ update failed (previous results retained): {error}\n")
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
+    main()

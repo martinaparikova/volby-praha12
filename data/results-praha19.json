@@ -1,58 +1,65 @@
 {
   "municipality": "Praha 19",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
-  "totalSeats": 15,
-  "precinctsTotal": 9,
-  "precinctsCounted": 5,
-  "turnoutPercent": 32.2,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547344.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:35",
+  "totalSeats": 19,
+  "precinctsTotal": 6,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 6,
-      "name": "Maják pro Kbely",
-      "votesPercent": 27.3,
-      "seats": 5
-    },
-    {
-      "id": 5,
-      "name": "Občanská demokratická strana",
-      "votesPercent": 27.1,
-      "seats": 4
-    },
-    {
-      "id": 3,
-      "name": "OK-19",
-      "votesPercent": 20.7,
-      "seats": 3
-    },
-    {
-      "id": 4,
-      "name": "NAŠE KBELY - NAŠE ČESKO",
-      "votesPercent": 12.3,
-      "seats": 2
+      "id": 1,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "Sdružení nezávislých kandidátů Kbely náš domov",
-      "votesPercent": 7.7,
-      "seats": 1
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 1,
-      "name": "ANO 2011",
-      "votesPercent": 4.9,
-      "seats": 0
+      "id": 3,
+      "name": "OK-19",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 4,
+      "name": "NAŠE KBELY - NAŠE ČESKO",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "Občanská demokratická strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "Maják pro Kbely",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Ing. Alena Fleková",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 49
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
@@ -63,17 +70,17 @@
     },
     {
       "seatNumber": 3,
-      "name": "Karel Kučera",
-      "partyId": 4,
-      "partyName": "NAŠE KBELY - NAŠE ČESKO",
-      "preferenceVotes": 52
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 4,
-      "name": "Bohumil Sobotka",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 48
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
@@ -84,38 +91,38 @@
     },
     {
       "seatNumber": 6,
-      "name": "David Lorenc",
-      "partyId": 6,
-      "partyName": "Maják pro Kbely",
-      "preferenceVotes": 33
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
-      "name": "Leoš Biskup",
-      "partyId": 6,
-      "partyName": "Maják pro Kbely",
-      "preferenceVotes": 101
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
-      "name": "Ivana Šestáková",
-      "partyId": 2,
-      "partyName": "Sdružení nezávislých kandidátů Kbely náš domov",
-      "preferenceVotes": 10
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
-      "name": "Antonín Zámyslický",
-      "partyId": 6,
-      "partyName": "Maják pro Kbely",
-      "preferenceVotes": 110
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
-      "name": "Markéta Cacáková",
-      "partyId": 3,
-      "partyName": "OK-19",
-      "preferenceVotes": 45
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 11,
@@ -147,6 +154,34 @@
     },
     {
       "seatNumber": 15,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 16,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 17,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 18,
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
+    },
+    {
+      "seatNumber": 19,
       "name": null,
       "partyId": null,
       "partyName": null,

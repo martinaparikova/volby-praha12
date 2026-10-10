@@ -1,61 +1,70 @@
 {
   "municipality": "Praha 22",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_538931.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:23",
   "totalSeats": 25,
-  "precinctsTotal": 16,
-  "precinctsCounted": 9,
-  "turnoutPercent": 47.8,
+  "precinctsTotal": 9,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
+    {
+      "id": 1,
+      "name": "DvacetDvojka",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
     {
       "id": 2,
       "name": "Naše 22 – Spolky, Svobodní a Patrioti",
-      "votesPercent": 18.3,
-      "seats": 5
-    },
-    {
-      "id": 8,
-      "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 16.7,
-      "seats": 4
-    },
-    {
-      "id": 4,
-      "name": "Česká pirátská strana",
-      "votesPercent": 15.8,
-      "seats": 4
-    },
-    {
-      "id": 7,
-      "name": "OK22 s podporou PRAHA SOBĚ",
-      "votesPercent": 13.8,
-      "seats": 3
-    },
-    {
-      "id": 6,
-      "name": "ANO 2011",
-      "votesPercent": 12.7,
-      "seats": 3
-    },
-    {
-      "id": 5,
-      "name": "Občanská demokratická strana",
-      "votesPercent": 10.5,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "TADY 22 – hlas místních",
-      "votesPercent": 7.6,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 1,
-      "name": "DvacetDvojka",
-      "votesPercent": 4.6,
-      "seats": 1
+      "id": 4,
+      "name": "Česká pirátská strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 5,
+      "name": "Občanská demokratická strana",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "OK22 s podporou PRAHA SOBĚ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "STAROSTOVÉ A NEZÁVISLÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
@@ -75,24 +84,24 @@
     },
     {
       "seatNumber": 3,
-      "name": "Ing. Jan Konopásek",
-      "partyId": 2,
-      "partyName": "Naše 22 – Spolky, Svobodní a Patrioti",
-      "preferenceVotes": 107
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 4,
-      "name": "Ing. Petr Kopecký",
-      "partyId": 8,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 81
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 5,
-      "name": "RNDr. Ing. Bohumil Loula CSc.",
-      "partyId": 2,
-      "partyName": "Naše 22 – Spolky, Svobodní a Patrioti",
-      "preferenceVotes": 77
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 6,
@@ -110,17 +119,17 @@
     },
     {
       "seatNumber": 8,
-      "name": "Mgr. Petra Dvořáková",
-      "partyId": 4,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 19
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
-      "name": "Mgr. Ing. Jaromír Beránek",
-      "partyId": 4,
-      "partyName": "Česká pirátská strana",
-      "preferenceVotes": 112
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
@@ -138,17 +147,17 @@
     },
     {
       "seatNumber": 12,
-      "name": "Mgr. Jana Chladná",
-      "partyId": 7,
-      "partyName": "OK22 s podporou PRAHA SOBĚ",
-      "preferenceVotes": 26
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 13,
-      "name": "Ing. Jana Veselá",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 21
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 14,
@@ -159,31 +168,31 @@
     },
     {
       "seatNumber": 15,
-      "name": "Vít Urban",
-      "partyId": 7,
-      "partyName": "OK22 s podporou PRAHA SOBĚ",
-      "preferenceVotes": 66
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 16,
-      "name": "Vojtěch Zelenka",
-      "partyId": 8,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 72
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
-      "name": "Ing. Martin Langmajer MBA",
-      "partyId": 5,
-      "partyName": "Občanská demokratická strana",
-      "preferenceVotes": 46
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 18,
-      "name": "Ing. Jiří Pařízek",
-      "partyId": 3,
-      "partyName": "TADY 22 – hlas místních",
-      "preferenceVotes": 21
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 19,
@@ -201,17 +210,17 @@
     },
     {
       "seatNumber": 21,
-      "name": "Mgr. Jitka Rothová",
-      "partyId": 3,
-      "partyName": "TADY 22 – hlas místních",
-      "preferenceVotes": 54
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 22,
-      "name": "Mgr. Zdeňka Žaludová",
-      "partyId": 6,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 52
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 23,
@@ -222,10 +231,10 @@
     },
     {
       "seatNumber": 24,
-      "name": "Bc. Hana Vagenknechtová",
-      "partyId": 1,
-      "partyName": "DvacetDvojka",
-      "preferenceVotes": 31
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,

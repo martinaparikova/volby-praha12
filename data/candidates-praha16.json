@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 16",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-16-539601",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -455,7 +455,7 @@
     {
       "id": 5,
       "name": "ANO 2011",
-      "candidateCount": 15,
+      "candidateCount": 14,
       "candidates": [
         {
           "number": 1,
@@ -526,13 +526,6 @@
           "age": 54,
           "gender": "F",
           "profession": "vedoucí prodejny"
-        },
-        {
-          "number": 11,
-          "name": "Aneta Brachová",
-          "age": 39,
-          "gender": "F",
-          "profession": "administrativní zaměstnankyně"
         },
         {
           "number": 12,

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CTYPDUVV DATGENER="2026-03-29T00:30:52" xmlns="http://www.volby.cz/vol/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.volby.cz/vol/ ctypduvv.xsd">
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>0</TYPDUVODU>
+  <VYZNAMTYPU>Volby</VYZNAMTYPU>
+  <VYZNTYP_EN>Election</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>1</TYPDUVODU>
+  <VYZNAMTYPU>Nové volby</VYZNAMTYPU>
+  <VYZNTYP_EN>New election</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>2</TYPDUVODU>
+  <VYZNAMTYPU>Dodatečné volby</VYZNAMTYPU>
+  <VYZNTYP_EN>Additional election</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>3</TYPDUVODU>
+  <VYZNAMTYPU>Opakované volby</VYZNAMTYPU>
+  <VYZNTYP_EN>Repeated election</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>4</TYPDUVODU>
+  <VYZNAMTYPU>Doplňovací volby</VYZNAMTYPU>
+  <VYZNTYP_EN>By-election</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>5</TYPDUVODU>
+  <VYZNAMTYPU>Dodatečné hlasování</VYZNAMTYPU>
+  <VYZNTYP_EN>Additional voting</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+ <CTYPDUVV_ROW>
+  <TYPDUVODU>6</TYPDUVODU>
+  <VYZNAMTYPU>Opakované hlasování</VYZNAMTYPU>
+  <VYZNTYP_EN>Repeated voting</VYZNTYP_EN>
+ </CTYPDUVV_ROW>
+</CTYPDUVV>

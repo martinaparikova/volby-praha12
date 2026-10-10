@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 21",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-21-538949",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -244,7 +244,7 @@
           "number": 16,
           "name": "Egle Havrdová MA, Ph.D.",
           "age": 52,
-          "gender": "M",
+          "gender": "F",
           "profession": "ředitelka vzdělávací a výzkumné organizace"
         },
         {

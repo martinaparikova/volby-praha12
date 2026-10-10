@@ -1,84 +1,93 @@
 {
   "municipality": "Praha 20",
   "election": "Volby do zastupitelstev obcí 2026",
-  "isSample": true,
-  "sampleNote": "Ukázková data pro vývoj a náhled stránky - nejde o skutečné výsledky voleb.",
-  "generatedAt": null,
+  "source": "https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_538213.xml",
+  "isSample": false,
+  "isComplete": false,
+  "generatedAt": "2026-10-08T16:40:40",
   "totalSeats": 25,
-  "precinctsTotal": 29,
-  "precinctsCounted": 19,
-  "turnoutPercent": 28.4,
+  "precinctsTotal": 12,
+  "precinctsCounted": 0,
+  "turnoutPercent": null,
   "parties": [
     {
-      "id": 5,
-      "name": "Hnutí Šance pro Počernice",
-      "votesPercent": 21.1,
-      "seats": 5
-    },
-    {
-      "id": 6,
-      "name": "Počernice JINAK",
-      "votesPercent": 16.2,
-      "seats": 4
-    },
-    {
-      "id": 8,
-      "name": "SPOLU (ODS a TOP09 s podporou nezávislých kandidátů Horních Počernic)",
-      "votesPercent": 14.2,
-      "seats": 4
+      "id": 1,
+      "name": "Hnutí Občanů Počernic a NEZÁVISLÍ",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 2,
       "name": "STAROSTOVÉ A NEZÁVISLÍ",
-      "votesPercent": 12.8,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 3,
       "name": "PRO Počernice – Naše Česko",
-      "votesPercent": 11.6,
-      "seats": 3
-    },
-    {
-      "id": 7,
-      "name": "ANO 2011",
-      "votesPercent": 10.7,
-      "seats": 3
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
       "id": 4,
       "name": "Místní pro Horní Počernice",
-      "votesPercent": 7.2,
-      "seats": 2
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     },
     {
-      "id": 1,
-      "name": "Hnutí Občanů Počernic a NEZÁVISLÍ",
-      "votesPercent": 6.1,
-      "seats": 1
+      "id": 5,
+      "name": "Hnutí Šance pro Počernice",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 6,
+      "name": "Počernice JINAK",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 7,
+      "name": "ANO 2011",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
+    },
+    {
+      "id": 8,
+      "name": "SPOLU (ODS a TOP09 s podporou nezávislých kandidátů Horních Počernic)",
+      "votes": 0,
+      "votesPercent": 0.0,
+      "seats": null
     }
   ],
   "seats": [
     {
       "seatNumber": 1,
-      "name": "Lenka Friedelová",
-      "partyId": 3,
-      "partyName": "PRO Počernice – Naše Česko",
-      "preferenceVotes": 27
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 2,
-      "name": "Bc. Jiří Šebek",
-      "partyId": 1,
-      "partyName": "Hnutí Občanů Počernic a NEZÁVISLÍ",
-      "preferenceVotes": 44
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 3,
-      "name": "Mgr. Jakub Moudrý",
-      "partyId": 6,
-      "partyName": "Počernice JINAK",
-      "preferenceVotes": 88
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 4,
@@ -89,38 +98,38 @@
     },
     {
       "seatNumber": 5,
-      "name": "Bc. Martin Nagy MBA",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 58
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 6,
-      "name": "Aneta Hošková",
-      "partyId": 6,
-      "partyName": "Počernice JINAK",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 7,
-      "name": "Ing. Ondřej Žídek",
-      "partyId": 8,
-      "partyName": "SPOLU (ODS a TOP09 s podporou nezávislých kandidátů Horních Počernic)",
-      "preferenceVotes": 28
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 8,
-      "name": "Ing. Lukáš Boubal",
-      "partyId": 7,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 35
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 9,
-      "name": "MVDr. Klára Bonková",
-      "partyId": 5,
-      "partyName": "Hnutí Šance pro Počernice",
-      "preferenceVotes": 42
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 10,
@@ -131,10 +140,10 @@
     },
     {
       "seatNumber": 11,
-      "name": "Jana Hájková",
-      "partyId": 4,
-      "partyName": "Místní pro Horní Počernice",
-      "preferenceVotes": 14
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 12,
@@ -145,17 +154,17 @@
     },
     {
       "seatNumber": 13,
-      "name": "Ing. Alexandra Janáčková",
-      "partyId": 5,
-      "partyName": "Hnutí Šance pro Počernice",
-      "preferenceVotes": 175
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 14,
-      "name": "Karolína Kovaříková",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 40
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 15,
@@ -166,10 +175,10 @@
     },
     {
       "seatNumber": 16,
-      "name": "Ing. Lucie Sýkorová MBA",
-      "partyId": 2,
-      "partyName": "STAROSTOVÉ A NEZÁVISLÍ",
-      "preferenceVotes": 39
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 17,
@@ -187,17 +196,17 @@
     },
     {
       "seatNumber": 19,
-      "name": "Hana Markulinec Moravcová",
-      "partyId": 5,
-      "partyName": "Hnutí Šance pro Počernice",
-      "preferenceVotes": 175
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 20,
-      "name": "Sabina Kurfürstová",
-      "partyId": 7,
-      "partyName": "ANO 2011",
-      "preferenceVotes": 79
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 21,
@@ -215,17 +224,17 @@
     },
     {
       "seatNumber": 23,
-      "name": "Mgr. Petr Měšťan",
-      "partyId": 8,
-      "partyName": "SPOLU (ODS a TOP09 s podporou nezávislých kandidátů Horních Počernic)",
-      "preferenceVotes": 64
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 24,
-      "name": "Petra Bukovanová",
-      "partyId": 3,
-      "partyName": "PRO Počernice – Naše Česko",
-      "preferenceVotes": 29
+      "name": null,
+      "partyId": null,
+      "partyName": null,
+      "preferenceVotes": null
     },
     {
       "seatNumber": 25,

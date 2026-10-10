@@ -1,8 +1,8 @@
 {
   "municipality": "Praha 1",
   "election": "Volby do zastupitelstev obcí 2026",
-  "source": "https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/praha-1-500054",
-  "sourceNote": "Data ČSÚ, zprostředkovaná přes Poradna pro obce",
+  "source": "https://volby.gov.cz/opendata/kv2026/xml/kvrk.zip",
+  "sourceNote": "Oficiální registr ČSÚ; pouze platní kandidáti",
   "parties": [
     {
       "id": 1,
@@ -480,7 +480,7 @@
         },
         {
           "number": 12,
-          "name": "mjr. v z. Ing. Bc. Beno Ge MPA",
+          "name": "mjr. v zál. Ing. Bc. Beno Ge MPA",
           "age": 44,
           "gender": "M",
           "profession": "podnikatel, bývalý vojenský pilot a válečný veterán"
@@ -812,7 +812,7 @@
           "name": "Bc. David Soukup",
           "age": 55,
           "gender": "M",
-          "profession": "předseda rady ČTK"
+          "profession": "předseda Rady ČTK"
         },
         {
           "number": 4,
@@ -987,7 +987,7 @@
     {
       "id": 6,
       "name": "Rozhodujme společně",
-      "candidateCount": 27,
+      "candidateCount": 26,
       "candidates": [
         {
           "number": 1,
@@ -1029,7 +1029,7 @@
           "name": "Ing. Ladislava Fógelová DiS.",
           "age": 51,
           "gender": "F",
-          "profession": "projektová manažerka na Ministerstvu pro místní rozvoj ČR"
+          "profession": "projektová manažerka Ministerstva pro místní rozvoj ČR"
         },
         {
           "number": 7,
@@ -1079,13 +1079,6 @@
           "age": 82,
           "gender": "M",
           "profession": "senior"
-        },
-        {
-          "number": 14,
-          "name": "Bc. Ivona Remundová",
-          "age": 43,
-          "gender": "F",
-          "profession": "dokumentaristka, politoložka, dula"
         },
         {
           "number": 15,
@@ -1155,7 +1148,7 @@
           "name": "Bc. Emilija Rónová",
           "age": 58,
           "gender": "F",
-          "profession": "sales manager, emeritní předsedkyně Komise pro bezbariérovou Prahu 1 a zakladatelka iniciativy nejen Toalety pro všechny"
+          "profession": "sales manager, emeritní předsedkyně Komise pro bezbariérovou Prahu 1 a zakladatelka iniciativy Nejen Toalety pro všechny"
         },
         {
           "number": 25,
@@ -1617,7 +1610,7 @@
           "name": "Mgr. Petr Lukáš",
           "age": 60,
           "gender": "M",
-          "profession": "učitel tělocviku a němčiny, profesionální tenisový trenér světového žebříčku ATP, člen Komise pro informatiku a Smart Cities MČ Praha 1"
+          "profession": "učitel tělocviku a němčiny, profesionální tenisový trenér hráčů světového žebříčku ATP, člen Komise pro informatiku a Smart Cities MČ Praha 1"
         },
         {
           "number": 7,
@@ -1638,7 +1631,7 @@
           "name": "Markéta Nova",
           "age": 51,
           "gender": "F",
-          "profession": "nákupčí ve filmové produkci, ochránkyně zvířat, předsedkyně SVJ Smetanovo nábřeží/Karoliny Světlé 325"
+          "profession": "nákupčí ve filmové produkci, ochránkyně zvířat, předsedkyně SVJ Smetanovo nábřeží/Karoliny Světlé"
         },
         {
           "number": 10,
@@ -1673,14 +1666,14 @@
           "name": "Ing. Marika Mocková",
           "age": 73,
           "gender": "F",
-          "profession": "ekonomka, předsedkyně SVJ Betlémské náměstí 259, členka Finančního výboru MČ Praha 1, členka spolku Žijeme v centru, podílí se na sousedských akcí na Starém Městě"
+          "profession": "ekonomka, předsedkyně SVJ Betlémské náměstí 259, členka Finančního výboru MČ Praha 1, členka spolku Žijeme v centru, podílí se na sousedských akcích na Starém Městě"
         },
         {
           "number": 15,
           "name": "Mgr. Pavel Šváb",
           "age": 66,
           "gender": "M",
-          "profession": "učitel hudby, předseda SVJ Senovážné náměstí 11 a starousedlí z Nového Města"
+          "profession": "učitel hudby, předseda SVJ Senovážné náměstí 11 a starousedlík z Nového Města"
         },
         {
           "number": 16,
@@ -1708,7 +1701,7 @@
           "name": "Mgr. Bc. Pavel Hodek",
           "age": 52,
           "gender": "M",
-          "profession": "obchodní manažer, člen Jednotky Sboru dobrovolných hasičů Praha 1, člen Komise pro dopravu MČ Praha 1"
+          "profession": "obchodní manažer, člen Jednotky dobrovolných hasičů Praha 1, člen Komise pro dopravu MČ Praha 1"
         },
         {
           "number": 20,
@@ -1750,7 +1743,7 @@
           "name": "Milan Pazderník",
           "age": 51,
           "gender": "M",
-          "profession": "živnostník — vinárník a restauratér ze Starého Města"
+          "profession": "živnostník - vinárník a restauratér ze Starého Města"
         },
         {
           "number": 26,
@@ -2247,7 +2240,7 @@
           "name": "Kryštof Vetrák Petrásek",
           "age": 33,
           "gender": "M",
-          "profession": "projekťák, řidič pražský"
+          "profession": "Projekťák, Řidič pražský"
         },
         {
           "number": 13,
@@ -2548,7 +2541,7 @@
           "name": "Ing. Michal Wolf",
           "age": 78,
           "gender": "M",
-          "profession": "předseda SVJ, dříve odd. rozpočtu - fin. odbor Magistrátu hl. m. Prahy"
+          "profession": "předseda SVJ, dříve odd. rozpočtu - fin. odbor Magistrátu hl. města Prahy"
         }
       ]
     },

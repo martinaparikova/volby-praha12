@@ -66,6 +66,7 @@
         <span aria-hidden="true">⚠️</span>
         <span id="results-sample-text"></span>
       </div>
+      <p class="empty-state" id="results-error" role="alert" hidden></p>
 
       <div class="card results-toolbar">
         <div class="results-toolbar__row">
@@ -92,13 +93,13 @@
 
       <div class="card table-card">
         <h2>Výsledky kandidátek</h2>
-        <p class="chart-card__hint">Průběžný podíl hlasů a odhad počtu mandátů podle sečtených okrsků.</p>
+        <p class="chart-card__hint">Podíl hlasů podle ČSÚ. Oficiální mandáty jsou dostupné až po úplném sečtení.</p>
         <div class="party-bar-chart party-bar-chart--results" id="results-party-chart"></div>
       </div>
 
       <div class="card table-card">
         <h2>Zastupitelstvo (<span id="results-seats-confirmed">0</span> z <span id="results-seats-total">35</span> obsazeno)</h2>
-        <p class="chart-card__hint">Jednotlivá křesla se doplňují postupně, jak jsou potvrzovány výsledky.</p>
+        <p class="chart-card__hint">Křesla se obsadí podle seznamu zvolených zastupitelů zveřejněného ČSÚ.</p>
         <div class="seats-grid" id="results-seats-grid"></div>
       </div>
     </section>
@@ -260,8 +261,8 @@
   </main>
 
   <footer class="site-footer">
-    <p>Zdroj dat: Český statistický úřad, zprostředkováno přes
-      <a href="https://www.poradnaproobce.cz/komunalni-volby-2026/kandidatni-listiny/hlavni-mesto-praha/hlavni-mesto-praha/praha/praha-12-547107" target="_blank" rel="noopener" id="source-link">Poradnu pro obce</a>.
+    <p>Zdroj dat:
+      <a href="https://volby.gov.cz/opendata/kv2026/kv2026_opendata.htm" target="_blank" rel="noopener" id="source-link">Český statistický úřad</a>.
       Pohlaví je u části kandidátů dopočítáno odhadem podle křestního jména.
     </p>
   </footer>
