@@ -1,9 +1,11 @@
 import io
+from http.client import IncompleteRead, RemoteDisconnected
 import json
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
+from urllib.error import HTTPError
 from xml.etree import ElementTree as ET
 import zipfile
 
@@ -41,6 +43,43 @@ def results(complete: bool = False) -> bytes:
 class OfficialDataTests(unittest.TestCase):
     def setUp(self):
         self.rows = [candidate(1), candidate(2, "N"), candidate(3)]
+
+    def test_retries_closed_connection_then_returns_download(self):
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = b"official XML"
+        with patch.object(csu, "urlopen", side_effect=[
+            RemoteDisconnected("Remote end closed connection without response"), response,
+        ]) as opened, patch.object(csu.time, "sleep") as sleep:
+            self.assertEqual(csu.download("https://volby.gov.cz/test"), b"official XML")
+        self.assertEqual(opened.call_count, 2)
+        sleep.assert_called_once_with(2)
+
+    def test_truncated_read_retries_entire_download(self):
+        truncated = MagicMock()
+        truncated.__enter__.return_value.read.side_effect = IncompleteRead(b"partial", 10)
+        complete = MagicMock()
+        complete.__enter__.return_value.read.return_value = b"complete"
+        with patch.object(csu, "urlopen", side_effect=[truncated, complete]), \
+                patch.object(csu.time, "sleep"):
+            self.assertEqual(csu.download("https://volby.gov.cz/test"), b"complete")
+
+    def test_retry_exhaustion_is_an_error(self):
+        with patch.object(csu, "urlopen", side_effect=RemoteDisconnected("closed")) as opened, \
+                patch.object(csu.time, "sleep") as sleep:
+            with self.assertRaises(RemoteDisconnected):
+                csu.download("https://volby.gov.cz/test")
+        self.assertEqual(opened.call_count, 4)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [2, 4, 8])
+
+    def test_retries_transient_http_but_not_missing_file(self):
+        for status, attempts in ((503, 4), (429, 4), (404, 1), (403, 1)):
+            with self.subTest(status=status):
+                error = HTTPError("https://volby.gov.cz/test", status, "error", {}, None)
+                with patch.object(csu, "urlopen", side_effect=error) as opened, \
+                        patch.object(csu.time, "sleep"):
+                    with self.assertRaises(HTTPError):
+                        csu.download("https://volby.gov.cz/test")
+                self.assertEqual(opened.call_count, attempts)
 
     def test_excludes_invalid_without_renumbering(self):
         candidates, result = csu.convert("praha12", results(), self.rows)

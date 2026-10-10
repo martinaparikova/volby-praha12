@@ -1,5 +1,6 @@
 """Update candidates and results from official ČSÚ XML, without estimating mandates."""
 import argparse
+from http.client import IncompleteRead, RemoteDisconnected
 import io
 import json
 import os
@@ -7,6 +8,7 @@ from pathlib import Path
 import sys
 import tempfile
 import time
+from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 from xml.etree import ElementTree as ET
 import zipfile
@@ -20,8 +22,22 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 def download(url: str) -> bytes:
-    with urlopen(url, timeout=60) as response:
-        return response.read()
+    attempts = 4
+    for attempt in range(1, attempts + 1):
+        try:
+            with urlopen(url, timeout=60) as response:
+                return response.read()
+        except (HTTPError, URLError, RemoteDisconnected, IncompleteRead,
+                TimeoutError, ConnectionError) as error:
+            if isinstance(error, HTTPError) and error.code not in (408, 429, 500, 502, 503, 504):
+                raise
+            if attempt == attempts:
+                raise
+            delay = 2 ** attempt
+            print(f"ČSÚ download failed ({attempt}/{attempts}) for {url}: {error}; "
+                  f"retrying in {delay}s.", file=sys.stderr, flush=True)
+            time.sleep(delay)
+    raise AssertionError("Unreachable download retry state")
 
 
 def code_for(slug: str) -> int:
@@ -236,7 +252,7 @@ def main() -> None:
             time.sleep(60)
     except KeyboardInterrupt:
         print("Updating stopped.", file=sys.stderr)
-    except (OSError, ValueError, KeyError, ET.ParseError, zipfile.BadZipFile) as error:
+    except (OSError, IncompleteRead, ValueError, KeyError, ET.ParseError, zipfile.BadZipFile) as error:
         parser.exit(1, f"ČSÚ update failed (previous results retained): {error}\n")
 
 

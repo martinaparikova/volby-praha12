@@ -130,6 +130,10 @@ neznámá platnost kandidáta či nesoulad počtů kandidátů/mandátů ukonč�
 s chybovou zprávou bez publikování vadné dávky. Jednotlivé soubory se nahrazují
 atomicky. Při chybě obnovení v prohlížeči zůstanou poslední výsledky
 s viditelným upozorněním.
+Dočasné výpadky spojení, neúplné přenosy a HTTP 408/429/500/502/503/504
+se opakují nejvýše čtyřikrát s čekáním 2, 4 a 8 sekund a zprávou v logu.
+Po vyčerpání pokusů běh selže bez nasazení nové verze. Chyby validace,
+neexistující soubory (404) a odmítnutý přístup (403) se neopakují.
 
 ```powershell
 python scripts\update_csu.py                   # jednorázově všech 23 zastupitelstev
