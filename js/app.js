@@ -54,6 +54,7 @@
   };
 
   let resultsTimer = null;
+  let resultsRequestSequence = 0;
 
   /* ===================== Utilities ===================== */
   const normalize = (s) =>
@@ -215,6 +216,7 @@
 
   /* ===================== Results tab ===================== */
   async function loadResults(file, slug) {
+    const requestSequence = ++resultsRequestSequence;
     const fetchJson = async (url, message) => {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error(message);
@@ -227,7 +229,27 @@
         : Promise.resolve(null),
     ]);
     if (slug === "praha12") validatePrecinctResults(precincts, json.parties);
-    if (slug !== state.municipality) return;
+    if (slug !== state.municipality || requestSequence !== resultsRequestSequence) return;
+    const currentResults = state.results;
+    const currentPrecincts = state.precinctResults;
+    const countedPrecincts = (data) => data?.precincts.filter((item) => item.counted).length ?? 0;
+    const hasOlderTimestamp = (next, current) => {
+      const nextTime = Date.parse(next?.generatedAt);
+      const currentTime = Date.parse(current?.generatedAt);
+      return Number.isFinite(nextTime) && Number.isFinite(currentTime) && nextTime < currentTime;
+    };
+    const resultsRegressed = currentResults?.municipality === json.municipality &&
+      (json.precinctsCounted < currentResults.precinctsCounted ||
+        hasOlderTimestamp(json, currentResults));
+    const precinctsRegressed = slug === "praha12" && currentPrecincts &&
+      (countedPrecincts(precincts) < countedPrecincts(currentPrecincts) ||
+        hasOlderTimestamp(precincts, currentPrecincts));
+    if (resultsRegressed || precinctsRegressed) {
+      showResultsError(new Error(
+        "Automatická aktualizace vrátila starší nebo méně sečtené výsledky; ponechávám předchozí data."
+      ));
+      return;
+    }
     json.fetchedAt = new Date();
     state.results = json;
     state.precinctResults = precincts;

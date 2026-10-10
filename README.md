@@ -73,7 +73,9 @@ aktualizuje při sčítání; jednotlivé XML soubory zastupitelstev mohou zůst
 zastaralé.
 Pokud nový import nahlásí méně sečtených okrsků než předchozí zveřejněná verze
 stejného zastupitelstva, předchozí výsledky se zachovají. Publikační workflow
-proto před importem načte dosavadní výsledkové JSON soubory z webu.
+proto před importem načte dosavadní výsledkové JSON soubory z webu. Automatická
+obnova v otevřené stránce navíc ignoruje opožděné odpovědi a starší nebo méně
+sečtený stav, aby nemohla přepsat novější zobrazené výsledky.
 
 ### Aktualizace dat
 
