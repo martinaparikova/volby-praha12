@@ -29,8 +29,10 @@ def download(url: str) -> bytes:
                 return response.read()
         except (HTTPError, URLError, RemoteDisconnected, IncompleteRead,
                 TimeoutError, ConnectionError) as error:
-            if isinstance(error, HTTPError) and error.code not in (408, 429, 500, 502, 503, 504):
-                raise
+            if isinstance(error, HTTPError):
+                error.close()
+                if error.code not in (408, 429, 500, 502, 503, 504):
+                    raise
             if attempt == attempts:
                 raise
             delay = 2 ** attempt
