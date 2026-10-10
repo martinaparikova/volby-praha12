@@ -1,0 +1,33 @@
+name: Temporary minute updates until Prague midnight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/minute-updates.yml"
+      - "scripts/minute_updates.py"
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12-21 10 10 *"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: election-minute-coordinator
+  cancel-in-progress: true
+
+jobs:
+  coordinate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dispatch minute publications until 2026-10-11 00:00 Europe/Prague
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/minute_updates.py

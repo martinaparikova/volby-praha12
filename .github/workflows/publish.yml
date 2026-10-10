@@ -49,7 +49,7 @@ jobs:
 
       - name: Test official XML importer
         if: steps.window.outputs.publish == 'true'
-        run: python -m unittest discover -s scripts -p test_update_csu.py -v
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v
 
       - name: Fetch and validate official data
         if: steps.window.outputs.publish == 'true'

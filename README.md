@@ -190,6 +190,22 @@ Ruční aktualizace: GitHub → Actions → **Update CSU data and publish** →
 verze nenasadí, předchozí web zůstane dostupný a běh skončí chybou v Actions.
 Čas „Aktualizováno“ ukazuje stáří zdrojových dat ČSÚ.
 
+### Dočasný minutový režim 10. října 2026
+
+Workflow **Temporary minute updates until Prague midnight** běží na GitHubu
+a každých 60 sekund žádá o nový běh publikačního workflow. Pokud předchozí
+publikování stále běží nebo čeká, danou minutu přeskočí, aby nevznikala fronta.
+Platí pouze 10. října 2026 od 14:00 do půlnoci českého času, tj. do
+**22:00 UTC**. Běh spuštěný těsně před půlnocí může nasazení dokončit později.
+Po půlnoci už koordinátor další aktualizace nespouští; pětiminutový plán
+publikačního workflow zůstává aktivní.
+
+Koordinátor se obnovuje hodinovým cronem a jeden běh trvá nejvýše 65 minut.
+GitHub může obnovu opozdit; v případné mezeře funguje původní pětiminutový
+plán. Nová aktualizace, stahování a nasazení proto nejsou zaručené přesně
+každou minutu. Režim nezávisí na zapnutém lokálním počítači, nemění obsah
+repozitáře a nevyžaduje osobní přístupový token.
+
 Instalace závislostí pro samostatný lokální běh:
 
 ```powershell
