@@ -338,29 +338,35 @@
       : "–";
 
     const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);
-    document.getElementById("results-party-chart").innerHTML = r.parties
-      .map(
-        (p) => {
-          let mandateLabel;
-          if (p.seats != null) {
-            mandateLabel = `${p.seats}\u00a0mandátů`;
-          } else if (estimate && !estimate.eligible.has(p.id)) {
-            mandateLabel = "pod uzavírací klauzulí";
-          } else if (estimate) {
-            mandateLabel = `odhad: ${estimate.seats.get(p.id)}\u00a0mandátů`;
-          } else {
-            mandateLabel = "mandáty zatím neurčeny";
-          }
-          return `
+    const renderPartyResult = (p) => {
+      let mandateLabel;
+      if (p.seats != null) {
+        mandateLabel = `${p.seats}\u00a0mandátů`;
+      } else if (estimate && !estimate.eligible.has(p.id)) {
+        mandateLabel = "pod uzavírací klauzulí";
+      } else if (estimate) {
+        mandateLabel = `odhad: ${estimate.seats.get(p.id)}\u00a0mandátů`;
+      } else {
+        mandateLabel = "mandáty zatím neurčeny";
+      }
+      return `
         <div class="party-bar-row">
           <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${mandateLabel}</span></div>
           <div class="party-bar-row__track">
             <div class="party-bar-row__fill" style="width:${(p.votesPercent / maxPct) * 100}%"></div>
           </div>
         </div>`;
-        }
-      )
-      .join("");
+    };
+    const aboveThreshold = r.parties.filter((p) => p.votesPercent >= 5);
+    const belowThreshold = r.parties.filter((p) => p.votesPercent < 5);
+    document.getElementById("results-party-chart").innerHTML =
+      aboveThreshold.map(renderPartyResult).join("") +
+      (belowThreshold.length
+        ? `<section class="results-below-threshold" aria-labelledby="results-below-threshold-title">
+            <h3 id="results-below-threshold-title">Kandidátky pod 5 % hlasů</h3>
+            <div class="party-bar-chart">${belowThreshold.map(renderPartyResult).join("")}</div>
+          </section>`
+        : "");
 
     const confirmed = r.seats.filter((s) => s.name).length;
     document.getElementById("results-seats-confirmed").textContent = confirmed;

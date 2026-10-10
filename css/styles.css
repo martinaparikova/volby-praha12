@@ -745,6 +745,29 @@ main {
 
 .party-bar-chart--results .party-bar-row__label span:last-child { color: var(--color-text); font-weight: 700; }
 
+.results-below-threshold {
+  margin-top: .5rem;
+  padding: 1rem;
+  border-top: 2px solid var(--color-text-muted);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: color-mix(in srgb, var(--color-text-muted) 10%, var(--color-bg-alt));
+}
+.results-below-threshold h3 {
+  margin: 0 0 1rem;
+  font-size: .85rem;
+  color: var(--color-text-muted);
+}
+.results-below-threshold .party-bar-row__label,
+.results-below-threshold .party-bar-row__label span:last-child {
+  color: var(--color-text-muted);
+}
+.results-below-threshold .party-bar-row__track {
+  background: var(--color-bg-alt);
+}
+.results-below-threshold .party-bar-row__fill {
+  background: var(--color-text-muted);
+}
+
 .seats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));

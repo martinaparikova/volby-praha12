@@ -94,6 +94,11 @@ měnit s každou aktualizací; oficiální mandáty a zvolení kandidáti se zob
 až po úplném sečtení. Účast je při nulovém počtu sečtených okrsků `null`,
 nikoliv skutečných 0 %.
 
+Ve výsledcích kandidátek jsou listiny s podílem hlasů pod 5 % oddělené
+do šedě podbarvené skupiny. Přesně 5 % patří do horní skupiny.
+Toto vizuální rozdělení podle zobrazeného podílu hlasů nemění výpočet
+mandátů ani zákonnou uzavírací klauzuli zohledňující počet kandidátů.
+
 Formát souboru `results-*.json`:
 
 ```jsonc
