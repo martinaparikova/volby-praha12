@@ -277,9 +277,12 @@
     document.getElementById("results-precincts").textContent = `${r.precinctsCounted} z ${r.precinctsTotal} (${precinctsPct}\u00a0%)`;
     document.getElementById("results-precincts-fill").style.width = `${precinctsPct}%`;
     document.getElementById("results-turnout").textContent = r.turnoutPercent == null ? "–" : `${r.turnoutPercent}\u00a0%`;
-    const updated = r.generatedAt ? new Date(r.generatedAt) : r.fetchedAt;
+    const updated = r.generatedAt ? new Date(r.generatedAt) : null;
     document.getElementById("results-updated").textContent = updated
       ? updated.toLocaleString("cs-CZ")
+      : "–";
+    document.getElementById("results-fetched").textContent = r.fetchedAt
+      ? r.fetchedAt.toLocaleString("cs-CZ")
       : "–";
 
     const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);

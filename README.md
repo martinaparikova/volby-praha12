@@ -120,7 +120,10 @@ např. [Praha 12](https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysl
 Přebírá procenta hlasů, volební účast, počty okrsků a velikost zastupitelstva.
 Po dokončení sčítání převezme přímo přidělené mandáty a elementy `ZASTUPITEL`
 s počty hlasů. Neprovádí vlastní d'Hondtův výpočet ani odhad vítězů.
-Čas „Aktualizováno“ na stránce odpovídá času vytvoření dat ČSÚ.
+„Čas dat ČSÚ“ odpovídá času vytvoření zdrojových dat. „Naposledy načteno“
+ukazuje poslední úspěšné načtení zveřejněného JSON do prohlížeče, nikoliv
+poslední stažení z ČSÚ. Při opakovaném načtení nezměněných dat se první
+čas nemění; při chybě načtení se neposune ani druhý čas.
 
 Skript před zápisem ověří všechny stažené obce. Chyba HTTP/XML, jiná obec,
 neznámá platnost kandidáta či nesoulad počtů kandidátů/mandátů ukončí běh
@@ -188,7 +191,8 @@ při pushi fungují dál.
 Ruční aktualizace: GitHub → Actions → **Update CSU data and publish** →
 **Run workflow**, větev `main`. V případě chyby stažení či validace se nová
 verze nenasadí, předchozí web zůstane dostupný a běh skončí chybou v Actions.
-Čas „Aktualizováno“ ukazuje stáří zdrojových dat ČSÚ.
+„Čas dat ČSÚ“ ukazuje stáří zdrojových dat, „Naposledy načteno“ čas
+posledního úspěšného načtení v prohlížeči.
 
 ### Dočasný minutový režim 10. října 2026
 
