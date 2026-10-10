@@ -260,6 +260,55 @@
     }
   }
 
+  function estimatePartialMandates(r) {
+    if (r.isSample || r.isComplete !== false || !r.precinctsCounted || !r.totalSeats) return null;
+
+    const parties = r.parties.map((party) => {
+      const candidateParty = state.parties.find((item) => item.id === party.id);
+      return {
+        id: party.id,
+        votes: party.votes,
+        candidateCount: candidateParty && candidateParty.candidateCount,
+      };
+    });
+    const totalVotes = parties.reduce((sum, party) => sum + party.votes, 0);
+    if (
+      !totalVotes ||
+      parties.some((party) =>
+        !Number.isFinite(party.votes) ||
+        party.votes < 0 ||
+        !Number.isInteger(party.candidateCount) ||
+        party.candidateCount < 1
+      )
+    ) {
+      return null;
+    }
+
+    const eligible = parties.filter((party) =>
+      party.votes >= 0.05 * (totalVotes / r.totalSeats) * Math.min(party.candidateCount, r.totalSeats)
+    );
+    if (!eligible.some((party) => party.votes > 0)) return null;
+
+    const seats = new Map(parties.map((party) => [party.id, 0]));
+    const assigned = eligible.map((party, index) => ({ ...party, index, seats: 0 }));
+    for (let seat = 0; seat < r.totalSeats; seat += 1) {
+      const winner = assigned
+        .filter((party) => party.votes > 0)
+        .reduce((best, party) => {
+          const quotient = party.votes / (party.seats + 1);
+          const bestQuotient = best.votes / (best.seats + 1);
+          return quotient > bestQuotient ||
+            (quotient === bestQuotient && (party.votes > best.votes ||
+              (party.votes === best.votes && party.index < best.index)))
+            ? party
+            : best;
+        });
+      winner.seats += 1;
+    }
+    assigned.forEach((party) => seats.set(party.id, party.seats));
+    return { eligible: new Set(eligible.map((party) => party.id)), seats };
+  }
+
   function renderResultsTab() {
     const r = state.results;
     const banner = document.getElementById("results-sample-banner");
@@ -268,10 +317,13 @@
       return;
     }
 
+    const estimate = estimatePartialMandates(r);
     banner.hidden = !r.isSample && r.isComplete !== false;
     document.getElementById("results-sample-text").textContent = r.isSample
       ? r.sampleNote
-      : "Průběžná data ČSÚ. Mandáty a zvolení zastupitelé budou uvedeni až po úplném sečtení.";
+      : estimate
+        ? "Průběžný odhad mandátů vychází z dosavadních hlasů, zákonné uzavírací klauzule (zohledňuje počet kandidátů listiny) a d'Hondtovy metody; může se změnit. Jména zvolených zastupitelů a oficiální mandáty budou známy po úplném sečtení."
+        : "Průběžná data ČSÚ. Odhad mandátů se zobrazí po započtení prvního okrsku; oficiální mandáty a zvolení zastupitelé budou uvedeni až po úplném sečtení.";
 
     const precinctsPct = r.precinctsTotal ? round1((r.precinctsCounted / r.precinctsTotal) * 100) : 0;
     document.getElementById("results-precincts").textContent = `${r.precinctsCounted} z ${r.precinctsTotal} (${precinctsPct}\u00a0%)`;
@@ -288,13 +340,25 @@
     const maxPct = Math.max(...r.parties.map((p) => p.votesPercent), 1);
     document.getElementById("results-party-chart").innerHTML = r.parties
       .map(
-        (p) => `
+        (p) => {
+          let mandateLabel;
+          if (p.seats != null) {
+            mandateLabel = `${p.seats}\u00a0mandátů`;
+          } else if (estimate && !estimate.eligible.has(p.id)) {
+            mandateLabel = "pod uzavírací klauzulí";
+          } else if (estimate) {
+            mandateLabel = `odhad: ${estimate.seats.get(p.id)}\u00a0mandátů`;
+          } else {
+            mandateLabel = "mandáty zatím neurčeny";
+          }
+          return `
         <div class="party-bar-row">
-          <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${p.seats == null ? "mandáty zatím neurčeny" : `${p.seats}&nbsp;mandátů`}</span></div>
+          <div class="party-bar-row__label"><span title="${p.name}">${p.id}. ${p.name}</span><span>${p.votesPercent}&nbsp;% · ${mandateLabel}</span></div>
           <div class="party-bar-row__track">
             <div class="party-bar-row__fill" style="width:${(p.votesPercent / maxPct) * 100}%"></div>
           </div>
-        </div>`
+        </div>`;
+        }
       )
       .join("");
 

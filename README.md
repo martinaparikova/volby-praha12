@@ -84,10 +84,15 @@ automaticky.
 
 `data/results-praha{1..22}.json` a `data/results-magistrat.json` obsahují
 **oficiální průběžná data ČSÚ**. Nulový počet sečtených okrsků není ukázka.
-Dokud není zastupitelstvo úplně sečtené (`isComplete=false`), mandáty
-jednotlivých stran jsou `null` a všechna křesla čekají na výsledek.
-Žlutý baner vysvětluje, že mandáty budou dostupné po úplném sečtení.
-Účast je při nulovém počtu sečtených okrsků `null`, nikoliv skutečných 0 %.
+Dokud není zastupitelstvo úplně sečtené (`isComplete=false`), oficiální
+mandáty jednotlivých stran jsou `null` a jména zvolených zastupitelů se
+nezobrazují. Po započtení prvního okrsku ale záložka Výsledky průběžně
+odhaduje rozdělení mandátů ze součtu hlasů. Odhad uplatňuje zákonnou
+uzavírací klauzuli: 5 % z průměrného počtu hlasů na mandát násobených počtem
+kandidátů listiny, nejvýše počtem mandátů, a poté d'Hondtovu metodu. Může se
+měnit s každou aktualizací; oficiální mandáty a zvolení kandidáti se zobrazí
+až po úplném sečtení. Účast je při nulovém počtu sečtených okrsků `null`,
+nikoliv skutečných 0 %.
 
 Formát souboru `results-*.json`:
 
@@ -101,7 +106,7 @@ Formát souboru `results-*.json`:
   "precinctsCounted": 18,        // sečteno okrsků
   "turnoutPercent": 47.2,        // volební účast
   "totalSeats": 35,              // velikost zastupitelstva
-  "parties": [ { "id": 1, "name": "...", "votesPercent": 20.5, "seats": null } ],
+  "parties": [ { "id": 1, "name": "...", "votes": 1234, "votesPercent": 20.5, "seats": null } ],
   "seats": [ { "seatNumber": 1, "name": null, "partyId": null, "partyName": null, "preferenceVotes": null } ]
   // "name"/"partyId"/"partyName"/"preferenceVotes" = null u dosud nerozhodnutého křesla
 }
@@ -119,7 +124,8 @@ Skript používá [průběžné XML ČSÚ](https://volby.gov.cz/opendata/kv2026/
 např. [Praha 12](https://volby.gov.cz/appdata/kv2026/20261009/odata/zastup/vysledky_obec_547107.xml).
 Přebírá procenta hlasů, volební účast, počty okrsků a velikost zastupitelstva.
 Po dokončení sčítání převezme přímo přidělené mandáty a elementy `ZASTUPITEL`
-s počty hlasů. Neprovádí vlastní d'Hondtův výpočet ani odhad vítězů.
+s počty hlasů. Odhad neovlivňuje tento zdroj ani JSON; počítá se v prohlížeči
+jen z průběžných hlasů a velikostí kandidátních listin.
 „Čas dat ČSÚ“ odpovídá času vytvoření zdrojových dat. „Naposledy načteno“
 ukazuje poslední úspěšné načtení zveřejněného JSON do prohlížeče, nikoliv
 poslední stažení z ČSÚ. Při opakovaném načtení nezměněných dat se první
