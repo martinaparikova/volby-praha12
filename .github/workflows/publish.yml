@@ -51,6 +51,17 @@ jobs:
         if: steps.window.outputs.publish == 'true'
         run: python -m unittest discover -s scripts -p 'test_*.py' -v
 
+      - name: Retrieve previously published results as regression baseline
+        if: steps.window.outputs.publish == 'true'
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          for path in data/results-*.json; do
+            curl --fail --silent --show-error --retry 3 \
+              "https://volby-praha12.cz/${path}?run=${RUN_ID}" \
+              --output "$path"
+          done
+
       - name: Fetch and validate official data
         if: steps.window.outputs.publish == 'true'
         run: python scripts/update_csu.py

@@ -40,10 +40,16 @@ def results(complete: bool = False) -> bytes:
     """.encode("utf-8")
 
 
-def district_results() -> bytes:
+def district_results(counted: int = 0, total: int = 2) -> bytes:
     standalone = ET.fromstring(results())
     municipality = standalone.find(f"{{{csu.NS['kv']}}}OBEC")
     assert municipality is not None
+    turnout = municipality.find(
+        f"{{{csu.NS['kv']}}}VYSLEDEK/{{{csu.NS['kv']}}}UCAST"
+    )
+    assert turnout is not None
+    turnout.set("OKRSKY_ZPRAC", str(counted))
+    turnout.set("OKRSKY_CELKEM", str(total))
     other = ET.fromstring(ET.tostring(municipality))
     other.set("KODZASTUP", "999999")
     root = ET.Element(
@@ -130,6 +136,33 @@ class OfficialDataTests(unittest.TestCase):
         self.assertEqual(result["generatedAt"], "2026-10-10T19:30:00")
         self.assertEqual(result["source"], csu.RESULTS_URL)
         self.assertEqual(result["precinctsTotal"], 2)
+
+    def test_keeps_previous_results_when_precinct_count_drops(self):
+        previous_xml = (
+            results().replace(b'OKRSKY_CELKEM="2"', b'OKRSKY_CELKEM="9"')
+            .replace(b'OKRSKY_ZPRAC="0"', b'OKRSKY_ZPRAC="7"')
+        )
+        _, previous = csu.convert("praha12", previous_xml, self.rows)
+        _, current = csu.convert("praha12", district_results(5, 9), self.rows)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "results-praha12.json"
+            csu.write_json(path, previous)
+            with patch("sys.stderr"):
+                preserved = csu.preserve_results_if_precinct_count_regresses(current, path)
+        self.assertEqual(preserved, previous)
+        self.assertEqual(previous["precinctsCounted"], 7)
+        self.assertEqual(current["precinctsCounted"], 5)
+
+    def test_accepts_results_when_precinct_count_increases(self):
+        previous_xml = results().replace(b'OKRSKY_ZPRAC="0"', b'OKRSKY_ZPRAC="1"')
+        _, previous = csu.convert("praha12", previous_xml, self.rows)
+        current_xml = results(True)
+        _, current = csu.convert("praha12", current_xml, self.rows)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "results-praha12.json"
+            csu.write_json(path, previous)
+            accepted = csu.preserve_results_if_precinct_count_regresses(current, path)
+        self.assertEqual(accepted, current)
 
     def test_rejects_count_mismatch_and_invalid_winner(self):
         with self.assertRaisesRegex(ValueError, "count mismatch"):

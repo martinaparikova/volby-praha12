@@ -63,6 +63,9 @@ pocházejí z aktuálního výsledkového XML ČSÚ pro rok 2026, nikoliv z arch
 Průběžné výsledky se načítají ze souhrnného XML za okres Praha, které se
 aktualizuje při sčítání; jednotlivé XML soubory zastupitelstev mohou zůstat
 zastaralé.
+Pokud nový import nahlásí méně sečtených okrsků než předchozí zveřejněná verze
+stejného zastupitelstva, předchozí výsledky se zachovají. Publikační workflow
+proto před importem načte dosavadní výsledkové JSON soubory z webu.
 
 ### Aktualizace dat
 

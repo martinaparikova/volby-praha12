@@ -229,12 +229,40 @@ def write_json(path: Path, value: dict) -> None:
             temporary.unlink()
 
 
+def preserve_results_if_precinct_count_regresses(results: dict, path: Path) -> dict:
+    if not path.exists():
+        return results
+
+    with path.open(encoding="utf-8") as stream:
+        previous = json.load(stream)
+    if not isinstance(previous, dict):
+        raise ValueError(f"Invalid previous results in {path}: expected a JSON object")
+    if previous.get("municipality") != results["municipality"] or previous.get("isSample"):
+        return results
+
+    previous_count = previous.get("precinctsCounted")
+    if not isinstance(previous_count, int) or isinstance(previous_count, bool):
+        raise ValueError(f"Invalid previous precinct count in {path}")
+    if results["precinctsCounted"] < previous_count:
+        print(
+            f"ČSÚ precinct count regressed for {results['municipality']} "
+            f"({previous_count} -> {results['precinctsCounted']}); keeping previous results.",
+            file=sys.stderr, flush=True,
+        )
+        return previous
+    return results
+
+
 def update(slugs: list[str], output: Path) -> None:
     rows = registry_rows(download(REGISTRY_URL), {code_for(slug) for slug in slugs})
     results_data = download(RESULTS_URL)
     converted = []
     for slug in slugs:
-        converted.append((slug, *convert(slug, results_data, rows[code_for(slug)])))
+        candidates, results = convert(slug, results_data, rows[code_for(slug)])
+        results = preserve_results_if_precinct_count_regresses(
+            results, output / f"results-{slug}.json",
+        )
+        converted.append((slug, candidates, results))
     # Validate every downloaded municipality before publishing any of the batch.
     for slug, candidates, results in converted:
         write_json(output / f"candidates-{slug}.json", candidates)
