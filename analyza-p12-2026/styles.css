@@ -167,6 +167,60 @@
   margin-top: .4rem;
 }
 
+.point-list li[data-tags] {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: .2rem .4rem .2rem .2rem;
+  margin-left: -.4rem;
+}
+
+.point-list li[data-tags]:hover {
+  background: color-mix(in srgb, var(--color-pink) 12%, transparent);
+}
+
+.related-hint {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--color-green-dark);
+  background: color-mix(in srgb, var(--color-green) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-green) 28%, var(--color-border));
+  border-radius: 999px;
+  padding: .45rem .9rem;
+}
+
+:root[data-theme="dark"] .related-hint {
+  color: #c8ead9;
+}
+
+body.is-linking .point-list li {
+  opacity: .32;
+}
+
+body.is-linking .point-list li.is-related {
+  opacity: 1;
+  background: color-mix(in srgb, #d48a2c 16%, var(--color-bg-alt));
+  outline: 2px solid color-mix(in srgb, #d48a2c 65%, transparent);
+}
+
+body.is-linking .point-list li.is-source {
+  background: color-mix(in srgb, var(--color-green) 16%, var(--color-bg-alt));
+  outline-color: var(--color-green);
+}
+
+.matrix-table tbody tr {
+  cursor: pointer;
+}
+
+body.is-linking .matrix-table tbody tr {
+  opacity: .35;
+}
+
+body.is-linking .matrix-table tbody tr.is-related {
+  opacity: 1;
+  outline: 2px solid color-mix(in srgb, #d48a2c 70%, transparent);
+  outline-offset: -2px;
+}
+
 .compare-card.is-dimmed {
   opacity: .38;
 }

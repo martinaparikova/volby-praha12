@@ -4,6 +4,8 @@
     query: "",
     topic: "all",
     view: "compare",
+    relatedTags: [],
+    sourceId: "",
   };
 
   const els = {
@@ -16,6 +18,7 @@
     empty: document.getElementById("analysis-empty"),
     exportBtn: document.getElementById("export-xlsx"),
     themeToggle: document.getElementById("theme-toggle"),
+    relatedHint: document.getElementById("related-hint"),
   };
 
   function initTheme() {
@@ -94,18 +97,113 @@
     return (topicIds || []).includes(state.topic);
   }
 
-  function splitPoints(text) {
-    return String(text || "")
-      .split(/\s*;\s*/)
-      .map((item) => item.trim())
-      .filter(Boolean)
-      .map((item) => item.charAt(0).toLocaleUpperCase("cs") + item.slice(1));
+  function splitPoints(value) {
+    const items = Array.isArray(value)
+      ? value.map((item) => String(item).trim()).filter(Boolean)
+      : String(value || "")
+          .split(/\s*;\s*/)
+          .map((item) => item.trim())
+          .filter(Boolean);
+    return items.map((item) => item.charAt(0).toLocaleUpperCase("cs") + item.slice(1));
   }
 
-  function renderPoints(text) {
+  function tagsFor(text) {
+    const n = normalize(text);
+    const tags = [];
+    if (/metro d/.test(n)) tags.push("metro-d");
+    if (/tramvaj/.test(n)) tags.push("tramvaj-komorany");
+    if (/parkovac/.test(n)) tags.push("parkovaci-domy");
+    if (/\bd0\b/.test(n) || /prazsk(?:y|eho) okruh/.test(n) || /obchvat komoran/.test(n)) tags.push("d0-obchvat");
+    if (/cyklo|sdilenych kol|sdilena kola|vjezdu kol/.test(n)) tags.push("cyklodoprava");
+    if (/p\+r/.test(n)) tags.push("p-plus-r");
+    if (/zon placeneho|placeneho stani|rezidencni/.test(n)) tags.push("modre-zony");
+    if (/skolni ulice|zony bez aut|cesty do skol|pre chod.*skol|prechod.*skol|bezpecn.*skol|okoli skol/.test(n)) {
+      tags.push("bezpecnost-skoly");
+    }
+    if (/lavka/.test(n)) tags.push("lavky");
+    if (/zs komoran|zakladni skola v komoran|zakladni skola v modranech|t\. g\. masaryka|zs a ms smolkova/.test(n)) {
+      tags.push("zs-komorany-tgm");
+    }
+    if (/stredni skol|gymnaz/.test(n)) tags.push("stredni-skola");
+    if (
+      /obecni byt|bytoveho fondu|najemni bydleni|mestske najemni|prodej mestskych byt|ukonceni prodeje|privatizac|fond mestske casti navy/.test(n)
+    ) {
+      tags.push("obecni-byty");
+    }
+    if (/developer|obcanska vybavenost|obcanskou vybavenost|prispevky developer/.test(n)) {
+      tags.push("vybavenost-developeri");
+    }
+    if (/sofijsk|prior|galerie modrany/.test(n)) tags.push("sofijak-prior");
+    if (/zbrojni|oc labe/.test(n)) tags.push("cholupice-labe");
+    if (/fotovolta|solarni/.test(n)) tags.push("fve");
+    if (/prevzeti uklidu|mestsky zahradnik/.test(n)) tags.push("uklid-zelen");
+    if (/destov|sucho|vedr|zadrzovani vody|adaptac/.test(n)) tags.push("destova-voda");
+    if (/belari/.test(n)) tags.push("belarie");
+    if (/bazen/.test(n)) tags.push("bazen");
+    if (/domov senior|dum pro seniory|zarubov|vapcarov/.test(n)) tags.push("domov-senioru");
+    if (/kamer|straznik|prevence kriminal|hazard|nelegaln/.test(n)) tags.push("kamery-straznici");
+    if (/poliklinik/.test(n)) tags.push("poliklinika");
+    if (/portal|digitaliz|online sluz|online zapis|elektronick/.test(n)) tags.push("digitalizace");
+    if (/kulturni(ho)? domu v cholupic|komunitni centrum (na tocne|v odkoupen)|namesti v tocne|namesti v cholupic/.test(n)) {
+      tags.push("komunity-okraje");
+    }
+    if (/senior taxi/.test(n)) tags.push("senior-taxi");
+    return [...new Set(tags)];
+  }
+
+  function renderPoints(text, partyId, topicId) {
     const points = splitPoints(text);
     if (!points.length) return "";
-    return `<ul class="point-list">${points.map((point) => `<li>${highlight(point)}</li>`).join("")}</ul>`;
+    return `<ul class="point-list">${points
+      .map((point, index) => {
+        const tags = tagsFor(point);
+        const extras = tags.length
+          ? ` data-tags="${escapeHtml(tags.join(" "))}" data-source="${escapeHtml(`${topicId}-${partyId}-${index}`)}" tabindex="0" role="button"`
+          : "";
+        return `<li${extras}>${highlight(point)}</li>`;
+      })
+      .join("")}</ul>`;
+  }
+
+  function relatedLabels() {
+    return DATA.matrix.filter((row) => state.relatedTags.includes(row.id)).map((row) => row.measure);
+  }
+
+  function applyRelated() {
+    const active = state.relatedTags.length > 0;
+    document.body.classList.toggle("is-linking", active);
+    document.querySelectorAll("[data-tags]").forEach((el) => {
+      const tags = (el.dataset.tags || "").split(" ").filter(Boolean);
+      const match = tags.some((tag) => state.relatedTags.includes(tag));
+      el.classList.toggle("is-related", match);
+      el.classList.toggle("is-source", Boolean(state.sourceId) && el.dataset.source === state.sourceId);
+    });
+    document.querySelectorAll("[data-matrix-id]").forEach((el) => {
+      el.classList.toggle("is-related", state.relatedTags.includes(el.dataset.matrixId));
+    });
+    if (!els.relatedHint) return;
+    if (!active) {
+      els.relatedHint.hidden = true;
+      els.relatedHint.textContent = "";
+      return;
+    }
+    const labels = relatedLabels();
+    els.relatedHint.hidden = false;
+    els.relatedHint.textContent = labels.length
+      ? `Související: ${labels.join(" · ")}. Klikněte znovu nebo stiskněte Esc pro zrušení.`
+      : "Související body jsou zvýrazněné. Klikněte znovu nebo stiskněte Esc pro zrušení.";
+  }
+
+  function setRelated(tags, sourceId) {
+    const unique = [...new Set(tags)].filter(Boolean);
+    if (sourceId && sourceId === state.sourceId) {
+      state.relatedTags = [];
+      state.sourceId = "";
+    } else {
+      state.relatedTags = unique;
+      state.sourceId = sourceId || unique.join("|");
+    }
+    applyRelated();
   }
 
   function renderParties() {
@@ -138,13 +236,19 @@
       .map((topic) => {
         const cards = DATA.parties.map((party) => {
           const text = topic.positions[party.id] || "";
-          const visible = matchesQuery([topic.title, party.name, party.short, party.leader, text]);
+          const visible = matchesQuery([
+            topic.title,
+            party.name,
+            party.short,
+            party.leader,
+            ...splitPoints(text),
+          ]);
           return {
             visible,
             html: `
             <article class="compare-card party-${party.id}${visible ? "" : " is-dimmed"}">
               <div class="compare-card__party">${escapeHtml(party.short)}</div>
-              ${renderPoints(text)}
+              ${renderPoints(text, party.id, topic.id)}
             </article>`,
           };
         });
@@ -179,7 +283,7 @@
           })
           .join("");
         return `
-          <tr class="status-${escapeHtml(row.status)}">
+          <tr class="status-${escapeHtml(row.status)}" data-matrix-id="${escapeHtml(row.id)}" tabindex="0">
             <th scope="row">${highlight(row.measure)}</th>
             ${cells}
             <td><span class="agreement-pill agreement-pill--${escapeHtml(row.status)}">${highlight(row.agreementLabel)}</span></td>
@@ -201,26 +305,51 @@
     els.compare.hidden = state.view !== "compare";
     els.matrix.hidden = state.view !== "matrix";
     updateEmptyState();
+    applyRelated();
   }
 
-  function sheetFromAoA(rows, colWidths) {
+  function estimateRowHeight(values, colWidth) {
+    const maxLen = Math.max(12, ...values.map((value) => String(value || "").length));
+    const lines = Math.min(10, Math.ceil(maxLen / Math.max(18, colWidth - 2)));
+    return { hpt: Math.max(18, lines * 16) };
+  }
+
+  function sheetFromAoA(rows, colWidths, extra) {
     const sheet = XLSX.utils.aoa_to_sheet(rows);
     sheet["!cols"] = colWidths.map((width) => ({ wch: width }));
+    sheet["!rows"] = rows.map((row) => estimateRowHeight(row, Math.min(...colWidths.slice(1, colWidths.length) || colWidths)));
+    if (extra && extra.merges) sheet["!merges"] = extra.merges;
+    if (extra && extra.freezeRows) {
+      sheet["!views"] = [{ state: "frozen", ySplit: extra.freezeRows, topLeftCell: `A${extra.freezeRows + 1}` }];
+    }
     return sheet;
   }
 
-  function exportWorkbook() {
-    if (typeof XLSX === "undefined") return;
+  function compareExportSheet() {
+    const headers = ["Téma", ...DATA.parties.map((party) => party.short)];
+    const rows = [headers];
+    const merges = [];
 
-    const partyHeaders = DATA.parties.map((party) => party.name);
-    const compareRows = [
-      ["Téma", ...partyHeaders],
-      ...DATA.topics.map((topic) => [
-        topic.title,
-        ...DATA.parties.map((party) => splitPoints(topic.positions[party.id]).join("\n")),
-      ]),
-    ];
-    const matrixRows = [
+    DATA.topics.forEach((topic) => {
+      const lists = DATA.parties.map((party) => splitPoints(topic.positions[party.id]));
+      const maxPoints = Math.max(1, ...lists.map((list) => list.length));
+      const start = rows.length;
+      for (let i = 0; i < maxPoints; i += 1) {
+        rows.push([i === 0 ? topic.title : "", ...lists.map((list) => list[i] || "")]);
+      }
+      if (maxPoints > 1) {
+        merges.push({ s: { r: start, c: 0 }, e: { r: start + maxPoints - 1, c: 0 } });
+      }
+      rows.push([]);
+    });
+
+    if (rows.length > 1 && !rows[rows.length - 1].some(Boolean)) rows.pop();
+
+    return sheetFromAoA(rows, [28, 38, 38, 38, 38, 38], { merges, freezeRows: 1 });
+  }
+
+  function matrixExportSheet() {
+    const rows = [
       ["Opatření", ...DATA.parties.map((party) => party.short), "Stav shody"],
       ...DATA.matrix.map((row) => [
         row.measure,
@@ -228,18 +357,28 @@
         row.agreementLabel,
       ]),
     ];
+    return sheetFromAoA(rows, [42, 22, 28, 28, 28, 22, 32], { freezeRows: 1 });
+  }
+
+  function pointsListSheet() {
+    const rows = [["Téma", "Strana", "Bod programu"]];
+    DATA.topics.forEach((topic) => {
+      DATA.parties.forEach((party) => {
+        splitPoints(topic.positions[party.id]).forEach((point) => {
+          rows.push([topic.title, party.short, point]);
+        });
+      });
+    });
+    return sheetFromAoA(rows, [28, 22, 80], { freezeRows: 1 });
+  }
+
+  function exportWorkbook() {
+    if (typeof XLSX === "undefined") return;
 
     const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(
-      workbook,
-      sheetFromAoA(compareRows, [28, 48, 48, 48, 48, 48]),
-      "Srovnání po tématech"
-    );
-    XLSX.utils.book_append_sheet(
-      workbook,
-      sheetFromAoA(matrixRows, [42, 22, 28, 28, 28, 22, 32]),
-      "Analytická matice"
-    );
+    XLSX.utils.book_append_sheet(workbook, compareExportSheet(), "Srovnání po tématech");
+    XLSX.utils.book_append_sheet(workbook, matrixExportSheet(), "Analytická matice");
+    XLSX.utils.book_append_sheet(workbook, pointsListSheet(), "Seznam bodů");
     XLSX.writeFile(workbook, "srovnani-programu-praha12-2026.xlsx");
   }
 
@@ -276,6 +415,41 @@
       els.exportBtn.disabled = true;
       els.exportBtn.title = "Knihovna SheetJS se nenačetla";
     }
+
+    function eventEl(event) {
+      const node = event.target;
+      return node instanceof Element ? node : node && node.parentElement;
+    }
+
+    els.compare.addEventListener("click", (event) => {
+      const el = eventEl(event);
+      const point = el && el.closest("li[data-tags]");
+      if (!point) return;
+      event.stopPropagation();
+      setRelated((point.dataset.tags || "").split(" "), point.dataset.source);
+    });
+    els.matrix.addEventListener("click", (event) => {
+      const el = eventEl(event);
+      const row = el && el.closest("tr[data-matrix-id]");
+      if (!row) return;
+      event.stopPropagation();
+      setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`);
+    });
+    document.addEventListener("click", (event) => {
+      if (!state.relatedTags.length) return;
+      const el = eventEl(event);
+      if (el && el.closest(".analysis-toolbar, .party-overview a, li[data-tags], tr[data-matrix-id]")) return;
+      setRelated([], "");
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setRelated([], "");
+      if (event.key !== "Enter") return;
+      const el = eventEl(event);
+      const point = el && el.closest("li[data-tags]");
+      if (point) setRelated((point.dataset.tags || "").split(" "), point.dataset.source);
+      const row = el && el.closest("tr[data-matrix-id]");
+      if (row) setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`);
+    });
   }
 
   init();
