@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /analyza-p12-2026
+Disallow: /analyza-p12-2026/

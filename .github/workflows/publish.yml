@@ -81,8 +81,8 @@ jobs:
         if: steps.window.outputs.publish == 'true'
         run: |
           mkdir -p _site/data
-          cp index.html CNAME _site/
-          cp -r css js _site/
+          cp index.html CNAME robots.txt _site/
+          cp -r css js analyza-p12-2026 _site/
           cp data/candidates-*.json data/results-*.json data/precincts-praha12.json _site/data/
 
       - uses: actions/upload-pages-artifact@v3

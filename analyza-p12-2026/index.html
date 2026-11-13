@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analýza programů Praha 12 — komunální volby 2026</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Interní srovnání volebních programů komunálních voleb 2026 v MČ Praha 12." />
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("p12-theme");
+      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = saved || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body class="analysis-page">
+  <div class="analysis-sticky">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <span class="brand__badge">P12</span>
+          <div class="brand__text">
+            <strong>Analýza programů</strong>
+            <span>Praha 12 · komunální volby 2026 · pracovní přehled</span>
+          </div>
+        </div>
+        <div class="header-controls">
+          <button id="theme-toggle" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Přepnout tmavý režim">
+            <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+                <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.6 5.4l-1.6 1.6M6.9 17.1l-1.6 1.6M18.6 18.6l-1.6-1.6M6.9 6.9 5.3 5.3"/>
+                </g>
+              </svg>
+            </span>
+            <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="theme-switch__thumb" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="analysis-toolbar">
+      <div class="analysis-toolbar__row">
+        <label class="filter-group filter-group--grow">
+          <span class="filter-group__label">Fulltextové vyhledávání</span>
+          <div class="search-box">
+            <input id="analysis-search" type="search" placeholder="Hledat v programech, opatřeních i lídrech…" autocomplete="off" />
+          </div>
+        </label>
+        <label class="filter-group">
+          <span class="filter-group__label">Téma</span>
+          <select id="topic-filter" class="analysis-select" aria-label="Filtrovat podle tématu"></select>
+        </label>
+      </div>
+      <div class="analysis-toolbar__row">
+        <div class="segmented" role="group" aria-label="Přepínač zobrazení">
+          <button class="segmented__btn is-active" type="button" data-view="compare" aria-pressed="true">Srovnávací tabulky po tématech</button>
+          <button class="segmented__btn" type="button" data-view="matrix" aria-pressed="false">Analytická matice</button>
+        </div>
+        <button id="export-xlsx" class="btn btn--primary" type="button">Exportovat do Excelu (.xlsx)</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="analysis-hero">
+      <h1>Srovnání volebních programů</h1>
+      <p>Pracovní analytický přehled pěti zveřejněných programů pro komunální volby 2026 v MČ Praha 12. Texty vycházejí z oficiálních stránek subjektů. Stránka není veřejně odkazovaná ani určená k indexaci.</p>
+      <div class="party-overview" id="party-overview"></div>
+    </section>
+
+    <div id="view-compare"></div>
+
+    <section id="view-matrix" class="card table-card" hidden>
+      <p class="legend">
+        <span><i class="swatch swatch--agree" aria-hidden="true"></i> Zelená = shoda většiny stran</span>
+        <span><i class="swatch swatch--diverge" aria-hidden="true"></i> Oranžová = rozdílný přístup / specifický návrh</span>
+        <span><i class="swatch swatch--conflict" aria-hidden="true"></i> Červená = střet</span>
+      </p>
+      <div class="matrix-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Opatření</th>
+              <th>Piráti</th>
+              <th>Praha 12 sobě</th>
+              <th>STAN</th>
+              <th>Občané 12</th>
+              <th>TOP 09</th>
+              <th>Stav shody</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="empty-state" id="analysis-empty" hidden>Pro zadané hledání nebo téma se nic nenašlo.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Neoficiální pracovní srovnání zveřejněných programů. Odkazy na zdrojové texty jsou u jednotlivých subjektů výše.</p>
+  </footer>
+
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
