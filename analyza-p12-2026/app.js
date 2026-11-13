@@ -114,6 +114,7 @@
     if (/tramvaj/.test(n)) tags.push("tramvaj-komorany");
     if (/parkovac/.test(n)) tags.push("parkovaci-domy");
     if (/\bd0\b/.test(n) || /prazsk(?:y|eho) okruh/.test(n) || /obchvat komoran/.test(n)) tags.push("d0-obchvat");
+    if (/vlak|\bs8\b/.test(n)) tags.push("vlak-s8");
     if (/cyklo|sdilenych kol|sdilena kola|vjezdu kol/.test(n)) tags.push("cyklodoprava");
     if (/p\+r/.test(n)) tags.push("p-plus-r");
     if (/zon placeneho|placeneho stani|rezidencni/.test(n)) tags.push("modre-zony");
@@ -142,11 +143,21 @@
     if (/bazen/.test(n)) tags.push("bazen");
     if (/domov senior|dum pro seniory|zarubov|vapcarov/.test(n)) tags.push("domov-senioru");
     if (/kamer|straznik|prevence kriminal|hazard|nelegaln/.test(n)) tags.push("kamery-straznici");
-    if (/poliklinik/.test(n)) tags.push("poliklinika");
+    if (/poliklinik(?:y|a) modran|provozovatele poliklinik/.test(n)) tags.push("poliklinika");
     if (/portal|digitaliz|online sluz|online zapis|elektronick/.test(n)) tags.push("digitalizace");
+    if (
+      /rozklikavac|otevrenych mestech|open source|jmenovite hlasovani|zverejnovani zadani|zverejneni maxima informaci|dohled nad hospodarenim/.test(
+        n
+      )
+    ) {
+      tags.push("transparentnost");
+    }
+    if (/participativn/.test(n)) tags.push("participativni-rozpocet");
     if (/kulturni(ho)? domu v cholupic|komunitni centrum (na tocne|v odkoupen)|namesti v tocne|namesti v cholupic/.test(n)) {
       tags.push("komunity-okraje");
     }
+    if (/sportovn|spolk|lodenic|pump-track|mikrogrant|atletick/.test(n)) tags.push("sport-spolky");
+    if (/adiktolog|zony bez alkoholu|dusevniho zdravi|alkoholu a drogam/.test(n)) tags.push("adiktologie");
     if (/senior taxi/.test(n)) tags.push("senior-taxi");
     return [...new Set(tags)];
   }
@@ -169,7 +180,60 @@
     return DATA.matrix.filter((row) => state.relatedTags.includes(row.id)).map((row) => row.measure);
   }
 
-  function applyRelated() {
+  function collectEvidence(tagId) {
+    return DATA.parties.map((party) => {
+      const items = [];
+      DATA.topics.forEach((topic) => {
+        splitPoints(topic.positions[party.id]).forEach((point) => {
+          if (tagsFor(point).includes(tagId)) items.push({ topic: topic.title, point });
+        });
+      });
+      return { party, items };
+    });
+  }
+
+  function renderMatrixEvidence(options) {
+    document.querySelectorAll("tr.matrix-evidence").forEach((el) => el.remove());
+    const fromMatrix = String(state.sourceId || "").startsWith("matrix-");
+    const tagId = fromMatrix ? state.relatedTags[0] : "";
+    if (!tagId) return;
+    const sourceRow = document.querySelector(`tr[data-matrix-id="${CSS.escape(tagId)}"]`);
+    if (!sourceRow) return;
+    const measure = DATA.matrix.find((row) => row.id === tagId)?.measure || "";
+    const colCount = DATA.parties.length + 2;
+    const cards = collectEvidence(tagId)
+      .map(({ party, items }) => {
+        const list = items.length
+          ? `<ul class="point-list">${items
+              .map(
+                (item) =>
+                  `<li><span class="evidence-topic">${escapeHtml(item.topic)}</span>${highlight(item.point)}</li>`
+              )
+              .join("")}</ul>`
+          : `<p class="evidence-empty">V programu výslovně neuvedeno</p>`;
+        return `
+          <article class="evidence-card party-${party.id}">
+            <div class="compare-card__party">${escapeHtml(party.short)}</div>
+            ${list}
+          </article>`;
+      })
+      .join("");
+    const detail = document.createElement("tr");
+    detail.className = "matrix-evidence";
+    detail.innerHTML = `
+      <td colspan="${colCount}">
+        <div class="evidence-panel">
+          <p class="evidence-heading">Podklady v programech${measure ? `: ${escapeHtml(measure)}` : ""}</p>
+          <div class="evidence-grid">${cards}</div>
+        </div>
+      </td>`;
+    sourceRow.after(detail);
+    if (options && options.scroll) {
+      detail.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  function applyRelated(options) {
     const active = state.relatedTags.length > 0;
     document.body.classList.toggle("is-linking", active);
     document.querySelectorAll("[data-tags]").forEach((el) => {
@@ -181,29 +245,34 @@
     document.querySelectorAll("[data-matrix-id]").forEach((el) => {
       el.classList.toggle("is-related", state.relatedTags.includes(el.dataset.matrixId));
     });
+    renderMatrixEvidence(options);
     if (!els.relatedHint) return;
     if (!active) {
       els.relatedHint.hidden = true;
       els.relatedHint.textContent = "";
       return;
     }
+    const fromMatrix = String(state.sourceId || "").startsWith("matrix-");
     const labels = relatedLabels();
     els.relatedHint.hidden = false;
-    els.relatedHint.textContent = labels.length
-      ? `Související: ${labels.join(" · ")}. Klikněte znovu nebo stiskněte Esc pro zrušení.`
-      : "Související body jsou zvýrazněné. Klikněte znovu nebo stiskněte Esc pro zrušení.";
+    els.relatedHint.textContent = fromMatrix
+      ? "Pod řádkem jsou citace z programů. Klikněte znovu nebo stiskněte Esc pro zrušení."
+      : labels.length
+        ? `Související: ${labels.join(" · ")}. Klikněte znovu nebo stiskněte Esc pro zrušení.`
+        : "Související body jsou zvýrazněné. Klikněte znovu nebo stiskněte Esc pro zrušení.";
   }
 
-  function setRelated(tags, sourceId) {
+  function setRelated(tags, sourceId, options) {
     const unique = [...new Set(tags)].filter(Boolean);
     if (sourceId && sourceId === state.sourceId) {
       state.relatedTags = [];
       state.sourceId = "";
-    } else {
-      state.relatedTags = unique;
-      state.sourceId = sourceId || unique.join("|");
+      applyRelated();
+      return;
     }
-    applyRelated();
+    state.relatedTags = unique;
+    state.sourceId = sourceId || unique.join("|");
+    applyRelated(options);
   }
 
   function renderParties() {
@@ -433,12 +502,14 @@
       const row = el && el.closest("tr[data-matrix-id]");
       if (!row) return;
       event.stopPropagation();
-      setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`);
+      setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`, { scroll: true });
     });
     document.addEventListener("click", (event) => {
       if (!state.relatedTags.length) return;
       const el = eventEl(event);
-      if (el && el.closest(".analysis-toolbar, .party-overview a, li[data-tags], tr[data-matrix-id]")) return;
+      if (el && el.closest(".analysis-toolbar, .party-overview a, li[data-tags], tr[data-matrix-id], tr.matrix-evidence")) {
+        return;
+      }
       setRelated([], "");
     });
     document.addEventListener("keydown", (event) => {
@@ -448,7 +519,7 @@
       const point = el && el.closest("li[data-tags]");
       if (point) setRelated((point.dataset.tags || "").split(" "), point.dataset.source);
       const row = el && el.closest("tr[data-matrix-id]");
-      if (row) setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`);
+      if (row) setRelated([row.dataset.matrixId], `matrix-${row.dataset.matrixId}`, { scroll: true });
     });
   }
 
