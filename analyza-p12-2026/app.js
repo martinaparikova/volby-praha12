@@ -111,25 +111,31 @@
     const n = normalize(text);
     const tags = [];
     if (/metro d/.test(n)) tags.push("metro-d");
-    if (/tramvaj/.test(n)) tags.push("tramvaj-komorany");
+    if (/tramvaj/.test(n) && /komoran/.test(n)) tags.push("tramvaj-komorany");
     if (/parkovac/.test(n)) tags.push("parkovaci-domy");
     if (/\bd0\b/.test(n) || /prazsk(?:y|eho) okruh/.test(n) || /obchvat komoran/.test(n)) tags.push("d0-obchvat");
     if (/vlak|\bs8\b/.test(n)) tags.push("vlak-s8");
+    if (/cyklopruh/.test(n) || /paterni tahy vyhradne/.test(n)) tags.push("cyklopruhy-paterni");
     if (/cyklo|sdilenych kol|sdilena kola|vjezdu kol/.test(n)) tags.push("cyklodoprava");
     if (/p\+r/.test(n)) tags.push("p-plus-r");
-    if (/zon placeneho|placeneho stani|rezidencni/.test(n)) tags.push("modre-zony");
+    if (/zon placeneho|placeneho stani/.test(n)) tags.push("modre-zony");
     if (/skolni ulice|zony bez aut|cesty do skol|pre chod.*skol|prechod.*skol|bezpecn.*skol|okoli skol/.test(n)) {
       tags.push("bezpecnost-skoly");
     }
     if (/lavka/.test(n)) tags.push("lavky");
-    if (/zs komoran|zakladni skola v komoran|zakladni skola v modranech|t\. g\. masaryka|zs a ms smolkova/.test(n)) {
-      tags.push("zs-komorany-tgm");
+    if (/zs komoran|zakladni skola v komoran|zakladni skoly v komoranech/.test(n)) {
+      tags.push("zs-komorany");
     }
+    if (/t\. g\. masaryka/.test(n)) tags.push("zs-tgm-pavilon");
     if (/stredni skol|gymnaz/.test(n)) tags.push("stredni-skola");
-    if (
-      /obecni byt|bytoveho fondu|najemni bydleni|mestske najemni|prodej mestskych byt|ukonceni prodeje|privatizac|fond mestske casti navy/.test(n)
-    ) {
+    if (/obecni byt|bytoveho fondu|najemni bydleni|mestske najemni|socialniho bydleni/.test(n)) {
       tags.push("obecni-byty");
+    }
+    if (/prodej majetku|prodej mestskych byt|ukonceni prodeje|nebudeme prodavat|privatizac/.test(n)) {
+      tags.push("prodej-majetku");
+    }
+    if (/zahustov|vysokopodlaz|predimenzovan|nadsazen|charakter vilov|raz cholupic/.test(n)) {
+      tags.push("regulace-vystavby");
     }
     if (/developer|obcanska vybavenost|obcanskou vybavenost|prispevky developer/.test(n)) {
       tags.push("vybavenost-developeri");
@@ -142,7 +148,9 @@
     if (/belari/.test(n)) tags.push("belarie");
     if (/bazen/.test(n)) tags.push("bazen");
     if (/domov senior|dum pro seniory|zarubov|vapcarov/.test(n)) tags.push("domov-senioru");
-    if (/kamer|straznik|prevence kriminal|hazard|nelegaln/.test(n)) tags.push("kamery-straznici");
+    if (/kamer/.test(n)) tags.push("kamery");
+    if (/straznik|hlidek mestske policie|okrskov/.test(n)) tags.push("straznici-mp");
+    if (/asistent/.test(n) && /prevence/.test(n)) tags.push("asistenti-prevence");
     if (/poliklinik(?:y|a) modran|provozovatele poliklinik/.test(n)) tags.push("poliklinika");
     if (/portal|digitaliz|online sluz|online zapis|elektronick/.test(n)) tags.push("digitalizace");
     if (
@@ -156,8 +164,11 @@
     if (/kulturni(ho)? domu v cholupic|komunitni centrum (na tocne|v odkoupen)|namesti v tocne|namesti v cholupic/.test(n)) {
       tags.push("komunity-okraje");
     }
+    if (/knihovn|kulturni sal|viceuceloveho kulturniho salu/.test(n)) tags.push("knihovna-sal");
     if (/sportovn|spolk|lodenic|pump-track|mikrogrant|atletick/.test(n)) tags.push("sport-spolky");
-    if (/adiktolog|zony bez alkoholu|dusevniho zdravi|alkoholu a drogam/.test(n)) tags.push("adiktologie");
+    if (/alkohol|nizkoprah|bezdomov|nelegalniho prodeje drog|drogam ve verejnem/.test(n)) {
+      tags.push("alkohol-bezdomovectvi");
+    }
     if (/senior taxi/.test(n)) tags.push("senior-taxi");
     return [...new Set(tags)];
   }
