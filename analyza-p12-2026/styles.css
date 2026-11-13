@@ -17,6 +17,21 @@
   backdrop-filter: none;
 }
 
+.analysis-author {
+  font-size: .78rem;
+  color: var(--color-text-muted);
+}
+
+.analysis-author a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
+.analysis-author a:hover,
+.analysis-author a:focus-visible {
+  color: var(--color-pink-dark);
+}
+
 .analysis-page .site-header__inner,
 .analysis-toolbar,
 .analysis-page main,
